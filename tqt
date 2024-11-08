@@ -1,0 +1,285 @@
+TST00002     RUHAA2218 WS/10AUG F N LD 12AUG24 2359  OD CAIYNB                 
+T-                                                                             
+FXP/PAX/R,U09,UP/S2/P1                                                         
+   1.ALMARWANI/AHMED A(ADT/02DEC05)                                            
+ 1   CAI SM  441 Q 12AUG 0510  OK QEGOW           12AUG12AUG 30K               
+     YNB                                                                       
+FARE  I EGP    7809.00                                                         
+EQUIV   SAR     595.00                                                         
+TX001 X SAR     2.00-YQAC TX002 X SAR     6.00-YQAD TX003 X SAR    94.00-YRVA  
+TX004 X SAR     8.00-E3SE TX005 X SAR    87.00-IOVZ TX006 X SAR    12.00-EGTR  
+TX007 X SAR     8.00-EQGO TX008 X SAR     8.00-JKDC TX009 X SAR     2.00-O2SO  
+TX010 X SAR     4.00-O9CA TX011 X SAR    94.00-QHEB TX012 X SAR     8.00-S4EC  
+TX013 X SAR    12.00-XKEM                                                      
+TOTAL   SAR     940.00    BSR 0.07618661                                       
+GRAND TOTAL SAR     940.00                                                     
+CAI SM YNB M/IT END                 
+-----------------------------------------------------------
+TST00004     RUHAA2218 WS/22AUG F N LD 26AUG24 2359  OD HMBHMB                 
+T-                                                                             
+FXP/PAX/R,U09,UP/S2,3/P1                                                       
+   1.ABDELAAL/MOHAMED(ADT/28DEC82)                                             
+ 1   HMB SM  437 H 26AUG 0225  OK HEGRT           26AUG26AUG 30K               
+ 2 O DMM SM  438 W 30AUG 1440  OK WEGRT           30AUG30AUG 30K               
+     HMB                                                                       
+FARE  I EGP    8303.00                                                         
+EQUIV   SAR     638.00                                                         
+TX001 X SAR     6.00-YQAD TX002 X SAR   188.00-YRVA TX003 X SAR    16.00-E3SE  
+TX004 X SAR   130.00-IOAE TX005 X SAR     5.00-T2CB TX006 X SAR    12.00-EGTR  
+TX007 X SAR     8.00-EQGO TX008 X SAR     8.00-JKDC TX009 X SAR     2.00-O2SO  
+TX010 X SAR     4.00-O9CA TX011 X SAR    94.00-QHEB TX012 X SAR    16.00-S4EC  
+TX013 X SAR    12.00-XKEM                                                      
+TOTAL   SAR    1139.00    BSR 0.07682553                                       
+GRAND TOTAL SAR    1139.00                                                     
+HMB SM DMM M/IT SM HMB M/IT END                                                
+
+ 42.FE NO BAG FOR INFANT FEES FOR CHNG/REF/NO SHOW ANCILLARY IS                
+NON REFUNDABL                                                                  
+ 47.FM *F*0.00                                                                 
+ 48.FP CASH                                                                    
+ 49.FT *F*SERRA  
+-----------------------------------------
+T     P/S  NAME                   TOTAL            FOP                 SEGMENTS
+5    .1  THASSAN/NOURA M          EGP      6953.00 CCEPXXXXXXXXXXXX6155/0+4    
+5    .2  TMOHAMED/FATMA R         EGP      6953.00 CCEPXXXXXXXXXXXX6155/0+4    
+6    .3  TRAMADAN/YOUSSEF M       EGP      6421.00 CCEPXXXXXXXXXXXX6155/0+4    
+
+DELETED TST RECORDS MAY EXIST - PLEASE USE TTH 
+---------------------------------------------------------
+TST00001     RUHAA28WH WS/31AUG I Q LD 05SEP24 2359  OD CAIRUH                 
+T-                                                                             
+FXP                                                                            
+   1.ABDELWAHED/OMAR S(ADT/22MAR90)                                            
+ 1   CAI NE  162 V 05SEP 0510  OK VEGNEOW         05SEP05SEP 30K               
+     RUH                                                                       
+FARE  F EGP    2231.00                                                         
+EQUIV   SAR     173.00                                                         
+TX001 X SAR    20.00-YQAC TX002 X SAR   145.00-YRVA TX003 X SAR   172.00-YRVB  
+TX004 X SAR     8.00-E3SE TX005 X SAR    12.00-EGTR TX006 X SAR     8.00-EQGO  
+TX007 X SAR     8.00-JKDC TX008 X SAR     2.00-O2SO TX009 X SAR     4.00-O9CA  
+TX010 X SAR    94.00-QHEB TX011 X SAR     8.00-S4EC TX012 X SAR    12.00-XKEM  
+TOTAL   SAR     666.00    BSR 0.0771728                                        
+GRAND TOTAL SAR     666.00                                                     
+CAI NE RUH46.41NUC46.41END ROE48.064                                           
+
+ 39.FE NONENDORSABLE/REBOOKING/ AND REFUND SUBJ TO PENALTY                     
+ 42.FM *M*3                                                                    
+ 43.FP CASH                                                                    
+ 44.FT *NESA24                                                                 
+ 45.FV NE
+ -------------------------------------------------
+ // with TWD:
+ TKT-0653707780499        RCI-                     1A  LOC-WPKEHJ
+  OD-DMMDMM  SI-      FCPI-0   POI-RUH  DOI-31AUG24  IOI-71213181
+    1.SOHAIL/AMIR               ADT            ST
+  1 ODMM SV1169   Y 07NOV2300 OK LPG2SAC4      O   07NOV07NOV 2PC
+  2 XRUH SV 724   L 08NOV0220 OK LPG2SAC4      O   08NOV08NOV 2PC
+  3 OISB SV 727   Q 22NOV0200 OK QPG2SAC4      O   22NOV22NOV 2PC
+  4 XJED SV1110   Y 22NOV0900 OK QPG2SAC4      O   22NOV22NOV 2PC
+     DMM
+ FARE   F SAR       423.00
+ TOTALTAX SAR       557.50
+ TOTAL    SAR       980.50 
+ /FC DMM SV X/RUH SV ISB69.33SV X/JED SV DMM43.33NUC112.66END ROE
+ 3.75
+ FE TKT VALD 1Y FRM ISSUE DATE
+ FP CCAXXXXXXXXXXXX7838/0829/A436510
+ FOR TAX/FEE DETAILS USE TWD/TAX
+
+ // with TQT:
+ TST00001  PC RUHAA2218 92/31AUG M 0 LD 31AUG24 2359  OD DMMDMM                 
+ T-                                                                             
+ FXP                                                                            
+    1.SOHAIL/AMIR(ADT/15MAR87)                                                  
+  1   DMM SV 1169 Y 07NOV 2300  OK LPG2SAC4        07NOV07NOV 2PC               
+  2 X RUH SV  724 L 08NOV 0220  OK LPG2SAC4        08NOV08NOV 2PC               
+  3   ISB    ARNK                                                               
+  4 O JED SV 1110 Y 22NOV 0900  OK QPG2SAC4        22NOV22NOV 2PC               
+      DMM                                                                       
+ FARE  F SAR     423.00                                                         
+ TX001 X SAR   200.00-YRVA TX002 X SAR    16.00-E3SE TX003 X SAR    92.50-IOAE  
+ TX004 X SAR    15.00-T2CB TX005 X SAR   169.00-RGGA TX006 X SAR    27.00-SPEB  
+ TX007 X SAR    38.00-YDDE                                                      
+ TOTAL   SAR     980.50                                                         
+ GRAND TOTAL SAR     980.50                                                     
+ DMM SV X/RUH SV ISB69.33SV X/JED SV DMM43.33NUC112.66END                       
+  ROE3.75                                                                       
+
+  33.FE TKT VALD 1Y FRM ISSUE DATE                                              
+  36.FM *C*0.00                                                                 
+  37.FP CCAXXXXXXXXXXXX7838/0829/A436510                                        
+  38.FV SV 
+  ----------------------------------------------------------
+  T     P/S  NAME                   TOTAL            FOP                 SEGMENTS
+5    .1  TALNUGHAYMISH/HANA M     SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .3  TALWEHAIBI/DEEMA A       SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .4  TALWEHAIBI/MOHAMMED A    SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .5  TALWEHAIBI/MUNIRAH A     SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .6  TALWHAIBI/AHMED M        SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .7  TBINATIK/NURA K          SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  5    .8  TSHAHUL HAMEED/FATHIMA + SAR       263.35 CCAXXXXXXXXXXXX4491/08+9    
+  6    .2  TALWEHAIBI/ABDULAZIZ A   SAR       216.20 CCAXXXXXXXXXXXX4491/08+9    
+  7    .1  TALNUGHAYMISH/HANA M     SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .3  TALWEHAIBI/DEEMA A       SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .4  TALWEHAIBI/MOHAMMED A    SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .5  TALWEHAIBI/MUNIRAH A     SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .6  TALWHAIBI/AHMED M        SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .7  TBINATIK/NURA K          SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  7    .8  TSHAHUL HAMEED/FATHIMA + SAR       331.20 CCAXXXXXXXXXXXX4491/08+10   
+  8    .2  TALWEHAIBI/ABDULAZIZ A   SAR       266.80 CCAXXXXXXXXXXXX4491/08+10
+  -----------------------------------------------------
+  TST00001     RUHAA28WH WS/01SEP F N LD 09SEP24 2359  OD RUHBHH                 
+  T-E                                                                            
+  FXP                                                                            
+     1.ALASBLI/MONA F(ADT/20MAR88)                                               
+   1   RUH SV 1733 Q 09SEP 2025  OK QNGFSAC4        09SEP09SEP 1PC               
+       BHH                                                                       
+  FARE  I SAR     445.00                                                         
+  TX001 X SAR    35.00-YRVA TX002 X SAR    25.00-IOAE TX003 X SAR    10.00-IOVZ  
+  TX004 X SAR    78.00-K7VA TX005 X SAR     5.00-T2CB                            
+  TOTAL   SAR     598.00                                                         
+  GRAND TOTAL SAR     598.00                                                     
+  RUH SV BHH M/IT END                                                            
+
+   28.FE TKT VALD 1Y FRM ISSUE DATE                                              
+   31.FM *F*0.00                                                                 
+   32.FP CCAXXXXXXXXXXXX9925/0929/A357929                                        
+   33.FT *F*NGFSA2SA0824                                                         
+   34.FV *F*SV  
+   ------------------------------------------------------
+TST00001     RUHAA28WH WS/01SEP F N LD 02SEP24 2359  OD WAERUH                 
+T-E                                                                            
+FXP                                                                            
+   1.ALSHAYB/KALLED(ADT/28JUL89)                                               
+ 1   WAE SV 1926 T 02SEP 1835  OK TNGFSAS4        02SEP02SEP 0PC               
+     RUH                                                                       
+FARE  I SAR     304.00                                                         
+TX001 X SAR    35.00-YRVA TX002 X SAR    10.00-IOAE TX003 X SAR    52.35-K7VA  
+TOTAL   SAR     401.35                                                         
+GRAND TOTAL SAR     401.35                                                     
+WAE SV RUH M/IT END                                                            
+
+ 19.FE NONREFUNDABLE/NONCHANGABLE                                              
+ 22.FM *F*0.00                                                                 
+ 23.FP CCAXXXXXXXXXXXX0497/0929/A871401                                        
+ 24.FT *F*NGFSA2SA0824                                                         
+ 25.FV *F*SV
+ ----------------------------------------
+ TST00001     RUHAA28WH WS/01SEP I 0 LD 01SEP24 1516  OD ISTIST                 
+ T-                                                                             
+ FXP                                                                            
+    1.CALLEWAERT/PHILIP(ADT/14MAY66)                                            
+  1   IST S7 3750 R 03SEP 1610  OK RBSRT                10JUL 0PC               
+  2 O DME S7 3749 T 06SEP 1005  OK TBSRT                10JUL 0PC               
+      IST                                                                       
+ FARE  F USD     290.00                                                         
+ EQUIV   SAR    1090.00                                                         
+ TX001 X SAR   134.00-YQAC TX002 X SAR    13.00-M6SE TX003 X SAR    84.00-TRAE  
+ TX004 X SAR    27.00-RICA TX005 X SAR    27.00-RICB                            
+ TOTAL   SAR    1375.00    BSR 3.756                                            
+ GRAND TOTAL SAR    1375.00                                                     
+ IST S7 MOW122.00S7 IST168.00NUC290.00END ROE1.00                               
+
+  35.FE S7/NON-REF/CHNG/RESTR/BS                                                
+  38.FM *M*0                                                                    
+  39.FP CASH                                                                    
+  40.FV S7
+  -----------------------------------------------
+
+  //capturing the Price
+
+  capture line:1, column:1, length:2 assign TSTtest
+  if (TSTtest=="T "){
+  
+  }
+  ---------------------------------------------------
+T     P/S  NAME                   TOTAL            FOP                 SEGMENTS
+2    .1  TALSAEED/ALI O           SAR       596.00 CASH                   2    
+                                                                               
+DELETED TST RECORDS MAY EXIST - PLEASE USE TTH
+-------------------------------------------------------
+capture line:1, column:1, length:2 assign to testTST
+capture line:2, column:35, length:3 assign to firstCurr
+capture line:3, column:35, length:3 assign to secondCurr
+if (testTST != "T "){
+    send "There're no TST"
+    mandatory ask "Continue?" assign to qz5
+}
+--------------------
+send "RTA"
+--------------------------
+RP/RUHAA28WH/RUHAA28WH            WS/SU  19SEP24/2110Z   K5VNXG
+  2  MS 649 W 07OCT 1 CAIRUH HK1  0030 0305  07OCT  E  MS/K5VNXG
+  3  MS 648 T 11NOV 1 RUHCAI HK1  2200 2355  11NOV  E  MS/K5VNXG
+_____________________________
+capture line:2, column:30, length:2 assign to HK1Test
+if (HK1Test=="HK"){
+  assign "1" to segmentsCount
+  capture line:2, column:6, length:2 assign to Airline1
+  capture line:2, column:15, length:5 assign to TravelDate
+  capture line:2, column:23, length:3 assign to OriginCity
+  capture line:2, column:32, length:1 assign to PassengerCount
+  capture line:3, column:30, length:2 assign to HKnextTest
+  if (HKnextTest=="HK"){
+    assign "2" to segmentsCount
+    capture line:4, column:30, length:2 assign to HK3Test
+    if (HK3Test=="HK"){
+      assign "3" to segmentsCount
+      capture line:5, column:30, length:2 assign to HK4Test
+      if (HK4Test=="HK"){
+          assign "4" to segmentsCount
+          capture line:6, column:30, length:2 assign to HK5Test
+          if (HK5Test=="HK"){
+            assign "5" to segmentsCount
+            capture line:7, column:30, length:2 assign to HK6Test
+            if (HK6Test=="HK"){
+                assign "6" to segmentsCount
+                capture line:8, column:30, length:2 assign to HK7Test
+                if (HK7Test=="HK"){
+                    send "SmartFlow now working on more than 6 segments"
+                    ask "ignore?" assign to qz5
+                    send "ig"
+                    call "test1"
+                }
+            }
+          }
+      }
+    }
+  }
+
+}
+else{
+capture line:3, column:30, length:2 assign to HK2Test
+if (HK2Test=="HK"){
+  capture line:3, column:6, length:2 assign to Airline1
+  capture line:3, column:15, length:5 assign to TravelDate
+  capture line:3, column:23, length:3 assign to OriginCity
+  capture line:3, column:32, length:1 assign to PassengerCount
+  capture line:4, column:30, length:2 assign to HKnextTest
+  if (HKnextTest=="HK"){
+    assign "2" to segmentsCount
+    capture line:5, column:30, length:2 assign to HK3Test
+    if (HK3Test=="HK"){
+      assign "3" to segmentsCount
+      capture line:6, column:30, length:2 assign to HK4Test
+      if (HK4Test=="HK"){
+          assign "4" to segmentsCount
+          capture line:7, column:30, length:2 assign to HK5Test
+          if (HK5Test=="HK"){
+            assign "5" to segmentsCount
+            capture line:8, column:30, length:2 assign to HK6Test
+            if (HK6Test=="HK"){
+                assign "6" to segmentsCount
+                capture line:9, column:30, length:2 assign to HK7Test
+                if (HK7Test=="HK"){
+                    send "SmartFlow now working on more than 6 segments"
+                    ask "ignore?" assign to qz5
+                    send "ig"
+                    call "test1"
+                }
+            }
+          }
+      }
+    }
+  }
+}

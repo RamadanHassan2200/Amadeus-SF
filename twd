@@ -1,0 +1,155 @@
+TKT-4773707565237        RCI-                     1A  LOC-J344EM
+ OD-ELQELQ  SI-      FCPI-Q   POI-RUH  DOI-22AUG24  IOI-71208432
+   1.ALSHAMMARI/MAHA KHULEEF H ADT            ST
+ 1 OELQ NE 141   N 29AUG1900 OK NSANERT       O   29AUG29AUG 40K
+ 2 OCAI NE 140   U 03SEP1030 OK USANERT       O   03SEP03SEP 30K
+    ELQ
+FARE   F SAR       112.00
+TOTALTAX SAR       524.00
+TOTAL    SAR       636.00 
+/FC ELQ NE CAI12.13NE ELQ17.73NUC29.86END ROE3.75
+FE NONENDORSABLE/REBOOKING/ AND REFUND SUBJ TO PENALTY
+FP CASH
+FT NESA24
+FOR TAX/FEE DETAILS USE TWD/TAX
+-------------------------------------------
+TKT-0653707571117        RCI-                     1A  LOC-JVNWO9
+ OD-JEDJED  SI-      FCPI-N   POI-RUH  DOI-22AUG24  IOI-71213181
+   1.TUANO/ALMAJED             ADT            ST
+ 1 OJED SV 870   T 23AUG0500 OK TNGFRDC4      A   23AUG23AUG 2PC
+ 2 OMNL SV 871   T 07OCT2330 OK TNGFRDC4      O   07OCT07OCT 2PC
+    JED
+FARE   I               IT
+TOTALTAX SAR       408.00
+TOTAL                  IT 
+/FC JED SV MNL M/IT SV JED M/IT END
+FE TKT VALD 1Y FRM ISSUE DATE
+FP CCAXXXXXXXXXXXX8341/0829/A400722
+FT NGFRDKSAASI24
+FOR TAX/FEE DETAILS USE TWD/TAX
+NET REPORTING IT/BT
+---------------------------------------
+TKT-0653707807773        RCI-                     1A  LOC-M6CQ8L
+ OD-WAERUH  SI-      FCPI-N   POI-RUH  DOI-01SEP24  IOI-71213181
+   1.ALSHAYB/KALLED            ADT            ST
+ 1 OWAE SV1926   T 02SEP1835 OK TNGFSAS4      A   02SEP02SEP NO
+    RUH
+FARE   I               IT
+TOTALTAX SAR        97.35
+TOTAL                  IT 
+/FC WAE SV RUH M/IT END
+FE NONREFUNDABLE/NONCHANGABLE
+FP CCAXXXXXXXXXXXX0497/0929/A871401
+FT NGFSA2SA0824
+FOR TAX/FEE DETAILS USE TWD/TAX
+NET REPORTING IT/BT
+============================-----------------
+TKT-3815825673289        RCI-                     1A  LOC-VTJRX8
+ OD-CAICAI  SI-      FCPI-N   POI-KWI  DOI-04SEP24  IOI-42227835
+   1.SOLIMAN/FAIROOZ           CHD            ST
+ 1 OCAI SM 407   W 17SEP1115 OK WEGRT/CH      O   17SEP17SEP 30K
+ 2 OKWI SM 408   U 21SEP1455 OK UEGRT         O   21SEP21SEP 2PC
+    CAI
+FARE   I               IT
+EQUIV                           BSR   0.00630235
+TOTALTAX KWD       34.800
+TOTAL                  IT 
+/FC CAI SM KWI Q55.35 M/IT SM CAI M/IT END ROE49.18
+FE FEES FOR CHNG/REF/NO SHOW ANCILLARY IS NON REFUNDABL
+FP CASH
+FT SERRA
+NON-ENDORSABLE
+FOR TAX/FEE DETAILS USE TWD/TAX
+NET REPORTING IT/BT
+----------------------------------------
+// If INF
+capture line:3, column:32, length:3 assign to Paxt1
+capture line:4, column:32, length:3 assign to Paxt2
+if(Paxt1=="INF"){
+   send"RTTN"
+   mandatory ask "Enter a non Infant ticket line number:" assign to nonINFL
+   send "TWD/L" +nonINFL
+}
+if(Paxt2=="INF"){
+   send"RTTN"
+   mandatory ask "Enter a non Infant ticket line number:" assign to nonINFL
+   send "TWD/L" +nonINFL
+}
+
+// Capturing the Baggage allowance
+
+capture line:4, column:30, length:2 assign to OK1
+if (OK1=="OK"){
+   capture line:4, column:60, length;2 assign to Bg1
+}
+capture line:5, column:30, length:2 assign to OK2
+if (OK2=="OK"){
+   capture line:5, column:60, length;2 assign to Bg2
+}
+capture line:6, column:30, length:2 assign to OK3
+if (OK3=="OK"){
+   capture line:6, column:60, length;2 assign to Bg3
+}
+capture line:7, column:30, length:2 assign to OK4
+if (OK4=="OK"){
+   capture line:7, column:60, length;2 assign to Bg4
+}
+capture line:8, column:30, length:2 assign to OK5
+if (OK5=="OK"){
+   capture line:8, column:60, length;2 assign to Bg5
+}
+capture line:9, column:30, length:2 assign to OK6
+if (OK6=="OK"){
+   capture line:9, column:60, length;2 assign to Bg6
+}
+
+if (OK6=="OK"){
+   if (segCount!="6"){
+      send "Please Reconfirm the Segments!"
+      mandatory ask "Continue?" assign to Segask
+   }
+}
+else{
+   
+   if (OK5=="OK"){
+      if (segCount!="5"){
+         send "Please Reconfirm the Segments!"
+         mandatory ask "Continue?" assign to Segask
+      }
+   }
+   else{
+      if (OK4=="OK"){
+         if (segCount!="4"){
+            send "Please Reconfirm the Segments!"
+            mandatory ask "Continue?" assign to Segask
+         }
+      }
+      else{
+         if (OK3=="OK"){
+            if (segCount!="3"){
+               send "Please Reconfirm the Segments!"
+                  mandatory ask "Continue?" assign to Segask
+            }
+         }
+         else{
+            if (OK2=="OK"){
+               if (segCount!="2"){
+                  send "Please Reconfirm the Segments!"
+                     mandatory ask "Continue?" assign to Segask
+               }
+            }
+            else{
+               if (OK1=="OK"){
+                  if (segCount!="1"){
+                     send "Please Reconfirm the Segments!"
+                     mandatory ask "Continue?" assign to Segask
+                  }
+               }       
+            }//2
+         }//3
+      }//4
+   }//5
+}//6
+
+
+
