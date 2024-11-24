@@ -86,6 +86,7 @@ if (ch20 == "-"){
   append ch17 +ch18 +ch19 +ch20 +ch21 +ch22 +ch23 +ch24 +ch25 +ch26 +ch27 +ch28 +ch29 +ch30 to tktNo
 }
 send "TWD/TKT" +tktNo
+capture line:1, column:1, length:3 assign to TKTCheck
 if (TKTCheck !="TKT"){
   ask "Try again!" assign to qz5
   call "FQD&FQP"
@@ -316,18 +317,64 @@ if (gov1616 =="GOV"){
   mandatory ask "Ignore?" assign to qz5
 }
 
-  
+
 choose "FQP or FQD?"{
-  when ("FQD"){
+  when ("ATC || FQD"){
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
 capture line:1, column:1, length:21 assign to checkPending
+if (checkPending=="NO FARE FOR BOOKING C"){
+    ask "Continue?" assign to qz5
+}
 if (checkPending=="REFUND RECORD PENDING"){
 send "TRFIG"
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
 }
+capture line:1, column:1, length:21 assign to checkPending
+if (checkPending=="NO FARE FOR BOOKING C"){
+    ask "Continue?" assign to qz5
+}
 capture line:1, column:34, length:3 assign to checkRFND
 if (checkRFND!="AGT"){
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
+}
+
+capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+
+    capture line:15, column:1, length:2 assign to FOCheck1
+    capture line:16, column:1, length:2 assign to FOCheck2
+    capture line:17, column:1, length:2 assign to FOCheck3
+
+    if (FOCheck1=="FO"){
+      mandatory ask "Is the ticket expired?" assign to qz5
+    }
+    if (FOCheck2=="FO"){
+      mandatory ask "Is the ticket expired?" assign to qz5
+    }
+    if (FOCheck3=="FO"){
+      mandatory ask "Is the ticket expired?" assign to qz5
+    }
+
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:5, length:40 assign to totalRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:5, length:40 assign to totalRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:5, length:40 assign to totalRefundAmount
+    }
+    capture line:6, column:28, length:3 assign to refundCurrency
+    send "TRFP"
+    capture line:2, column:1, length:21 assign to refundedTicketCheck
+    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
+        send ":" +totalRefundAmount +"  " +refundCurrency
+        call "FQD&FQP"
+    }
 }
 
 if (OK1 =="OK"){
@@ -402,7 +449,7 @@ if (OK5 =="OK"){
 
 if (OK6 =="OK"){
   if (status6=="O"){
-    if (original6="O"){
+    if (original6=="O"){
       assign "TRUE" to checkOpen6
     }
   }
@@ -416,31 +463,31 @@ if (OK6 =="OK"){
 
 if (segCount=="6"){
     if (checkOpen6=="TRUE"){
-      append "" +city6 +"/A" +airline1 +"/C" +class6 to FQDCommand
+      append "" +city6 +"/A" +airline6 +"/C" +class6 to FQDCommand
       assign fareBasis6 to fareBasis
     }
     else{
         if (checkOpen5=="TRUE"){
-          append "" +city5 +"/A" +airline1 +"/C" +class5 to FQDCommand
+          append "" +city5 +"/A" +airline5 +"/C" +class5 to FQDCommand
           assign fareBasis5 to fareBasis
         }
         else{
           if (checkOpen4=="TRUE"){
-            append "" +city4 +"/A" +airline1 +"/C" +class4 to FQDCommand
+            append "" +city4 +"/A" +airline4 +"/C" +class4 to FQDCommand
             assign fareBasis4 to fareBasis
           }
           else{
               if (checkOpen3=="TRUE"){
-                append "" +city3 +"/A" +airline1 +"/C" +class3 to FQDCommand
+                append "" +city3 +"/A" +airline3 +"/C" +class3 to FQDCommand
                 assign fareBasis3 to fareBasis
               }
               else{
                   if (checkOpen2=="TRUE"){
-                    append "" +city2 +"/A" +airline1 +"/C" +class2 to FQDCommand
+                    append "" +city2 +"/A" +airline2 +"/C" +class2 to FQDCommand
                     assign fareBasis2 to fareBasis
                   }
                   else{
-                      append "" +city7 +"/A" +airline1 +"/C" +class1 to FQDCommand
+                      append "" +city7 +"/A" +airline6 +"/C" +class6 to FQDCommand
                       assign fareBasis1 to fareBasis
                   }
               }
@@ -451,26 +498,26 @@ if (segCount=="6"){
 
 if (segCount=="5"){
   if (checkOpen5=="TRUE"){
-          append "" +city5 +"/A" +airline1 +"/C" +class5 to FQDCommand
+          append "" +city5 +"/A" +airline5 +"/C" +class5 to FQDCommand
           assign fareBasis5 to fareBasis
         }
         else{
           if (checkOpen4=="TRUE"){
-            append "" +city4 +"/A" +airline1 +"/C" +class4 to FQDCommand
+            append "" +city4 +"/A" +airline4 +"/C" +class4 to FQDCommand
             assign fareBasis4 to fareBasis
           }
           else{
               if (checkOpen3=="TRUE"){
-                append "" +city3 +"/A" +airline1 +"/C" +class3 to FQDCommand
+                append "" +city3 +"/A" +airline3 +"/C" +class3 to FQDCommand
                 assign fareBasis3 to fareBasis
               }
               else{
                   if (checkOpen2=="TRUE"){
-                    append "" +city2 +"/A" +airline1 +"/C" +class2 to FQDCommand
+                    append "" +city2 +"/A" +airline2 +"/C" +class2 to FQDCommand
                     assign fareBasis2 to fareBasis
                   }
                   else{
-                      append "" +city7 +"/A" +airline1 +"/C" +class1 to FQDCommand
+                      append "" +city6 +"/A" +airline5 +"/C" +class5 to FQDCommand
                       assign fareBasis1 to fareBasis
                   }
               }
@@ -481,21 +528,21 @@ if (segCount=="5"){
 
 if (segCount=="4"){
     if (checkOpen4=="TRUE"){
-            append "" +city4 +"/A" +airline1 +"/C" +class4 to FQDCommand
+            append "" +city4 +"/A" +airline4 +"/C" +class4 to FQDCommand
             assign fareBasis4 to fareBasis
           }
           else{
               if (checkOpen3=="TRUE"){
-                append "" +city3 +"/A" +airline1 +"/C" +class3 to FQDCommand
+                append "" +city3 +"/A" +airline3 +"/C" +class3 to FQDCommand
                 assign fareBasis3 to fareBasis
               }
               else{
                   if (checkOpen2=="TRUE"){
-                    append "" +city2 +"/A" +airline1 +"/C" +class2 to FQDCommand
+                    append "" +city2 +"/A" +airline2 +"/C" +class2 to FQDCommand
                     assign fareBasis2 to fareBasis
                   }
                   else{
-                      append "" +city5 +"/A" +airline1 +"/C" +class1 to FQDCommand
+                      append "" +city5 +"/A" +airline4 +"/C" +class4 to FQDCommand
                       assign fareBasis1 to fareBasis
                   }
               }
@@ -504,16 +551,16 @@ if (segCount=="4"){
 
 if (segCount=="3"){
    if (checkOpen3=="TRUE"){
-                append "" +city3 +"/A" +airline1 +"/C" +class3 to FQDCommand
+                append "" +city3 +"/A" +airline3 +"/C" +class3 to FQDCommand
                 assign fareBasis3 to fareBasis
               }
               else{
                   if (checkOpen2=="TRUE"){
-                    append "" +city2 +"/A" +airline1 +"/C" +class2 to FQDCommand
+                    append "" +city2 +"/A" +airline2 +"/C" +class2 to FQDCommand
                     assign fareBasis2 to fareBasis
                   }
                   else{
-                      append "" +city4 +"/A" +airline1 +"/C" +class1 to FQDCommand
+                      append "" +city4 +"/A" +airline3 +"/C" +class3 to FQDCommand
                       assign fareBasis1 to fareBasis
                   }
          }
@@ -522,11 +569,11 @@ if (segCount=="3"){
 
 if (segCount=="2"){
      if (checkOpen2=="TRUE"){
-                    append "" +city2 +"/A" +airline1 +"/C" +class2 to FQDCommand
+                    append "" +city2 +"/A" +airline2 +"/C" +class2 to FQDCommand
                     assign fareBasis2 to fareBasis
                   }
                   else{
-                      append "" +city3 +"/A" +airline1 +"/C" +class1 to FQDCommand
+                      append "" +city3 +"/A" +airline2 +"/C" +class2 to FQDCommand
                       assign fareBasis1 to fareBasis
                   }
 }
@@ -660,12 +707,9 @@ if (segCount=="1"){
     }
     }
 
-    send "FQP" +FQPCommand +"/R," +DOI +",U*SRG01,UP"
+    send "FQP" +FQPCommand +"/R," +DOI +",U*SRG01,UP,P/L-"  
     
         
   }
 }
   
-
-
-
