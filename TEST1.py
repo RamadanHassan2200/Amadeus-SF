@@ -13,36 +13,9 @@ if (HK1Test=="HK"){
   capture line:2, column:15, length:5 assign to TravelDate
   capture line:2, column:23, length:3 assign to OriginCity
   capture line:2, column:32, length:1 assign to PassengerCount
-  capture line:3, column:30, length:2 assign to HKnextTest
-  if (HKnextTest=="HK"){
-    assign "2" to segmentsCount
-    capture line:4, column:30, length:2 assign to HK3Test
-    if (HK3Test=="HK"){
-      assign "3" to segmentsCount
-      capture line:5, column:30, length:2 assign to HK4Test
-      if (HK4Test=="HK"){
-          assign "4" to segmentsCount
-          capture line:6, column:30, length:2 assign to HK5Test
-          if (HK5Test=="HK"){
-            assign "5" to segmentsCount
-            capture line:7, column:30, length:2 assign to HK6Test
-            if (HK6Test=="HK"){
-                assign "6" to segmentsCount
-                capture line:8, column:30, length:2 assign to HK7Test
-                if (HK7Test=="HK"){
-                    send "SmartFlow now working on more than 6 segments"
-                    ask "ignore?" assign to qz5
-                    send "ig"
-                    call "test1"
-                }
-            }
-          }
-      }
-    }
-  }
 
 }
-else{
+
 capture line:3, column:30, length:2 assign to HK2Test
 if (HK2Test=="HK"){
   assign "1" to segmentsCount
@@ -50,39 +23,119 @@ if (HK2Test=="HK"){
   capture line:3, column:15, length:5 assign to TravelDate
   capture line:3, column:23, length:3 assign to OriginCity
   capture line:3, column:32, length:1 assign to PassengerCount
-  capture line:4, column:30, length:2 assign to HKnextTest
-      if (HKnextTest=="HK"){
-        assign "2" to segmentsCount
-        capture line:5, column:30, length:2 assign to HK3Test
-        if (HK3Test=="HK"){
-          assign "3" to segmentsCount
-          capture line:6, column:30, length:2 assign to HK4Test
-          if (HK4Test=="HK"){
-              assign "4" to segmentsCount
-              capture line:7, column:30, length:2 assign to HK5Test
-              if (HK5Test=="HK"){
-                assign "5" to segmentsCount
-                capture line:8, column:30, length:2 assign to HK6Test
-                if (HK6Test=="HK"){
-                    assign "6" to segmentsCount
-                    capture line:9, column:30, length:2 assign to HK7Test
-                    if (HK7Test=="HK"){
-                        send "SmartFlow now working on more than 6 segments"
-                        ask "ignore?" assign to qz5
-                        send "ig"
-                        call "test1"
-                    }
-                }
-              }
-          }
-        }
-      }
 }
+
+capture line:8, column:43, length:1 assign to agtName
+capture line:8, column:44, length:1 assign to agtNameChar2
+capture line:8, column:45, length:1 assign to agtNameChar3
+capture line:8, column:46, length:1 assign to agtNameChar4
+capture line:8, column:47, length:1 assign to agtNameChar5
+capture line:8, column:48, length:1 assign to agtNameChar6
+capture line:8, column:49, length:1 assign to agtNameChar7
+capture line:8, column:50, length:1 assign to agtNameChar8
+capture line:8, column:51, length:1 assign to agtNameChar9
+capture line:8, column:52, length:1 assign to agtNameChar10
+capture line:8, column:53, length:1 assign to agtNameChar11
+capture line:8, column:54, length:1 assign to agtNameChar12
+capture line:8, column:55, length:1 assign to agtNameChar13
+capture line:8, column:56, length:1 assign to agtNameChar14
+capture line:8, column:57, length:1 assign to agtNameChar15
+capture line:8, column:58, length:1 assign to agtNameChar16
+capture line:8, column:59, length:1 assign to agtNameChar17
+capture line:8, column:60, length:1 assign to agtNameChar18
+capture line:8, column:61, length:1 assign to agtNameChar19
+capture line:8, column:62, length:1 assign to agtNameChar20
+capture line:8, column:63, length:1 assign to agtNameChar21
+capture line:8, column:64, length:1 assign to agtNameChar22
+
+if (agtNameChar2!=" "){
+      append agtNameChar2 to agtName
+      if (agtNameChar3!=" "){
+            append agtNameChar3 to agtName
+            if (agtNameChar4!=" "){
+                  append agtNameChar4 to agtName
+                  if (agtNameChar5!=" "){
+                        append agtNameChar5 to agtName
+                        if (agtNameChar6!=" "){
+                              append agtNameChar6 to agtName
+                              if (agtNameChar7!=" "){
+                                    append agtNameChar7 to agtName
+                                    if (agtNameChar8!=" "){
+                                          append agtNameChar8 to agtName
+                                          if (agtNameChar9!=" "){
+                                                append agtNameChar9 to agtName
+                                                if (agtNameChar10!=" "){
+                                                      append agtNameChar10 to agtName
+                                                      if (agtNameChar11!=" "){
+                                                            append agtNameChar11 to agtName
+                                                            if (agtNameChar12!=" "){
+                                                                  append agtNameChar12 to agtName
+                                                                  if (agtNameChar13!=" "){
+                                                                        append agtNameChar13 to agtName
+                                                                        if (agtNameChar14!=" "){
+                                                                              append agtNameChar14 to agtName
+                                                                              if (agtNameChar15!=" "){
+                                                                                    append agtNameChar15 to agtName
+                                                                                    if (agtNameChar16!=" "){
+                                                                                          append agtNameChar16 to agtName
+                                                                                          if (agtNameChar17!=" "){
+                                                                                                append agtNameChar17 to agtName
+                                                                                                if (agtNameChar18!=" "){
+                                                                                                      append agtNameChar18 to agtName
+                                                                                                      if (agtNameChar19!=" "){
+                                                                                                            append agtNameChar19 to agtName
+                                                                                                            if (agtNameChar20!=" "){
+                                                                                                                  append agtNameChar20 to agtName
+                                                                                                                  if (agtNameChar21!=" "){
+                                                                                                                        append agtNameChar21 to agtName
+                                                                                                                        if (agtNameChar22!=" "){
+                                                                                                                              append agtNameChar22 to agtName
+                                                                                                                        }
+                                                                                                                  }
+                                                                                                            }
+                                                                                                      }
+                                                                                                }
+                                                                                          }
+                                                                                    }
+                                                                              }
+                                                                        }
+                                                                  }
+                                                            }
+                                                      }
+                                                }
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }      
+      }    
+}
+
+
+
+********************* SIGN IDENTIFICATION **********************                
+     OFFICE                        - RUHAA2218                                  
+     SIGN                          - 359292                                     
+                                                                                
+*********************** SECURITY PROFILE ***********************                
+USN *   USER NAME                       - RAMADAN 13107017 ABDAL                
+                                          LAH
+
+capture line:3, column:30, length:2 assign to HK2Test
+if (HK2Test=="HK"){
+  assign "1" to segmentsCount
+  capture line:3, column:6, length:2 assign to Airline1
+  capture line:3, column:15, length:5 assign to TravelDate
+  capture line:3, column:23, length:3 assign to OriginCity
+  capture line:3, column:32, length:1 assign to PassengerCount
+  
+}
+
 else{
   send "Not Confirmed Segemnts please, check again!"
   ask "Stop and Review" assign to qz5
   send "ig"
-}
 }
 
 // ignore >4 segments or >6 passengers
