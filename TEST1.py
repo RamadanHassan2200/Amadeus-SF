@@ -1,30 +1,8 @@
 //retrirval
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
-send "rt" +pnr
 
-// Checking Airline(s) and Travel date and passenger count
-send "RTA"
-
-capture line:2, column:30, length:2 assign to HK1Test
-if (HK1Test=="HK"){
-  assign "1" to segmentsCount
-  capture line:2, column:6, length:2 assign to Airline1
-  capture line:2, column:15, length:5 assign to TravelDate
-  capture line:2, column:23, length:3 assign to OriginCity
-  capture line:2, column:32, length:1 assign to PassengerCount
-
-}
-
-capture line:3, column:30, length:2 assign to HK2Test
-if (HK2Test=="HK"){
-  assign "1" to segmentsCount
-  capture line:3, column:6, length:2 assign to Airline1
-  capture line:3, column:15, length:5 assign to TravelDate
-  capture line:3, column:23, length:3 assign to OriginCity
-  capture line:3, column:32, length:1 assign to PassengerCount
-}
-
+send "JGD/USN"
 capture line:8, column:43, length:1 assign to agtName
 capture line:8, column:44, length:1 assign to agtNameChar2
 capture line:8, column:45, length:1 assign to agtNameChar3
@@ -49,102 +27,211 @@ capture line:8, column:63, length:1 assign to agtNameChar21
 capture line:8, column:64, length:1 assign to agtNameChar22
 
 if (agtNameChar2!=" "){
-      append agtNameChar2 to agtName
-      if (agtNameChar3!=" "){
-            append agtNameChar3 to agtName
-            if (agtNameChar4!=" "){
-                  append agtNameChar4 to agtName
-                  if (agtNameChar5!=" "){
-                        append agtNameChar5 to agtName
-                        if (agtNameChar6!=" "){
-                              append agtNameChar6 to agtName
-                              if (agtNameChar7!=" "){
-                                    append agtNameChar7 to agtName
-                                    if (agtNameChar8!=" "){
-                                          append agtNameChar8 to agtName
-                                          if (agtNameChar9!=" "){
-                                                append agtNameChar9 to agtName
-                                                if (agtNameChar10!=" "){
-                                                      append agtNameChar10 to agtName
-                                                      if (agtNameChar11!=" "){
-                                                            append agtNameChar11 to agtName
-                                                            if (agtNameChar12!=" "){
-                                                                  append agtNameChar12 to agtName
-                                                                  if (agtNameChar13!=" "){
-                                                                        append agtNameChar13 to agtName
-                                                                        if (agtNameChar14!=" "){
-                                                                              append agtNameChar14 to agtName
-                                                                              if (agtNameChar15!=" "){
-                                                                                    append agtNameChar15 to agtName
-                                                                                    if (agtNameChar16!=" "){
-                                                                                          append agtNameChar16 to agtName
-                                                                                          if (agtNameChar17!=" "){
-                                                                                                append agtNameChar17 to agtName
-                                                                                                if (agtNameChar18!=" "){
-                                                                                                      append agtNameChar18 to agtName
-                                                                                                      if (agtNameChar19!=" "){
-                                                                                                            append agtNameChar19 to agtName
-                                                                                                            if (agtNameChar20!=" "){
-                                                                                                                  append agtNameChar20 to agtName
-                                                                                                                  if (agtNameChar21!=" "){
-                                                                                                                        append agtNameChar21 to agtName
-                                                                                                                        if (agtNameChar22!=" "){
-                                                                                                                              append agtNameChar22 to agtName
-                                                                                                                        }
-                                                                                                                  }
-                                                                                                            }
-                                                                                                      }
-                                                                                                }
-                                                                                          }
-                                                                                    }
-                                                                              }
-                                                                        }
-                                                                  }
-                                                            }
-                                                      }
-                                                }
-                                          }
-                                    }
-                              }
-                        }
-                  }
-            }      
-      }    
+append agtNameChar2 to agtName
+if (agtNameChar3!=" "){
+append agtNameChar3 to agtName
+if (agtNameChar4!=" "){
+append agtNameChar4 to agtName
+if (agtNameChar5!=" "){
+append agtNameChar5 to agtName
+if (agtNameChar6!=" "){
+append agtNameChar6 to agtName
+if (agtNameChar7!=" "){
+append agtNameChar7 to agtName
+if (agtNameChar8!=" "){
+append agtNameChar8 to agtName
+if (agtNameChar9!=" "){
+append agtNameChar9 to agtName
+if (agtNameChar10!=" "){
+append agtNameChar10 to agtName
+if (agtNameChar11!=" "){
+append agtNameChar11 to agtName
+if (agtNameChar12!=" "){
+append agtNameChar12 to agtName
+if (agtNameChar13!=" "){
+append agtNameChar13 to agtName
+if (agtNameChar14!=" "){
+append agtNameChar14 to agtName
+if (agtNameChar15!=" "){
+append agtNameChar15 to agtName
+if (agtNameChar16!=" "){
+append agtNameChar16 to agtName
+if (agtNameChar17!=" "){
+append agtNameChar17 to agtName
+if (agtNameChar18!=" "){
+append agtNameChar18 to agtName
+if (agtNameChar19!=" "){
+append agtNameChar19 to agtName
+if (agtNameChar20!=" "){
+append agtNameChar20 to agtName
+if (agtNameChar21!=" "){
+append agtNameChar21 to agtName
+if (agtNameChar22!=" "){
+append agtNameChar22 to agtName
+}}}}}}}}}}}}}}}}}}}}}//agtNameChar2
+
+
+send "rt" +pnr
+
+// Checking Airline(s) and Travel date and passenger count
+send "RTA"
+
+assign "1" to HKCheckConfirmation
+capture line:2, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:3, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:4, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:5, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:6, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:7, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+capture line:8, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
 }
 
+if (HKCheckConfirmation=="0"){
+    send "Not Confirmed Segments!"
+    ask "Please check the ssegments and try again" assign to qz5
+    send "ig"
+}
 
-
-********************* SIGN IDENTIFICATION **********************                
-     OFFICE                        - RUHAA2218                                  
-     SIGN                          - 359292                                     
-                                                                                
-*********************** SECURITY PROFILE ***********************                
-USN *   USER NAME                       - RAMADAN 13107017 ABDAL                
-                                          LAH
-
+capture line:2, column:30, length:2 assign to HK1Test
+if (HK1Test=="HK"){
+  append "1" to segmentsCount
+  capture line:2, column:6, length:2 assign to Airline1
+  capture line:2, column:15, length:5 assign to TravelDate
+  capture line:2, column:23, length:3 assign to OriginCity
+  capture line:2, column:32, length:1 assign to PassengerCount
+  capture line:2, column:35, length:4 assign to TravelTime
+}
 capture line:3, column:30, length:2 assign to HK2Test
 if (HK2Test=="HK"){
-  assign "1" to segmentsCount
-  capture line:3, column:6, length:2 assign to Airline1
-  capture line:3, column:15, length:5 assign to TravelDate
-  capture line:3, column:23, length:3 assign to OriginCity
-  capture line:3, column:32, length:1 assign to PassengerCount
-  
+  append "1" to segmentsCount
+  capture line:3, column:6, length:2 assign to Airline2
+  if (TravelDate == "undefined"){
+      capture line:3, column:15, length:5 assign to TravelDate
+  }
+  if (OriginCity == "undefined"){
+      capture line:3, column:23, length:3 assign to OriginCity
+  }
+  if (PassengerCount == "undefined"){
+      capture line:3, column:32, length:1 assign to PassengerCount
+  }
+  if (TravelTime == "undefined"){
+      capture line:3, column:35, length:4 assign to TravelTime
+  }
 }
 
-else{
-  send "Not Confirmed Segemnts please, check again!"
-  ask "Stop and Review" assign to qz5
-  send "ig"
+capture line:4, column:30, length:2 assign to HK3Test
+if (HK3Test=="HK"){
+  append "1" to segmentsCount
+  capture line:4, column:6, length:2 assign to Airline3
+}
+
+capture line:5, column:30, length:2 assign to HK4Test
+if (HK4Test=="HK"){
+    append "1" to segmentsCount
+    capture line:5, column:6, length:2 assign to Airline4
+}
+
+capture line:6, column:30, length:2 assign to HK5Test 
+if (HK5Test=="HK"){
+    append "1" to segmentsCount
+    capture line:6, column:6, length:2 assign to Airline5
+}
+
+capture line:7, column:30, length:2 assign to HK6Test
+if (HK6Test=="HK"){
+    append "1" to segmentsCount
+    capture line:7, column:6, length:2 assign to Airline6
+}
+
+capture line:8, column:30, length:2 assign to HK7Test
+if (HK7Test=="HK"){
+    append "1" to segmentsCount
+    capture line:8, column:6, length:2 assign to Airline7
+}
+
+capture line:9, column:30, length:2 assign to HK8Test
+if (HK8Test=="HK"){
+    append "1" to segmentsCount
+}
+
+if (segmentsCount == "11"){
+    assign "2" to segmentsCount
+}
+if (segmentsCount == "111"){
+    assign "3" to segmentsCount
+}
+if (segmentsCount == "1111"){
+    assign "4" to segmentsCount
+}
+if (segmentsCount == "11111"){
+    assign "5" to segmentsCount
+}
+if (segmentsCount == "111111"){
+    assign "6" to segmentsCount
+}
+if (segmentsCount > "111111"){
+    send "Smart Flow can't handle more than 6 segments"
+    ask "Please continue manually!" assign to qz5
+    send "ig"
 }
 
 // ignore >4 segments or >6 passengers
 
 // Non-voidable airlines: A3, ER, H1, NP, R5, UK with AI
   if (Airline1=="A3") {
+    capture line:2, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
     send "A3 airline is non-voidable for (P,U,T,S) Classes"
     ask "Stop and Review" assign to qz5
     send "ig"
+    }
+    assign "A3Class" to A3ClassCheck
   }
   if (Airline1=="ER"){
     send "ER airline is non-voidable"
@@ -159,7 +246,6 @@ else{
   if (Airline1=="NP"){
     send "NP airline is non-voidable"
     ask "Stop and Review" assign to qz5
-    send "ig"
   }
   if (Airline1=="R5"){
     send "R5 airline is non-voidable"
@@ -170,17 +256,45 @@ else{
     ask "Is it connected with AI (Air India)?" assign to qz1
   }
   if (Airline1=="NE"){
-    send " NE airline is non-voidable within 24HRs"
-    ask "Is it tomorrow?" assign to qz
-    send "IR"
-    ask "Is it tomorrow?" assign to qz3
+    if (TravelDate == today){
+        send "NE is non-voidable within 24 hrs."
+        ask "Ignore!" assign to qz5
+        send "ig"
+    }
+    else{
+      send "DD" +today +"/1"
+      capture line:2, column:4, length:5 assign to tomorrow
+      if (TravelDate == tomorrow){
+          send "DD" +OriginCity
+          capture line:2, column:13, length:14 assign to OriginCityCurrentTime
+          send "DF" +TravelTime +"-" +OriginCityCurrentTime
+          capture line:2, column:1, length:5 assign to TimeDifference
+          if (TravelTime <= OriginCityCurrentTime){
+            send "NE is non-voidable within 24 hrs."
+            ask "Ignore!" assign to qz5
+            send "ig"
+          }
+      }
+    }
   }
+
+
     
-  //Today dates aren't considered
   if (TravelDate == today){
-    send  "No void for today flights"
-    ask "Check again please!" assign to qz
-    send "ig"
+    send  "DD" +OriginCity
+    capture line:2, column:13, length:14 assign to OriginCityCurrentTime
+    send "DF" +TravelTime +"-" +OriginCityCurrentTime
+    capture line:2, column:1, length:5 assign to TimeDifference
+    if (TravelTime <= OriginCityCurrentTime){
+        send "Flight Deperted!"
+        ask "Ignore!" assign to qz5
+        send "ig"
+    }
+    if (TimeDifference < "60"){
+        send "Flight is within 1 hour!"
+        mandatory ask "Continue?" assign to qz5
+    }
+    
   }
 // Checking Airline(s) and Travel date and passenger count//
 
