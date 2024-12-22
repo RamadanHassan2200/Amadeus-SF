@@ -319,7 +319,8 @@ if (gov1616 =="GOV"){
 
 
 choose "FQP or FQD?"{
-  when ("ATC || FQD"){
+  when ("ATC"){
+
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
@@ -376,7 +377,9 @@ if (checkATC =="C"){
         call "FQD&FQP"
     }
 }
+  }
 
+  when ("FQD"){
 if (OK1 =="OK"){
   if (status1=="O"){
     if (original1=="O"){
@@ -675,6 +678,7 @@ if (segCount=="1"){
   }
 
   }
+
   when ("FQP"){
     if (OK1=="OK"){
      if (status1!="O"){
@@ -710,6 +714,72 @@ if (segCount=="1"){
     send "FQP" +FQPCommand +"/R," +DOI +",U*SRG01,UP,P/L-"  
     
         
+  }
+  if (status1 == "S"){
+    if (airline1 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline1 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline1 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status2 == "S"){
+    if (airline2 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status3 == "S"){
+    if (airline3 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline3 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline3 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status4 == "S"){
+    if (airline4 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status5 == "S"){
+    if (airline5 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline5 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline5 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status6 == "S"){
+    if (airline6 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline6 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline6 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
   }
 }
   
