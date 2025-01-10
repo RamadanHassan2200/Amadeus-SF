@@ -98,9 +98,12 @@ capture line:1, column:8, length:10 assign to TKTP3
 
 capture line:2, column:44, length:7 assign to DOI
 
+capture line:3, column:6, length:26 assign to PAXNAME
+
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
 capture line:4, column:9, length:2 assign to airline1
+capture line:4, column:11, length:4 assign to flightNo1
 capture line:4, column:18, length:1 assign to class1
 capture line:4, column:20, length:5 assign to travelDate1
 capture line:4, column:30, length:2 assign to OK1
@@ -110,6 +113,7 @@ capture line:4, column:47, length:1 assign to status1
 capture line:5, column:4, length:1 assign to original2  
 capture line:5, column:5, length:3 assign to city2
 capture line:5, column:9, length:2 assign to airline2
+capture line:5, column:11, length:4 assign to flightNo2
 capture line:5, column:18, length:1 assign to class2
 capture line:5, column:20, length:5 assign to travelDate2
 capture line:5, column:30, length:2 assign to OK2
@@ -119,6 +123,7 @@ capture line:5, column:47, length:1 assign to status2
 capture line:6, column:4, length:1 assign to original3
 capture line:6, column:5, length:3 assign to city3
 capture line:6, column:9, length:2 assign to airline3
+capture line:6, column:11, length:4 assign to flightNo3
 capture line:6, column:18, length:1 assign to class3
 capture line:6, column:20, length:5 assign to travelDate3
 capture line:6, column:30, length:2 assign to OK3
@@ -128,6 +133,7 @@ capture line:6, column:47, length:1 assign to status3
 capture line:7, column:4, length:1 assign to original4
 capture line:7, column:5, length:3 assign to city4
 capture line:7, column:9, length:2 assign to airline4
+capture line:7, column:11, length:4 assign to flightNo4
 capture line:7, column:18, length:1 assign to class4
 capture line:7, column:20, length:5 assign to travelDate4
 capture line:7, column:30, length:2 assign to OK4
@@ -137,6 +143,7 @@ capture line:7, column:47, length:1 assign to status4
 capture line:8, column:4, length:1 assign to original5
 capture line:8, column:5, length:3 assign to city5
 capture line:8, column:9, length:2 assign to airline5
+capture line:8, column:11, length:4 assign to flightNo5
 capture line:8, column:18, length:1 assign to class5
 capture line:8, column:20, length:5 assign to travelDate5
 capture line:8, column:30, length:2 assign to OK5
@@ -146,6 +153,7 @@ capture line:8, column:47, length:1 assign to status5
 capture line:9, column:4, length:1 assign to original6
 capture line:9, column:5, length:3 assign to city6
 capture line:9, column:9, length:2 assign to airline6
+capture line:9, column:11, length:4 assign to flightNo6
 capture line:9, column:18, length:1 assign to class6
 capture line:9, column:20, length:5 assign to travelDate6
 capture line:9, column:30, length:2 assign to OK6
@@ -341,35 +349,95 @@ send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
 
 capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
-    
-    capture line:10, column:5, length:12 assign to totalRefundcheck1
-    capture line:11, column:5, length:12 assign to totalRefundcheck2
-    capture line:12, column:5, length:12 assign to totalRefundcheck3
 
     capture line:15, column:1, length:2 assign to FOCheck1
     capture line:16, column:1, length:2 assign to FOCheck2
     capture line:17, column:1, length:2 assign to FOCheck3
 
     if (FOCheck1=="FO"){
-      mandatory ask "Is the ticket expired?" assign to qz5
+      assign "True" to FOCheck
+      capture line:15, column:28, length:7 assign to FODate
     }
     if (FOCheck2=="FO"){
-      mandatory ask "Is the ticket expired?" assign to qz5
+      assign "True" to FOCheck
+      capture line:16, column:28, length:7 assign to FODate
     }
     if (FOCheck3=="FO"){
-      mandatory ask "Is the ticket expired?" assign to qz5
+      assign "True" to FOCheck
+      capture line:17, column:28, length:7 assign to FODate
     }
+
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
 
     if (totalRefundcheck1 == "REFUND TOTAL"){
         capture line:10, column:5, length:40 assign to totalRefundAmount
+        capture line:10, column:30, length:13 assign to amountRefunded
     }
     if (totalRefundcheck2 == "REFUND TOTAL"){
         capture line:11, column:5, length:40 assign to totalRefundAmount
+        capture line:11, column:30, length:13 assign to amountRefunded
     }
     if (totalRefundcheck3 == "REFUND TOTAL"){
         capture line:12, column:5, length:40 assign to totalRefundAmount
+        capture line:12, column:30, length:13 assign to amountRefunded
     }
     capture line:6, column:28, length:3 assign to refundCurrency
+
+    capture line:11, column:5, length:10 assign to checkCommission1
+    capture line:12, column:5, length:10 assign to checkCommission2
+    capture line:13, column:5, length:10 assign to checkCommission3
+
+    assign  "         0.00" to commissionAmount
+
+    if (checkCommission1 == "COMMISSION"){
+        capture line:11, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission2 == "COMMISSION"){
+        capture line:12, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission3 == "COMMISSION"){
+        capture line:13, column:30, length:13 assign to commissionAmount
+    }
+
+    capture line:12, column:5, length:10 assign to checkNetRefund1
+    capture line:13, column:5, length:10 assign to checkNetRefund2
+    capture line:14, column:5, length:10 assign to checkNetRefund3
+
+    append amountRefunded to netRefundAmount
+
+    if (checkNetRefund1 == "NET REFUND"){
+        capture line:12, column:30, length:13 assign to netRefundAmount
+    }
+    if (checkNetRefund2 == "NET REFUND"){
+        capture line:13, column:30, length:13 assign to netRefundAmount
+    }
+    if (checkNetRefund3 == "NET REFUND"){
+        capture line:14, column:30, length:13 assign to netRefundAmount
+    }
+
+
+    if (netRefundAmount != amountRefunded){
+      send "TRFU/NF"
+    }
+
+    if (commissionAmount !="         0.00"){
+      send "TRFU/FM0"
+    }
+
+    if (FOCheck == "True"){
+        send "DD"
+        capture line:2, column:33, length:7 assign to todayDate
+        send "DD" +FODate +"/" +todayDate
+        capture line:2, column:1, length:4 assign to dateDifference
+        if (dateDifference >= "365"){
+          mandatory ask "Original Ticket is Expired!" assign to qz5
+          call "FQD&FQP"
+        }
+    }
+
+
     send "TRFP"
     capture line:2, column:1, length:21 assign to refundedTicketCheck
     if (refundedTicketCheck == "OK - REFUND PROCESSED"){
@@ -715,6 +783,7 @@ if (segCount=="1"){
     
         
   }
+  when ("Create EMD"){
   if (status1 == "S"){
     if (airline1 == "UL"){
       assign "TRUE" to EMDEligible
@@ -781,5 +850,182 @@ if (segCount=="1"){
       assign "TRUE" to EMDEligible
     }
   }
-}
+
   
+  if (EMDEligible == "TRUE"){
+    assign "" to EMDOrigin
+    assign "" to EMDDestination
+    assign "" to EMDAirline
+    if (OK1=="OK"){
+     if (status1=="S"){
+      assign airline1 to EMDAirline
+      assign city1 to EMDOrigin
+      assign city2 to EMDDestination
+    }
+    }
+    if (OK2=="OK"){
+    if (status2=="S"){
+      assign airline2 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city2 to EMDOrigin
+        }
+        assign city3 to EMDDestination
+    }
+    }
+    if (OK3=="OK"){
+    if (status3=="S"){
+      assign airline3 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city3 to EMDOrigin
+        }
+        assign city4 to EMDDestination
+    }
+    }
+    if (OK4=="OK"){
+    if (status4!="S"){
+      assign airline4 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city4 to EMDOrigin
+        }
+        assign city5 to EMDDestination
+    }
+    }
+    if (OK5=="OK"){
+    if (status5!="S"){
+      assign airline5 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city5 to EMDOrigin
+        }
+        assign city6 to EMDDestination
+    }
+    }
+    if (OK6=="OK"){
+    if (status6!="S"){
+      assign airline6 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city6 to EMDOrigin
+        }
+        assign city7 to EMDDestination
+    }
+    }
+
+    send "JGD/USN"
+capture line:8, column:43, length:1 assign to agtName
+capture line:8, column:44, length:1 assign to agtNameChar2
+capture line:8, column:45, length:1 assign to agtNameChar3
+capture line:8, column:46, length:1 assign to agtNameChar4
+capture line:8, column:47, length:1 assign to agtNameChar5
+capture line:8, column:48, length:1 assign to agtNameChar6
+capture line:8, column:49, length:1 assign to agtNameChar7
+capture line:8, column:50, length:1 assign to agtNameChar8
+capture line:8, column:51, length:1 assign to agtNameChar9
+capture line:8, column:52, length:1 assign to agtNameChar10
+capture line:8, column:53, length:1 assign to agtNameChar11
+capture line:8, column:54, length:1 assign to agtNameChar12
+capture line:8, column:55, length:1 assign to agtNameChar13
+capture line:8, column:56, length:1 assign to agtNameChar14
+capture line:8, column:57, length:1 assign to agtNameChar15
+capture line:8, column:58, length:1 assign to agtNameChar16
+capture line:8, column:59, length:1 assign to agtNameChar17
+capture line:8, column:60, length:1 assign to agtNameChar18
+capture line:8, column:61, length:1 assign to agtNameChar19
+capture line:8, column:62, length:1 assign to agtNameChar20
+capture line:8, column:63, length:1 assign to agtNameChar21
+capture line:8, column:64, length:1 assign to agtNameChar22
+
+if (agtNameChar2!=" "){
+append agtNameChar2 to agtName
+if (agtNameChar3!=" "){
+append agtNameChar3 to agtName
+if (agtNameChar4!=" "){
+append agtNameChar4 to agtName
+if (agtNameChar5!=" "){
+append agtNameChar5 to agtName
+if (agtNameChar6!=" "){
+append agtNameChar6 to agtName
+if (agtNameChar7!=" "){
+append agtNameChar7 to agtName
+if (agtNameChar8!=" "){
+append agtNameChar8 to agtName
+if (agtNameChar9!=" "){
+append agtNameChar9 to agtName
+if (agtNameChar10!=" "){
+append agtNameChar10 to agtName
+if (agtNameChar11!=" "){
+append agtNameChar11 to agtName
+if (agtNameChar12!=" "){
+append agtNameChar12 to agtName
+if (agtNameChar13!=" "){
+append agtNameChar13 to agtName
+if (agtNameChar14!=" "){
+append agtNameChar14 to agtName
+if (agtNameChar15!=" "){
+append agtNameChar15 to agtName
+if (agtNameChar16!=" "){
+append agtNameChar16 to agtName
+if (agtNameChar17!=" "){
+append agtNameChar17 to agtName
+if (agtNameChar18!=" "){
+append agtNameChar18 to agtName
+if (agtNameChar19!=" "){
+append agtNameChar19 to agtName
+if (agtNameChar20!=" "){
+append agtNameChar20 to agtName
+if (agtNameChar21!=" "){
+append agtNameChar21 to agtName
+if (agtNameChar22!=" "){
+append agtNameChar22 to agtName
+}}}}}}}}}}}}}}}}}}}}}//agtNameChar2
+
+    send "NM1" + PAXNAME
+    send "EGSD/V" +EMDAirline
+    mandatory ask "Type the Penalty Code:" assign to EMDCode
+    send "IU" +EMDAirline +"NN1" +EMDCode +EMDOrigin +EMDDestination +"/" +today 
+    send "APE-A@Gmail.com"
+    send "TKOK"
+    send "RF" +agtName +";ER"
+    send "TMC/V" +EMDAirline
+    send "TMI/IC-TKT"+TKTP1 +TKTP2 +TKTP3
+    mandatory ask "What is the Penalty Amount?" assign to EMDPenalty
+    send "TMI/CV-" +EMDPenalty +"/F" +EMDPenalty
+    send "TMI/FP-CASH"
+    send "RF" +agtName +";ER"
+    send ": EMD READY!, Before printing please reconfirm the (ROUTE) on it."
+  }
+  else{
+    send "This isn't an EMD Airline!"
+  }
+}
+
+when ("Create Ghost segments"){
+  send "SRT" +DOI
+  capture line:1, column:37, length:2 assign to travelYear
+  send "DD" +DOI +"/" +travelDate1 +travelYear
+  capture line:2, column:1, length:1 assign to checkyear
+  if (checkyear =="-"){
+  send "DF" +travelYear +";1"
+  capture line:2, column:1, length:2 assign to travelYear
+  }
+  
+  if (OK1=="OK"){
+      send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
+  }
+    if (OK2=="OK"){
+      send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYear +city2 +city3 +"GK1/0230 0500/RECLOC"
+    }
+    if (OK3=="OK"){
+      send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYear +city3 +city4 +"GK1/0600 0900/RECLOC"
+    }
+    if (OK4=="OK"){
+      send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYear +city4 +city5 +"GK1/0930 1200/RECLOC"
+    }
+    if (OK5=="OK"){
+      send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYear +city5 +city6 +"GK1/1300 1600/RECLOC"
+    }
+    if (OK6=="OK"){
+     send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYear +city6 +city7 +"GK1/1700 2000/RECLOC"
+    }
+}
+
+}
+

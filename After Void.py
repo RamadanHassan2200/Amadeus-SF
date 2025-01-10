@@ -12,7 +12,6 @@ send "rt" +pnr
 
 // Checking Airline(s) and Travel date and passenger count
 send "RTA"
-
 capture line:2, column:30, length:2 assign to HK1Test
 if (HK1Test=="HK"){
   assign "1" to segmentsCount
@@ -110,7 +109,7 @@ else{
     ask "Stop and Review" assign to qz5
     send "ig"
   }
-    
+
   //Today dates aren't considered
   if (TravelDate == today){
     send  "No refund/void for today flights!"
@@ -129,257 +128,488 @@ else{
   send "PV"
   capture line:8, column:30, length:8 assign to thisOffice
   capture line:2, column:30, length:9 assign to thisOfficeName
- 
+
     //opening the ticket:
   send "rttn"
-  assign "0" to FACount
-  assign "0" to FACountStart
-  capture line:2, column:5, length:2 assign to FA1
-          if (FA1=="FA"){
-            assign "1" to FACountStart
-            assign "1" to FACount
-            capture line:2, column:12, length:14 assign to TnFA1
-          }
-          if (FA1=="FH"){
-            assign "1" to FACountStart
-            assign "1" to FACount
-            capture line:2, column:13, length:14 assign to TnFA1
-          }
-          capture line:3, column:5, length:2 assign to FA2
-          if (FA2=="FA"){
-              assign "2" to FACountStart
-              if (FACount=="1"){
-                  assign "2" to FACount
-              }
-              else {
-                  assign "1" to FACount
-              }
-                capture line:3, column:12, length:14 assign to TnFA2
-          }
-          if (FA2=="FH"){
-            assign "2" to FACountStart
-            if (FACount=="1"){
-                  assign "2" to FACount
-              }
-              else {
-                  assign "1" to FACount
-              }
-                capture line:3, column:13, length:14 assign to TnFA2
-          }
-          capture line:4, column:5, length:2 assign to FA3
-          if (FA3=="FA"){
-              if (FACount=="2"){
-                  assign "3" to FACount
-              }
-              else{
-                  assign "2" to FACount
-              }
-                capture line:4, column:12, length:14 assign to TnFA3
-          }
-          if (FA3=="FH"){
-            if (FACount=="2"){
-                  assign "3" to FACount
-              }
-              else{
-                  assign "2" to FACount
-              }
-                capture line:4, column:13, length:14 assign to TnFA3
-          }
-          capture line:5, column:5, length:2 assign to FA4
-          if (FA4=="FA"){
-                if (FACount=="3"){
-                  assign "4" to FACount
-                }
-                else{
-                  assign "3" to FACount
-                }
-                  capture line:5, column:12, length:14 assign to TnFA4
-          }
-          if (FA4=="FH"){
-            if (FACount=="3"){
-                  assign "4" to FACount
-                }
-                else{
-                  assign "3" to FACount
-                }
-                capture line:5, column:13, length:14 assign to TnFA4
-          }
-          capture line:6, column:5, length:2 assign to FA5
-          if (FA5=="FA"){
-                if (FACount=="4"){
-                  assign "5" to FACount
-                }
-                else{
-                  assign "4" to FACount
-                }
-                    capture line:6, column:12, length:14 assign to TnFA5
-          }
-          if (FA5=="FH"){
-            if (FACount=="4"){
-                  assign "5" to FACount
-                }
-                else{
-                  assign "4" to FACount
-                }
-                capture line:6, column:13, length:14 assign to TnFA5
-          }
-          capture line:7, column:5, length:2 assign to FA6
-          if (FA6=="FA"){
-                if (FACount=="5"){
-                  assign "6" to FACount
-                }
-                else{
-                  assign "5" to FACount
-                }
-                    capture line:7, column:12, length:14 assign to TnFA6
-          }
-          if (FA6=="FH"){
-            if (FACount=="5"){
-                  assign "6" to FACount
-                }
-                else{
-                  assign "5" to FACount
-                }
-                      capture line:7, column:13, length:14 assign to TnFA6
-          }
-          capture line:8, column:5, length:2 assign to FA7
-          if (FA7=="FA"){
-                if (FACount=="6"){
-                  assign "7" to FACount
-                }
-                else{
-                  assign "6" to FACount
-                }
-                    capture line:8, column:12, length:14 assign to TnFA7
-          }
-          if (FA7=="FH"){
-             if (FACount=="6"){
-                  assign "7" to FACount
-                }
-                else{
-                  assign "6" to FACount
-                }
-            capture line:8, column:13, length:14 assign to TnFA7
-          }
-          capture line:9, column:5, length:2 assign to FA8
-          if (FA8=="FA"){
-                if (FACount=="7"){
-                    assign "8" to FACount
-                }
-                else{
-                  assign "7" to FACount
-                }
-                    capture line:9, column:12, length:14 assign to TnFA8
-          }
-          if (FA8=="FH"){
-            if (FACount=="7"){
-                    assign "8" to FACount
-                }
-                else{
-                  assign "7" to FACount
-                }
-            capture line:9, column:13, length:14 assign to TnFA8
-          }
-          capture line:10, column:5, length:2 assign to FA9
-          if (FA9=="FA"){
-              if (FACount=="8"){
-                  assign "9" to FACount
-              }
-              else{
-                assign "8" to FACount
-              }
-                 capture line:10, column:12, length:14 assign to TnFA9
-          }
-          if (FA9=="FH"){
-            if (FACount=="8"){
-                  assign "9" to FACount
-              }
-              else{
-                assign "8" to FACount
-              }
-            capture line:10, column:13, length:14 assign to TnFA9
-          }
-          capture line:11, column:5, length:2 assign to FA10
-          if (FA10=="FA"){
-              if (FACount=="9"){
-                  send "More than 9 FA"
-                  mandatory ask "Please continue manually as there're more than 9 FA(s)" assign to qz5
-                  send "ig"
-              }
-              else{
-                  assign "9" to FACount
-              }
-                 capture line:11, column:12, length:14 assign to TnFA10
-          }
-          if (FA10=="FH"){
-            if (FACount=="9"){
-                  send "More than 9 FA"
-                  mandatory ask "Please continue manually as there're more than 9 FA(s)" assign to qz5
-                  send "ig"
-              }
-              else{
-                  assign "9" to FACount
-              }
-            capture line:11, column:13, length:14 assign to TnFA10
-          }
-          
-          
-assign TnFA1 to TFAOpen   
-send "TWD/TKT" +TFAOpen
+  assign "" to FACount
 
+  assign "FALSE" to FA_Check_TRUE_FALSE1
+  assign "FALSE" to FA_Check_TRUE_FALSE2
+  assign "FALSE" to FA_Check_TRUE_FALSE3
+  assign "FALSE" to FA_Check_TRUE_FALSE4
+  assign "FALSE" to FA_Check_TRUE_FALSE5
+  assign "FALSE" to FA_Check_TRUE_FALSE6
+  assign "FALSE" to FA_Check_TRUE_FALSE7
+  assign "FALSE" to FA_Check_TRUE_FALSE8
+  assign "FALSE" to FA_Check_TRUE_FALSE9
+  assign "FALSE" to FA_Check_TRUE_FALSE10
+  assign "FALSE" to FA_Check_TRUE_FALSE11
+  assign "FALSE" to FA_Check_TRUE_FALSE12
+  assign "FALSE" to FA_Check_TRUE_FALSE13
+  assign "FALSE" to FA_Check_TRUE_FALSE14
+  assign "FALSE" to FA_Check_TRUE_FALSE15
+  assign "FALSE" to FA_Check_TRUE_FALSE16
+  assign "FALSE" to FA_Check_TRUE_FALSE17
+  assign "FALSE" to FA_Check_TRUE_FALSE18
+  assign "FALSE" to FA_Check_TRUE_FALSE19
+
+  capture line:2, column:5, length:3 assign to FA_Test
+  capture line:2, column:26, length:3 assign to ET_TEST
+  capture line:2, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE1
+                capture line:2, column:12, length:1 assign to Tn1FA1
+                capture line:2, column:13, length:13 assign to Tn1FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE1
+                capture line:2, column:12, length:1 assign to Tn1FA1
+                capture line:2, column:13, length:13 assign to Tn1FA2
+            }
+          }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE1
+            capture line:2, column:13, length:1 assign to Tn1FA1
+            capture line:2, column:14, length:13 assign to Tn1FA2
+        }
+
+        capture line:3, column:5, length:3 assign to FA_Test
+        capture line:3, column:26, length:3 assign to ET_TEST
+        capture line:3, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE2
+                capture line:3, column:12, length:1 assign to Tn2FA1
+                capture line:3, column:13, length:13 assign to Tn2FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE2
+                capture line:3, column:12, length:1 assign to Tn2FA1
+                capture line:3, column:13, length:13 assign to Tn2FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE2
+            capture line:3, column:13, length:1 assign to Tn2FA1
+            capture line:3, column:14, length:13 assign to Tn2FA2
+        }
+
+        capture line:4, column:5, length:3 assign to FA_Test
+        capture line:4, column:26, length:3 assign to ET_TEST
+        capture line:4, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE3
+                capture line:4, column:12, length:1 assign to Tn3FA1
+                capture line:4, column:13, length:13 assign to Tn3FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE3
+                capture line:4, column:12, length:1 assign to Tn3FA1
+                capture line:4, column:13, length:13 assign to Tn3FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE3
+            capture line:4, column:13, length:1 assign to Tn3FA1
+            capture line:4, column:14, length:13 assign to Tn3FA2
+        }
+
+        capture line:5, column:5, length:3 assign to FA_Test
+        capture line:5, column:26, length:3 assign to ET_TEST
+        capture line:5, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE4
+                capture line:5, column:12, length:1 assign to Tn4FA1
+                capture line:5, column:13, length:13 assign to Tn4FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE4
+                capture line:5, column:12, length:1 assign to Tn4FA1
+                capture line:5, column:13, length:13 assign to Tn4FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE4
+            capture line:5, column:13, length:1 assign to Tn4FA1
+            capture line:5, column:14, length:13 assign to Tn4FA2
+        }
+
+        capture line:6, column:5, length:3 assign to FA_Test
+        capture line:6, column:26, length:3 assign to ET_TEST
+        capture line:6, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE5
+                capture line:6, column:12, length:1 assign to Tn5FA1
+                capture line:6, column:13, length:13 assign to Tn5FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE5
+                capture line:6, column:12, length:1 assign to Tn5FA1
+                capture line:6, column:13, length:13 assign to Tn5FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE5
+            capture line:6, column:13, length:1 assign to Tn5FA1
+            capture line:6, column:14, length:13 assign to Tn5FA2
+        }
+        capture line:7, column:5, length:3 assign to FA_Test
+        capture line:7, column:26, length:3 assign to ET_TEST
+        capture line:7, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE6
+                capture line:7, column:12, length:1 assign to Tn6FA1
+                capture line:7, column:13, length:13 assign to Tn6FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE6
+                capture line:7, column:12, length:1 assign to Tn6FA1
+                capture line:7, column:13, length:13 assign to Tn6FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE6
+            capture line:7, column:13, length:1 assign to Tn6FA1
+            capture line:7, column:14, length:13 assign to Tn6FA2
+        }
+
+        capture line:8, column:5, length:3 assign to FA_Test
+        capture line:8, column:26, length:3 assign to ET_TEST
+        capture line:8, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE7
+                capture line:8, column:12, length:1 assign to Tn7FA1
+                capture line:8, column:13, length:13 assign to Tn7FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE7
+                capture line:8, column:12, length:1 assign to Tn7FA1
+                capture line:8, column:13, length:13 assign to Tn7FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE7
+            capture line:8, column:13, length:1 assign to Tn7FA1
+            capture line:8, column:14, length:13 assign to Tn7FA2
+        }
+
+        capture line:9, column:5, length:3 assign to FA_Test
+        capture line:9, column:26, length:3 assign to ET_TEST
+        capture line:9, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE8
+                capture line:9, column:12, length:1 assign to Tn8FA1
+                capture line:9, column:13, length:13 assign to Tn8FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE8
+                capture line:9, column:12, length:1 assign to Tn8FA1
+                capture line:9, column:13, length:13 assign to Tn8FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE8
+            capture line:9, column:13, length:1 assign to Tn8FA1
+            capture line:9, column:14, length:13 assign to Tn8FA2
+        }
+        
+        capture line:10, column:5, length:3 assign to FA_Test
+        capture line:10, column:26, length:3 assign to ET_TEST
+        capture line:10, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE9
+                capture line:10, column:12, length:1 assign to Tn9FA1
+                capture line:10, column:13, length:13 assign to Tn9FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE9
+                capture line:10, column:12, length:1 assign to Tn9FA1
+                capture line:10, column:13, length:13 assign to Tn9FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE9
+            capture line:10, column:13, length:1 assign to Tn9FA1
+            capture line:10, column:14, length:13 assign to Tn9FA2
+        }
+
+        capture line:11, column:5, length:3 assign to FA_Test
+        capture line:11, column:26, length:3 assign to ET_TEST
+        capture line:11, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE10
+                capture line:11, column:12, length:1 assign to Tn10FA1
+                capture line:11, column:13, length:13 assign to Tn10FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE10
+                capture line:11, column:12, length:1 assign to Tn10FA1
+                capture line:11, column:13, length:13 assign to Tn10FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE10
+            capture line:11, column:13, length:1 assign to Tn10FA1
+            capture line:11, column:14, length:13 assign to Tn10FA2
+        }
+
+        capture line:12, column:5, length:3 assign to FA_Test
+        capture line:12, column:26, length:3 assign to ET_TEST
+        capture line:12, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE11
+                capture line:12, column:12, length:1 assign to Tn11FA1
+                capture line:12, column:13, length:13 assign to Tn11FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE11
+                capture line:12, column:12, length:1 assign to Tn11FA1
+                capture line:12, column:13, length:13 assign to Tn11FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE11
+            capture line:12, column:13, length:1 assign to Tn11FA1
+            capture line:12, column:14, length:13 assign to Tn11FA2
+        }
+
+        capture line:13, column:5, length:3 assign to FA_Test
+        capture line:13, column:26, length:3 assign to ET_TEST
+        capture line:13, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE12
+                capture line:13, column:12, length:1 assign to Tn12FA1
+                capture line:13, column:13, length:13 assign to Tn12FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE12
+                capture line:13, column:12, length:1 assign to Tn12FA1
+                capture line:13, column:13, length:13 assign to Tn12FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE12
+            capture line:13, column:13, length:1 assign to Tn12FA1
+            capture line:13, column:14, length:13 assign to Tn12FA2
+        }
+
+        capture line:14, column:5, length:3 assign to FA_Test
+        capture line:14, column:26, length:3 assign to ET_TEST
+        capture line:14, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE13
+                capture line:14, column:12, length:1 assign to Tn13FA1
+                capture line:14, column:13, length:13 assign to Tn13FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE13
+                capture line:14, column:12, length:1 assign to Tn13FA1
+                capture line:14, column:13, length:13 assign to Tn13FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE13
+            capture line:14, column:13, length:1 assign to Tn13FA1
+            capture line:14, column:14, length:13 assign to Tn13FA2
+        }
+
+        capture line:15, column:5, length:3 assign to FA_Test
+        capture line:15, column:26, length:3 assign to ET_TEST
+        capture line:15, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE14
+                capture line:15, column:12, length:1 assign to Tn14FA1
+                capture line:15, column:13, length:13 assign to Tn14FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE14
+                capture line:15, column:12, length:1 assign to Tn14FA1
+                capture line:15, column:13, length:13 assign to Tn14FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE14
+            capture line:15, column:13, length:1 assign to Tn14FA1
+            capture line:15, column:14, length:13 assign to Tn14FA2
+        }
+
+        capture line:16, column:5, length:3 assign to FA_Test
+        capture line:16, column:26, length:3 assign to ET_TEST
+        capture line:16, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE15
+                capture line:16, column:12, length:1 assign to Tn15FA1
+                capture line:16, column:13, length:13 assign to Tn15FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE15
+                capture line:16, column:12, length:1 assign to Tn15FA1
+                capture line:16, column:13, length:13 assign to Tn15FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE15
+            capture line:16, column:13, length:1 assign to Tn15FA1
+            capture line:16, column:14, length:13 assign to Tn15FA2
+        }
+
+        capture line:17, column:5, length:3 assign to FA_Test
+        capture line:17, column:26, length:3 assign to ET_TEST
+        capture line:17, column:29, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE16
+                capture line:17, column:12, length:1 assign to Tn16FA1
+                capture line:17, column:13, length:13 assign to Tn16FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE16
+                capture line:17, column:12, length:1 assign to Tn16FA1
+                capture line:17, column:13, length:13 assign to Tn16FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE16
+            capture line:17, column:13, length:1 assign to Tn16FA1
+            capture line:17, column:14, length:13 assign to Tn16FA2
+        }
+
+        capture line:18, column:5, length:3 assign to FA_Test
+        capture line:18, column:26, length:3 assign to ET_TEST
+        capture line:18, column:27, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE17
+                capture line:18, column:12, length:1 assign to Tn17FA1
+                capture line:18, column:13, length:13 assign to Tn17FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE17
+                capture line:18, column:12, length:1 assign to Tn17FA1
+                capture line:18, column:13, length:13 assign to Tn17FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE17
+            capture line:18, column:13, length:1 assign to Tn17FA1
+            capture line:18, column:14, length:13 assign to Tn17FA2
+        }
+
+        capture line:19, column:5, length:3 assign to FA_Test
+        capture line:19, column:26, length:3 assign to ET_TEST
+        capture line:19, column:27, length:3 assign to ET_TESTA
+        if (FA_Test=="FA "){
+            if (ET_TEST=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE18
+                capture line:19, column:12, length:1 assign to Tn18FA1
+                capture line:19, column:13, length:13 assign to Tn18FA2
+            }
+            if (ET_TESTA=="/ET"){
+                append "1" to FACount
+                assign "TRUE" to FA_Check_TRUE_FALSE18
+                capture line:19, column:12, length:1 assign to Tn18FA1
+                capture line:19, column:13, length:13 assign to Tn18FA2
+            }
+        }
+        if (FA_Test=="FHE"){
+            append "1" to FACount
+            assign "TRUE" to FA_Check_TRUE_FALSE18
+            capture line:19, column:13, length:1 assign to Tn18FA1
+            capture line:19, column:14, length:13 assign to Tn18FA2
+        }
+
+send "TWD/TKT" + Tn1FA1 + Tn1FA2
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
-  assign TnFA2 to TFAOpen
-  send "TWD/TKT" +TFAOpen
+  send "TWD/TKT" +Tn2FA1 + Tn2FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
-  assign TnFA3 to TFAOpen
-  send "TWD/TKT" +TFAOpen
+  send "TWD/TKT" +Tn3FA1 + Tn3FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
-  assign TnFA4 to TFAOpen
-  send "TWD/TKT" +TFAOpen
+  send "TWD/TKT" +Tn4FA1 + Tn4FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
-  assign TnFA5 to TFAOpen
-  send "TWD/TKT" +TFAOpen
-}
-capture line:3, column:32, length:3 assign to PAXST
-if (PAXST=="INF"){
-  assign TnFA6 to TFAOpen
-  send "TWD/TKT" +TFAOpen
-}
-capture line:3, column:32, length:3 assign to PAXST
-if (PAXST=="INF"){
-  assign TnFA7 to TFAOpen
-  send "TWD/TKT" +TFAOpen
-}
-capture line:3, column:32, length:3 assign to PAXST
-if (PAXST=="INF"){
-  assign TnFA8 to TFAOpen
-  send "TWD/TKT" +TFAOpen
-}
-capture line:3, column:32, length:3 assign to PAXST
-if (PAXST=="INF"){
-  assign TnFA9 to TFAOpen
-  send "TWD/TKT" +TFAOpen
-}
-capture line:3, column:32, length:3 assign to PAXST
-if (PAXST=="INF"){
-  assign TnFA10 to TFAOpen
-  send "TWD/TKT" +TFAOpen
+  send "TWD/TKT" +Tn5FA1 + Tn5FA2
 }
 
-
-    capture line:2, column:44, length:5 assign to DOITEST
-  if (DOITEST == today){
-    send "No refund today just Void!"
-    mandatory ask "Please continue with FO SmartFlow" assign to qz5
-  }
+capture line:2, column:44, length:5 assign to DOITEST
     capture line:2, column:57, length:8 assign to ticketingOffice
+
+  if (DOITEST==today){
+    send "N0 After Void for today flights" +DOITEST
+    ask "Ignore?" assign to qz5
+    send "ig"
+  }
 
   if (ticketingOffice!= thisOffice){
       send "PV/" +ticketingOffice
@@ -388,10 +618,12 @@ if (PAXST=="INF"){
   }
 
 capture line:4, column:47, length:1 assign to FST1
-if (FST1=="C"){
+if (FST1!="O"){
+    if (FST1!="A"){
            send "Please check status!"
            ask "The CST checked in" assign to qz5
            send "ig"
+    }
 }
 
 if (segmentsCount=="1"){
@@ -584,15 +816,40 @@ if (Bg6 =="0 "){
     assign "0P" to Bg6
 }
 
-assign " " to ref62
-          //FXR/k/R,U,UP,U*SEE24,U*MOS05
-          if (thisOfficeName == "RUHAA2162"){
-            assign ",*RF" to ref62
-          }
+        
+          
+          
+
+          assign "/R,U,UP" to ref62
+          //FXR/K
           if (Airline1 =="SM"){
             append ",U09" to ref62
           }
-          send "FXR/K/R,U,UP,U*SEE24,U*MOS05"+ref62
+          if (Airline1 =="QR"){
+            append ",U202201" to ref62
+          }
+          if (Airline1 == "SN"){
+            append ",U385910,P" to ref62
+          }
+          if (Airline1 == "SV"){
+            append ",U*SEE24,U*MOS05" to ref62
+          }
+          if (Airline1 == "WY"){
+            append ",U584562" to ref62
+          }
+          if (Airline1 == "PR"){
+            append ",U*C5YQ" to ref62
+          }
+          
+          if (thisOfficeName == "RUHAA2162"){
+            append ",*RF" to ref62
+          }
+
+          if (thisOfficeName == "CAIEG3645"){
+            assign " " to ref62
+          }
+          send "FXR/K"+ref62
+
 
 capture line:1, column:1, length:8 assign to checkAttn
 if (checkAttn=="**ATTN**"){
@@ -646,77 +903,73 @@ if (totals16=="TOTALS"){
 }
      
      if (PassengerCount=="1"){
-          capture line:6, column:1, length:3 assign to checknewCurr6
-          capture line:7, column:1, length:3 assign to checknewCurr7
-          capture line:8, column:1, length:3 assign to checknewCurr8
-          capture line:9, column:1, length:3 assign to checknewCurr9
-          capture line:10, column:1, length:3 assign to checknewCurr10
-          capture line:11, column:1, length:3 assign to checknewCurr11
-          capture line:12, column:1, length:3 assign to checknewCurr12
-          capture line:13, column:1, length:3 assign to checknewCurr13
-          capture line:14, column:1, length:3 assign to checknewCurr14
-          capture line:15, column:1, length:3 assign to checknewCurr15
-          capture line:16, column:1, length:3 assign to checknewCurr16
-          capture line:17, column:1, length:3 assign to checknewCurr17
-          capture line:18, column:1, length:3 assign to checknewCurr18
-          capture line:19, column:1, length:3 assign to checknewCurr19
-          capture line:20, column:1, length:3 assign to checknewCurr20
-          capture line:21, column:1, length:3 assign to checknewCurr21
-          capture line:22, column:1, length:3 assign to checknewCurr22
-          capture line:23, column:1, length:3 assign to checknewCurr23
+          capture line:6, column:13, length:3 assign to checknewXT6
+          capture line:7, column:13, length:3 assign to checknewXT7
+          capture line:8, column:13, length:3 assign to checknewXT8
+          capture line:9, column:13, length:3 assign to checknewXT9
+          capture line:10, column:13, length:3 assign to checknewXT10
+          capture line:11, column:13, length:3 assign to checknewXT11
+          capture line:12, column:13, length:3 assign to checknewXT12
+          capture line:13, column:13, length:3 assign to checknewXT13
+          capture line:14, column:13, length:3 assign to checknewXT14
+          capture line:15, column:13, length:3 assign to checknewXT15
+          capture line:16, column:13, length:3 assign to checknewXT16
+          capture line:17, column:13, length:3 assign to checknewXT17
+          capture line:18, column:13, length:3 assign to checknewXT18
+          capture line:19, column:13, length:3 assign to checknewXT19
+          capture line:20, column:13, length:3 assign to checknewXT20
+          capture line:21, column:13, length:3 assign to checknewXT21
+          capture line:22, column:13, length:3 assign to checknewXT22
 
-          if (checknewCurr6 == firstCurr){
-               capture line:6, column:4, length:10 assign to totalNewPrice
-          }
-          if (checknewCurr7 == firstCurr){
+          if (checknewXT6 == "-XT"){
                capture line:7, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr8 == firstCurr){
+          if (checknewXT7 == "-XT"){
                capture line:8, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr9 == firstCurr){
+          if (checknewXT8 == "-XT"){
                capture line:9, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr10 == firstCurr){
+          if (checknewXT9 == "-XT"){
                capture line:10, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr11 == firstCurr){
+          if (checknewXT10 == "-XT"){
                capture line:11, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr12 == firstCurr){
+          if (checknewXT11 == "-XT"){
                capture line:12, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr13 == firstCurr){
+          if (checknewXT12 == "-XT"){
                capture line:13, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr14 == firstCurr){
+          if (checknewXT13 == "-XT"){
                capture line:14, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr15 == firstCurr){
+          if (checknewXT14 == "-XT"){
                capture line:15, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr16 == firstCurr){
+          if (checknewXT15 == "-XT"){
                capture line:16, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr17 == firstCurr){
+          if (checknewXT16 == "-XT"){
                capture line:17, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr18 == firstCurr){
+          if (checknewXT17 == "-XT"){
                capture line:18, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr19 == firstCurr){
+          if (checknewXT18 == "-XT"){
                capture line:19, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr20 == firstCurr){
+          if (checknewXT19 == "-XT"){
                capture line:20, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr21 == firstCurr){
+          if (checknewXT20 == "-XT"){
                capture line:21, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr22 == firstCurr){
+          if (checknewXT21 == "-XT"){
                capture line:22, column:4, length:10 assign to totalNewPrice
           }
-          if (checknewCurr23 == firstCurr){
+          if (checknewXT22 == "-XT"){
                capture line:23, column:4, length:10 assign to totalNewPrice
           }
      }
@@ -965,166 +1218,791 @@ if (fBg6 =="0 "){
       send "" +baggageCheckerStatment + " Segment(s)"
       mandatory ask "Continue?" assign to qz5
     }
-
-if (FACountStart =="0"){
-      send "There's no FA!"
-      mandatory ask "please continue manually!" assign to qz5
+assign "0" to  totalRefundAmount
+if (FA_Check_TRUE_FALSE1 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
 }
-if (FACountStart =="1"){
-    if (FACount>0){
-        send "SRT" +TnFA1
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA1
-    }
-    if (FACount>1){
-        send "SRT" +TnFA2
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA2
-    }
-    if (FACount>2){
-        send "SRT" +TnFA3
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA3
-    }
-    if (FACount>3){
-        send "SRT" +TnFA4
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA4
-    }
-    if (FACount>4){
-        send "SRT" +TnFA5
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA5
-    }
-    if (FACount>5){
-        send "SRT" +TnFA6
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA6
-    }
-    if (FACount>6){
-        send "SRT" +TnFA7
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA7
-    }
-    if (FACount>7){
-        send "SRT" +TnFA8
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA8
-    }
-    if (FACount>8){
-        send "SRT" +TnFA9
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA9
-    }
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
 }
-if (FACountStart =="2"){
-    if (FACount>0){
-        send "SRT" +TnFA2
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA2
-    }
-    if (FACount>1){
-        send "SRT" +TnFA3
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA3
-    }
-    if (FACount>2){
-        send "SRT" +TnFA4
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA4
-    }
-    if (FACount>3){
-        send "SRT" +TnFA5
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA5
-    }
-    if (FACount>4){
-        send "SRT" +TnFA6
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA6
-    }
-    if (FACount>5){
-        send "SRT" +TnFA7
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA7
-    }
-    if (FACount>6){
-        send "SRT" +TnFA8
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA8
-    }
-    if (FACount>7){
-        send "SRT" +TnFA9
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA9
-    }
-    if (FACount>8){
-        send "SRT" +TnFA10
-        call "z_After_Void_RF"
-        capture line:1, column:32, length:10 assign to TRFA10
-    }
 }
 
-if (FACountStart =="1"){
-    assign "" to Count
-    if (FACount>0){
-      append TRFA1 to Count
+if (FA_Check_TRUE_FALSE2 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>1){
-      append ";" +TRFA2 to Count
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>2){
-      append ";" +TRFA3 to Count
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>3){
-      append ";" +TRFA4 to Count
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE3 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>4){
-      append ";" +TRFA5 to Count
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>5){
-      append ";" +TRFA6 to Count
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>6){
-      append ";" +TRFA7 to Count
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE4 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>7){
-      append ";" +TRFA8 to Count
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
     }
-    if (FACount>8){
-      append ";" +TRFA9 to Count
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE5 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE6 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE7 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE8 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE9 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE10 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE11 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE12 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE13 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE14 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE15 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE16 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE17 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE18 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:33, length:10 assign to ticketRefundAmount
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:33, length:10 assign to ticketRefundAmount
+    }
+    append ";" + ticketRefundAmount to totalRefundAmount
+    
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+send "DF" +totalRefundAmount
+capture line:6, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:4, column:1, length:10 assign to totalRefundAmount
+}
+capture line:5, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:3, column:1, length:10 assign to totalRefundAmount
+}
+capture line:4, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:2, column:1, length:10 assign to totalRefundAmount
+}
+
+send "DF" +totalRefundAmount +"-" +totalNewPrice
+capture line:2, column:1, length:10 assign to totalDealAmount
+
+if (totalDealAmount >"0"){
+    choose "Would you like to proceed with the refund?"{
+        when ("Yes") {
+            send "TTE"
+            send "rfRAMADAN;er"
+            capture line:1, column:1, length:14 assign to checkMobileNo
+            if (checkMobileNo=="The ER command"){
+                send "IR"
+                send "RTP"
+                ask "Enter The Mobile Number (Without [+]):" assign to checkMobileNoAsk
+                if (checkMobileNoAsk != ""){
+                    if (checkMobileNoAsk!=" "){
+                    send "APN-M+" +checkMobileNoAsk +"/AR/P1"
+                    }
+                }
+                send "rfRAMADAN;er"
+                capture line:1, column:1, length:14 assign to checkMobileNo
+                if (checkMobileNo=="The ER command"){
+                    send "IR"
+                    send "RTP"
+                    group{
+                        ask "Enter the mobile number(s) line(s):" assign to mobileLines
+                        ask "Enter the Mobile Number:" assign to mobileNewNo
+                    }
+
+                    send "XE" + mobileLines
+                    send "APM-+" +mobileNewNo
+                    send "APN-M+" +mobileNewNo +"/AR/P1"
+                }
+
+                send "rfRAMADAN;er"
+                send "ER"   
+            }
+            send "IR"
+            send "IR"
+            send "TTE"
+            send "FXB/K"+ref62
+            send "rfRAMADAN;er"
+            send "er"
+            send "IG"
+
+    if (FA_Check_TRUE_FALSE1 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE2 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE3 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE4 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE5 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE6 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE7 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE8 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE9 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE10 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE11 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE12 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE13 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE14 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE15 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE16 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE17 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+
+if (FA_Check_TRUE_FALSE18 == "True"){
+    send "TRFIG"
+    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC"
+    capture line:1, column:58, length:1 assign to checkATC
+if (checkATC =="C"){
+    call "TRFP"
+}
+else{
+    send "PLEASE CONTINUE MANULALLY!"
+    ask "CONTINUE MANUALLY" assign to qz6
+}
+}
+            capture line:2, column:1, length:21 assign to refundedTicketCheck
+    if (refundedTicketCheck != "OK - REFUND PROCESSED"){
+        ask "Contiue?" assign to qz5
+    }
+            send "RT" +pnr
+            send "IR"
+            call "z_FOPCASH_DEL"
+            send "FPCASH"
+            send "FM0"
+            call "z_RTTN_DEL"
+            send "rfRAMADAN;er"
+            send "er"
+            call "Check HK Segment"
+
+        }
+        when ("No") {
+            send "TRFIG"
+            send "IG"
+        }
     }
 }
-if (FACountStart =="2"){
-    assign "" to Count
-    if (FACount>0){
-        append TRFA2 to Count
-    }
-    if (FACount>1){
-      append ";" +TRFA3 to Count
-    }
-    if (FACount>2){
-       append ";" +TRFA4 to Count
-    }
-    if (FACount>3){
-        append ";" +TRFA5 to Count
-    }
-    if (FACount>4){
-        append ";" +TRFA6 to Count
-    }
-    if (FACount>5){
-        append ";" +TRFA7 to Count
-    }
-    if (FACount>6){
-        append ";" +TRFA8 to Count
-    }
-    if (FACount>7){
-        append ";" +TRFA9 to Count
-    }
-    if (FACount>8){
-        append ";" +TRFA10 to Count
-    }
+else{
+    send "NO After-Void Deal (" +totalDealAmount +")"
+    ask "Ignore?" assign to qz6
+    send "TRFIG"
+    send "IG"
 }
-send "" +TnFA1 +";" +TnFA2 +";" +TnFA3 +";" +TnFA4
-send "" +FACount +";" +FACountStart
-send "df" +Count +"-" +totalNewPrice
+    call "After_VOID"

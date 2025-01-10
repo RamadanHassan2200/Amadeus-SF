@@ -3,8 +3,80 @@
 //retrirval
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
-send "rt" +pnr
 
+send "JGD/USN"
+capture line:8, column:43, length:1 assign to agtName
+capture line:8, column:44, length:1 assign to agtNameChar2
+capture line:8, column:45, length:1 assign to agtNameChar3
+capture line:8, column:46, length:1 assign to agtNameChar4
+capture line:8, column:47, length:1 assign to agtNameChar5
+capture line:8, column:48, length:1 assign to agtNameChar6
+capture line:8, column:49, length:1 assign to agtNameChar7
+capture line:8, column:50, length:1 assign to agtNameChar8
+capture line:8, column:51, length:1 assign to agtNameChar9
+capture line:8, column:52, length:1 assign to agtNameChar10
+capture line:8, column:53, length:1 assign to agtNameChar11
+capture line:8, column:54, length:1 assign to agtNameChar12
+capture line:8, column:55, length:1 assign to agtNameChar13
+capture line:8, column:56, length:1 assign to agtNameChar14
+capture line:8, column:57, length:1 assign to agtNameChar15
+capture line:8, column:58, length:1 assign to agtNameChar16
+capture line:8, column:59, length:1 assign to agtNameChar17
+capture line:8, column:60, length:1 assign to agtNameChar18
+capture line:8, column:61, length:1 assign to agtNameChar19
+capture line:8, column:62, length:1 assign to agtNameChar20
+capture line:8, column:63, length:1 assign to agtNameChar21
+capture line:8, column:64, length:1 assign to agtNameChar22
+
+if (agtNameChar2!=" "){
+append agtNameChar2 to agtName
+if (agtNameChar3!=" "){
+append agtNameChar3 to agtName
+if (agtNameChar4!=" "){
+append agtNameChar4 to agtName
+if (agtNameChar5!=" "){
+append agtNameChar5 to agtName
+if (agtNameChar6!=" "){
+append agtNameChar6 to agtName
+if (agtNameChar7!=" "){
+append agtNameChar7 to agtName
+if (agtNameChar8!=" "){
+append agtNameChar8 to agtName
+if (agtNameChar9!=" "){
+append agtNameChar9 to agtName
+if (agtNameChar10!=" "){
+append agtNameChar10 to agtName
+if (agtNameChar11!=" "){
+append agtNameChar11 to agtName
+if (agtNameChar12!=" "){
+append agtNameChar12 to agtName
+if (agtNameChar13!=" "){
+append agtNameChar13 to agtName
+if (agtNameChar14!=" "){
+append agtNameChar14 to agtName
+if (agtNameChar15!=" "){
+append agtNameChar15 to agtName
+if (agtNameChar16!=" "){
+append agtNameChar16 to agtName
+if (agtNameChar17!=" "){
+append agtNameChar17 to agtName
+if (agtNameChar18!=" "){
+append agtNameChar18 to agtName
+if (agtNameChar19!=" "){
+append agtNameChar19 to agtName
+if (agtNameChar20!=" "){
+append agtNameChar20 to agtName
+if (agtNameChar21!=" "){
+append agtNameChar21 to agtName
+if (agtNameChar22!=" "){
+append agtNameChar22 to agtName
+}}}}}}}}}}}}}}}}}}}}}//agtNameChar2
+
+if (agtName == "Y"){
+  assign "SMARTFLOW" to agtName
+}
+
+send "rt" +pnr
 // Checking Airline(s) and Travel date and passenger count
 send "RTA"
 
@@ -107,11 +179,6 @@ else{
     ask "Stop and Review" assign to qz5
     send "ig"
   }
-  if (Airline1=="NP"){
-    send "NP airline is non-voidable"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
   if (Airline1=="R5"){
     send "R5 airline is non-voidable"
     ask "Stop and Review" assign to qz5
@@ -123,9 +190,8 @@ else{
     send "ig"
   }
   if (Airline1=="NE"){
-    send "NE airline is non-voidable (EX-EGY)"
+    send "NE airline is non-voidable within 24 Hrs"
     ask "Stop and Review" assign to qz5
-    send "ig"
   }
   if (Airline1=="SV"){
     send "SV airline is non-voidable (EX-EGY)"
@@ -329,6 +395,13 @@ send "TWD/TKT" +TnFA1
 
 capture line:1, column:1, length:22 assign to checkticketopenness
 if (checkticketopenness=="SECURED ETKT RECORD(S)"){
+  assign "FALSE" to TWDOpened
+}
+capture line:1, column:1, length:14 assign to checkticketopenness
+if (checkticketopenness=="INVALID FORMAT"){
+  assign "FALSE" to TWDOpened
+}
+if (TWDOpened=="FALSE"){
   send "tqt/t500"
   capture line:2, column:1, length:3 assign to TQTNumber1
   capture line:2, column:42, length:10 assign to TQTPrice1
@@ -1678,7 +1751,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                     }
                     send "ir"
                     send "tte/all"
-                    send "rfRAMADAN;er"
+                    send "RF" +agtName +";ER"
                     send "ir"
                     send "tte/all"
                     send "FXB/K"
@@ -1952,7 +2025,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
     }
 
     
-                    send "rfRAMADAN;er"
+                    send "RF" +agtName +";ER"
                     capture line:1, column:1, length:7 assign to Warning
                         if (Warning =="WARNING"){
                             send "er"
@@ -1961,7 +2034,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         if (CheckSM == "SIMULTANEOUS"){ //1
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "rfRAMADAN;er"
+                    send "FXB/K"                            send "RF" +agtName +";ER"
                     capture line:1, column:1, length:7 assign to Warning
                         if (Warning =="WARNING"){
                             send "er"
@@ -1970,7 +2043,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         if (CheckSM == "SIMULTANEOUS"){ //2
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "rfRAMADAN;er"
+                    send "FXB/K"                            send "RF" +agtName +";ER"
                             capture line:1, column:1, length:7 assign to Warning
                             if (Warning =="WARNING"){
                                 send "er"
@@ -1979,7 +2052,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                             if (CheckSM == "SIMULTANEOUS"){ //3
                                 send "ir"
                                 send "tte/all"
-                    send "FXB/K"                                send "rfRAMADAN;er"
+                    send "FXB/K"                                send "RF" +agtName +";ER"
                             capture line:1, column:1, length:7 assign to Warning
                             if (Warning =="WARNING"){
                                 send "er"
@@ -1988,7 +2061,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                             if (CheckSM == "SIMULTANEOUS"){ //4
                                 send "ir"
                                 send "tte/all"
-                    send "FXB/K"                                send "rfRAMADAN;er"
+                    send "FXB/K"                                send "RF" +agtName +";ER"
                                 capture line:1, column:1, length:7 assign to Warning
                                 if (Warning =="WARNING"){
                                     send "er"
@@ -1997,7 +2070,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                                 if (CheckSM == "SIMULTANEOUS"){ //5
                                  send "ir"
                                  send "tte/all"
-                    send "FXB/K"                                 send "rfRAMADAN;er"
+                    send "FXB/K"                                 send "RF" +agtName +";ER"
                                  }//5
                                 }//4
                               }//3
@@ -2014,7 +2087,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         when ("No"){
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "rfRAMADAN;er"
+                    send "FXB/K"                            send "RF" +agtName +";ER"
                             send "er"
                             call "z_Deal Checker"
 
@@ -2290,7 +2363,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
       send "" +baggageCheckerStatment + " Segment(s)"
       mandatory ask "Continue?" assign to qz5
     }
-                            send "rfRAMADAN;er"
+                            send "RF" +agtName +";ER"
                             send "er"
                             call "z_Deal Checker"
                             capture line:1, column:1, length:10 assign to egy1deal
@@ -2302,7 +2375,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                             send "ir"
                             send "tte/all"
                     send "FXB/K"                            
-                    send "rfRAMADAN;er"
+                    send "RF" +agtName +";ER"
                             send "er"
                             call "z_Deal Checker"
                         }
@@ -2315,26 +2388,22 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         }
                     }
 send "ir"
-assign "TRUE" to checkCardFund
-if (checkCardFund != "FALSE"){
 send "rtf"
-if (Airline1=="MS"){
-   call "z_FOPCASH_DEL"  
+call "z_FOPCASH_DEL"  
+assign "TRUE" to checkCardFund
+if (checkCardFund == "TRUE"){
+if (Airline1=="UJ"){
+    send "FPCash"
+}
+else{
     send "pdy"
     send "pt*1"
 }
-else{
-if (Airline1=="SM"){
-    call "z_FOPCASH_DEL"  
-    send "pdy"
-    send "pt*1"
 }
-else{
-    send "FPcash"
-}
+else {
+    send "FPCash"
 }
 
-}
 if (Airline1=="TK"){ 
     send "fm1"
 }
@@ -2354,28 +2423,23 @@ else{
     
 call "z_RTTN_DEL"
 
-send "rfRAMADAN;er"
+send "RF" +agtName +";ER"
 capture line:1, column: 1, length: 12 assign to CheckSM
 if (CheckSM == "SIMULTANEOUS"){
 send "ir"      
-if (checkCardFund != "FALSE"){
-send "rtf"
-if (Airline1=="MS"){
-   call "z_FOPCASH_DEL"  
+if (checkCardFund == "TRUE"){
+if (Airline1=="UJ"){
+    send "FPCash"
+}
+else{
     send "pdy"
     send "pt*1"
 }
-else{
-if (Airline1=="SM"){
-    call "z_FOPCASH_DEL"  
-    send "pdy"
-    send "pt*1"
 }
-else{
-    send "FPcash"
+else {
+    send "FPCash"
 }
-}
-}
+
 
 if (Airline1=="TK"){ 
     send "fm1"
@@ -2395,31 +2459,53 @@ else{
 }
     
 call "z_RTTN_DEL"
-send "rfRAMADAN;er"
+send "RF" +agtName +";ER"
 }
 send "er"
 
 send "ttp/rt"
+capture line:1, column:1, length:39 assign to checkAfterTTP
+if (checkAfterTTP == "FOP RJT: REJECTED BY IATA FOP AUTHORITY"){
+  send "RTF"
+  call "z_FOPCASH_DEL" 
+  send "PDY"
+  send "PT*1"
+  send "RF" +agtName +";ER"
+  send "ER"
+  send "TTP/RT"
+}
+
+
+capture line:1, column:1, length:39 assign to checkAfterTTP
+if (checkAfterTTP == "FOP RJT: REJECTED BY IATA FOP AUTHORITY"){
+  mandatory ask "Going Cash?" assign to qz5
+  send "RTF"
+  call "z_FOPCASH_DEL" 
+  send "FPCASH"
+  send "RF" +agtName +";ER"
+  send "ER"
+  send "TTP/RT"
+}
+
+capture line:1, column:1, length:36 assign to checkAfterTTP
+if (checkAfterTTP== "GTW/ETS: UNABLE TO PROCESS - TIMEOUT"){
+  send "TTP/RT"
+}
+
 capture line:1, column: 1, length: 12 assign to CheckSM2
 if (CheckSM2 == "SIMULTANEOUS"){
 send "ir"
-if (checkCardFund != "FALSE"){
-send "rtf"
-if (Airline1=="MS"){
-   call "z_FOPCASH_DEL"  
+if (checkCardFund == "TRUE"){
+if (Airline1=="UJ"){
+    send "FPCash"
+}
+else{
     send "pdy"
     send "pt*1"
 }
-else{
-if (Airline1=="SM"){
-    call "z_FOPCASH_DEL"  
-    send "pdy"
-    send "pt*1"
 }
-else{
-    send "FPcash"
-}
-}
+else {
+    send "FPCash"
 }
 
 if (Airline1=="TK"){ 
@@ -2440,10 +2526,36 @@ else{
 }
     
 call "z_RTTN_DEL"
-send "rfRAMADAN;er"
+send "RF" +agtName +";ER"
 send "er"
 
 send "ttp/rt"
+capture line:1, column:1, length:39 assign to checkAfterTTP
+if (checkAfterTTP == "FOP RJT: REJECTED BY IATA FOP AUTHORITY"){
+  send "RTF"
+  call "z_FOPCASH_DEL" 
+  send "PDY"
+  send "PT*1"
+  send "RF" +agtName +";ER"
+  send "ER"
+  send "TTP/RT"
+}
+
+capture line:1, column:1, length:39 assign to checkAfterTTP
+if (checkAfterTTP == "FOP RJT: REJECTED BY IATA FOP AUTHORITY"){
+  mandatory ask "Going Cash?" assign to qz5
+  send "RTF"
+  call "z_FOPCASH_DEL" 
+  send "FPCASH"
+  send "RF" +agtName +";ER"
+  send "ER"
+  send "TTP/RT"
+}
+
+capture line:1, column:1, length:36 assign to checkAfterTTP
+if (checkAfterTTP== "GTW/ETS: UNABLE TO PROCESS - TIMEOUT"){
+  send "TTP/RT"
+}
 }
 
 call "z_Name Sorter"
