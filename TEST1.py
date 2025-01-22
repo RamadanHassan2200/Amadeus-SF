@@ -83,61 +83,22 @@ if (HKCheck!="HK"){
         assign "0" to HKCheckConfirmation
     }
 }
-capture line:3, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-capture line:4, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-capture line:5, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-capture line:6, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-capture line:7, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-capture line:8, column:30, length:2 assign to HKCheck
-if (HKCheck!="HK"){
-    if (HKCheck!="  "){
-        assign "0" to HKCheckConfirmation
-    }
-}
-
-if (HKCheckConfirmation=="0"){
-    send "Not Confirmed Segments!"
-    ask "Please check the ssegments and try again" assign to qz5
-    send "ig"
-}
-
-capture line:2, column:30, length:2 assign to HK1Test
-if (HK1Test=="HK"){
-  append "1" to segmentsCount
+else{
+    assign "1" to segmentsCount
   capture line:2, column:6, length:2 assign to Airline1
   capture line:2, column:15, length:5 assign to TravelDate
   capture line:2, column:23, length:3 assign to OriginCity
   capture line:2, column:32, length:1 assign to PassengerCount
   capture line:2, column:35, length:4 assign to TravelTime
 }
-capture line:3, column:30, length:2 assign to HK2Test
-if (HK2Test=="HK"){
-  append "1" to segmentsCount
+capture line:3, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+else{
+    append "1" to segmentsCount
   capture line:3, column:6, length:2 assign to Airline2
   if (TravelDate == "undefined"){
       capture line:3, column:15, length:5 assign to TravelDate
@@ -152,41 +113,68 @@ if (HK2Test=="HK"){
       capture line:3, column:35, length:4 assign to TravelTime
   }
 }
-
-capture line:4, column:30, length:2 assign to HK3Test
-if (HK3Test=="HK"){
-  append "1" to segmentsCount
-  capture line:4, column:6, length:2 assign to Airline3
+capture line:4, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
 }
-
-capture line:5, column:30, length:2 assign to HK4Test
-if (HK4Test=="HK"){
+else{
+    append "1" to segmentsCount
+    capture line:4, column:6, length:2 assign to Airline3
+}
+capture line:5, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+else{
     append "1" to segmentsCount
     capture line:5, column:6, length:2 assign to Airline4
 }
-
-capture line:6, column:30, length:2 assign to HK5Test 
-if (HK5Test=="HK"){
+capture line:6, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+else{
     append "1" to segmentsCount
     capture line:6, column:6, length:2 assign to Airline5
 }
-
-capture line:7, column:30, length:2 assign to HK6Test
-if (HK6Test=="HK"){
+capture line:7, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+else{
     append "1" to segmentsCount
     capture line:7, column:6, length:2 assign to Airline6
 }
-
-capture line:8, column:30, length:2 assign to HK7Test
-if (HK7Test=="HK"){
+capture line:8, column:30, length:2 assign to HKCheck
+if (HKCheck!="HK"){
+    if (HKCheck!="  "){
+        assign "0" to HKCheckConfirmation
+    }
+}
+else{
     append "1" to segmentsCount
     capture line:8, column:6, length:2 assign to Airline7
+}
+
+if (HKCheckConfirmation=="0"){
+    send "Not Confirmed Segments!"
+    ask "Please check the ssegments and try again" assign to qz5
+    send "ig"
 }
 
 capture line:9, column:30, length:2 assign to HK8Test
 if (HK8Test=="HK"){
     append "1" to segmentsCount
 }
+
 
 if (segmentsCount == "11"){
     assign "2" to segmentsCount
@@ -209,8 +197,6 @@ if (segmentsCount > "111111"){
     send "ig"
 }
 
-// ignore >4 segments or >6 passengers
-
 // Non-voidable airlines: A3, ER, H1, NP, R5, UK with AI
   if (Airline1=="A3") {
     capture line:2, column:13, length: 1 assign to A3Class
@@ -231,30 +217,275 @@ if (segmentsCount > "111111"){
     ask "Stop and Review" assign to qz5
     send "ig"
     }
-    assign "A3Class" to A3ClassCheck
   }
+  if (Airline2=="A3") {
+    capture line:3, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+  if (Airline3=="A3") {
+    capture line:4, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+  if (Airline4=="A3") {
+    capture line:5, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+if (Airline5=="A3") {
+    capture line:6, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+  if (Airline6=="A3") {
+    capture line:7, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+  if (Airline7=="A3") {
+    capture line:8, column:13, length: 1 assign to A3Class
+    if (A3Class=="P"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="U"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="T"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3Class=="S"){
+        assign "A3Class" to A3ClassCheck
+    }
+    if (A3ClassCheck == "A3Class"){
+    send "A3 airline is non-voidable for (P,U,T,S) Classes"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+    }
+  }
+
   if (Airline1=="ER"){
     send "ER airline is non-voidable"
     ask "Stop and Review" assign to qz5
     send "ig"
   }
+  if (Airline2=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline3=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline4=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline5=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline6=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline7=="ER"){
+    send "ER airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+
+
   if (Airline1=="H1"){
     send "H1 airline is non-voidable"
     ask "Stop and Review" assign to qz5
     send "ig"
   }
+  if (Airline2=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline3=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline4=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline5=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline6=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline7=="H1"){
+    send "H1 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+
+
   if (Airline1=="NP"){
     send "NP airline is non-voidable"
     ask "Stop and Review" assign to qz5
   }
+  if (Airline2=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+  if (Airline3=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+  if (Airline4=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+  if (Airline5=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+  if (Airline6=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+  if (Airline7=="NP"){
+    send "NP airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+  }
+
   if (Airline1=="R5"){
     send "R5 airline is non-voidable"
     ask "Stop and Review" assign to qz5
     send "ig"
   }
+  if (Airline2=="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline3=="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline4=="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline5=="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline6="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline7=="R5"){
+    send "R5 airline is non-voidable"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+
+
   if (Airline1=="UK"){
     ask "Is it connected with AI (Air India)?" assign to qz1
   }
+  if (Airline1=="AI"){
+    ask "Is it connected with UK (Viastra)?" assign to qz1
+  }
+
   if (Airline1=="NE"){
     if (TravelDate == today){
         send "NE is non-voidable within 24 hrs."
@@ -294,9 +525,8 @@ if (segmentsCount > "111111"){
         send "Flight is within 1 hour!"
         mandatory ask "Continue?" assign to qz5
     }
-    
   }
-// Checking Airline(s) and Travel date and passenger count//
+
 
 // Checking the possibilty to take EX-Egy deal
 if (OriginCity=="ASW"){
@@ -402,28 +632,36 @@ if (OriginCity=="SSH"){
 
   //checking if there's an emd
   send "tqm"
-          capture line:1, column:1, length:20 assign to emdTest
-          if (emdTest != "NO TSM RECORD EXISTS"){
-          send "EMD! Please stop and check."
-          send "ig"
-          }
+  capture line:1, column:1, length:20 assign to emdTest
+  if (emdTest != "NO TSM RECORD EXISTS"){
+  send "EMD! Please stop and check."
+  send "ig"
+  }
 
   //getting the office IATA code
   send "PV"
   capture line:8, column:30, length:8 assign to thisOffice
   capture line:2, column:30, length:9 assign to thisOfficeName
  
-    //opening the ticket:
+  //opening the ticket:
   send "rttn"
 
-        capture line:2, column:5, length:2 assign to FA1
-          if (FA1=="FA"){
-            assign "1" to FACount
-            capture line:2, column:8, length:3 assign to PAXtest
-            if (PAXtest=="PAX"){
-            capture line:2, column:12, length:14 assign to TnFA1
-            }
-          }
+  capture line:2, column:5, length:3 assign to FA1
+  if (FA1=="FA "){
+      capture line:2, column:8, length:3 assign to PAXtest
+      if (PAXtest=="PAX"){
+          assign "1" to FACount
+          capture line:2, column:12, length:14 assign to TnFA1
+      }
+  }
+  if (FA1=="FHE"){
+      capture line:2, column:9, length:3 assign to PAXtest
+      if (PAXtest=="PAX"){
+          assign "1" to FACount
+          capture line:2, column:12, length:14 assign to TnFA1
+      }
+  }
+
           capture line:3, column:5, length:2 assign to FA2
           if (FA2=="FA"){
               if (FACount=="1"){
