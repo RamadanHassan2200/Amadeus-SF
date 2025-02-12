@@ -401,27 +401,6 @@ if (checkATC =="C"){
         capture line:13, column:30, length:13 assign to commissionAmount
     }
 
-    capture line:12, column:5, length:10 assign to checkNetRefund1
-    capture line:13, column:5, length:10 assign to checkNetRefund2
-    capture line:14, column:5, length:10 assign to checkNetRefund3
-
-    append amountRefunded to netRefundAmount
-
-    if (checkNetRefund1 == "NET REFUND"){
-        capture line:12, column:30, length:13 assign to netRefundAmount
-    }
-    if (checkNetRefund2 == "NET REFUND"){
-        capture line:13, column:30, length:13 assign to netRefundAmount
-    }
-    if (checkNetRefund3 == "NET REFUND"){
-        capture line:14, column:30, length:13 assign to netRefundAmount
-    }
-
-
-    if (netRefundAmount != amountRefunded){
-      send "TRFU/NF"
-    }
-
     if (commissionAmount !="         0.00"){
       send "TRFU/FM0"
     }
@@ -437,7 +416,7 @@ if (checkATC =="C"){
         }
     }
 
-
+    send "TRFU/NF"
     send "TRFP"
     capture line:2, column:1, length:21 assign to refundedTicketCheck
     if (refundedTicketCheck == "OK - REFUND PROCESSED"){
