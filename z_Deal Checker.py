@@ -1,4 +1,4 @@
-//for price diff
+//z_Deal Checker
 
 send "RTA"
 capture line:2, column:4, length:2 assign to checkAirline
@@ -238,6 +238,42 @@ if (totals16=="TOTALS"){
                capture line:23, column:4, length:10 assign to totalNewPrice
           }
      }
+     
+     // check if lower class exists:
+     send "Fqq1"
+  capture line:9, column:17, length:1 assign to firstSeg
+  capture line:10, column:17, length:1 assign to secondSeg
+  capture line:11, column:17, length:1 assign to thirdSeg
+  capture line:12, column:17, length:1 assign to fourthSeg
+  capture line:13, column:17, length:1 assign to fifthSeg
+  capture line:14, column:17, length:1 assign to sixthSeg
+  capture line:15, column:17, length:1 assign to seventhSeg
+  capture line:16, column:17, length:1 assign to eighthSeg
+
+  if (firstSeg == "*"){
+    send "Star!"
+  }
+  if (secondSeg == "*"){
+    send "Star!"
+  }
+  if (thirdSeg == "*"){
+    send "Star!"
+  }
+  if (fourthSeg == "*"){
+    send "Star!"
+  }
+  if (fifthSeg == "*"){
+    send "Star!"
+  }
+  if (sixthSeg == "*"){
+    send "Star!"
+  }
+  if (seventhSeg == "*"){
+    send "Star!"
+  }
+  if (eighthSeg == "*"){
+    send "Star!"
+  }
 
      send "DF" + totalNewFare + "*0.0" +airlinePercentage
      capture line:2, column:1, length:10 assign to NewFarePercentage
@@ -368,8 +404,93 @@ if (totals16=="TOTALS"){
                capture line:23, column:4, length:10 assign to totalNewPrice
           }
      }
+     send "Fqq1"
+  capture line:9, column:17, length:1 assign to firstSeg
+  capture line:10, column:17, length:1 assign to secondSeg
+  capture line:11, column:17, length:1 assign to thirdSeg
+  capture line:12, column:17, length:1 assign to fourthSeg
+  capture line:13, column:17, length:1 assign to fifthSeg
+  capture line:14, column:17, length:1 assign to sixthSeg
+  capture line:15, column:17, length:1 assign to seventhSeg
+  capture line:16, column:17, length:1 assign to eighthSeg
+
+  if (firstSeg == "*"){
+    send "Star!"
+  }
+  if (secondSeg == "*"){
+    send "Star!"
+  }
+  if (thirdSeg == "*"){
+    send "Star!"
+  }
+  if (fourthSeg == "*"){
+    send "Star!"
+  }
+  if (fifthSeg == "*"){
+    send "Star!"
+  }
+  if (sixthSeg == "*"){
+    send "Star!"
+  }
+  if (seventhSeg == "*"){
+    send "Star!"
+  }
+  if (eighthSeg == "*"){
+    send "Star!"
+  }
 }
 }
+
+if (curr1 == "PKR"){
+     assign "0.033" to airlinePKPercentage
+
+if (Airline1 == "GF"){
+    assign "0.035" to airlinePKPercentage
+}
+if (Airline1 == "WY"){
+    assign "0.035" to airlinePKPercentage
+}
+if (Airline1 == "UL"){
+    assign "0.035" to airlinePKPercentage
+}
+if (Airline1 == "FZ"){
+    assign "0.03" to airlinePKPercentage
+}
+if (Airline1 == "EY"){
+    assign "0.03" to airlinePKPercentage
+}
+if (Airline1 == "EK"){
+    assign "0.025" to airlinePKPercentage
+}
+if (Airline1 == "QR"){
+    assign "0.025" to airlinePKPercentage
+}
+if (Airline1 == "TK"){
+    assign "0.04" to airlinePKPercentage
+}
+if (Airline1 == "TG"){
+    assign "0.03" to airlinePKPercentage
+}
+if (Airline1 == "UL"){
+    assign "0.04" to airlinePKPercentage
+}
+if (Airline1 == "OD"){
+    assign "0.04" to airlinePKPercentage
+}
+if (Airline1 == "SQ"){
+    assign "0.025" to airlinePKPercentage
+}
+if (Airline1 == "PR"){
+    assign "0.025" to airlinePKPercentage
+}
+if (Airline1 == "ET"){
+    assign "0.025" to airlinePKPercentage
+}
+if (Airline1 == "CA"){
+    assign "0.03" to airlinePKPercentage
+}
+}
+
 send "TTH"
 capture line:1, column:1, length:1 assign to newTSTs
 if (newTSTs=="T"){
@@ -432,8 +553,31 @@ if (TSTCount=="6"){
 
           send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +";" +TST5 +";" +TST6 +"-" +curr2deal     
        }
-       else{
-          send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST +";" +TST5 +"-" +fifthTST +";" +TST6 +"-" +sixthTST 
+       if(curr1=="PKR"){
+          send "DF" +firstTST +";" +secondTST +";" +thirdTST +";" +fourthTST +";" +fifthTST +";" +sixthTST
+          capture line:3, column:1, length:1 assign to checkDFnextLine
+          if (checkDFnextLine == ">"){
+               capture line:2, column:1, length:10 assign to totalNewPrice
+          }
+          else{
+               capture line:4, column:1, length:1 assign to checkDFnextLine
+               if (checkDFnextLine == ">"){
+                    capture line:3, column:1, length:10 assign to totalNewPrice
+               }
+          }
+          send "FQC" + totalNewPrice + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +";" +TST5 +";" +TST6 +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST +";" +TST5 +"-" +fifthTST +";" +TST6 +"-" +sixthTST 
+          }
        }
 }
 else{
@@ -457,9 +601,32 @@ if (TSTCount=="5"){
 
           send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +";" +TST5 +"-" +curr2deal 
          }
-         else{
-            send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST +";" +TST5 +"-" +fifthTST
-         }
+         if(curr1=="PKR"){
+          send "DF" +firstTST +";" +secondTST +";" +thirdTST +";" +fourthTST +";" +fifthTST 
+          capture line:3, column:1, length:1 assign to checkDFnextLine
+          if (checkDFnextLine == ">"){
+               capture line:2, column:1, length:10 assign to totalNewPrice
+          }
+          else{
+               capture line:4, column:1, length:1 assign to checkDFnextLine
+               if (checkDFnextLine == ">"){
+                    capture line:3, column:1, length:10 assign to totalNewPrice
+               }
+          }
+          send "FQC" + totalNewPrice + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +";" +TST5 +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST +";" +TST5 +"-" +fifthTST 
+          }
+       }
 }
 else{
 if (TSTCount=="4"){
@@ -482,9 +649,32 @@ if(curr1=="EGP"){
 
           send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +"-" +curr2deal  
   }
-  else{
-     send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST  
-  }
+  if(curr1=="PKR"){
+          send "DF" +firstTST +";" +secondTST +";" +thirdTST +";" +fourthTST 
+          capture line:3, column:1, length:1 assign to checkDFnextLine
+          if (checkDFnextLine == ">"){
+               capture line:2, column:1, length:10 assign to totalNewPrice
+          }
+          else{
+               capture line:4, column:1, length:1 assign to checkDFnextLine
+               if (checkDFnextLine == ">"){
+                    capture line:3, column:1, length:10 assign to totalNewPrice
+               }
+          }
+          send "FQC" + totalNewPrice + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +";" +TST2 +";" +TST3 +";" +TST4 +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST +";" +TST4 +"-" +fourthTST 
+          }
+       }
 }
 else{
 if (TSTCount=="3"){
@@ -506,9 +696,32 @@ if(curr1=="EGP"){
 
           send "df" +TST1 +";" +TST2 +";" +TST3 +"-" +curr2deal 
   }
-  else{
-     send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST 
-  }
+  if(curr1=="PKR"){
+          send "DF" +firstTST +";" +secondTST +";" +thirdTST 
+          capture line:3, column:1, length:1 assign to checkDFnextLine
+          if (checkDFnextLine == ">"){
+               capture line:2, column:1, length:10 assign to totalNewPrice
+          }
+          else{
+               capture line:4, column:1, length:1 assign to checkDFnextLine
+               if (checkDFnextLine == ">"){
+                    capture line:3, column:1, length:10 assign to totalNewPrice
+               }
+          }
+          send "FQC" + totalNewPrice + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +";" +TST2 +";" +TST3  +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST +";" +TST3 +"-" +thirdTST 
+          }
+       }
 }
 else{
 if (TSTCount=="2"){
@@ -529,9 +742,23 @@ if(curr1=="EGP"){
 
           send "df" +TST1 +";" +TST2 +"-" +curr2deal 
   }
-  else{
-     send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST 
-  } 
+  if(curr1=="PKR"){
+          send "DF" +firstTST +";" +secondTST 
+          capture line:2, column:1, length:10 assign to totalNewPrice
+          send "FQC" + totalNewPrice + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +";" +TST2  +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST +";" +TST2 +"-" +secondTST 
+          }
+       }
 }
 else{
 if (firstTST<="9999999"){
@@ -550,9 +777,21 @@ if(curr1=="EGP"){
 
           send "df" +TST1 +"-" +curr2deal 
   }
-  else{
-     send "df" +TST1 +"-" +firstTST
-  }
+  if(curr1=="PKR"){
+          send "FQC" + firstTST + "PKR/" +curr2
+          if (curr2=="AED"){
+           capture line:4, column:4, length:5 assign to curr2deal
+          }
+          else {
+           capture line:4, column:4, length:8 assign to curr2deal
+          }
+          send "df" +TST1 +"-" +curr2deal + ";" +curr2deal +"*" +airlinePKPercentage
+       }
+       if (curr1!="PKR"){
+          if (curr1!="EGP"){
+               send "df" +TST1 +"-" +firstTST 
+          }
+       }
 }
 
 }//1
