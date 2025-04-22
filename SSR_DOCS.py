@@ -111,7 +111,7 @@ if (paxDOBMonth=="12"){
     assign "DEC" to paxDOBMonth
 }
 
-send "SRDOCS " +Airline + "HK1 -"  passType+ +"/" +paxPassNasjonalty +"/" +paxPassbort
+send "SRDOCS " +Airline + "HK1 -"  +passType +"/" +paxPassNasjonalty +"/" +paxPassbort
   +"/" +paxPassNasjonalty +"/" +paxDOBDay +paxDOBMonth +paxDOBYear +"/" +gender
   +"/" +paxPassExpiryDay +paxPassExpiryMonth +paxPassExpiryYear +"/" +paxNAME +"/P" +paxNO
 
