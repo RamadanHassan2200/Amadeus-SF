@@ -18,8 +18,8 @@ else{
 
 send "RT"
 group{
-Mandatory ask "ENTER THE PAX No:" assign to paxNO
-Mandatory ask "ENTER THE PAX Name:" assign to paxNAME
+mandatory ask "ENTER THE PAX No:" assign to paxNO
+mandatory ask "ENTER THE PAX Name:" assign to paxNAME
 select "ENTER THE PAX INFO Type:" from "P,I" assign to passType
 ask "ENTER THE PAX Passport NO:" assign to paxPassbort
 ask "ENTER THE PAX Passport Expiry Date:" assign to paxPassExpiry
