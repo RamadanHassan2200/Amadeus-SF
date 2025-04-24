@@ -201,62 +201,102 @@ else{
 // Checking the possibilty to take EX-Egy deal
 if (OriginCity=="ASW"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="ATZ"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="CAI"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="DBB"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="HBE"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="HMB"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="HRG"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="LXR"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="RMF"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 if (OriginCity=="SSH"){
       if (Airline1!="SV"){
-        send "EX-Egy deal is available..."
-        mandatory ask "Continue..?" assign to qz4
+        if (Airline1!="NP"){
+          if (Airline1!="NE"){
+            send "EX-Egy deal is available..."
+            mandatory ask "Continue..?" assign to qz4
+          }
+        }
       }
 }
 

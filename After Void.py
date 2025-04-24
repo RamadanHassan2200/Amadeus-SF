@@ -21,6 +21,9 @@ if (HK1Test=="HK"){
   capture line:2, column:23, length:3 assign to OriginCity
   capture line:2, column:32, length:1 assign to PassengerCount
   capture line:3, column:30, length:2 assign to HKnextTest
+  capture line:2, column:35, length:4 assign to TravelTime
+  capture line:2, column:35, length:2 assign to TravelTime1
+  capture line:2, column:37, length:2 assign to TravelTime2
   if (HKnextTest=="HK"){
     assign "2" to segmentsCount
     capture line:4, column:30, length:2 assign to HK3Test
@@ -58,6 +61,9 @@ if (HK2Test=="HK"){
   capture line:3, column:23, length:3 assign to OriginCity
   capture line:3, column:32, length:1 assign to PassengerCount
   capture line:4, column:30, length:2 assign to HKnextTest
+  capture line:3, column:35, length:4 assign to TravelTime
+  capture line:3, column:35, length:2 assign to TravelTime1
+  capture line:3, column:37, length:2 assign to TravelTime2
       if (HKnextTest=="HK"){
         assign "2" to segmentsCount
         capture line:5, column:30, length:2 assign to HK3Test
@@ -112,10 +118,31 @@ else{
   }
 
   //Today dates aren't considered
-  if (TravelDate == today){
-    send  "No refund/void for today flights!"
-    ask "Check again please!" assign to qz
+ send  "DD" +OriginCity
+  capture line:2, column:13, length:2 assign to OriginCityCurrentTime1
+  capture line:2, column:15, length:2 assign to OriginCityCurrentTime2
+  capture line:2, column:30, length:5 assign to OriginCityCurrentDate
+  send "DD" +OriginCityCurrentDate +"/" + TravelDate
+  capture line:2, column:1, length:1 assign to checkpast
+  capture line:2, column:1, length:2 assign to checktoday
+  if (checkpast == "-"){
+    send "Flight Departed!"
+    ask "Ignore!" assign to qz5
     send "ig"
+  }
+  if (checktoday == " 0"){
+    send "DF"  +TravelTime1 +"*60-" +TravelTime2 +"-" +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 
+    capture line:2, column:1, length:1 assign to checkTimePast
+    capture line:2, column:1, length:5 assign to checkTimeDifference
+    if (checkTimePast == "-"){
+      send "Flight Departed!"
+      ask "Ignore!" assign to qz5
+      send "ig"
+    }
+    if (checkTimeDifference<= "120"){
+      send "Flight is within 2Hrs"
+      ask "Continue?" assign to qz5
+    }
   }
 
   send "tqm"
