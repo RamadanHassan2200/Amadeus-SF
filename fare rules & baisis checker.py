@@ -1,3 +1,5 @@
+//FQD&FQP
+
 ask "Enter the Ticket Number:(With or Without TWD/TKT)" assign to TicketNumber
 
 send "ig"
@@ -96,9 +98,12 @@ capture line:1, column:5, length:1 assign to TKTP1
 capture line:1, column:6, length:2 assign to TKTP2
 capture line:1, column:8, length:10 assign to TKTP3
 
+capture line:1, column:59, length:6 assign to Ticket_PNR
+
 capture line:2, column:44, length:7 assign to DOI
 
-capture line:3, column:6, length:26 assign to PAXNAME
+capture line:3, column:6, length:25 assign to PAXNAME
+capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
 
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
@@ -107,7 +112,7 @@ capture line:4, column:11, length:4 assign to flightNo1
 capture line:4, column:18, length:1 assign to class1
 capture line:4, column:20, length:5 assign to travelDate1
 capture line:4, column:30, length:2 assign to OK1
-capture line:4, column:33, length:12 assign to fareBasis1
+capture line:4, column:33, length:8 assign to fareBasis1
 capture line:4, column:47, length:1 assign to status1
 
 capture line:5, column:4, length:1 assign to original2  
@@ -117,7 +122,7 @@ capture line:5, column:11, length:4 assign to flightNo2
 capture line:5, column:18, length:1 assign to class2
 capture line:5, column:20, length:5 assign to travelDate2
 capture line:5, column:30, length:2 assign to OK2
-capture line:5, column:33, length:12 assign to fareBasis2
+capture line:5, column:33, length:8 assign to fareBasis2
 capture line:5, column:47, length:1 assign to status2
 
 capture line:6, column:4, length:1 assign to original3
@@ -127,7 +132,7 @@ capture line:6, column:11, length:4 assign to flightNo3
 capture line:6, column:18, length:1 assign to class3
 capture line:6, column:20, length:5 assign to travelDate3
 capture line:6, column:30, length:2 assign to OK3
-capture line:6, column:33, length:12 assign to fareBasis3
+capture line:6, column:33, length:8 assign to fareBasis3
 capture line:6, column:47, length:1 assign to status3
 
 capture line:7, column:4, length:1 assign to original4
@@ -137,7 +142,7 @@ capture line:7, column:11, length:4 assign to flightNo4
 capture line:7, column:18, length:1 assign to class4
 capture line:7, column:20, length:5 assign to travelDate4
 capture line:7, column:30, length:2 assign to OK4
-capture line:7, column:33, length:12 assign to fareBasis4
+capture line:7, column:33, length:8 assign to fareBasis4
 capture line:7, column:47, length:1 assign to status4
 
 capture line:8, column:4, length:1 assign to original5
@@ -147,7 +152,7 @@ capture line:8, column:11, length:4 assign to flightNo5
 capture line:8, column:18, length:1 assign to class5
 capture line:8, column:20, length:5 assign to travelDate5
 capture line:8, column:30, length:2 assign to OK5
-capture line:8, column:33, length:12 assign to fareBasis5
+capture line:8, column:33, length:8 assign to fareBasis5
 capture line:8, column:47, length:1 assign to status5
 
 capture line:9, column:4, length:1 assign to original6
@@ -157,7 +162,7 @@ capture line:9, column:11, length:4 assign to flightNo6
 capture line:9, column:18, length:1 assign to class6
 capture line:9, column:20, length:5 assign to travelDate6
 capture line:9, column:30, length:2 assign to OK6
-capture line:9, column:33, length:12 assign to fareBasis6
+capture line:9, column:33, length:8 assign to fareBasis6
 capture line:9, column:47, length:1 assign to status6
 
 capture line:10, column:5, length:3 assign to city7
@@ -773,6 +778,23 @@ if (segCount=="1"){
     if (airline1 == "SV"){
       assign "TRUE" to EMDEligible
     }
+    if (airline1 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status1 == "U"){
+    if (airline1 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline1 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline1 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline1 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
   }
   if (status2 == "S"){
     if (airline2 == "UL"){
@@ -782,6 +804,23 @@ if (segCount=="1"){
       assign "TRUE" to EMDEligible
     }
     if (airline2 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status2 == "U"){
+    if (airline2 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline2 == "RJ"){
       assign "TRUE" to EMDEligible
     }
   }
@@ -795,6 +834,23 @@ if (segCount=="1"){
     if (airline3 == "SV"){
       assign "TRUE" to EMDEligible
     }
+    if (airline3 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status3 == "U"){
+    if (airline3 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline3 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline3 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline3 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
   }
   if (status4 == "S"){
     if (airline4 == "UL"){
@@ -804,6 +860,23 @@ if (segCount=="1"){
       assign "TRUE" to EMDEligible
     }
     if (airline4 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status4 == "U"){
+    if (airline4 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline4 == "RJ"){
       assign "TRUE" to EMDEligible
     }
   }
@@ -817,6 +890,23 @@ if (segCount=="1"){
     if (airline5 == "SV"){
       assign "TRUE" to EMDEligible
     }
+    if (airline5 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+  if (status5 == "U"){
+    if (airline5 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline5 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline5 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline5 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
   }
   if (status6 == "S"){
     if (airline6 == "UL"){
@@ -828,7 +918,25 @@ if (segCount=="1"){
     if (airline6 == "SV"){
       assign "TRUE" to EMDEligible
     }
+    if (airline6 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
   }
+  if (status6 == "U"){
+    if (airline6 == "UL"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline6 == "ME"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline6 == "SV"){
+      assign "TRUE" to EMDEligible
+    }
+    if (airline6 == "RJ"){
+      assign "TRUE" to EMDEligible
+    }
+  }
+
 
   
   if (EMDEligible == "TRUE"){
@@ -841,9 +949,21 @@ if (segCount=="1"){
       assign city1 to EMDOrigin
       assign city2 to EMDDestination
     }
+    if (status1=="U"){
+      assign airline1 to EMDAirline
+      assign city1 to EMDOrigin
+      assign city2 to EMDDestination
+    }
     }
     if (OK2=="OK"){
     if (status2=="S"){
+      assign airline2 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city2 to EMDOrigin
+        }
+        assign city3 to EMDDestination
+    }
+    if (status2=="U"){
       assign airline2 to EMDAirline
         if (EMDOrigin ==""){
           assign city2 to EMDOrigin
@@ -859,9 +979,23 @@ if (segCount=="1"){
         }
         assign city4 to EMDDestination
     }
+    if (status3=="U"){
+      assign airline3 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city3 to EMDOrigin
+        }
+        assign city4 to EMDDestination
+    }
     }
     if (OK4=="OK"){
     if (status4!="S"){
+      assign airline4 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city4 to EMDOrigin
+        }
+        assign city5 to EMDDestination
+    }
+    if (status4!="U"){
       assign airline4 to EMDAirline
         if (EMDOrigin ==""){
           assign city4 to EMDOrigin
@@ -877,9 +1011,23 @@ if (segCount=="1"){
         }
         assign city6 to EMDDestination
     }
+    if (status5!="U"){
+      assign airline5 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city5 to EMDOrigin
+        }
+        assign city6 to EMDDestination
+    }
     }
     if (OK6=="OK"){
     if (status6!="S"){
+      assign airline6 to EMDAirline
+        if (EMDOrigin ==""){
+          assign city6 to EMDOrigin
+        }
+        assign city7 to EMDDestination
+    }
+    if (status6!="U"){
       assign airline6 to EMDAirline
         if (EMDOrigin ==""){
           assign city6 to EMDOrigin
@@ -956,6 +1104,13 @@ if (agtNameChar22!=" "){
 append agtNameChar22 to agtName
 }}}}}}}}}}}}}}}}}}}}}//agtNameChar2
 
+    if (PAXNAME_ExtraCheck!=""){
+      if (PAXNAME_ExtraCheck!=" "){
+        send "RT" + Ticket_PNR
+        mandatory ask "Get the Pax Name..." assign to PAXNAME
+      }
+    }
+
     send "NM1" + PAXNAME
     send "EGSD/V" +EMDAirline
     mandatory ask "Type the Penalty Code:" assign to EMDCode
@@ -1004,7 +1159,37 @@ when ("Create Ghost segments"){
     if (OK6=="OK"){
      send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYear +city6 +city7 +"GK1/1700 2000/RECLOC"
     }
+
+    send "FXX/R," + DOI
+    capture line:4, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:4, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:5, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:5, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:6, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:6, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:7, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:7, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:8, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:8, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    
 }
 
 }
+
+
 
