@@ -104,6 +104,7 @@ capture line:2, column:44, length:7 assign to DOI
 
 capture line:3, column:6, length:25 assign to PAXNAME
 capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
+capture line:3, column:32, length:3 assign to PTC
 
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
@@ -330,9 +331,79 @@ if (gov1616 =="GOV"){
   mandatory ask "Ignore?" assign to qz5
 }
 
+  assign "0" to SegCount
+  if (OK1=="OK"){
+    assign "1" to SegCount
+    if (PTC == "INF"){
+      send "Please continue manually."
+      ask "This INF has a seat, please continue manually!" assign to qz5
+    }
+  }
+  if (OK1 =="NS"){
+    assign "1" to SegCount
+  }
+  if (OK2=="OK"){
+    assign "2" to SegCount
+  }
+  if (OK2 =="NS"){
+    assign "2" to SegCount
+  }
+  if (OK3=="OK"){
+    assign "3" to SegCount
+  }
+  if (OK3 =="NS"){
+    assign "3" to SegCount
+  }
+  if (OK4=="OK"){
+    assign "4" to SegCount
+  }
+  if (OK4 =="NS"){
+    assign "4" to SegCount
+  }
+  if (OK5=="OK"){
+    assign "5" to SegCount
+  }
+  if (OK5 =="NS"){
+    assign "5" to SegCount
+  }
+  if (OK6=="OK"){
+    assign "6" to SegCount
+  }
+  if (OK6 =="NS"){
+    assign "6" to SegCount
+  }
 
-choose "FQP or FQD?"{
-  when ("ATC"){
+
+
+  // One segment Possibilities
+  if (SegCount =="1"){
+    if (status1 == "O"){
+      assign "open" to status
+    }
+    if (status1 == "A"){
+      assign "open" to status
+    }
+    if (status1 == "S"){
+      assign "suspend" to status
+    }
+    if (status1 == "U"){
+      assign "suspend" to status
+    }
+
+    if (status == "open"){
+      //step-1: check fare rules
+      
+      send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
+      send "FXX/R," + DOI
+      
+    }
+    if (status == "suspend"){
+      
+    }
+  }
+  
+
+
 
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
 capture line:1, column:1, length:21 assign to checkPending
