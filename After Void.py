@@ -1,3 +1,4 @@
+//After_VOID
 //retrirval
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
@@ -20,6 +21,9 @@ if (HK1Test=="HK"){
   capture line:2, column:23, length:3 assign to OriginCity
   capture line:2, column:32, length:1 assign to PassengerCount
   capture line:3, column:30, length:2 assign to HKnextTest
+  capture line:2, column:35, length:4 assign to TravelTime
+  capture line:2, column:35, length:2 assign to TravelTime1
+  capture line:2, column:37, length:2 assign to TravelTime2
   if (HKnextTest=="HK"){
     assign "2" to segmentsCount
     capture line:4, column:30, length:2 assign to HK3Test
@@ -57,6 +61,9 @@ if (HK2Test=="HK"){
   capture line:3, column:23, length:3 assign to OriginCity
   capture line:3, column:32, length:1 assign to PassengerCount
   capture line:4, column:30, length:2 assign to HKnextTest
+  capture line:3, column:35, length:4 assign to TravelTime
+  capture line:3, column:35, length:2 assign to TravelTime1
+  capture line:3, column:37, length:2 assign to TravelTime2
       if (HKnextTest=="HK"){
         assign "2" to segmentsCount
         capture line:5, column:30, length:2 assign to HK3Test
@@ -111,10 +118,31 @@ else{
   }
 
   //Today dates aren't considered
-  if (TravelDate == today){
-    send  "No refund/void for today flights!"
-    ask "Check again please!" assign to qz
+ send  "DD" +OriginCity
+  capture line:2, column:13, length:2 assign to OriginCityCurrentTime1
+  capture line:2, column:15, length:2 assign to OriginCityCurrentTime2
+  capture line:2, column:30, length:5 assign to OriginCityCurrentDate
+  send "DD" +OriginCityCurrentDate +"/" + TravelDate
+  capture line:2, column:1, length:1 assign to checkpast
+  capture line:2, column:1, length:2 assign to checktoday
+  if (checkpast == "-"){
+    send "Flight Departed!"
+    ask "Ignore!" assign to qz5
     send "ig"
+  }
+  if (checktoday == " 0"){
+    send "DF"  +TravelTime1 +"*60-" +TravelTime2 +"-" +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 
+    capture line:2, column:1, length:1 assign to checkTimePast
+    capture line:2, column:1, length:5 assign to checkTimeDifference
+    if (checkTimePast == "-"){
+      send "Flight Departed!"
+      ask "Ignore!" assign to qz5
+      send "ig"
+    }
+    if (checkTimeDifference<= "120"){
+      send "Flight is within 2Hrs"
+      ask "Continue?" assign to qz5
+    }
   }
 
   send "tqm"
@@ -585,21 +613,41 @@ else{
         }
 
 send "TWD/TKT" + Tn1FA1 + Tn1FA2
+capture line:1, column:1, length:14 assign to checkNextTKT
+if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn2FA1 + Tn2FA2
+}
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn2FA1 + Tn2FA2
+}
+capture line:1, column:1, length:14 assign to checkNextTKT
+if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn3FA1 + Tn3FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn3FA1 + Tn3FA2
 }
+capture line:1, column:1, length:14 assign to checkNextTKT
+if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn4FA1 + Tn4FA2
+}
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn4FA1 + Tn4FA2
 }
+capture line:1, column:1, length:14 assign to checkNextTKT
+if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn5FA1 + Tn6FA2
+}
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn5FA1 + Tn5FA2
+}
+capture line:1, column:1, length:14 assign to checkNextTKT
+if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn6FA1 + Tn6FA2
 }
 
 capture line:2, column:44, length:5 assign to DOITEST
@@ -832,7 +880,7 @@ if (Bg6 =="0 "){
             append ",U385910,P" to ref62
           }
           if (Airline1 == "SV"){
-            append ",U*SEE24,U*MOS05" to ref62
+            append ",U*MOS05" to ref62
           }
           if (Airline1 == "WY"){
             append ",U584562" to ref62
@@ -1218,10 +1266,16 @@ if (fBg6 =="0 "){
       send "" +baggageCheckerStatment + " Segment(s)"
       mandatory ask "Continue?" assign to qz5
     }
+
+assign "" to NPcheck
+if (thisOfficeName=="RUHAA2300"){
+    assign "/T-NP"  to NPcheck
+}
+
 assign "0" to  totalRefundAmount
 if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
-    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC"
+    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1247,7 +1301,7 @@ else{
 
 if (FA_Check_TRUE_FALSE2 == "True"){
     send "TRFIG"
-    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC"
+    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1273,7 +1327,7 @@ else{
 
 if (FA_Check_TRUE_FALSE3 == "True"){
     send "TRFIG"
-    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC"
+    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1299,7 +1353,7 @@ else{
 
 if (FA_Check_TRUE_FALSE4 == "True"){
     send "TRFIG"
-    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC"
+    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1325,7 +1379,7 @@ else{
 
 if (FA_Check_TRUE_FALSE5 == "True"){
     send "TRFIG"
-    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC"
+    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1351,7 +1405,7 @@ else{
 
 if (FA_Check_TRUE_FALSE6 == "True"){
     send "TRFIG"
-    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC"
+    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1377,7 +1431,7 @@ else{
 
 if (FA_Check_TRUE_FALSE7 == "True"){
     send "TRFIG"
-    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC"
+    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1403,7 +1457,7 @@ else{
 
 if (FA_Check_TRUE_FALSE8 == "True"){
     send "TRFIG"
-    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC"
+    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1429,7 +1483,7 @@ else{
 
 if (FA_Check_TRUE_FALSE9 == "True"){
     send "TRFIG"
-    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC"
+    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1455,7 +1509,7 @@ else{
 
 if (FA_Check_TRUE_FALSE10 == "True"){
     send "TRFIG"
-    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC"
+    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1481,7 +1535,7 @@ else{
 
 if (FA_Check_TRUE_FALSE11 == "True"){
     send "TRFIG"
-    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC"
+    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1507,7 +1561,7 @@ else{
 
 if (FA_Check_TRUE_FALSE12 == "True"){
     send "TRFIG"
-    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC"
+    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1533,7 +1587,7 @@ else{
 
 if (FA_Check_TRUE_FALSE13 == "True"){
     send "TRFIG"
-    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC"
+    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1559,7 +1613,7 @@ else{
 
 if (FA_Check_TRUE_FALSE14 == "True"){
     send "TRFIG"
-    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC"
+    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1585,7 +1639,7 @@ else{
 
 if (FA_Check_TRUE_FALSE15 == "True"){
     send "TRFIG"
-    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC"
+    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1611,7 +1665,7 @@ else{
 
 if (FA_Check_TRUE_FALSE16 == "True"){
     send "TRFIG"
-    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC"
+    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1637,7 +1691,7 @@ else{
 
 if (FA_Check_TRUE_FALSE17 == "True"){
     send "TRFIG"
-    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC"
+    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1663,7 +1717,7 @@ else{
 
 if (FA_Check_TRUE_FALSE18 == "True"){
     send "TRFIG"
-    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC"
+    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
@@ -1747,10 +1801,12 @@ if (totalDealAmount >"0"){
 
     if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
-    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC"
+    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1760,10 +1816,12 @@ else{
 
 if (FA_Check_TRUE_FALSE2 == "True"){
     send "TRFIG"
-    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC"
+    send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1773,10 +1831,12 @@ else{
 
 if (FA_Check_TRUE_FALSE3 == "True"){
     send "TRFIG"
-    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC"
+    send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1786,10 +1846,12 @@ else{
 
 if (FA_Check_TRUE_FALSE4 == "True"){
     send "TRFIG"
-    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC"
+    send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1799,10 +1861,12 @@ else{
 
 if (FA_Check_TRUE_FALSE5 == "True"){
     send "TRFIG"
-    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC"
+    send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1812,10 +1876,12 @@ else{
 
 if (FA_Check_TRUE_FALSE6 == "True"){
     send "TRFIG"
-    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC"
+    send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1825,10 +1891,12 @@ else{
 
 if (FA_Check_TRUE_FALSE7 == "True"){
     send "TRFIG"
-    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC"
+    send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1838,10 +1906,12 @@ else{
 
 if (FA_Check_TRUE_FALSE8 == "True"){
     send "TRFIG"
-    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC"
+    send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1851,10 +1921,12 @@ else{
 
 if (FA_Check_TRUE_FALSE9 == "True"){
     send "TRFIG"
-    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC"
+    send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1864,10 +1936,12 @@ else{
 
 if (FA_Check_TRUE_FALSE10 == "True"){
     send "TRFIG"
-    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC"
+    send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1877,10 +1951,12 @@ else{
 
 if (FA_Check_TRUE_FALSE11 == "True"){
     send "TRFIG"
-    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC"
+    send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1890,10 +1966,12 @@ else{
 
 if (FA_Check_TRUE_FALSE12 == "True"){
     send "TRFIG"
-    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC"
+    send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1903,10 +1981,12 @@ else{
 
 if (FA_Check_TRUE_FALSE13 == "True"){
     send "TRFIG"
-    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC"
+    send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1916,10 +1996,12 @@ else{
 
 if (FA_Check_TRUE_FALSE14 == "True"){
     send "TRFIG"
-    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC"
+    send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1929,10 +2011,12 @@ else{
 
 if (FA_Check_TRUE_FALSE15 == "True"){
     send "TRFIG"
-    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC"
+    send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1942,10 +2026,12 @@ else{
 
 if (FA_Check_TRUE_FALSE16 == "True"){
     send "TRFIG"
-    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC"
+    send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1955,10 +2041,12 @@ else{
 
 if (FA_Check_TRUE_FALSE17 == "True"){
     send "TRFIG"
-    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC"
+    send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"
@@ -1968,10 +2056,12 @@ else{
 
 if (FA_Check_TRUE_FALSE18 == "True"){
     send "TRFIG"
-    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC"
+    send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
+    send "TRFU/NF"
     call "TRFP"
+    send "TRFP"
 }
 else{
     send "PLEASE CONTINUE MANULALLY!"

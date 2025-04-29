@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //FQD&FQP
+=======
+// FQD&FQP
+>>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
 ask "Enter the Ticket Number:(With or Without TWD/TKT)" assign to TicketNumber
 
@@ -104,7 +108,10 @@ capture line:2, column:44, length:7 assign to DOI
 
 capture line:3, column:6, length:25 assign to PAXNAME
 capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
+<<<<<<< HEAD
 capture line:3, column:32, length:3 assign to PTC
+=======
+>>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
@@ -1214,11 +1221,20 @@ append agtNameChar22 to agtName
         mandatory ask "Get the Pax Name..." assign to PAXNAME
       }
     }
+<<<<<<< HEAD
+=======
+    send "RT" +Ticket_PNR
+>>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
     send "NM1" + PAXNAME
     send "EGSD/V" +EMDAirline
     mandatory ask "Type the Penalty Code:" assign to EMDCode
     send "IU" +EMDAirline +"NN1" +EMDCode +EMDOrigin +EMDDestination +"/" +today 
+    capture line:1, column:1, length:25 assign to citiesCheck
+    if (citiesCheck == "TOO MANY CITIES/COUNTRIES"){
+      send "IU" +EMDAirline +"NN1" +EMDCode +EMDOrigin  +"/" +today 
+    }
+
     send "APE-A@Gmail.com"
     send "TKOK"
     send "RF" +agtName +";ER"
