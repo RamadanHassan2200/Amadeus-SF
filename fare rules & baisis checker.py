@@ -101,6 +101,7 @@ capture line:1, column:8, length:10 assign to TKTP3
 capture line:1, column:59, length:6 assign to Ticket_PNR
 
 capture line:2, column:44, length:7 assign to DOI
+capture line:2, column:57, length:8 assign to PCC_ID
 
 capture line:3, column:6, length:25 assign to PAXNAME
 capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
@@ -334,14 +335,19 @@ if (gov1616 =="GOV"){
 choose "FQP or FQD?"{
   when ("ATC"){
 
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
+assign "" to checkNP
+if (PCC_ID =="71201675"){
+  assign "/T-NP" to checkNP
+}
+send "TRFIG"
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
     ask "Continue?" assign to qz5
 }
 if (checkPending=="REFUND RECORD PENDING"){
 send "TRFIG"
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 }
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
@@ -659,23 +665,23 @@ if (segCount=="1"){
   capture line:19, column:1, length:2 assign to FQDN16
   capture line:20, column:1, length:2 assign to FQDN17
 
-  capture line:4, column:4, length:12 assign to FQDFareRule1
-  capture line:5, column:4, length:12 assign to FQDFareRule2
-  capture line:6, column:4, length:12 assign to FQDFareRule3
-  capture line:7, column:4, length:12 assign to FQDFareRule4
-  capture line:8, column:4, length:12 assign to FQDFareRule5
-  capture line:9, column:4, length:12 assign to FQDFareRule6
-  capture line:10, column:4, length:12 assign to FQDFareRule7
-  capture line:11, column:4, length:12 assign to FQDFareRule8
-  capture line:12, column:4, length:12 assign to FQDFareRule9
-  capture line:13, column:4, length:12 assign to FQDFareRule10
-  capture line:14, column:4, length:12 assign to FQDFareRule11
-  capture line:15, column:4, length:12 assign to FQDFareRule12
-  capture line:16, column:4, length:12 assign to FQDFareRule13
-  capture line:17, column:4, length:12 assign to FQDFareRule14
-  capture line:18, column:4, length:12 assign to FQDFareRule15
-  capture line:19, column:4, length:12 assign to FQDFareRule16
-  capture line:20, column:4, length:12 assign to FQDFareRule17
+  capture line:4, column:4, length:8 assign to FQDFareRule1
+  capture line:5, column:4, length:8 assign to FQDFareRule2
+  capture line:6, column:4, length:8 assign to FQDFareRule3
+  capture line:7, column:4, length:8 assign to FQDFareRule4
+  capture line:8, column:4, length:8 assign to FQDFareRule5
+  capture line:9, column:4, length:8 assign to FQDFareRule6
+  capture line:10, column:4, length:8 assign to FQDFareRule7
+  capture line:11, column:4, length:8 assign to FQDFareRule8
+  capture line:12, column:4, length:8 assign to FQDFareRule9
+  capture line:13, column:4, length:8 assign to FQDFareRule10
+  capture line:14, column:4, length:8 assign to FQDFareRule11
+  capture line:15, column:4, length:8 assign to FQDFareRule12
+  capture line:16, column:4, length:8 assign to FQDFareRule13
+  capture line:17, column:4, length:8 assign to FQDFareRule14
+  capture line:18, column:4, length:8 assign to FQDFareRule15
+  capture line:19, column:4, length:8 assign to FQDFareRule16
+  capture line:20, column:4, length:8 assign to FQDFareRule17
   
   if (FQDFareRule1==fareBasis){
     send "FQN" +FQDN1 +"*PE"

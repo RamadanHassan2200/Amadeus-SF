@@ -1,4 +1,5 @@
-// for Cairo Office
+//EX_PAK
+// for Karachi Office
 
 //retrirval
 mandatory ask "Enter the PNR: " assign to pnr
@@ -390,6 +391,13 @@ if (OriginCity=="ZIZ"){
 }
 if (OriginCity=="PZH"){
   assign "TRUE" to EXPAKCheck
+}
+
+if (Airline1=="GF"){
+    assign "TRUE" to EXPAKCheck
+}
+if (Airline1=="UL"){
+    assign "TRUE" to EXPAKCheck
 }
 
 if (EXPAKCheck != "TRUE"){
@@ -2591,3 +2599,4 @@ ask "ok?" assign to qz5
 call "z_Deal Checker"      
 
 call "EX_PAK"
+
