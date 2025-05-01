@@ -512,6 +512,7 @@ else{
 }
 
 
+
 //check No-Show for each segment
 
 assign "True" to NoShow
@@ -522,6 +523,106 @@ if (status1 == "O"){
 
   }
 }
+
+// Check Segment Continuity & out of sequence tickets
+
+if (segCount == "1"){
+  assign "Used" to Seg1Status
+  if (status1 == "O"){
+    assign "open" to Seg1Status
+  }
+  if (status1 == "A"){
+    assign "open" to Seg1Status
+  }
+  if (status1 == "S"){
+    assign "suspend" to Seg1Status
+  }
+  if (status1 == "U"){
+    assign "suspend" to Seg1Status
+  }
+}
+
+if (segCount == "2"){
+  assign "used" to Seg2Status
+  if (status2 == "O"){
+    assign "open" to Seg2Status
+  }
+  if (status2 == "A"){
+    assign "open" to Seg2Status
+  }
+  if (status2 == "S"){
+    assign "suspend" to Seg2Status
+  }
+  if (status2 == "U"){
+    assign "suspend" to Seg2Status
+  }
+}
+
+if (segCount == "3"){
+  assign "used" to Seg3Status
+  if (status3 == "O"){
+    assign "open" to Seg3Status
+  }
+  if (status3 == "A"){
+    assign "open" to Seg3Status
+  }
+  if (status3 == "S"){
+    assign "suspend" to Seg3Status
+  }
+  if (status3 == "U"){
+    assign "suspend" to Seg3Status
+  }
+}
+
+if (segCount == "4"){
+  assign "used" to Seg4Status
+  if (status4 == "O"){
+    assign "open" to Seg4Status
+  }
+  if (status4 == "A"){
+    assign "open" to Seg4Status
+  }
+  if (status4 == "S"){
+    assign "suspend" to Seg4Status
+  }
+  if (status4 == "U"){
+    assign "suspend" to Seg4Status
+  }
+}
+
+if (segCount == "5"){
+  assign "used" to Seg5Status
+  if (status5 == "O"){
+    assign "open" to Seg5Status
+  }
+  if (status5 == "A"){
+    assign "open" to Seg5Status
+  }
+  if (status5 == "S"){
+    assign "suspend" to Seg5Status
+  }
+  if (status5 == "U"){
+    assign "suspend" to Seg5Status
+  }
+}
+
+if (segCount == "6"){
+  assign "used" to Seg6Status
+  if (status6 == "O"){
+    assign "open" to Seg6Status
+  }
+  if (status6 == "A"){
+    assign "open" to Seg6Status
+  }
+  if (status6 == "S"){
+    assign "suspend" to Seg6Status
+  }
+  if (status6 == "U"){
+    assign "suspend" to Seg6Status
+  }
+}
+
+ // out of sequence scenarios assign "false" to out_of_sequence
 
 
 send "SRT" +DOI
