@@ -116,6 +116,7 @@ capture line:4, column:11, length:4 assign to flightNo1
 capture line:4, column:18, length:1 assign to class1
 capture line:4, column:20, length:5 assign to travelDate1
 capture line:4, column:30, length:2 assign to OK1
+capture line:4, column:33, length:4 assign to fareBasis1_Shortcut
 capture line:4, column:33, length:8 assign to fareBasis1
 capture line:4, column:47, length:1 assign to status1
 
@@ -1422,259 +1423,1109 @@ if (airline1 == "WY"){
   assign "U584562" to airline_TourCode
 }
 
+  send "FXX/R," +DOI +",UP,U,P," +airline_TourCode
+  
+  capture line:4, column:1, length:2 assign to FXXN1
+  capture line:5, column:1, length:2 assign to FXXN2
+  capture line:6, column:1, length:2 assign to FXXN3
+  capture line:7, column:1, length:2 assign to FXXN4
+  capture line:8, column:1, length:2 assign to FXXN5
+  capture line:9, column:1, length:2 assign to FXXN6
+  capture line:10, column:1, length:2 assign to FXXN7
+  capture line:11, column:1, length:2 assign to FXXN8
+  capture line:12, column:1, length:2 assign to FXXN9
+  capture line:13, column:1, length:2 assign to FXXN10
+  capture line:14, column:1, length:2 assign to FXXN11
+  capture line:15, column:1, length:2 assign to FXXN12
+  capture line:16, column:1, length:2 assign to FXXN13
+  capture line:17, column:1, length:2 assign to FXXN14
+  capture line:18, column:1, length:2 assign to FXXN15
+  capture line:19, column:1, length:2 assign to FXXN16
+  capture line:20, column:1, length:2 assign to FXXN17
 
+  capture line:4, column:4, length:4 assign to FXXFareRule1
+  capture line:5, column:4, length:4 assign to FXXFareRule2
+  capture line:6, column:4, length:4 assign to FXXFareRule3
+  capture line:7, column:4, length:4 assign to FXXFareRule4
+  capture line:8, column:4, length:4 assign to FXXFareRule5
+  capture line:9, column:4, length:4 assign to FXXFareRule6
+  capture line:10, column:4, length:4 assign to FXXFareRule7
+  capture line:11, column:4, length:4 assign to FXXFareRule8
+  capture line:12, column:4, length:4 assign to FXXFareRule9
+  capture line:13, column:4, length:4 assign to FXXFareRule10
+  capture line:14, column:4, length:4 assign to FXXFareRule11
+  capture line:15, column:4, length:4 assign to FXXFareRule12
+  capture line:16, column:4, length:4 assign to FXXFareRule13
+  capture line:17, column:4, length:4 assign to FXXFareRule14
+  capture line:18, column:4, length:4 assign to FXXFareRule15
+  capture line:19, column:4, length:4 assign to FXXFareRule16
+  capture line:20, column:4, length:4 assign to FXXFareRule17
 
+  assign "False" to check_FareBasis_Compatibility
+  if (FXXFareRule1 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN1 
 
-if (PTC=="INF"){
-  if (OK6 =="NS"){
-  // DOI = 24APR24
-  send "SRT" +DOI
-  capture line:1, column:37, length:2 assign to travelYear
-  // travelYear = 24
-  send "DD" +DOI +"/" +travelDate1 +travelYear
-  capture line:2, column:1, length:1 assign to checkyear
-  //checkyear = 
-  if (checkyear =="-"){
-  send "DF" +travelYear +";1"
-  capture line:2, column:1, length:2 assign to travelYear
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
   }
-  else{
 
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule2 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN2 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "2" to FXXfareBasisNumber
+    }
+  }
   }
 
-  send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule3 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN3 
 
-  if (OK2=="NS"){
-      send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYear +city2 +city3 +"GK1/0230 0500/RECLOC"
-    }
-    if (OK3=="OK"){
-      send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYear +city3 +city4 +"GK1/0600 0900/RECLOC"
-    }
-    if (OK4=="OK"){
-      send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYear +city4 +city5 +"GK1/0930 1200/RECLOC"
-    }
-    if (OK5=="OK"){
-      send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYear +city5 +city6 +"GK1/1300 1600/RECLOC"
-    }
-    if (OK6=="OK"){
-     send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYear +city6 +city7 +"GK1/1700 2000/RECLOC"
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
     }
 
-    send "FXX/R," + DOI
-    capture line:4, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:4, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:5, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:5, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:6, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:6, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:7, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:7, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:8, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:8, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
     }
 
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
 
-  }else{
-    send "THIS INFANT TICKET IS NOT VALID FOR AUTO_REFUND!"
-    mandatory ask "The Infant is occupying a seat!" assign to qz5
-    call "Auro_refund"
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "3" to FXXfareBasisNumber
+    }
   }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule4 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN4 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "4" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule5 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN5 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "5" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule6 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN6 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "6" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule7 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN7 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "7" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule8 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN8 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "8" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule9 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN9 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "9" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule10 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN10
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "10" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule11 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN11 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "11" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule12 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN12 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "12" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule13 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN13 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "13" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule14 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN14 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "14" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule15 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN15
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "15" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule16 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN16 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "16" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule17 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN17 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "17" to FXXfareBasisNumber
+    }
+  }
+  }
+
+ if (check_FareBasis_Compatibility == "False"){
+  mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
+  send "FQQ" +FXX_test_FareRule_Number
+  capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign FXX_test_FareRule_Number to FXXfareBasisNumber
+    }
+ }
+
+ if (check_FareBasis_Compatibility == "False"){
+  mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
+  send "FQQ" +FXX_test_FareRule_Number
+  capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "17" to FXXfareBasisNumber
+    }
+ }
+
+  if (check_FareBasis_Compatibility == "False"){
+    send "Can't Find The Fare Rule!"
+    ask "Please Continue manually!" assign to fq5
+  ``call "Auto_Refund"
+ }
+
+ // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ER, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
+                    //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
+
+if (airline1 == "A3"){
+ assign "True" to A3_Refundable
+  if (class1 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "S"){
+    assign "False" to A3_Refundable
+  }
+
+  if (segCount == "2"){
+   if (class2 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount == "3"){
+  if (class3 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount == "4"){
+  if (class4 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount == "5"){
+  if (class5 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount == "6"){
+   if (class6 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (A3_Refundable == )
 }
-else{
-if (OK1 =="OK"){
-  if (status1=="O"){
-    if (original1=="O"){
-      assign "TRUE" to checkOpen1
-    }
-  }
-  if (status1=="S"){
-    if (original1=="O"){
-      assign "TRUE" to checkOpen1
-    }
-  }
-  assign "1" to segCount
-}
 
-if (OK2 =="OK"){
-  if (status2=="O"){
-    if (original2=="O"){
-      assign "TRUE" to checkOpen2
-    }
-  }
-  if (status2=="S"){
-    if (original2=="O"){
-      assign "TRUE" to checkOpen2
-    }
-  }
-  assign "2" to segCount
-}
 
-if (OK3 =="OK"){
-  if (status3=="O"){
-    if (original3=="O"){
-      assign "TRUE" to checkOpen3
-    }
-  }
-  if (status3=="S"){
-    if (original3=="O"){
-      assign "TRUE" to checkOpen3
-    }
-  }
-  assign "3" to segCount
-}
-
-if (OK4 =="OK"){
-  if (status4=="O"){
-    if (original4=="O"){
-      assign "TRUE" to checkOpen4
-    }
-  }
-  if (status4=="S"){
-    if (original4=="O"){
-      assign "TRUE" to checkOpen4
-    }
-  }
-  assign "4" to segCount
-}
-
-if (OK5 =="OK"){
-  if (status5=="O"){
-    if (original5=="O"){
-      assign "TRUE" to checkOpen5
-    }
-  }
-  if (status5=="S"){
-    if (original5=="O"){
-      assign "TRUE" to checkOpen5
-    }
-  }
-  assign "5" to segCount
-}
-
-if (OK6 =="OK"){
-  if (status6=="O"){
-    if (original6=="O"){
-      assign "TRUE" to checkOpen6
-    }
-  }
-  if (status6=="S"){
-    if (original6=="O"){
-      assign "TRUE" to checkOpen6
-    }
-  }
-  assign "6" to segCount
-}
-
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
-capture line:1, column:1, length:21 assign to checkPending
-if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
-}
-if (checkPending=="REFUND RECORD PENDING"){
-send "TRFIG"
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
-}
-capture line:1, column:1, length:21 assign to checkPending
-if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
-}
-capture line:1, column:34, length:3 assign to checkRFND
-if (checkRFND!="AGT"){
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
-}
-
-capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
-
-    capture line:15, column:1, length:2 assign to FOCheck1
-    capture line:16, column:1, length:2 assign to FOCheck2
-    capture line:17, column:1, length:2 assign to FOCheck3
-
-    if (FOCheck1=="FO"){
-      assign "True" to FOCheck
-      capture line:15, column:28, length:7 assign to FODate
-    }
-    if (FOCheck2=="FO"){
-      assign "True" to FOCheck
-      capture line:16, column:28, length:7 assign to FODate
-    }
-    if (FOCheck3=="FO"){
-      assign "True" to FOCheck
-      capture line:17, column:28, length:7 assign to FODate
-    }
-
-    capture line:10, column:5, length:12 assign to totalRefundcheck1
-    capture line:11, column:5, length:12 assign to totalRefundcheck2
-    capture line:12, column:5, length:12 assign to totalRefundcheck3
-
-    if (totalRefundcheck1 == "REFUND TOTAL"){
-        capture line:10, column:5, length:40 assign to totalRefundAmount
-        capture line:10, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck2 == "REFUND TOTAL"){
-        capture line:11, column:5, length:40 assign to totalRefundAmount
-        capture line:11, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck3 == "REFUND TOTAL"){
-        capture line:12, column:5, length:40 assign to totalRefundAmount
-        capture line:12, column:30, length:13 assign to amountRefunded
-    }
-    capture line:6, column:28, length:3 assign to refundCurrency
-
-    capture line:11, column:5, length:10 assign to checkCommission1
-    capture line:12, column:5, length:10 assign to checkCommission2
-    capture line:13, column:5, length:10 assign to checkCommission3
-
-    assign  "         0.00" to commissionAmount
-
-    if (checkCommission1 == "COMMISSION"){
-        capture line:11, column:30, length:13 assign to commissionAmount
-    }
-    if (checkCommission2 == "COMMISSION"){
-        capture line:12, column:30, length:13 assign to commissionAmount
-    }
-    if (checkCommission3 == "COMMISSION"){
-        capture line:13, column:30, length:13 assign to commissionAmount
-    }
-
-    if (commissionAmount !="         0.00"){
-      send "TRFU/FM0"
-    }
-
-    if (FOCheck == "True"){
-        send "DD"
-        capture line:2, column:33, length:7 assign to todayDate
-        send "DD" +FODate +"/" +todayDate
-        capture line:2, column:1, length:4 assign to dateDifference
-        if (dateDifference >= "365"){
-          mandatory ask "Original Ticket is Expired!" assign to qz5
-          call "FQD&FQP"
-        }
-    }
-
-    send "TRFU/NF"
-    send "TRFP"
-    capture line:2, column:1, length:21 assign to refundedTicketCheck
-    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
-        send ":" +totalRefundAmount +"  " +refundCurrency
-        call "FQD&FQP"
-    }
-}
-  }
 
   when ("FQD"){
 if (OK1 =="OK"){
@@ -1904,23 +2755,23 @@ if (segCount=="1"){
   capture line:19, column:1, length:2 assign to FQDN16
   capture line:20, column:1, length:2 assign to FQDN17
 
-  capture line:4, column:4, length:12 assign to FQDFareRule1
-  capture line:5, column:4, length:12 assign to FQDFareRule2
-  capture line:6, column:4, length:12 assign to FQDFareRule3
-  capture line:7, column:4, length:12 assign to FQDFareRule4
-  capture line:8, column:4, length:12 assign to FQDFareRule5
-  capture line:9, column:4, length:12 assign to FQDFareRule6
-  capture line:10, column:4, length:12 assign to FQDFareRule7
-  capture line:11, column:4, length:12 assign to FQDFareRule8
-  capture line:12, column:4, length:12 assign to FQDFareRule9
-  capture line:13, column:4, length:12 assign to FQDFareRule10
-  capture line:14, column:4, length:12 assign to FQDFareRule11
-  capture line:15, column:4, length:12 assign to FQDFareRule12
-  capture line:16, column:4, length:12 assign to FQDFareRule13
-  capture line:17, column:4, length:12 assign to FQDFareRule14
-  capture line:18, column:4, length:12 assign to FQDFareRule15
-  capture line:19, column:4, length:12 assign to FQDFareRule16
-  capture line:20, column:4, length:12 assign to FQDFareRule17
+  capture line:4, column:4, length:8 assign to FQDFareRule1
+  capture line:5, column:4, length:8 assign to FQDFareRule2
+  capture line:6, column:4, length:8 assign to FQDFareRule3
+  capture line:7, column:4, length:8 assign to FQDFareRule4
+  capture line:8, column:4, length:8 assign to FQDFareRule5
+  capture line:9, column:4, length:8 assign to FQDFareRule6
+  capture line:10, column:4, length:8 assign to FQDFareRule7
+  capture line:11, column:4, length:8 assign to FQDFareRule8
+  capture line:12, column:4, length:8 assign to FQDFareRule9
+  capture line:13, column:4, length:8 assign to FQDFareRule10
+  capture line:14, column:4, length:8 assign to FQDFareRule11
+  capture line:15, column:4, length:8 assign to FQDFareRule12
+  capture line:16, column:4, length:8 assign to FQDFareRule13
+  capture line:17, column:4, length:8 assign to FQDFareRule14
+  capture line:18, column:4, length:8 assign to FQDFareRule15
+  capture line:19, column:4, length:8 assign to FQDFareRule16
+  capture line:20, column:4, length:8 assign to FQDFareRule17
   
   if (FQDFareRule1==fareBasis){
     send "FQN" +FQDN1 +"*PE"
