@@ -100,7 +100,8 @@ capture line:1, column:8, length:10 assign to TKTP3
 
 capture line:1, column:59, length:6 assign to Ticket_PNR
 
-capture line:2, column:44, length:7 assign to DOI
+capture line:2, column:44, length:5 assign to DDMMM_DOI
+capture line:2, column:49, length:2 assign to YY_DOI
 capture line:2, column:57, length:8 assign to PCC_ID
 
 
@@ -364,6 +365,7 @@ if (OK2 == "OK"){
   }
 }
 
+if (PTC =="INF"){
 if (OK2 == "NS"){
   assign "2" to segCount
   if (OK3 == "NS"){
@@ -379,7 +381,7 @@ if (OK2 == "NS"){
     }
   }
 }
-
+}
 
 if (checkDOIDays == "-"){
   capture line:2, column:2, length:4 assign to checkDOIDays
@@ -496,12 +498,14 @@ if (checkDOIDays == "-"){
     if (checkDOIDays > "364"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
       mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+      call "Auro_refund"
     }
   }
   else{
     if (checkDOIDays > "728"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
       mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+      call "Auro_refund"
     }
   }
 
@@ -509,35 +513,719 @@ if (checkDOIDays == "-"){
 else{
   send "THIS TICKET IS NOT VALID FOR REFUND!, please void it!"
   mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+  call "Auro_refund"
 }
+
+
+// Check each sgement status
+assign "True" to segment1_General_Status_Open
+if (status1 != "O"){
+  if (status1 != "A"){
+    if (status1 != "S"){
+      if (status1 != "U"){
+        assign "False" to segment1_General_Status_Open
+      }
+    }
+  }
+}
+
+if (segCount =="2"){
+assign "True" to segment2_General_Status_Open
+if (status2 != "O"){
+  if (status2 != "A"){
+    if (status2 != "S"){
+      if (status2 != "U"){
+        assign "False" to segment2_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="3"){
+assign "True" to segment3_General_Status_Open
+if (status3 != "O"){
+  if (status3 != "A"){
+    if (status3 != "S"){
+      if (status3 != "U"){
+        assign "False" to segment3_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="4"){
+assign "True" to segment4_General_Status_Open
+if (status4 != "O"){
+  if (status4 != "A"){
+    if (status4 != "S"){
+      if (status4 != "U"){
+        assign "False" to segment4_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="5"){
+assign "True" to segment5_General_Status_Open
+if (status5 != "O"){
+  if (status5 != "A"){
+    if (status5 != "S"){
+      if (status5 != "U"){
+        assign "False" to segment5_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="6"){
+assign "True" to segment6_General_Status_Open
+if (status6 != "O"){
+  if (status6 != "A"){
+    if (status6 != "S"){
+      if (status6 != "U"){
+        assign "False" to segment6_General_Status_Open
+      }
+    }
+  }
+}
+}
+
 
 
 //check No-Show for each segment
+assign "True" to status_NoShow
 
-assign "True" to NoShow
-if (status1 == "O"){
+if (segment1_General_Status_Open == "True"){
+  if (travelDate1 != ""){
+  assign travelDate1 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM 
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
 
+  }
 }else{
-  if (segCount == "2"){
+  if (segCount > "1"){
+  if (segment2_General_Status_Open == "True"){
+  if (travelDate2 != ""){
+  assign travelDate2 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
 
+  }
+}else{
+  if (segCount > "2"){
+  if (segment3_General_Status_Open == "True"){
+  if (travelDate3 != ""){
+  assign travelDate3 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "3"){
+  if (segment4_General_Status_Open == "True"){
+  if (travelDate4 != ""){
+  assign travelDate4 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "4"){
+  if (segment5_General_Status_Open == "True"){
+  if (travelDate5 != ""){
+  assign travelDate5 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "5"){
+  if (segment6_General_Status_Open == "True"){
+  if (travelDate6 != ""){
+  assign travelDate6 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  
+}
+  }
+}
+  }
+}
+  }
+}
+  }
+}
   }
 }
 
-
-send "SRT" +DOI
-  capture line:1, column:37, length:2 assign to travelYear
-  send "DD" +DOI +"/" +travelDate1 +travelYear
-  capture line:2, column:1, length:1 assign to checkyear
-  if (checkyear =="-"){
-  send "DF" +travelYear +";1"
-  capture line:2, column:1, length:2 assign to travelYear
+ send "DD" +today +"/" +open_TravelDDMMM +travelYY
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After != "-"){
+    capture line:2, column:2, length:3 assign to check_Before_After
+    if (check_Before_After > "2"){
+      choose "This is a Future Ticket, Do you want to continue?" until "Yes" {
+        when "No"{}
+      }
+      assign "False" to status_NoShow
+    }
+    else{
+      choose "This Ticket is within No-Show, Do you want to continue as:"{
+        when "No-Show"{}
+        when "Normal"{assign "Normal" to status_NoShow}
+      }
+    }
   }
 
-  send "DD"
-  capture line:2, column:33, length:7 assign to todaysdate
-  send "DD" +todaysdate +"/" +travelDate1 +travelYear
+  // Check Out Of Sequence Scenarios & Origanl destinations
+  assign "True" to Out_of_Sequence
+  assign "False" to Originals
+  if (segCount == "1"){
+    if (segment1_General_Status_Open == "True"){
+      if (original1 == "O"){
+        assign "False" to Out_of_Sequence
+        assign "True" to Originals
+      }
+    }  
+  }
 
-  if ()
+  if (segCount == "2"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (original1 == "O"){
+          assign "False" to Out_of_Sequence
+          assign "True" to Originals
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (original2 == "O"){
+          assign "False" to Out_of_Sequence
+          assign "True" to Originals
+        }
+      }
+    }
+  }
+
+  if (segCount == "3"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (original1 == "O"){
+            assign "False" to Out_of_Sequence
+            assign "True" to Originals
+          }
+          else{
+            if (original2 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else {
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            }
+          }
+        }
+      }
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open == "True"){
+          if (segment3_General_Status_Open == "True"){
+            if (original2 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else {
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            }
+          }
+        }
+      }
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open != "True"){
+          if (segment3_General_Status_Open == "True"){
+            if (original3 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (segCount == "4"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (original1 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else{
+              if (original2 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+        if (segment1_General_Status_Open != "True"){
+          if (segment2_General_Status_Open == "True"){
+            if (segment3_General_Status_Open == "True"){
+              if (segment4_General_Status_Open == "True"){
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } 
+        if (segment1_General_Status_Open != "True"){
+          if (segment2_General_Status_Open != "True"){
+            if (segment3_General_Status_Open == "True"){
+              if (segment4_General_Status_Open == "True"){
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open != "True"){
+          if (segment3_General_Status_Open != "True"){
+            if (segment4_General_Status_Open == "True"){
+              if (original4 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            } 
+          } 
+        } 
+      }
+  }
+
+  if (segCount == "5"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original1 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else{
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                    }
+                    else {
+                      if (original5 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original2 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original5 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original5 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              }
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original4 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original5 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+              }
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original5 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            } 
+          } 
+        } 
+      }
+    }
+  }
+
+  if (segCount == "6"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original1 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else{
+                  if (original2 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original3 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original4 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                      else {
+                        if (original5 == "O"){
+                          assign "False" to Out_of_Sequence
+                          assign "True" to Originals
+                        }
+                        else {
+                          if (original6 == "O"){
+                            assign "False" to Out_of_Sequence
+                            assign "True" to Originals
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original5 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                      else {
+                        if (original6 == "O"){
+                          assign "False" to Out_of_Sequence
+                          assign "True" to Originals
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original5 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original6 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                    }
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original5 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original6 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original5 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original6 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open != "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original6 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+  }
+
+
+if (Out_of_Sequence == "True"){
+  send "THIS TICKET IS NOT VALID FOR REFUND! Out of Sequence!"
+  mandatory ask "The Ticket is not valid for auto refund!, Please Ignore it" assign to qz5
+  call "Auto_Refund"
+}
+
+
+
+
 
 if (PTC=="INF"){
   if (OK6 =="NS"){
@@ -605,6 +1293,7 @@ if (PTC=="INF"){
   }else{
     send "THIS INFANT TICKET IS NOT VALID FOR AUTO_REFUND!"
     mandatory ask "The Infant is occupying a seat!" assign to qz5
+    call "Auro_refund"
   }
 }
 else{
