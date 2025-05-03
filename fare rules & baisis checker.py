@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-//FQD&FQP
-=======
 // FQD&FQP
->>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
 ask "Enter the Ticket Number:(With or Without TWD/TKT)" assign to TicketNumber
 
@@ -105,13 +101,10 @@ capture line:1, column:8, length:10 assign to TKTP3
 capture line:1, column:59, length:6 assign to Ticket_PNR
 
 capture line:2, column:44, length:7 assign to DOI
+capture line:2, column:57, length:8 assign to PCC_ID
 
 capture line:3, column:6, length:25 assign to PAXNAME
 capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
-<<<<<<< HEAD
-capture line:3, column:32, length:3 assign to PTC
-=======
->>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
@@ -337,10 +330,34 @@ if (gov1616 =="GOV"){
   send "Governmental Ticket ignore it!"
   mandatory ask "Ignore?" assign to qz5
 }
-  
-  //Runs ATC refund firstly:
-  send "TRFIG"
-  send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
+
+
+choose "FQP or FQD?"{
+  when ("ATC"){
+
+assign "" to checkNP
+if (PCC_ID =="71201675"){
+  assign "/T-NP" to checkNP
+}
+send "TRFIG"
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
+capture line:1, column:1, length:21 assign to checkPending
+if (checkPending=="NO FARE FOR BOOKING C"){
+    ask "Continue?" assign to qz5
+}
+if (checkPending=="REFUND RECORD PENDING"){
+send "TRFIG"
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
+}
+capture line:1, column:1, length:21 assign to checkPending
+if (checkPending=="NO FARE FOR BOOKING C"){
+    ask "Continue?" assign to qz5
+}
+capture line:1, column:34, length:3 assign to checkRFND
+if (checkRFND!="AGT"){
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
+}
+
 capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
 
@@ -418,129 +435,7 @@ if (checkATC =="C"){
         call "FQD&FQP"
     }
 }
-else{
-  
-
-  //check DOI 
-  #send "DD"
-  capture line:2, column:33, length:7 assign to todayDate
-  send "DD" +FODate +"/" +todayDate
-  capture line:2, column:1, length:4 assign to dateDifference
-  if (dateDifference >= "365"){
-    mandatory ask "Original Ticket is Expired!" assign to qz5
-    call "FQD&FQP"
   }
-
-  assign "0" to SegCount
-  if (OK1=="OK"){
-    assign "1" to SegCount
-    if (PTC == "INF"){
-      send "Please continue manually."
-      ask "This INF has a seat, please continue manually!" assign to qz5
-    }
-  }
-  if (OK1 =="NS"){
-    assign "1" to SegCount
-  }
-  if (OK2=="OK"){
-    assign "2" to SegCount
-  }
-  if (OK2 =="NS"){
-    assign "2" to SegCount
-  }
-  if (OK3=="OK"){
-    assign "3" to SegCount
-  }
-  if (OK3 =="NS"){
-    assign "3" to SegCount
-  }
-  if (OK4=="OK"){
-    assign "4" to SegCount
-  }
-  if (OK4 =="NS"){
-    assign "4" to SegCount
-  }
-  if (OK5=="OK"){
-    assign "5" to SegCount
-  }
-  if (OK5 =="NS"){
-    assign "5" to SegCount
-  }
-  if (OK6=="OK"){
-    assign "6" to SegCount
-  }
-  if (OK6 =="NS"){
-    assign "6" to SegCount
-  }
-
-
-
-  // One segment Possibilities
-  if (SegCount =="1"){
-    if (status1 == "O"){
-      assign "open" to status
-    }
-    if (status1 == "A"){
-      assign "open" to status
-    }
-    if (status1 == "S"){
-      assign "suspend" to status
-    }
-    if (status1 == "U"){
-      assign "suspend" to status
-    }
-
-    if (status == "open"){
-      //step-1: check fare rules
-      send "SRT" +DOI
-  capture line:1, column:37, length:2 assign to travelYear
-  send "DD" +DOI +"/" +travelDate1 +travelYear
-  capture line:2, column:1, length:1 assign to checkyear
-  if (checkyear =="-"){
-  send "DF" +travelYear +";1"
-  capture line:2, column:1, length:2 assign to travelYear
-  }
-      send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
-      send "FXX/R," + DOI +",UP,P"
-      send "FQQ12"
-      #capture line:1, column:1, length:21 assign to checkPending
-      if (checkPending=="#Fare"){
-        send "FQQ6"
-        #capture line:1, column:1, length:21 assign to checkPending
-        if (checkPending=="#Fare"){
-          send "FQQ3"
-          #capture line:1, column:1, length:21 assign to checkPending
-          if (checkPending=="#Fare"){
-            send "FQQ2"
-            #capture line:5, column:30, length:21 assign to checkFare1
-            if (checkFare1 == fareBasis1){
-              send "FQN2*pe"
-              #capture penalties lines based on each airline
-              // you have for each airline one of three options ("permitted", "Charge", "NRF")
-              // Possible airlines: more than 50, we will start with them at three stages:
-              // 1st Stage (High): SM, SV, MS, EY, ER, EK, PR, ..
-              if (airline1 == "SA"){
-
-              }
-
-            }
-            else{
-              send "FQN1*pe"
-            }
-          }
-        }
-      }
-
-
-    }
-    if (status == "suspend"){
-      
-    }
-  }
-  
-
-
-} //else
 
   when ("FQD"){
 if (OK1 =="OK"){
@@ -770,23 +665,23 @@ if (segCount=="1"){
   capture line:19, column:1, length:2 assign to FQDN16
   capture line:20, column:1, length:2 assign to FQDN17
 
-  capture line:4, column:4, length:12 assign to FQDFareRule1
-  capture line:5, column:4, length:12 assign to FQDFareRule2
-  capture line:6, column:4, length:12 assign to FQDFareRule3
-  capture line:7, column:4, length:12 assign to FQDFareRule4
-  capture line:8, column:4, length:12 assign to FQDFareRule5
-  capture line:9, column:4, length:12 assign to FQDFareRule6
-  capture line:10, column:4, length:12 assign to FQDFareRule7
-  capture line:11, column:4, length:12 assign to FQDFareRule8
-  capture line:12, column:4, length:12 assign to FQDFareRule9
-  capture line:13, column:4, length:12 assign to FQDFareRule10
-  capture line:14, column:4, length:12 assign to FQDFareRule11
-  capture line:15, column:4, length:12 assign to FQDFareRule12
-  capture line:16, column:4, length:12 assign to FQDFareRule13
-  capture line:17, column:4, length:12 assign to FQDFareRule14
-  capture line:18, column:4, length:12 assign to FQDFareRule15
-  capture line:19, column:4, length:12 assign to FQDFareRule16
-  capture line:20, column:4, length:12 assign to FQDFareRule17
+  capture line:4, column:4, length:8 assign to FQDFareRule1
+  capture line:5, column:4, length:8 assign to FQDFareRule2
+  capture line:6, column:4, length:8 assign to FQDFareRule3
+  capture line:7, column:4, length:8 assign to FQDFareRule4
+  capture line:8, column:4, length:8 assign to FQDFareRule5
+  capture line:9, column:4, length:8 assign to FQDFareRule6
+  capture line:10, column:4, length:8 assign to FQDFareRule7
+  capture line:11, column:4, length:8 assign to FQDFareRule8
+  capture line:12, column:4, length:8 assign to FQDFareRule9
+  capture line:13, column:4, length:8 assign to FQDFareRule10
+  capture line:14, column:4, length:8 assign to FQDFareRule11
+  capture line:15, column:4, length:8 assign to FQDFareRule12
+  capture line:16, column:4, length:8 assign to FQDFareRule13
+  capture line:17, column:4, length:8 assign to FQDFareRule14
+  capture line:18, column:4, length:8 assign to FQDFareRule15
+  capture line:19, column:4, length:8 assign to FQDFareRule16
+  capture line:20, column:4, length:8 assign to FQDFareRule17
   
   if (FQDFareRule1==fareBasis){
     send "FQN" +FQDN1 +"*PE"
@@ -1221,10 +1116,7 @@ append agtNameChar22 to agtName
         mandatory ask "Get the Pax Name..." assign to PAXNAME
       }
     }
-<<<<<<< HEAD
-=======
     send "RT" +Ticket_PNR
->>>>>>> cbdc983af72f3c5855e2d287b2b1dbbd795d9f79
 
     send "NM1" + PAXNAME
     send "EGSD/V" +EMDAirline
@@ -1310,6 +1202,4 @@ when ("Create Ghost segments"){
 }
 
 }
-
-
 

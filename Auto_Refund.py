@@ -101,9 +101,12 @@ capture line:1, column:8, length:10 assign to TKTP3
 capture line:1, column:59, length:6 assign to Ticket_PNR
 
 capture line:2, column:44, length:7 assign to DOI
+capture line:2, column:57, length:8 assign to PCC_ID
+
 
 capture line:3, column:6, length:25 assign to PAXNAME
 capture line:3, column:31, length:1 assign to PAXNAME_ExtraCheck
+capture line:3, column:32, length:3 assign to PTC
 
 capture line:4, column:4, length:1 assign to original1
 capture line:4, column:5, length:3 assign to city1
@@ -333,6 +336,278 @@ if (gov1616 =="GOV"){
 
 ask "Continue?" assign to qz5
 
+assign "" to checkNP
+if (PCC_ID =="71201675"){
+  assign "/T-NP" to checkNP
+}
+
+// Checking DOI that's not paased
+send "DD" +today + "/" +DOI
+capture line:2, column:1, length:1 assign to checkDOIDays
+assign "True" to ticket_2_Years_Validity
+
+//Segments counter
+assign "1" to segCount
+if (OK2 == "OK"){
+  assign "2" to segCount
+  if (OK3 == "OK"){
+    assign "3" to segCount
+    if (OK4 == "OK"){
+      assign "4" to segCount
+      if (OK5 == "OK"){
+        assign "5" to segCount
+        if (OK6 == "OK"){
+          assign "6" to segCount
+        }
+      }
+    }
+  }
+}
+
+if (OK2 == "NS"){
+  assign "2" to segCount
+  if (OK3 == "NS"){
+    assign "3" to segCount
+    if (OK4 == "NS"){
+      assign "4" to segCount
+      if (OK5 == "NS"){
+        assign "5" to segCount
+        if (OK6 == "NS"){
+          assign "6" to segCount
+        }
+      }
+    }
+  }
+}
+
+
+if (checkDOIDays == "-"){
+  capture line:2, column:2, length:4 assign to checkDOIDays
+  assign "True" to ticket_2_Years_Validity
+  if (segCount == "1"){
+  if (Airline1 != "MS"){
+    if (Airline1 != "EK"){
+      if (Airline1 != "LH"){
+        if (Airline1 != "BA"){
+          if (Airline1 != "TK"){
+            if (Airline1 != "SQ"){
+              if (Airline1 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+
+  if (segCount == "2"){
+  if (Airline2 != "MS"){
+    if (Airline2 != "EK"){
+      if (Airline2 != "LH"){
+        if (Airline2 != "BA"){
+          if (Airline2 != "TK"){
+            if (Airline2 != "SQ"){
+              if (Airline2 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+
+  if (segCount == "3"){
+  if (Airline3 != "MS"){
+    if (Airline3 != "EK"){
+      if (Airline3 != "LH"){
+        if (Airline3 != "BA"){
+          if (Airline3 != "TK"){
+            if (Airline3 != "SQ"){
+              if (Airline3 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+
+  if (segCount == "4"){
+  if (Airline4 != "MS"){
+    if (Airline4 != "EK"){
+      if (Airline4 != "LH"){
+        if (Airline4 != "BA"){
+          if (Airline4 != "TK"){
+            if (Airline4 != "SQ"){
+              if (Airline4 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+
+  if (segCount == "5"){
+  if (Airline5 != "MS"){
+    if (Airline5 != "EK"){
+      if (Airline5 != "LH"){
+        if (Airline5 != "BA"){
+          if (Airline5 != "TK"){
+            if (Airline5 != "SQ"){
+              if (Airline5 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+
+  if (segCount == "6"){
+  if (Airline6 != "MS"){
+    if (Airline6 != "EK"){
+      if (Airline6 != "LH"){
+        if (Airline6 != "BA"){
+          if (Airline6 != "TK"){
+            if (Airline6 != "SQ"){
+              if (Airline6 != "KU"){
+                assign "False" to ticket_2_Years_Validity
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  
+  if (ticket_2_Years_Validity != "True"){
+    if (checkDOIDays > "364"){
+      send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
+      mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+    }
+  }
+  else{
+    if (checkDOIDays > "728"){
+      send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
+      mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+    }
+  }
+
+}
+else{
+  send "THIS TICKET IS NOT VALID FOR REFUND!, please void it!"
+  mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+}
+
+
+//check No-Show for each segment
+
+assign "True" to NoShow
+if (status1 == "O"){
+
+}else{
+  if (segCount == "2"){
+
+  }
+}
+
+
+send "SRT" +DOI
+  capture line:1, column:37, length:2 assign to travelYear
+  send "DD" +DOI +"/" +travelDate1 +travelYear
+  capture line:2, column:1, length:1 assign to checkyear
+  if (checkyear =="-"){
+  send "DF" +travelYear +";1"
+  capture line:2, column:1, length:2 assign to travelYear
+  }
+
+  send "DD"
+  capture line:2, column:33, length:7 assign to todaysdate
+  send "DD" +todaysdate +"/" +travelDate1 +travelYear
+
+  if ()
+
+if (PTC=="INF"){
+  if (OK6 =="NS"){
+  // DOI = 24APR24
+  send "SRT" +DOI
+  capture line:1, column:37, length:2 assign to travelYear
+  // travelYear = 24
+  send "DD" +DOI +"/" +travelDate1 +travelYear
+  capture line:2, column:1, length:1 assign to checkyear
+  //checkyear = 
+  if (checkyear =="-"){
+  send "DF" +travelYear +";1"
+  capture line:2, column:1, length:2 assign to travelYear
+  }
+  else{
+
+  }
+
+  send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
+
+  if (OK2=="NS"){
+      send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYear +city2 +city3 +"GK1/0230 0500/RECLOC"
+    }
+    if (OK3=="OK"){
+      send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYear +city3 +city4 +"GK1/0600 0900/RECLOC"
+    }
+    if (OK4=="OK"){
+      send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYear +city4 +city5 +"GK1/0930 1200/RECLOC"
+    }
+    if (OK5=="OK"){
+      send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYear +city5 +city6 +"GK1/1300 1600/RECLOC"
+    }
+    if (OK6=="OK"){
+     send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYear +city6 +city7 +"GK1/1700 2000/RECLOC"
+    }
+
+    send "FXX/R," + DOI
+    capture line:4, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:4, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:5, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:5, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:6, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:6, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:7, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:7, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+    capture line:8, column:4, length:8 assign to checkfare1
+    if (checkfare1==fareBasis1){
+      capture line:8, column:1, length:2 assign to fare1No
+      send "FQN" + fare1No +"*PE"
+    }
+
+
+  }else{
+    send "THIS INFANT TICKET IS NOT VALID FOR AUTO_REFUND!"
+    mandatory ask "The Infant is occupying a seat!" assign to qz5
+  }
+}
+else{
 if (OK1 =="OK"){
   if (status1=="O"){
     if (original1=="O"){
