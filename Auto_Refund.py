@@ -336,6 +336,168 @@ if (gov1616 =="GOV"){
 }
 
 
+//Exclude NRF classes A3 (P,U,T,S), NE(N,S)
+
+if (airline1 == "A3"){
+ assign "True" to A3_Refundable
+  if (class1 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "S"){
+    assign "False" to A3_Refundable
+  }
+
+  if (segCount >= "2"){
+   if (class2 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "3"){
+  if (class3 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "4"){
+  if (class4 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "5"){
+  if (class5 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "6"){
+   if (class6 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (A3_Refundable != "True"){
+   send "A3 is Non-Refundable for P,U,T,S Classes"
+   ask "Ignore the Refund" assign to qz5
+   call "Auto_Refund"
+  }
+}
+
+if (airline1 == "NE"){
+ assign "True" to NE_Refundable
+  if (class1 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class1 == "S"){
+    assign "False" to NE_Refundable
+  }
+
+  if (segCount >= "2"){
+   if (class2 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class2 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "3"){
+  if (class3 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class3 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "4"){
+  if (class4 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class4 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "5"){
+  if (class5 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class5 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "6"){
+   if (class6 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class6 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (NE_Refundable != "True"){
+   send "NE is Non-Refundable for N,S Classes"
+   ask "Ignore the Refund" assign to qz5
+   call "Auto_Refund"
+  }
+
+
+}
+
 ask "Continue?" assign to qz5
 
 assign "" to checkNP
@@ -2432,98 +2594,7 @@ if (airline1 == "WY"){
  // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ER, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
                     //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
 
-if (airline1 == "A3"){
- assign "True" to A3_Refundable
-  if (class1 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "S"){
-    assign "False" to A3_Refundable
-  }
 
-  if (segCount == "2"){
-   if (class2 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount == "3"){
-  if (class3 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount == "4"){
-  if (class4 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount == "5"){
-  if (class5 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount == "6"){
-   if (class6 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (A3_Refundable == )
-}
 
 
 
