@@ -693,8 +693,6 @@ if (segment1_General_Status_Open == "True"){
   }
   
   }
-}else{
-  
 }
   }
 }
@@ -1223,6 +1221,206 @@ if (Out_of_Sequence == "True"){
   call "Auto_Refund"
 }
 
+
+
+// Check if the ticket is  valid for ATC-refund
+send "TRFIG"
+send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
+
+capture line:1, column:34, length:3 assign to checkRFND
+capture line:1, column:58, length:1 assign to checkATC
+assign "False" to ATC_Refund_Eligible
+if (checkRFND=="AGT"){
+  if (checkATC =="C"){
+    assign "True" to ATC_Refund_Eligible
+  }
+  if (checkATC =="N"){
+    assign "True" to ATC_Refund_Eligible
+  }
+}
+
+if (ATC_Refund_Eligible =="True"){
+
+    capture line:15, column:1, length:2 assign to FOCheck1
+    capture line:16, column:1, length:2 assign to FOCheck2
+    capture line:17, column:1, length:2 assign to FOCheck3
+
+    if (FOCheck1=="FO"){
+      assign "True" to FOCheck
+      capture line:15, column:28, length:7 assign to FODate
+    }
+    if (FOCheck2=="FO"){
+      assign "True" to FOCheck
+      capture line:16, column:28, length:7 assign to FODate
+    }
+    if (FOCheck3=="FO"){
+      assign "True" to FOCheck
+      capture line:17, column:28, length:7 assign to FODate
+    }
+
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:5, length:40 assign to totalRefundAmount
+        capture line:10, column:30, length:13 assign to amountRefunded
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:5, length:40 assign to totalRefundAmount
+        capture line:11, column:30, length:13 assign to amountRefunded
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:5, length:40 assign to totalRefundAmount
+        capture line:12, column:30, length:13 assign to amountRefunded
+    }
+    capture line:6, column:28, length:3 assign to refundCurrency
+
+    capture line:11, column:5, length:10 assign to checkCommission1
+    capture line:12, column:5, length:10 assign to checkCommission2
+    capture line:13, column:5, length:10 assign to checkCommission3
+
+    assign  "         0.00" to commissionAmount
+
+    if (checkCommission1 == "COMMISSION"){
+        capture line:11, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission2 == "COMMISSION"){
+        capture line:12, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission3 == "COMMISSION"){
+        capture line:13, column:30, length:13 assign to commissionAmount
+    }
+
+    if (commissionAmount !="         0.00"){
+      send "TRFU/FM0"
+    }
+
+    if (FOCheck == "True"){
+        send "DD"
+        capture line:2, column:33, length:7 assign to todayDate
+        send "DD" +FODate +"/" +todayDate
+        capture line:2, column:1, length:4 assign to dateDifference
+        if (dateDifference >= "365"){
+          mandatory ask "Original Ticket is Expired!" assign to qz5
+          call "Auto_Refund"
+        }
+    }
+
+    send "TRFU/NF"
+    send "TRFP"
+    capture line:2, column:1, length:21 assign to refundedTicketCheck
+    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
+        send ":" +totalRefundAmount +"  " +refundCurrency
+        call "Auto_Refund"
+    }
+    else{
+        send "THIS TICKET IS NOT VALID FOR REFUND!"
+        mandatory ask "The Ticket is not valid for auto refund!, Please Recheck it" assign to qz5
+        call "Auto_Refund"
+    }
+}
+
+
+// Working with Ghost Segments
+
+  send "DD" +DDMMM_DOI +"/" +travelDate1
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+
+ send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYY +city1 +city2 +"GK1/0000 0200/RECLOC"
+
+
+if (segCount > "1"){
+  send "DD" +DDMMM_DOI +"/" +travelDate2
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYY +city2 +city3 +"GK1/0230 0500/RECLOC"
+}
+
+if (segCount > "2"){
+  send "DD" +DDMMM_DOI +"/" +travelDate3
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYY +city3 +city4 +"GK1/0600 0900/RECLOC"
+}
+
+if (segCount > "3"){
+  send "DD" +DDMMM_DOI +"/" +travelDate4
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYY +city4 +city5 +"GK1/0930 1200/RECLOC"
+}
+
+if (segCount > "4"){
+  send "DD" +DDMMM_DOI +"/" +travelDate5
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYY +city5 +city6 +"GK1/1300 1600/RECLOC"
+}
+
+if (segCount > "5"){
+  send "DD" +DDMMM_DOI +"/" +travelDate6
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYY +city6 +city7 +"GK1/1700 2000/RECLOC"
+}
+
+assign "" to airline_TourCode
+if (airline1 == "PR"){
+  assign "U*C5YQ" to airline_TourCode
+}
+if (airline1 == "QR"){
+  assign "U202201" to airline_TourCode
+}
+if (airline1 == "SM"){
+  assign "U09" to airline_TourCode
+}
+if (airline1 == "SN"){
+  assign "U385910" to airline_TourCode
+}
+if (airline1 == "SV"){
+  assign "U*SEE24,U*MOS05" to airline_TourCode
+}
+if (airline1 == "WY"){
+  assign "U584562" to airline_TourCode
+}
 
 
 
