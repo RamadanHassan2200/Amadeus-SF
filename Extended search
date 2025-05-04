@@ -1,0 +1,88 @@
+// Extended search
+
+mandatory ask number "How many PNRs groups? (Up to 10)" assign to groupNumber
+if (groupNumber =="0"){
+    send "INvalid group number!"
+}
+if (groupNumber >"0"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber1
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS1
+}
+if (groupNumber >"1"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber2
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS2
+}
+if (groupNumber >"2"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber3
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS3
+}
+if (groupNumber >"3"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber4
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS4
+}
+if (groupNumber >"4"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber5
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS5
+}
+if (groupNumber >"5"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber6
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS6
+}
+if (groupNumber >"6"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber7
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS7
+}
+if (groupNumber >"7"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber8
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS8
+}
+if (groupNumber >"8"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber9
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS9
+}
+if (groupNumber >"9"){
+    mandatory ask number "How many PNRS? (MAX 199 PNRs!)" assign to PNRNumber10
+    mandatory ask "Enter the PNRs and separate with (one space only)" assign to PNRS10
+}
+
+/////////////////
+if (groupNumber >"0"){
+    send "SRT" + PNRNumber1 + "-" + PNRS1
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"1"){
+    send "SRT" + PNRNumber2 + "-" + PNRS2
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"2"){
+    send "SRT" + PNRNumber3 + "-" + PNRS3
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"3"){
+    send "SRT" + PNRNumber4 + "-" + PNRS4
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"4"){
+    send "SRT" + PNRNumber5 + "-" + PNRS5
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"5"){
+    send "SRT" + PNRNumber6 + "-" + PNRS6
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"6"){
+    send "SRT" +PNRNumber7 + "-" + PNRS7
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"7"){
+    send "SRT" + PNRNumber8 + "-" + PNRS8
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"8"){
+    send "SRT" + PNRNumber9 + "-" + PNRS9
+    call "PNRs_list_fetching"
+}
+if (groupNumber >"9"){
+    send "SRT" + PNRNumber10 + "-" + PNRS10
+    call "PNRs_list_fetching"
+}

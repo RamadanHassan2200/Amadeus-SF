@@ -2063,8 +2063,3 @@ if (PNRNumber > "198"){
     call "fast_search"
 }
 
-M2:M200
-M200:M398
-M398:M596
-M596:M794
-M794:M992

@@ -680,8 +680,6 @@ else{
 }
 
 
-<<<<<<< HEAD
-=======
 // Check each sgement status
 assign "True" to segment1_General_Status_Open
 if (status1 != "O"){
@@ -760,150 +758,10 @@ if (status6 != "O"){
 }
 
 
->>>>>>> 19431d8d47c92506c595a5245d8016160f26423a
 
 //check No-Show for each segment
 assign "True" to status_NoShow
 
-<<<<<<< HEAD
-assign "True" to NoShow
-if (status1 == "O"){
-
-}else{
-  if (segCount == "2"){
-
-  }
-}
-
-// Check Segment Continuity & out of sequence tickets
-
-if (segCount == "1"){
-  assign "Used" to Seg1Status
-  if (status1 == "O"){
-    assign "open" to Seg1Status
-  }
-  if (status1 == "A"){
-    assign "open" to Seg1Status
-  }
-  if (status1 == "S"){
-    assign "suspend" to Seg1Status
-  }
-  if (status1 == "U"){
-    assign "suspend" to Seg1Status
-  }
-}
-
-if (segCount == "2"){
-  assign "used" to Seg2Status
-  if (status2 == "O"){
-    assign "open" to Seg2Status
-  }
-  if (status2 == "A"){
-    assign "open" to Seg2Status
-  }
-  if (status2 == "S"){
-    assign "suspend" to Seg2Status
-  }
-  if (status2 == "U"){
-    assign "suspend" to Seg2Status
-  }
-}
-
-if (segCount == "3"){
-  assign "used" to Seg3Status
-  if (status3 == "O"){
-    assign "open" to Seg3Status
-  }
-  if (status3 == "A"){
-    assign "open" to Seg3Status
-  }
-  if (status3 == "S"){
-    assign "suspend" to Seg3Status
-  }
-  if (status3 == "U"){
-    assign "suspend" to Seg3Status
-  }
-}
-
-if (segCount == "4"){
-  assign "used" to Seg4Status
-  if (status4 == "O"){
-    assign "open" to Seg4Status
-  }
-  if (status4 == "A"){
-    assign "open" to Seg4Status
-  }
-  if (status4 == "S"){
-    assign "suspend" to Seg4Status
-  }
-  if (status4 == "U"){
-    assign "suspend" to Seg4Status
-  }
-}
-
-if (segCount == "5"){
-  assign "used" to Seg5Status
-  if (status5 == "O"){
-    assign "open" to Seg5Status
-  }
-  if (status5 == "A"){
-    assign "open" to Seg5Status
-  }
-  if (status5 == "S"){
-    assign "suspend" to Seg5Status
-  }
-  if (status5 == "U"){
-    assign "suspend" to Seg5Status
-  }
-}
-
-if (segCount == "6"){
-  assign "used" to Seg6Status
-  if (status6 == "O"){
-    assign "open" to Seg6Status
-  }
-  if (status6 == "A"){
-    assign "open" to Seg6Status
-  }
-  if (status6 == "S"){
-    assign "suspend" to Seg6Status
-  }
-  if (status6 == "U"){
-    assign "suspend" to Seg6Status
-  }
-}
-
- // out of sequence scenarios assign "false" to out_of_sequence
-
-
-send "SRT" +DOI
-  capture line:1, column:37, length:2 assign to travelYear
-  send "DD" +DOI +"/" +travelDate1 +travelYear
-  capture line:2, column:1, length:1 assign to checkyear
-  if (checkyear =="-"){
-  send "DF" +travelYear +";1"
-  capture line:2, column:1, length:2 assign to travelYear
-  }
-
-  send "DD"
-  capture line:2, column:33, length:7 assign to todaysdate
-  send "DD" +todaysdate +"/" +travelDate1 +travelYear
-
-  if ()
-
-if (PTC=="INF"){
-  if (OK6 =="NS"){
-  // DOI = 24APR24
-  send "SRT" +DOI
-  capture line:1, column:37, length:2 assign to travelYear
-  // travelYear = 24
-  send "DD" +DOI +"/" +travelDate1 +travelYear
-  capture line:2, column:1, length:1 assign to checkyear
-  //checkyear = 
-  if (checkyear =="-"){
-  send "DF" +travelYear +";1"
-  capture line:2, column:1, length:2 assign to travelYear
-=======
 if (segment1_General_Status_Open == "True"){
   if (travelDate1 != ""){
   assign travelDate1 to open_TravelDDMMM
@@ -912,7 +770,6 @@ if (segment1_General_Status_Open == "True"){
   if (check_Before_After == "-"){
     send "DF" +YY_DOI +";1"
     capture line:2, column:1, length:2 assign to travelYY
->>>>>>> 19431d8d47c92506c595a5245d8016160f26423a
   }
   else{
       assign YY_DOI to travelYY
