@@ -100,7 +100,8 @@ capture line:1, column:8, length:10 assign to TKTP3
 
 capture line:1, column:59, length:6 assign to Ticket_PNR
 
-capture line:2, column:44, length:7 assign to DOI
+capture line:2, column:44, length:5 assign to DDMMM_DOI
+capture line:2, column:49, length:2 assign to YY_DOI
 capture line:2, column:57, length:8 assign to PCC_ID
 
 
@@ -115,6 +116,7 @@ capture line:4, column:11, length:4 assign to flightNo1
 capture line:4, column:18, length:1 assign to class1
 capture line:4, column:20, length:5 assign to travelDate1
 capture line:4, column:30, length:2 assign to OK1
+capture line:4, column:33, length:4 assign to fareBasis1_Shortcut
 capture line:4, column:33, length:8 assign to fareBasis1
 capture line:4, column:47, length:1 assign to status1
 
@@ -334,6 +336,168 @@ if (gov1616 =="GOV"){
 }
 
 
+//Exclude NRF classes A3 (P,U,T,S), NE(N,S)
+
+if (airline1 == "A3"){
+ assign "True" to A3_Refundable
+  if (class1 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class1 == "S"){
+    assign "False" to A3_Refundable
+  }
+
+  if (segCount >= "2"){
+   if (class2 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class2 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "3"){
+  if (class3 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class3 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "4"){
+  if (class4 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class4 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "5"){
+  if (class5 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class5 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (segCount >= "6"){
+   if (class6 == "P"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "U"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "T"){
+    assign "False" to A3_Refundable
+  }
+  if (class6 == "S"){
+    assign "False" to A3_Refundable
+  }
+  }
+
+  if (A3_Refundable != "True"){
+   send "A3 is Non-Refundable for P,U,T,S Classes"
+   ask "Ignore the Refund" assign to qz5
+   call "Auto_Refund"
+  }
+}
+
+if (airline1 == "NE"){
+ assign "True" to NE_Refundable
+  if (class1 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class1 == "S"){
+    assign "False" to NE_Refundable
+  }
+
+  if (segCount >= "2"){
+   if (class2 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class2 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "3"){
+  if (class3 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class3 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "4"){
+  if (class4 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class4 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "5"){
+  if (class5 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class5 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (segCount >= "6"){
+   if (class6 == "N"){
+    assign "False" to NE_Refundable
+  }
+  if (class6 == "S"){
+    assign "False" to NE_Refundable
+  }
+  }
+
+  if (NE_Refundable != "True"){
+   send "NE is Non-Refundable for N,S Classes"
+   ask "Ignore the Refund" assign to qz5
+   call "Auto_Refund"
+  }
+
+
+}
+
 ask "Continue?" assign to qz5
 
 assign "" to checkNP
@@ -364,6 +528,7 @@ if (OK2 == "OK"){
   }
 }
 
+if (PTC =="INF"){
 if (OK2 == "NS"){
   assign "2" to segCount
   if (OK3 == "NS"){
@@ -379,7 +544,7 @@ if (OK2 == "NS"){
     }
   }
 }
-
+}
 
 if (checkDOIDays == "-"){
   capture line:2, column:2, length:4 assign to checkDOIDays
@@ -496,12 +661,14 @@ if (checkDOIDays == "-"){
     if (checkDOIDays > "364"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
       mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+      call "Auro_refund"
     }
   }
   else{
     if (checkDOIDays > "728"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
       mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+      call "Auro_refund"
     }
   }
 
@@ -509,12 +676,96 @@ if (checkDOIDays == "-"){
 else{
   send "THIS TICKET IS NOT VALID FOR REFUND!, please void it!"
   mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
+  call "Auro_refund"
 }
 
 
+<<<<<<< HEAD
+=======
+// Check each sgement status
+assign "True" to segment1_General_Status_Open
+if (status1 != "O"){
+  if (status1 != "A"){
+    if (status1 != "S"){
+      if (status1 != "U"){
+        assign "False" to segment1_General_Status_Open
+      }
+    }
+  }
+}
+
+if (segCount =="2"){
+assign "True" to segment2_General_Status_Open
+if (status2 != "O"){
+  if (status2 != "A"){
+    if (status2 != "S"){
+      if (status2 != "U"){
+        assign "False" to segment2_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="3"){
+assign "True" to segment3_General_Status_Open
+if (status3 != "O"){
+  if (status3 != "A"){
+    if (status3 != "S"){
+      if (status3 != "U"){
+        assign "False" to segment3_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="4"){
+assign "True" to segment4_General_Status_Open
+if (status4 != "O"){
+  if (status4 != "A"){
+    if (status4 != "S"){
+      if (status4 != "U"){
+        assign "False" to segment4_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="5"){
+assign "True" to segment5_General_Status_Open
+if (status5 != "O"){
+  if (status5 != "A"){
+    if (status5 != "S"){
+      if (status5 != "U"){
+        assign "False" to segment5_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+if (segCount =="6"){
+assign "True" to segment6_General_Status_Open
+if (status6 != "O"){
+  if (status6 != "A"){
+    if (status6 != "S"){
+      if (status6 != "U"){
+        assign "False" to segment6_General_Status_Open
+      }
+    }
+  }
+}
+}
+
+
+>>>>>>> 19431d8d47c92506c595a5245d8016160f26423a
 
 //check No-Show for each segment
+assign "True" to status_NoShow
 
+<<<<<<< HEAD
 assign "True" to NoShow
 if (status1 == "O"){
 
@@ -652,167 +903,649 @@ if (PTC=="INF"){
   if (checkyear =="-"){
   send "DF" +travelYear +";1"
   capture line:2, column:1, length:2 assign to travelYear
+=======
+if (segment1_General_Status_Open == "True"){
+  if (travelDate1 != ""){
+  assign travelDate1 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM 
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+>>>>>>> 19431d8d47c92506c595a5245d8016160f26423a
   }
   else{
-
+      assign YY_DOI to travelYY
   }
 
-  send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYear +city1 +city2 +"GK1/0000 0200/RECLOC"
+  }
+}else{
+  if (segCount > "1"){
+  if (segment2_General_Status_Open == "True"){
+  if (travelDate2 != ""){
+  assign travelDate2 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
 
-  if (OK2=="NS"){
-      send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYear +city2 +city3 +"GK1/0230 0500/RECLOC"
-    }
-    if (OK3=="OK"){
-      send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYear +city3 +city4 +"GK1/0600 0900/RECLOC"
-    }
-    if (OK4=="OK"){
-      send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYear +city4 +city5 +"GK1/0930 1200/RECLOC"
-    }
-    if (OK5=="OK"){
-      send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYear +city5 +city6 +"GK1/1300 1600/RECLOC"
-    }
-    if (OK6=="OK"){
-     send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYear +city6 +city7 +"GK1/1700 2000/RECLOC"
-    }
-
-    send "FXX/R," + DOI
-    capture line:4, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:4, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:5, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:5, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:6, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:6, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:7, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:7, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-    capture line:8, column:4, length:8 assign to checkfare1
-    if (checkfare1==fareBasis1){
-      capture line:8, column:1, length:2 assign to fare1No
-      send "FQN" + fare1No +"*PE"
-    }
-
-
-  }else{
-    send "THIS INFANT TICKET IS NOT VALID FOR AUTO_REFUND!"
-    mandatory ask "The Infant is occupying a seat!" assign to qz5
+  }
+}else{
+  if (segCount > "2"){
+  if (segment3_General_Status_Open == "True"){
+  if (travelDate3 != ""){
+  assign travelDate3 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "3"){
+  if (segment4_General_Status_Open == "True"){
+  if (travelDate4 != ""){
+  assign travelDate4 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "4"){
+  if (segment5_General_Status_Open == "True"){
+  if (travelDate5 != ""){
+  assign travelDate5 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
+  }
+}else{
+  if (segCount > "5"){
+  if (segment6_General_Status_Open == "True"){
+  if (travelDate6 != ""){
+  assign travelDate6 to open_TravelDDMMM
+  send "DD" +DDMMM_DOI +"/" +open_TravelDDMMM
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  
   }
 }
-else{
-if (OK1 =="OK"){
-  if (status1=="O"){
-    if (original1=="O"){
-      assign "TRUE" to checkOpen1
-    }
   }
-  if (status1=="S"){
-    if (original1=="O"){
-      assign "TRUE" to checkOpen1
-    }
+}
   }
-  assign "1" to segCount
+}
+  }
+}
+  }
+}
+  }
 }
 
-if (OK2 =="OK"){
-  if (status2=="O"){
-    if (original2=="O"){
-      assign "TRUE" to checkOpen2
+ send "DD" +today +"/" +open_TravelDDMMM +travelYY
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After != "-"){
+    capture line:2, column:2, length:3 assign to check_Before_After
+    if (check_Before_After > "2"){
+      choose "This is a Future Ticket, Do you want to continue?" until "Yes" {
+        when "No"{}
+      }
+      assign "False" to status_NoShow
+    }
+    else{
+      choose "This Ticket is within No-Show, Do you want to continue as:"{
+        when "No-Show"{}
+        when "Normal"{assign "Normal" to status_NoShow}
+      }
     }
   }
-  if (status2=="S"){
-    if (original2=="O"){
-      assign "TRUE" to checkOpen2
+
+  // Check Out Of Sequence Scenarios & Origanl destinations
+  assign "True" to Out_of_Sequence
+  assign "False" to Originals
+  if (segCount == "1"){
+    if (segment1_General_Status_Open == "True"){
+      if (original1 == "O"){
+        assign "False" to Out_of_Sequence
+        assign "True" to Originals
+      }
+    }  
+  }
+
+  if (segCount == "2"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (original1 == "O"){
+          assign "False" to Out_of_Sequence
+          assign "True" to Originals
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (original2 == "O"){
+          assign "False" to Out_of_Sequence
+          assign "True" to Originals
+        }
+      }
     }
   }
-  assign "2" to segCount
+
+  if (segCount == "3"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (original1 == "O"){
+            assign "False" to Out_of_Sequence
+            assign "True" to Originals
+          }
+          else{
+            if (original2 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else {
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            }
+          }
+        }
+      }
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open == "True"){
+          if (segment3_General_Status_Open == "True"){
+            if (original2 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else {
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            }
+          }
+        }
+      }
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open != "True"){
+          if (segment3_General_Status_Open == "True"){
+            if (original3 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (segCount == "4"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (original1 == "O"){
+              assign "False" to Out_of_Sequence
+              assign "True" to Originals
+            }
+            else{
+              if (original2 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+        if (segment1_General_Status_Open != "True"){
+          if (segment2_General_Status_Open == "True"){
+            if (segment3_General_Status_Open == "True"){
+              if (segment4_General_Status_Open == "True"){
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } 
+        if (segment1_General_Status_Open != "True"){
+          if (segment2_General_Status_Open != "True"){
+            if (segment3_General_Status_Open == "True"){
+              if (segment4_General_Status_Open == "True"){
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      if (segment1_General_Status_Open != "True"){
+        if (segment2_General_Status_Open != "True"){
+          if (segment3_General_Status_Open != "True"){
+            if (segment4_General_Status_Open == "True"){
+              if (original4 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            } 
+          } 
+        } 
+      }
+  }
+
+  if (segCount == "5"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original1 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else{
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                    }
+                    else {
+                      if (original5 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original2 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original5 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original3 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original5 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              }
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original4 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+              else {
+                if (original5 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+              }
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (original5 == "O"){
+                assign "False" to Out_of_Sequence
+                assign "True" to Originals
+              }
+            } 
+          } 
+        } 
+      }
+    }
+  }
+
+  if (segCount == "6"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original1 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else{
+                  if (original2 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original3 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original4 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                      else {
+                        if (original5 == "O"){
+                          assign "False" to Out_of_Sequence
+                          assign "True" to Originals
+                        }
+                        else {
+                          if (original6 == "O"){
+                            assign "False" to Out_of_Sequence
+                            assign "True" to Originals
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original2 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original3 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original4 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original5 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                      else {
+                        if (original6 == "O"){
+                          assign "False" to Out_of_Sequence
+                          assign "True" to Originals
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original3 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original4 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original5 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                    else {
+                      if (original6 == "O"){
+                        assign "False" to Out_of_Sequence
+                        assign "True" to Originals
+                      }
+                    }
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original4 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original5 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                  else {
+                    if (original6 == "O"){
+                      assign "False" to Out_of_Sequence
+                      assign "True" to Originals
+                    }
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original5 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+                else {
+                  if (original6 == "O"){
+                    assign "False" to Out_of_Sequence
+                    assign "True" to Originals
+                  }
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+    if (segment1_General_Status_Open != "True"){
+      if (segment2_General_Status_Open != "True"){
+        if (segment3_General_Status_Open != "True"){
+          if (segment4_General_Status_Open != "True"){
+            if (segment5_General_Status_Open != "True"){
+              if (segment6_General_Status_Open == "True"){
+                if (original6 == "O"){
+                  assign "False" to Out_of_Sequence
+                  assign "True" to Originals
+                }
+              } 
+            } 
+          } 
+        } 
+      }
+    }
+  }
+
+
+if (Out_of_Sequence == "True"){
+  send "THIS TICKET IS NOT VALID FOR REFUND! Out of Sequence!"
+  mandatory ask "The Ticket is not valid for auto refund!, Please Ignore it" assign to qz5
+  call "Auto_Refund"
 }
 
-if (OK3 =="OK"){
-  if (status3=="O"){
-    if (original3=="O"){
-      assign "TRUE" to checkOpen3
-    }
-  }
-  if (status3=="S"){
-    if (original3=="O"){
-      assign "TRUE" to checkOpen3
-    }
-  }
-  assign "3" to segCount
-}
 
-if (OK4 =="OK"){
-  if (status4=="O"){
-    if (original4=="O"){
-      assign "TRUE" to checkOpen4
-    }
-  }
-  if (status4=="S"){
-    if (original4=="O"){
-      assign "TRUE" to checkOpen4
-    }
-  }
-  assign "4" to segCount
-}
 
-if (OK5 =="OK"){
-  if (status5=="O"){
-    if (original5=="O"){
-      assign "TRUE" to checkOpen5
-    }
-  }
-  if (status5=="S"){
-    if (original5=="O"){
-      assign "TRUE" to checkOpen5
-    }
-  }
-  assign "5" to segCount
-}
-
-if (OK6 =="OK"){
-  if (status6=="O"){
-    if (original6=="O"){
-      assign "TRUE" to checkOpen6
-    }
-  }
-  if (status6=="S"){
-    if (original6=="O"){
-      assign "TRUE" to checkOpen6
-    }
-  }
-  assign "6" to segCount
-}
-
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
-capture line:1, column:1, length:21 assign to checkPending
-if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
-}
-if (checkPending=="REFUND RECORD PENDING"){
+// Check if the ticket is  valid for ATC-refund
 send "TRFIG"
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC"
-}
-capture line:1, column:1, length:21 assign to checkPending
-if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
-}
+
 capture line:1, column:34, length:3 assign to checkRFND
-if (checkRFND!="AGT"){
-send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
+capture line:1, column:58, length:1 assign to checkATC
+assign "False" to ATC_Refund_Eligible
+if (checkRFND=="AGT"){
+  if (checkATC =="C"){
+    assign "True" to ATC_Refund_Eligible
+  }
+  if (checkATC =="N"){
+    assign "True" to ATC_Refund_Eligible
+  }
 }
 
-capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+if (ATC_Refund_Eligible =="True"){
 
     capture line:15, column:1, length:2 assign to FOCheck1
     capture line:16, column:1, length:2 assign to FOCheck2
@@ -876,7 +1609,7 @@ if (checkATC =="C"){
         capture line:2, column:1, length:4 assign to dateDifference
         if (dateDifference >= "365"){
           mandatory ask "Original Ticket is Expired!" assign to qz5
-          call "FQD&FQP"
+          call "Auto_Refund"
         }
     }
 
@@ -885,10 +1618,1128 @@ if (checkATC =="C"){
     capture line:2, column:1, length:21 assign to refundedTicketCheck
     if (refundedTicketCheck == "OK - REFUND PROCESSED"){
         send ":" +totalRefundAmount +"  " +refundCurrency
-        call "FQD&FQP"
+        call "Auto_Refund"
+    }
+    else{
+        send "THIS TICKET IS NOT VALID FOR REFUND!"
+        mandatory ask "The Ticket is not valid for auto refund!, Please Recheck it" assign to qz5
+        call "Auto_Refund"
     }
 }
+
+
+// Working with Ghost Segments
+
+  send "DD" +DDMMM_DOI +"/" +travelDate1
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
   }
+  else{
+      assign YY_DOI to travelYY
+  }
+
+ send "ss" +airline1 +flightNo1 +class1 +travelDate1 +travelYY +city1 +city2 +"GK1/0000 0200/RECLOC"
+
+
+if (segCount > "1"){
+  send "DD" +DDMMM_DOI +"/" +travelDate2
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline2 +flightNo2 +class2 +travelDate2 +travelYY +city2 +city3 +"GK1/0230 0500/RECLOC"
+}
+
+if (segCount > "2"){
+  send "DD" +DDMMM_DOI +"/" +travelDate3
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline3 +flightNo3 +class3 +travelDate3 +travelYY +city3 +city4 +"GK1/0600 0900/RECLOC"
+}
+
+if (segCount > "3"){
+  send "DD" +DDMMM_DOI +"/" +travelDate4
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline4 +flightNo4 +class4 +travelDate4 +travelYY +city4 +city5 +"GK1/0930 1200/RECLOC"
+}
+
+if (segCount > "4"){
+  send "DD" +DDMMM_DOI +"/" +travelDate5
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline5 +flightNo5 +class5 +travelDate5 +travelYY +city5 +city6 +"GK1/1300 1600/RECLOC"
+}
+
+if (segCount > "5"){
+  send "DD" +DDMMM_DOI +"/" +travelDate6
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After == "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to travelYY
+  }
+  else{
+      assign YY_DOI to travelYY
+  }
+  send "ss" +airline6 +flightNo6 +class6 +travelDate6 +travelYY +city6 +city7 +"GK1/1700 2000/RECLOC"
+}
+
+assign "" to airline_TourCode
+if (airline1 == "PR"){
+  assign "U*C5YQ" to airline_TourCode
+}
+if (airline1 == "QR"){
+  assign "U202201" to airline_TourCode
+}
+if (airline1 == "SM"){
+  assign "U09" to airline_TourCode
+}
+if (airline1 == "SN"){
+  assign "U385910" to airline_TourCode
+}
+if (airline1 == "SV"){
+  assign "U*SEE24,U*MOS05" to airline_TourCode
+}
+if (airline1 == "WY"){
+  assign "U584562" to airline_TourCode
+}
+
+  send "FXX/R," +DOI +",UP,U,P," +airline_TourCode
+  
+  capture line:4, column:1, length:2 assign to FXXN1
+  capture line:5, column:1, length:2 assign to FXXN2
+  capture line:6, column:1, length:2 assign to FXXN3
+  capture line:7, column:1, length:2 assign to FXXN4
+  capture line:8, column:1, length:2 assign to FXXN5
+  capture line:9, column:1, length:2 assign to FXXN6
+  capture line:10, column:1, length:2 assign to FXXN7
+  capture line:11, column:1, length:2 assign to FXXN8
+  capture line:12, column:1, length:2 assign to FXXN9
+  capture line:13, column:1, length:2 assign to FXXN10
+  capture line:14, column:1, length:2 assign to FXXN11
+  capture line:15, column:1, length:2 assign to FXXN12
+  capture line:16, column:1, length:2 assign to FXXN13
+  capture line:17, column:1, length:2 assign to FXXN14
+  capture line:18, column:1, length:2 assign to FXXN15
+  capture line:19, column:1, length:2 assign to FXXN16
+  capture line:20, column:1, length:2 assign to FXXN17
+
+  capture line:4, column:4, length:4 assign to FXXFareRule1
+  capture line:5, column:4, length:4 assign to FXXFareRule2
+  capture line:6, column:4, length:4 assign to FXXFareRule3
+  capture line:7, column:4, length:4 assign to FXXFareRule4
+  capture line:8, column:4, length:4 assign to FXXFareRule5
+  capture line:9, column:4, length:4 assign to FXXFareRule6
+  capture line:10, column:4, length:4 assign to FXXFareRule7
+  capture line:11, column:4, length:4 assign to FXXFareRule8
+  capture line:12, column:4, length:4 assign to FXXFareRule9
+  capture line:13, column:4, length:4 assign to FXXFareRule10
+  capture line:14, column:4, length:4 assign to FXXFareRule11
+  capture line:15, column:4, length:4 assign to FXXFareRule12
+  capture line:16, column:4, length:4 assign to FXXFareRule13
+  capture line:17, column:4, length:4 assign to FXXFareRule14
+  capture line:18, column:4, length:4 assign to FXXFareRule15
+  capture line:19, column:4, length:4 assign to FXXFareRule16
+  capture line:20, column:4, length:4 assign to FXXFareRule17
+
+  assign "False" to check_FareBasis_Compatibility
+  if (FXXFareRule1 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN1 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule2 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN2 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "2" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule3 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN3 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "3" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule4 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN4 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "4" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule5 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN5 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "5" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule6 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN6 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "6" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule7 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN7 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "7" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule8 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN8 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "8" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule9 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN9 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "9" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule10 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN10
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "10" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule11 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN11 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "11" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule12 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN12 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "12" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule13 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN13 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "13" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule14 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN14 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "14" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule15 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN15
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "15" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule16 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN16 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "16" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule17 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN17 
+
+    capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "17" to FXXfareBasisNumber
+    }
+  }
+  }
+
+ if (check_FareBasis_Compatibility == "False"){
+  mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
+  send "FQQ" +FXX_test_FareRule_Number
+  capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign FXX_test_FareRule_Number to FXXfareBasisNumber
+    }
+ }
+
+ if (check_FareBasis_Compatibility == "False"){
+  mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
+  send "FQQ" +FXX_test_FareRule_Number
+  capture line:#, column:#, length:# assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (segCount > "1"){
+      capture line:#, column:#, length:# assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "2"){
+      capture line:#, column:#, length:# assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "3"){
+      capture line:#, column:#, length:# assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "4"){
+      capture line:#, column:#, length:# assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (segCount > "5"){
+      capture line:#, column:#, length:# assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "17" to FXXfareBasisNumber
+    }
+ }
+
+  if (check_FareBasis_Compatibility == "False"){
+    send "Can't Find The Fare Rule!"
+    ask "Please Continue manually!" assign to fq5
+  ``call "Auto_Refund"
+ }
+
+ // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ER, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
+                    //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
+
+
+
+
 
   when ("FQD"){
 if (OK1 =="OK"){
@@ -1118,23 +2969,23 @@ if (segCount=="1"){
   capture line:19, column:1, length:2 assign to FQDN16
   capture line:20, column:1, length:2 assign to FQDN17
 
-  capture line:4, column:4, length:12 assign to FQDFareRule1
-  capture line:5, column:4, length:12 assign to FQDFareRule2
-  capture line:6, column:4, length:12 assign to FQDFareRule3
-  capture line:7, column:4, length:12 assign to FQDFareRule4
-  capture line:8, column:4, length:12 assign to FQDFareRule5
-  capture line:9, column:4, length:12 assign to FQDFareRule6
-  capture line:10, column:4, length:12 assign to FQDFareRule7
-  capture line:11, column:4, length:12 assign to FQDFareRule8
-  capture line:12, column:4, length:12 assign to FQDFareRule9
-  capture line:13, column:4, length:12 assign to FQDFareRule10
-  capture line:14, column:4, length:12 assign to FQDFareRule11
-  capture line:15, column:4, length:12 assign to FQDFareRule12
-  capture line:16, column:4, length:12 assign to FQDFareRule13
-  capture line:17, column:4, length:12 assign to FQDFareRule14
-  capture line:18, column:4, length:12 assign to FQDFareRule15
-  capture line:19, column:4, length:12 assign to FQDFareRule16
-  capture line:20, column:4, length:12 assign to FQDFareRule17
+  capture line:4, column:4, length:8 assign to FQDFareRule1
+  capture line:5, column:4, length:8 assign to FQDFareRule2
+  capture line:6, column:4, length:8 assign to FQDFareRule3
+  capture line:7, column:4, length:8 assign to FQDFareRule4
+  capture line:8, column:4, length:8 assign to FQDFareRule5
+  capture line:9, column:4, length:8 assign to FQDFareRule6
+  capture line:10, column:4, length:8 assign to FQDFareRule7
+  capture line:11, column:4, length:8 assign to FQDFareRule8
+  capture line:12, column:4, length:8 assign to FQDFareRule9
+  capture line:13, column:4, length:8 assign to FQDFareRule10
+  capture line:14, column:4, length:8 assign to FQDFareRule11
+  capture line:15, column:4, length:8 assign to FQDFareRule12
+  capture line:16, column:4, length:8 assign to FQDFareRule13
+  capture line:17, column:4, length:8 assign to FQDFareRule14
+  capture line:18, column:4, length:8 assign to FQDFareRule15
+  capture line:19, column:4, length:8 assign to FQDFareRule16
+  capture line:20, column:4, length:8 assign to FQDFareRule17
   
   if (FQDFareRule1==fareBasis){
     send "FQN" +FQDN1 +"*PE"
