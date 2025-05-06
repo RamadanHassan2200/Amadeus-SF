@@ -117,8 +117,9 @@ capture line:4, column:18, length:1 assign to class1
 capture line:4, column:20, length:5 assign to travelDate1
 capture line:4, column:30, length:2 assign to OK1
 capture line:4, column:33, length:4 assign to fareBasis1_Shortcut
-capture line:4, column:33, length:8 assign to fareBasis1
+capture line:4, column:33, length:12 assign to fareBasis1
 capture line:4, column:47, length:1 assign to status1
+capture line:4, column:62, length:2 assign to pc1
 
 capture line:5, column:4, length:1 assign to original2  
 capture line:5, column:5, length:3 assign to city2
@@ -127,8 +128,9 @@ capture line:5, column:11, length:4 assign to flightNo2
 capture line:5, column:18, length:1 assign to class2
 capture line:5, column:20, length:5 assign to travelDate2
 capture line:5, column:30, length:2 assign to OK2
-capture line:5, column:33, length:8 assign to fareBasis2
+capture line:5, column:33, length:12 assign to fareBasis2
 capture line:5, column:47, length:1 assign to status2
+capture line:5, column:62, length:2 assign to pc2
 
 capture line:6, column:4, length:1 assign to original3
 capture line:6, column:5, length:3 assign to city3
@@ -137,8 +139,9 @@ capture line:6, column:11, length:4 assign to flightNo3
 capture line:6, column:18, length:1 assign to class3
 capture line:6, column:20, length:5 assign to travelDate3
 capture line:6, column:30, length:2 assign to OK3
-capture line:6, column:33, length:8 assign to fareBasis3
+capture line:6, column:33, length:12 assign to fareBasis3
 capture line:6, column:47, length:1 assign to status3
+capture line:6, column:62, length:2 assign to pc3
 
 capture line:7, column:4, length:1 assign to original4
 capture line:7, column:5, length:3 assign to city4
@@ -147,8 +150,9 @@ capture line:7, column:11, length:4 assign to flightNo4
 capture line:7, column:18, length:1 assign to class4
 capture line:7, column:20, length:5 assign to travelDate4
 capture line:7, column:30, length:2 assign to OK4
-capture line:7, column:33, length:8 assign to fareBasis4
+capture line:7, column:33, length:12 assign to fareBasis4
 capture line:7, column:47, length:1 assign to status4
+capture line:7, column:62, length:2 assign to pc4
 
 capture line:8, column:4, length:1 assign to original5
 capture line:8, column:5, length:3 assign to city5
@@ -157,8 +161,9 @@ capture line:8, column:11, length:4 assign to flightNo5
 capture line:8, column:18, length:1 assign to class5
 capture line:8, column:20, length:5 assign to travelDate5
 capture line:8, column:30, length:2 assign to OK5
-capture line:8, column:33, length:8 assign to fareBasis5
+capture line:8, column:33, length:12 assign to fareBasis5
 capture line:8, column:47, length:1 assign to status5
+capture line:8, column:62, length:2 assign to pc5
 
 capture line:9, column:4, length:1 assign to original6
 capture line:9, column:5, length:3 assign to city6
@@ -167,10 +172,51 @@ capture line:9, column:11, length:4 assign to flightNo6
 capture line:9, column:18, length:1 assign to class6
 capture line:9, column:20, length:5 assign to travelDate6
 capture line:9, column:30, length:2 assign to OK6
-capture line:9, column:33, length:8 assign to fareBasis6
+capture line:9, column:33, length:12 assign to fareBasis6
 capture line:9, column:47, length:1 assign to status6
+capture line:9, column:62, length:2 assign to pc6
 
 capture line:10, column:5, length:3 assign to city7
+
+
+// Checking Fare Uniqueness
+if (fareBasis2 != fareBasis1){
+  assign "True" to fareBasis2_Individual
+}
+if (fareBasis3 != fareBasis1){
+  if (fareBasis3 != fareBasis2){
+    assign "True" to fareBasis3_Individual
+  }
+}
+if (fareBasis4 != fareBasis1){
+  if (fareBasis4 != fareBasis2){
+    if (fareBasis4 != fareBasis3){
+      assign "True" to fareBasis4_Individual
+    }
+  }
+}
+if (fareBasis5 != fareBasis1){
+  if (fareBasis5 != fareBasis2){
+    if (fareBasis5 != fareBasis3){
+      if (fareBasis5 != fareBasis4){
+        assign "True" to fareBasis5_Individual
+      }
+    }
+  }
+}
+if (fareBasis6 != fareBasis1){
+  if (fareBasis6 != fareBasis2){
+    if (fareBasis6 != fareBasis3){
+      if (fareBasis6 != fareBasis4){
+        if (fareBasis6 != fareBasis5){
+          assign "True" to fareBasis6_Individual
+        }
+      }
+    }
+  }
+}
+
+
 
 // Searching for Gov
 capture line:8, column:4, length:3 assign to gov1
@@ -336,104 +382,7 @@ if (gov1616 =="GOV"){
 }
 
 
-//Exclude NRF classes A3 (P,U,T,S), NE(N,S)
-
-if (airline1 == "A3"){
- assign "True" to A3_Refundable
-  if (class1 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class1 == "S"){
-    assign "False" to A3_Refundable
-  }
-
-  if (segCount >= "2"){
-   if (class2 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class2 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount >= "3"){
-  if (class3 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class3 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount >= "4"){
-  if (class4 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class4 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount >= "5"){
-  if (class5 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class5 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (segCount >= "6"){
-   if (class6 == "P"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "U"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "T"){
-    assign "False" to A3_Refundable
-  }
-  if (class6 == "S"){
-    assign "False" to A3_Refundable
-  }
-  }
-
-  if (A3_Refundable != "True"){
-   send "A3 is Non-Refundable for P,U,T,S Classes"
-   ask "Ignore the Refund" assign to qz5
-   call "Auto_Refund"
-  }
-}
+//Exclude NRF classes , NE(N,S)
 
 if (airline1 == "NE"){
  assign "True" to NE_Refundable
@@ -497,6 +446,90 @@ if (airline1 == "NE"){
 
 
 }
+
+
+// Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, NE, NP, PC, 
+                    //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
+
+if (airline1 != "A3"){
+  if (airline1 != "AF"){
+    if (airline1 != "AH"){
+      if (airline1 != "AI"){
+        if (airline1 != "AT"){
+          if (airline1 != "BA"){
+            if (airline1 != "CX"){
+              if (airline1 != "DL"){
+                if (airline1 != "EK"){
+                  if (airline1 != "ET"){
+                    if (airline1 != "EY"){
+                      if (airline1 != "GF"){
+                        if (airline1 != "J2"){
+                          if (airline1 != "KL"){
+                            if (airline1 != "KQ"){
+                              if (airline1 != "KU"){
+                                if (airline1 != "ME"){
+                                  if (airline1 != "MH"){
+                                    if (airline1 != "MS"){
+                                      if (airline1 != "MU"){
+                                        if (airline1 != "NE"){
+                                          if (airline1 != "NP"){
+                                          if (airline1 != "PC"){
+                                            if (airline1 != "PK"){
+                                              if (airline1 != "PR"){
+                                                if (airline1 != "QR"){
+                                                  if (airline1 != "RJ"){
+                                                    if (airline1 != "SM"){
+                                                      if (airline1 != "SQ"){
+                                                        if (airline1 != "SV"){
+                                                          if (airline1 != "TG"){
+                                                            if (airline1 != "TK"){
+                                                              if (airline1 != "TU"){
+                                                                if (airline1 != "UJ"){
+                                                                  if (airline1 != "UL"){
+                                                                    if (airline1 != "VF"){
+                                                                      if (airline1 != "WY"){
+                                                                        send "Unsupported Airline!"
+                                                                        mandatory ask "Unsupported Airline!" assign to qz5
+                                                                        call "Auto_Refund"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 ask "Continue?" assign to qz5
 
@@ -757,6 +790,74 @@ if (status6 != "O"){
 }
 }
 
+if (airline1 =="KU"){
+  assign "True" to KU_Refundable
+  if (segCount == "1"){
+    if (segment1_General_Status_Open == "True"){
+      assign "false" to KU_Refundable
+    }
+  }
+  if (segCount == "2"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        assign "false" to KU_Refundable
+      }
+    }
+  }
+  if (segCount == "3"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          assign "false" to KU_Refundable
+        }
+      }
+    }
+  }
+  if (segCount == "4"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            assign "false" to KU_Refundable
+          }
+        }
+      }
+    }
+  }
+  if (segCount == "5"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              assign "false" to KU_Refundable
+            }
+          }
+        }
+      }
+    }
+  }
+  if (segCount == "6"){
+    if (segment1_General_Status_Open == "True"){
+      if (segment2_General_Status_Open == "True"){
+        if (segment3_General_Status_Open == "True"){
+          if (segment4_General_Status_Open == "True"){
+            if (segment5_General_Status_Open == "True"){
+              if (segment6_General_Status_Open == "True"){
+                assign "false" to KU_Refundable
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (KU_Refundable != "True"){
+    send "KU is Non-Refundable, Fully Unused"
+    ask "Ignore the Refund" assign to qz5
+    call "Auto_Refund"
+  }
+}
 
 
 //check No-Show for each segment
@@ -1628,41 +1729,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN1 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1678,41 +1779,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN2 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1729,41 +1830,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN3 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1780,41 +1881,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN4 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1831,41 +1932,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN5 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1882,41 +1983,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN6 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1933,41 +2034,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN7 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -1984,41 +2085,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN8 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2035,41 +2136,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN9 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2086,41 +2187,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN10
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2137,41 +2238,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN11 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2188,92 +2289,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN12 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
-      }
-    }
-
-    if (check_FareBasis_Compatibility == "True"){
-      assign "12" to FXXfareBasisNumber
-    }
-  }
-  }
-
-  if (check_FareBasis_Compatibility == "False"){
-    if (FXXFareRule13 == fareBasis1_Shortcut){
-    assign "True" to check_FareBasis_Compatibility
-    send "FQQ" +FXXN13 
-
-    capture line:#, column:#, length:# assign to FQQfareBasis1
-    if (FQQfareBasis1 != fareBasis1){
-      assign "False" to check_FareBasis_Compatibility
-    }
-
-    if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
-      }
-    }
-
-    if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
-      }
-    }
-
-    if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
-      }
-    }
-
-    if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
-      }
-    }
-
-    if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2290,41 +2340,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN14 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2341,41 +2391,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN15
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2392,41 +2442,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN16 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2443,41 +2493,41 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN17 
 
-    capture line:#, column:#, length:# assign to FQQfareBasis1
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2492,41 +2542,41 @@ if (airline1 == "WY"){
  if (check_FareBasis_Compatibility == "False"){
   mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
   send "FQQ" +FXX_test_FareRule_Number
-  capture line:#, column:#, length:# assign to FQQfareBasis1
+  capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2540,41 +2590,41 @@ if (airline1 == "WY"){
  if (check_FareBasis_Compatibility == "False"){
   mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
   send "FQQ" +FXX_test_FareRule_Number
-  capture line:#, column:#, length:# assign to FQQfareBasis1
+  capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
     }
 
     if (segCount > "1"){
-      capture line:#, column:#, length:# assign to FQQfareBasis2
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "2"){
-      capture line:#, column:#, length:# assign to FQQfareBasis3
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "3"){
-      capture line:#, column:#, length:# assign to FQQfareBasis4
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "4"){
-      capture line:#, column:#, length:# assign to FQQfareBasis5
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
       }
     }
 
     if (segCount > "5"){
-      capture line:#, column:#, length:# assign to FQQfareBasis6
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
       }
@@ -2591,7 +2641,7 @@ if (airline1 == "WY"){
   ``call "Auto_Refund"
  }
 
- // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ER, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
+ // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
                     //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
 
 
