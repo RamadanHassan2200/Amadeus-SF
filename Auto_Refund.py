@@ -2641,11 +2641,16 @@ if (airline1 == "WY"){
   ``call "Auto_Refund"
  }
 
+ send "FQN" +FXXfareBasisNumber +"*/PE"
+
  // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
                     //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
 
 
-
+  if (airline1 == "A3"){
+    // permitted
+    
+  }
 
 
   when ("FQD"){
