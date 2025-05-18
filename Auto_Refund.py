@@ -381,6 +381,267 @@ if (gov1616 =="GOV"){
   mandatory ask "Ignore?" assign to qz5
 }
 
+capture line:6, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:9, column:6, length:3 assign to original_Airline
+      capture line:6, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:6, column:21, length:7 assign to FODate
+      }
+      capture line:6, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:6, column:24, length:7 assign to FODate
+      }
+}
+capture line:7, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:7, column:4, length:3 assign to original_Airline
+      capture line:7, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:7, column:21, length:7 assign to FODate
+      }
+      capture line:7, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:7, column:24, length:7 assign to FODate
+      }
+}
+capture line:8, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:8, column:4, length:3 assign to original_Airline
+      capture line:8, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:8, column:21, length:7 assign to FODate
+      }
+      capture line:8, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:8, column:24, length:7 assign to FODate
+      }
+}
+capture line:9, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:9, column:4, length:3 assign to original_Airline
+      capture line:9, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:9, column:21, length:7 assign to FODate
+      }
+      capture line:9, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:9, column:24, length:7 assign to FODate
+      }
+}
+capture line:10, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:10, column:4, length:3 assign to original_Airline
+      capture line:10, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:10, column:21, length:7 assign to FODate
+      }
+      capture line:10, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:10, column:24, length:7 assign to FODate
+      }
+}
+capture line:11, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:11, column:4, length:3 assign to original_Airline
+      capture line:11, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:11, column:21, length:7 assign to FODate
+      }
+      capture line:11, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:11, column:24, length:7 assign to FODate
+      }
+}
+capture line:12, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:12, column:4, length:3 assign to original_Airline
+      capture line:12, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:12, column:21, length:7 assign to FODate
+      }
+      capture line:12, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:12, column:24, length:7 assign to FODate
+      }
+}
+capture line:13, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:13, column:4, length:3 assign to original_Airline
+      capture line:13, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:13, column:21, length:7 assign to FODate
+      }
+      capture line:13, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:13, column:24, length:7 assign to FODate
+      }
+}
+capture line:14, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:14, column:4, length:3 assign to original_Airline
+      capture line:14, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:14, column:21, length:7 assign to FODate
+      }
+      capture line:14, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:14, column:24, length:7 assign to FODate
+      }
+}
+capture line:15, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:15, column:4, length:3 assign to original_Airline
+      capture line:15, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:15, column:21, length:7 assign to FODate
+      }
+      capture line:15, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:15, column:24, length:7 assign to FODate
+      }
+}
+capture line:16, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:16, column:4, length:3 assign to original_Airline
+      capture line:16, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:16, column:21, length:7 assign to FODate
+      }
+      capture line:16, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:16, column:24, length:7 assign to FODate
+      }
+}
+capture line:17, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:17, column:4, length:3 assign to original_Airline
+      capture line:17, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:17, column:21, length:7 assign to FODate
+      }
+      capture line:17, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:17, column:24, length:7 assign to FODate
+      }
+}
+capture line:18, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:18, column:4, length:3 assign to original_Airline
+      capture line:18, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:18, column:21, length:7 assign to FODate
+      }
+      capture line:18, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:18, column:24, length:7 assign to FODate
+      }
+}
+capture line:19, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:19, column:4, length:3 assign to original_Airline
+      capture line:19, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:19, column:21, length:7 assign to FODate
+      }
+      capture line:19, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:19, column:24, length:7 assign to FODate
+      }
+}
+capture line:20, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:20, column:4, length:3 assign to original_Airline
+      capture line:20, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:20, column:21, length:7 assign to FODate
+      }
+      capture line:20, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:20, column:24, length:7 assign to FODate
+      }
+}
+capture line:21, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:21, column:4, length:3 assign to original_Airline
+      capture line:21, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:21, column:21, length:7 assign to FODate
+      }
+      capture line:21, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:21, column:24, length:7 assign to FODate
+      }
+}
+capture line:22, column:1, length:2 assign to FO_Check
+if (FO_Check=="FO"){
+      assign "True" to FOCheck
+      capture line:22, column:4, length:3 assign to original_Airline
+      capture line:22, column:28, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:22, column:21, length:7 assign to FODate
+      }
+      capture line:22, column:31, length:1 assign to FODate_check
+      if (FODate_check == "/"){
+        capture line:22, column:24, length:7 assign to FODate
+      }
+}
+
+
+
+if (FOCheck == "True"){
+        send "DD"
+        capture line:2, column:33, length:7 assign to todayDate
+        send "DD" +FODate +"/" +todayDate
+        capture line:2, column:1, length:4 assign to dateDifference
+        if (dateDifference >= "365"){
+          // exclude 077, 125, 176, 220, 229, 235, 618
+          assign "True" to FO_2_Years_Validity
+          if (original_Airline != "077"){
+            if (original_Airline != "125"){
+              if (original_Airline != "176"){
+                if (original_Airline != "220"){
+                  if (original_Airline != "229"){
+                    if (original_Airline != "235"){
+                      if (original_Airline != "618"){
+                        assign "False" to FO_2_Years_Validity
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          if (FO_2_Years_Validity == "True"){
+            if (dateDifference >= "730"){
+              send "FO is Non-Refundable for 2 Years"
+              ask "Ignore the Refund" assign to qz5
+              call "Auto_Refund"
+            }
+          }else{
+            send "FO is Non-Refundable for 2 Years"
+            ask "Ignore the Refund" assign to qz5
+            call "Auto_Refund"
+          }
+        }
+}
+
 
 //Exclude NRF classes , NE(N,S)
 
@@ -1505,23 +1766,6 @@ if (checkRFND=="AGT"){
 
 if (ATC_Refund_Eligible =="True"){
 
-    capture line:15, column:1, length:2 assign to FOCheck1
-    capture line:16, column:1, length:2 assign to FOCheck2
-    capture line:17, column:1, length:2 assign to FOCheck3
-
-    if (FOCheck1=="FO"){
-      assign "True" to FOCheck
-      capture line:15, column:28, length:7 assign to FODate
-    }
-    if (FOCheck2=="FO"){
-      assign "True" to FOCheck
-      capture line:16, column:28, length:7 assign to FODate
-    }
-    if (FOCheck3=="FO"){
-      assign "True" to FOCheck
-      capture line:17, column:28, length:7 assign to FODate
-    }
-
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1558,17 +1802,6 @@ if (ATC_Refund_Eligible =="True"){
 
     if (commissionAmount !="         0.00"){
       send "TRFU/FM0"
-    }
-
-    if (FOCheck == "True"){
-        send "DD"
-        capture line:2, column:33, length:7 assign to todayDate
-        send "DD" +FODate +"/" +todayDate
-        capture line:2, column:1, length:4 assign to dateDifference
-        if (dateDifference >= "365"){
-          mandatory ask "Original Ticket is Expired!" assign to qz5
-          call "Auto_Refund"
-        }
     }
 
     send "TRFU/NF"
