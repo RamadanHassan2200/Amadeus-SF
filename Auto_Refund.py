@@ -1968,6 +1968,15 @@ if (airline1 == "WY"){
   if (FXXFareRule1 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN1 
+    
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN1 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN1 
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2018,6 +2027,15 @@ if (airline1 == "WY"){
     if (FXXFareRule2 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN2 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN2 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN2 
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2070,6 +2088,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN3 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN3 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN3 
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2120,6 +2147,15 @@ if (airline1 == "WY"){
     if (FXXFareRule4 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN4 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN4
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN4
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2172,6 +2208,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN5 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN5
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN5
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2222,6 +2267,15 @@ if (airline1 == "WY"){
     if (FXXFareRule6 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN6 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN6
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN6
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2274,6 +2328,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN7 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN7
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN7
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2324,6 +2387,15 @@ if (airline1 == "WY"){
     if (FXXFareRule8 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN8 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN8
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN8
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2376,6 +2448,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN9 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN9
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN9
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2426,6 +2507,15 @@ if (airline1 == "WY"){
     if (FXXFareRule10 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN10
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN10
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN10
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2478,6 +2568,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN11 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN11
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN11
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2528,6 +2627,15 @@ if (airline1 == "WY"){
     if (FXXFareRule12 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN12 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN12
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN12
+    }
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2580,6 +2688,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN14 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN14
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN14
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2631,6 +2748,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN15
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN15
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN15
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2680,7 +2806,16 @@ if (airline1 == "WY"){
   if (check_FareBasis_Compatibility == "False"){
     if (FXXFareRule16 == fareBasis1_Shortcut){
     assign "True" to check_FareBasis_Compatibility
-    send "FQQ" +FXXN16 
+    send "FQQ" +FXXN16
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN16
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN16
+    } 
 
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
@@ -2733,6 +2868,15 @@ if (airline1 == "WY"){
     assign "True" to check_FareBasis_Compatibility
     send "FQQ" +FXXN17 
 
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN17
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXXN17
+    }
+
     capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2782,6 +2926,16 @@ if (airline1 == "WY"){
  if (check_FareBasis_Compatibility == "False"){
   mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
   send "FQQ" +FXX_test_FareRule_Number
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+
   capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
@@ -2830,6 +2984,16 @@ if (airline1 == "WY"){
  if (check_FareBasis_Compatibility == "False"){
   mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
   send "FQQ" +FXX_test_FareRule_Number
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "ENTRY REQUIRES"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+
   capture line:9, column:32, length:12 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
