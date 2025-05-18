@@ -1685,8 +1685,15 @@ if (airline1 == "SV"){
 if (airline1 == "WY"){
   assign "U584562" to airline_TourCode
 }
+  assign "" to ptc_ID
+  if (PTC == "CHD"){
+    assign "CH" to ptc_ID
+  }
+  if (PTC == "INF"){
+    assign "IN" to ptc_ID
+  }
 
-  send "FXX/R," +DOI +",UP,U,P," +airline_TourCode
+  send "FXX/R" +ptc_ID +"," +DOI +",UP,U,P," +airline_TourCode
   
   capture line:4, column:1, length:2 assign to FXXN1
   capture line:5, column:1, length:2 assign to FXXN2
@@ -2631,7 +2638,7 @@ if (airline1 == "WY"){
     }
 
     if (check_FareBasis_Compatibility == "True"){
-      assign "17" to FXXfareBasisNumber
+      assign FXX_test_FareRule_Number to FXXfareBasisNumber
     }
  }
 
@@ -2641,7 +2648,7 @@ if (airline1 == "WY"){
   ``call "Auto_Refund"
  }
 
- send "FQN" +FXXfareBasisNumber +"*/PE"
+ send "FQN" +FXXfareBasisNumber +"*PE"
 
  // Supported Airlines (A3, AF, AH, AI, AT, BA, CX, DL, EK, ET, EY, GF, J2, KL, KQ, KU, ME, MH, MS, MU, MS, NE, NP, PC, 
                     //  PK, PR, QR, RJ, SM, SQ, SV, TG, TK, TU, UJ, UL, VF, WY)
