@@ -735,6 +735,8 @@ if (segCount=="1"){
     send "FQN" +FQDN17 +"*PE"
   }
 
+  send "MD-Cancellations"
+
   }
 
   when ("FQP"){
@@ -1234,6 +1236,8 @@ when ("Create Ghost segments"){
       capture line:8, column:1, length:2 assign to fare1No
       send "FQN" + fare1No +"*PE"
     }
+
+    send "MD-Cancellations"
     
 }
 
