@@ -1236,14 +1236,14 @@ if (segment1_General_Status_Open == "True"){
     capture line:2, column:2, length:3 assign to check_Before_After
     if (check_Before_After > "2"){
       choose "This is a Future Ticket, Do you want to continue?" until "Yes" {
-        when "No"{}
+        when ("No"){}
       }
       assign "False" to status_NoShow
     }
     else{
       choose "This Ticket is within No-Show, Do you want to continue as:"{
-        when "No-Show"{}
-        when "Normal"{assign "Normal" to status_NoShow}
+        when ("No-Show"){}
+        when ("Normal"){assign "Normal" to status_NoShow}
       }
     }
   }
@@ -3044,6 +3044,8 @@ if (airline1 == "WY"){
     ask "Please Continue manually!" assign to fq5
   ``call "Auto_Refund"
  }
+
+ capture line:7, 
 
  send "FQN" +FXXfareBasisNumber +"*PE"
 
