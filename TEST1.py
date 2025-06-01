@@ -8,6 +8,78 @@ if (pnr =="u"){
     call "Updater"
 }
 
+send "JGD/USN"
+capture line:8, column:43, length:1 assign to agtName
+capture line:8, column:44, length:1 assign to agtNameChar2
+capture line:8, column:45, length:1 assign to agtNameChar3
+capture line:8, column:46, length:1 assign to agtNameChar4
+capture line:8, column:47, length:1 assign to agtNameChar5
+capture line:8, column:48, length:1 assign to agtNameChar6
+capture line:8, column:49, length:1 assign to agtNameChar7
+capture line:8, column:50, length:1 assign to agtNameChar8
+capture line:8, column:51, length:1 assign to agtNameChar9
+capture line:8, column:52, length:1 assign to agtNameChar10
+capture line:8, column:53, length:1 assign to agtNameChar11
+capture line:8, column:54, length:1 assign to agtNameChar12
+capture line:8, column:55, length:1 assign to agtNameChar13
+capture line:8, column:56, length:1 assign to agtNameChar14
+capture line:8, column:57, length:1 assign to agtNameChar15
+capture line:8, column:58, length:1 assign to agtNameChar16
+capture line:8, column:59, length:1 assign to agtNameChar17
+capture line:8, column:60, length:1 assign to agtNameChar18
+capture line:8, column:61, length:1 assign to agtNameChar19
+capture line:8, column:62, length:1 assign to agtNameChar20
+capture line:8, column:63, length:1 assign to agtNameChar21
+capture line:8, column:64, length:1 assign to agtNameChar22
+
+if (agtNameChar2!=" "){
+append agtNameChar2 to agtName
+if (agtNameChar3!=" "){
+append agtNameChar3 to agtName
+if (agtNameChar4!=" "){
+append agtNameChar4 to agtName
+if (agtNameChar5!=" "){
+append agtNameChar5 to agtName
+if (agtNameChar6!=" "){
+append agtNameChar6 to agtName
+if (agtNameChar7!=" "){
+append agtNameChar7 to agtName
+if (agtNameChar8!=" "){
+append agtNameChar8 to agtName
+if (agtNameChar9!=" "){
+append agtNameChar9 to agtName
+if (agtNameChar10!=" "){
+append agtNameChar10 to agtName
+if (agtNameChar11!=" "){
+append agtNameChar11 to agtName
+if (agtNameChar12!=" "){
+append agtNameChar12 to agtName
+if (agtNameChar13!=" "){
+append agtNameChar13 to agtName
+if (agtNameChar14!=" "){
+append agtNameChar14 to agtName
+if (agtNameChar15!=" "){
+append agtNameChar15 to agtName
+if (agtNameChar16!=" "){
+append agtNameChar16 to agtName
+if (agtNameChar17!=" "){
+append agtNameChar17 to agtName
+if (agtNameChar18!=" "){
+append agtNameChar18 to agtName
+if (agtNameChar19!=" "){
+append agtNameChar19 to agtName
+if (agtNameChar20!=" "){
+append agtNameChar20 to agtName
+if (agtNameChar21!=" "){
+append agtNameChar21 to agtName
+if (agtNameChar22!=" "){
+append agtNameChar22 to agtName
+}}}}}}}}}}}}}}}}}}}}}//agtNameChar2
+
+if (agtName == "GUEST"){
+  assign "SF" to agtName
+}
+
 send "rt" +pnr
 
 // Checking Airline(s) and Travel date and passenger count
@@ -1159,9 +1231,7 @@ if (fBg6 =="0 "){
             when ("Proceed"){
               choose "Continue?"{
                   when ("Yes"){
-                      send "rfRAMADAN;er"
-                      send "er"
-                      send "ir"
+                      send "IR"
                       send "trdc/all" +NPcheck
                       capture line:1, column:1, length:26 assign to Voidmsg
                       if (Voidmsg!="OK - DOCUMENT(S) CANCELLED"){
@@ -1232,10 +1302,8 @@ if (fBg6 =="0 "){
                         
                       }
                       send "ir"
-                      send "tte/all"
                       send "ir"
-                      send "ir"
-                      send "tte/all"               
+                      send "tte/all"              
                       send "FXB/K"+ref62
                       send "fqq1"
 
@@ -1507,14 +1575,14 @@ assign "Please check the baggage in: " to baggageCheckerStatment
     }
 
     
-                      send "rfRAMADAN;er"
+                      send "rf" +agtName +";er"
                       send "er"
                       capture line:1, column: 1, length: 12 assign to CheckSM
                       if (CheckSM == "SIMULTANEOUS"){
                       send "ir"
                       send "tte/all"
                       send "FXB/K"+ref62
-                      send "rfRAMADAN;er" 
+                      send "rf" +agtName +";er" 
                       send "er"
                       }
 
@@ -1529,7 +1597,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                               send "ir"
                               send "tte/all"
                               send "FXB/K"+ref62
-                              send "rfRAMADAN;er"
+                              send "rf" +agtName +";er"
                               capture line:1, column:1, length:7 assign to Warning
                               if (Warning =="WARNING"){send "er"
                                   }
@@ -1538,10 +1606,10 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                                   send "ir"
                                   send "tte/all"
                                   send "FXB/K"+ref62
-                                  send "rfRAMADAN;er" 
+                                  send "rf" +agtName +";er" 
                                   send "er"
                                   }
-                                  send "rfRAMADAN;er"
+                                  send "rf" +agtName +";er"
                                   send "er"
                                   send "tth"
                                   call "z_Deal Checker"
@@ -1553,7 +1621,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                       send "fpcash"
                       send "fm0"
                       call "z_RTTN_DEL"          
-                      send "rfRAMADAN;er"
+                      send "rf" +agtName +";er"
                       capture line:1, column:1, length:7 assign to Warning
                       if (Warning =="WARNING"){send "er"}
                       if (thisOfficeName =="KWIKT2809"){
@@ -1588,7 +1656,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
             //                }
               //          }
 //
-  //                           send "rfRAMADAN;er"
+  //                           send "rf" +agtName +";er"
     //                         send "er"
       //                      capture line:1, column: 1, length: 12 assign to CheckSM
         //                    if (CheckSM == "SIMULTANEOUS"){
@@ -1617,7 +1685,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
             //                }
               //          }
 //
-  //                           send "rfRAMADAN;er"
+  //                           send "rf" +agtName +";er"
     //                         send "er"
 //
   //                          }
@@ -2014,7 +2082,7 @@ if (fBg6 =="0 "){
             when ("Proceed"){
               choose "Continue?"{
                   when ("Yes"){
-                      send "rfRAMADAN;er"
+                      send "rf" +agtName +";er"
                       send "er"
                       send "ir"
                       send "trdc/all" +NPcheck
@@ -2092,14 +2160,14 @@ if (fBg6 =="0 "){
                       send "ir"
                       send "tte/all"
                       send "FXB/K" +ref62 +"/SBF-1"
-                      send "rfRAMADAN;er"
+                      send "rf" +agtName +";er"
                       send "er"
                       capture line:1, column: 1, length: 12 assign to CheckSM
                       if (CheckSM == "SIMULTANEOUS"){
                       send "ir"
                       send "tte/all"
                       send "FXB/K" +ref62 +"/SBF-1"
-                      send "rfRAMADAN;er" 
+                      send "rf" +agtName +";er" 
                       send "er"
                       }
 
@@ -2114,7 +2182,7 @@ if (fBg6 =="0 "){
                               send "ir"
                               send "tte/all"
                               send "FXB/K" +ref62 +"/SBF-1"
-                              send "rfRAMADAN;er"
+                              send "rf" +agtName +";er"
                               capture line:1, column:1, length:7 assign to Warning
                               if (Warning =="WARNING"){send "er"
                                   }
@@ -2123,10 +2191,10 @@ if (fBg6 =="0 "){
                                   send "ir"
                                   send "tte/all"
                                   send "FXB/K" +ref62 +"/SBF-1"
-                                  send "rfRAMADAN;er" 
+                                  send "rf" +agtName +";er" 
                                   send "er"
                                   }
-                                  send "rfRAMADAN;er"
+                                  send "rf" +agtName +";er"
                                   send "er"
                                   send "tth"
                                   call "z_Deal Checker"
@@ -2138,7 +2206,7 @@ if (fBg6 =="0 "){
                       send "fpcash"
                       send "fm0"
                       call "z_RTTN_DEL"          
-                      send "rfRAMADAN;er"
+                      send "rf" +agtName +";er"
                       capture line:1, column:1, length:7 assign to Warning
                       if (Warning =="WARNING"){send "er"}
                       if (thisOfficeName =="KWIKT2809"){
@@ -2173,7 +2241,7 @@ if (fBg6 =="0 "){
                 //            }
                   //      }
 
-    //                         send "rfRAMADAN;er"
+    //                         send "rf" +agtName +";er"
       //                       send "er"
         //                    capture line:1, column: 1, length: 12 assign to CheckSM
           //                  if (CheckSM == "SIMULTANEOUS"){
@@ -2202,7 +2270,7 @@ if (fBg6 =="0 "){
               //              }
                 //        }
     //
-      //                       send "rfRAMADAN;er"
+      //                       send "rf" +agtName +";er"
         //                     send "er"
 //
   //                          }
