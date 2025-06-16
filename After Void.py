@@ -1264,8 +1264,380 @@ if (fBg6 =="0 "){
     
     if (baggageCheckerStatment != "Please check the baggage in: "){
       send "" +baggageCheckerStatment + " Segment(s)"
+      ask "Continue with SBF?" assign to qz5
+
+      send "FXR/K"+ref62 +"/SBF"
+      assign "True" to SBF_Check
+
+
+capture line:1, column:1, length:8 assign to checkAttn
+if (checkAttn=="**ATTN**"){
+    mandatory ask "There's unavailable class(es)!" assign to qz5
+}
+
+capture line:6, column:20, length:6 assign to totals6
+capture line:7, column:20, length:6 assign to totals7
+capture line:8, column:20, length:6 assign to totals8
+capture line:9, column:20, length:6 assign to totals9
+capture line:10, column:20, length:6 assign to totals10
+capture line:11, column:20, length:6 assign to totals11
+capture line:12, column:20, length:6 assign to totals12
+capture line:13, column:20, length:6 assign to totals13
+capture line:14, column:20, length:6 assign to totals14
+capture line:15, column:20, length:6 assign to totals15
+capture line:16, column:20, length:6 assign to totals16
+
+if (totals6=="TOTALS"){
+     capture line:6, column:51, length:10 assign to totalNewPrice
+}
+if (totals7=="TOTALS"){
+     capture line:7, column:51, length:10 assign to totalNewPrice
+}
+if (totals8=="TOTALS"){
+     capture line:8, column:51, length:10 assign to totalNewPrice
+}
+if (totals9=="TOTALS"){
+     capture line:9, column:51, length:10 assign to totalNewPrice     
+}
+if (totals10=="TOTALS"){
+     capture line:10, column:51, length:10 assign to totalNewPrice
+}
+if (totals11=="TOTALS"){
+     capture line:11, column:51, length:10 assign to totalNewPrice
+}
+if (totals12=="TOTALS"){
+     capture line:12, column:51, length:10 assign to totalNewPrice
+}
+if (totals13=="TOTALS"){
+     capture line:13, column:51, length:10 assign to totalNewPrice
+}
+if (totals14=="TOTALS"){
+     capture line:14, column:51, length:10 assign to totalNewPrice
+}
+if (totals15=="TOTALS"){
+     capture line:15, column:51, length:10 assign to totalNewPrice
+}
+if (totals16=="TOTALS"){
+     capture line:16, column:51, length:10 assign to totalNewPrice
+}
+     
+     if (PassengerCount=="1"){
+          capture line:6, column:13, length:3 assign to checknewXT6
+          capture line:7, column:13, length:3 assign to checknewXT7
+          capture line:8, column:13, length:3 assign to checknewXT8
+          capture line:9, column:13, length:3 assign to checknewXT9
+          capture line:10, column:13, length:3 assign to checknewXT10
+          capture line:11, column:13, length:3 assign to checknewXT11
+          capture line:12, column:13, length:3 assign to checknewXT12
+          capture line:13, column:13, length:3 assign to checknewXT13
+          capture line:14, column:13, length:3 assign to checknewXT14
+          capture line:15, column:13, length:3 assign to checknewXT15
+          capture line:16, column:13, length:3 assign to checknewXT16
+          capture line:17, column:13, length:3 assign to checknewXT17
+          capture line:18, column:13, length:3 assign to checknewXT18
+          capture line:19, column:13, length:3 assign to checknewXT19
+          capture line:20, column:13, length:3 assign to checknewXT20
+          capture line:21, column:13, length:3 assign to checknewXT21
+          capture line:22, column:13, length:3 assign to checknewXT22
+
+          if (checknewXT6 == "-XT"){
+               capture line:7, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT7 == "-XT"){
+               capture line:8, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT8 == "-XT"){
+               capture line:9, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT9 == "-XT"){
+               capture line:10, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT10 == "-XT"){
+               capture line:11, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT11 == "-XT"){
+               capture line:12, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT12 == "-XT"){
+               capture line:13, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT13 == "-XT"){
+               capture line:14, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT14 == "-XT"){
+               capture line:15, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT15 == "-XT"){
+               capture line:16, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT16 == "-XT"){
+               capture line:17, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT17 == "-XT"){
+               capture line:18, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT18 == "-XT"){
+               capture line:19, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT19 == "-XT"){
+               capture line:20, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT20 == "-XT"){
+               capture line:21, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT21 == "-XT"){
+               capture line:22, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewXT22 == "-XT"){
+               capture line:23, column:4, length:10 assign to totalNewPrice
+          }
+     }
+
+      send "FQQ1"
+
+    capture line:6, column:59, length:2 assign to baggage1
+    if (baggage1=="BG"){
+            capture line:8, column:59, length:2 assign to fBg1
+        }
+        if (segmentsCount=="2"){
+            capture line:10, column:59, length:2 assign to fBg2
+        }
+        if (segmentsCount=="3"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+        }
+        if (segmentsCount=="4"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+        }
+        if (segmentsCount=="5"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+            capture line:12, column:59, length:2 assign to fBg5
+        }
+        if (segmentsCount=="6"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+            capture line:12, column:59, length:2 assign to fBg5
+            capture line:13, column:59, length:2 assign to fBg6
+       
+    }
+
+    capture line:7, column:59, length:2 assign to baggage2
+    if (baggage2=="BG"){
+        capture line:9, column:59, length:2 assign to fBg1
+        if (segmentsCount=="2"){
+            capture line:10, column:59, length:2 assign to fBg2
+        }
+        if (segmentsCount=="3"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+        }
+        if (segmentsCount=="4"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+        }
+        if (segmentsCount=="5"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+            capture line:13, column:59, length:2 assign to fBg5
+        }
+        if (segmentsCount=="6"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+            capture line:13, column:59, length:2 assign to fBg5
+            capture line:14, column:59, length:2 assign to fBg6
+        }
+    }
+
+    capture line:8, column:59, length:2 assign to baggage3
+    if (baggage3=="BG"){
+            capture line:10, column:59, length:2 assign to fBg1
+        if (segmentsCount=="2"){
+            capture line:11, column:59, length:2 assign to fBg2
+        }
+        if (segmentsCount=="3"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+        }
+        if (segmentsCount=="4"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+        }
+        if (segmentsCount=="5"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+            capture line:14, column:59, length:2 assign to fBg5
+        }
+        if (segmentsCount=="6"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+            capture line:14, column:59, length:2 assign to fBg5
+            capture line:15, column:59, length:2 assign to fBg6
+        }
+    }
+
+if (fBg1 ==""){
+    assign "0p" to fBg1
+}
+if (fBg1 =="NO"){
+    assign "0p" to fBg1
+}
+if (fBg1 =="0 "){
+    assign "0P" to fBg1
+}
+
+if (fBg2 ==""){
+    assign "0p" to fBg2
+}
+if (fBg2 =="NO"){
+    assign "0p" to fBg2
+}
+if (fBg2 =="0 "){
+    assign "0P" to fBg2
+}
+    
+if (fBg3 ==""){
+    assign "0p" to fBg3
+}
+if (fBg3 =="NO"){
+    assign "0p" to fBg3
+}
+if (fBg3 =="0 "){
+    assign "0P" to fBg3
+}
+
+if (fBg4 ==""){
+    assign "0p" to fBg4
+}
+if (fBg4 =="NO"){
+    assign "0p" to fBg4
+}
+if (fBg4 =="0 "){
+    assign "0P" to fBg4
+}
+        
+if (fBg5 ==""){
+    assign "0p" to fBg5
+}
+if (fBg5 =="NO"){
+    assign "0p" to fBg5
+}
+if (fBg5 =="0 "){
+    assign "0P" to fBg5
+}        
+
+if (fBg6 ==""){
+    assign "0p" to fBg6
+}
+if (fBg6 =="NO"){
+    assign "0p" to fBg6
+}
+if (fBg6 =="0 "){
+    assign "0P" to fBg6
+}
+
+    assign "True" to BaggageChecker1
+    assign "True" to BaggageChecker2
+    assign "True" to BaggageChecker3
+    assign "True" to BaggageChecker4
+    assign "True" to BaggageChecker5
+    assign "True" to BaggageChecker6
+
+        if (fBg1 !=Bg1){
+                assign "False" to BaggageChecker1
+            }
+        if (segmentsCount=="2"){
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+        }
+        if (segmentsCount=="3"){
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+        }
+        if (segmentsCount=="4"){
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+        }
+        if (segmentsCount=="5"){
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+        }
+        if (segmentsCount=="6"){
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+            if (fBg6!=Bg6){
+                assign "False" to BaggageChecker6
+            }
+        }
+
+        assign "Please check the baggage in: " to baggageCheckerStatment
+      if (BaggageChecker1 == "False"){
+      append "-1st-" to baggageCheckerStatment
+    }
+    if (BaggageChecker2 == "False"){
+      append "-2nd-" to baggageCheckerStatment
+    }
+    if (BaggageChecker3 == "False"){
+      append "-3rd-" to baggageCheckerStatment
+    }
+    if (BaggageChecker4 == "False"){
+      append "-4th-" to baggageCheckerStatment
+    }
+    if (BaggageChecker5 == "False"){
+      append "-5th-" to baggageCheckerStatment
+    }
+    if (BaggageChecker6 == "False"){
+      append "-6th-" to baggageCheckerStatment
+    }
+    
+    if (baggageCheckerStatment != "Please check the baggage in: "){
+      send "" +baggageCheckerStatment + " Segment(s)"
       mandatory ask "Continue?" assign to qz5
     }
+
+    }//first baggage check
 
 assign "" to NPcheck
 if (thisOfficeName=="RUHAA2300"){
@@ -1277,7 +1649,12 @@ if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
     send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1291,19 +1668,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE2 == "True"){
     send "TRFIG"
     send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1318,18 +1695,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE3 == "True"){
     send "TRFIG"
     send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1344,18 +1721,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE4 == "True"){
     send "TRFIG"
     send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1370,18 +1747,19 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE5 == "True"){
     send "TRFIG"
     send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1396,18 +1774,19 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE6 == "True"){
     send "TRFIG"
     send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1422,18 +1801,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE7 == "True"){
     send "TRFIG"
     send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1448,18 +1827,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE8 == "True"){
     send "TRFIG"
     send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1474,18 +1853,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE9 == "True"){
     send "TRFIG"
     send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1499,19 +1878,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE10 == "True"){
     send "TRFIG"
     send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1525,19 +1904,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE11 == "True"){
     send "TRFIG"
     send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1551,19 +1930,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE12 == "True"){
     send "TRFIG"
     send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1577,19 +1956,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE13 == "True"){
     send "TRFIG"
     send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1603,19 +1982,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE14 == "True"){
     send "TRFIG"
     send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1629,19 +2008,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE15 == "True"){
     send "TRFIG"
     send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1655,19 +2034,19 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE16 == "True"){
     send "TRFIG"
     send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1682,18 +2061,19 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
 if (FA_Check_TRUE_FALSE17 == "True"){
     send "TRFIG"
     send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1708,18 +2088,18 @@ if (checkATC =="C"){
     }
     append ";" + ticketRefundAmount to totalRefundAmount
     
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
 }
 
 if (FA_Check_TRUE_FALSE18 == "True"){
     send "TRFIG"
     send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
-if (checkATC =="C"){
+    if (checkATC =="C"){
+        assign "Guranteed!" to totalRefundEligibility 
+    }
+    else{
+        assign "Not Guranteed!" to totalRefundNoEligibility
+    }
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1733,15 +2113,10 @@ if (checkATC =="C"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
-    
-}
-else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
+
 }
 
-send "DF" +totalRefundAmount
+send "DF" +totalRefundAmount 
 capture line:6, column:1, length:1 assign to dfnextcheck
 if (dfnextcheck == ">"){
     capture line:4, column:1, length:10 assign to totalRefundAmount
@@ -1793,8 +2168,14 @@ if (totalDealAmount >"0"){
             }
             send "IR"
             send "IR"
-            send "TTE"
-            send "FXB/K"+ref62
+            send "TTE/all"
+            if (SBF_Check == "True"){
+                send "FXB/K"+ref62 +"/SBF"
+            }
+            else{
+                send "FXB/K"+ref62
+            }
+            
             send "rfRAMADAN;er"
             send "er"
             send "IG"
@@ -1805,273 +2186,726 @@ if (totalDealAmount >"0"){
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
+
 if (FA_Check_TRUE_FALSE2 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE3 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE4 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE5 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE6 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE7 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE8 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE9 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE10 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE11 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE12 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE13 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE14 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
 if (FA_Check_TRUE_FALSE15 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
+
 if (FA_Check_TRUE_FALSE16 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
+
 if (FA_Check_TRUE_FALSE17 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }
+        }
+        when ("No, ignore!") {
+
+        }
+    }
 }
 }
 
+
 if (FA_Check_TRUE_FALSE18 == "True"){
+    ask "Do you want to continue with the next ticket?" assign to qz6
     send "TRFIG"
     send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
+    send "TRFU/FM0"
     call "TRFP"
-    send "TRFP"
+    capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
 }
 else{
-    send "PLEASE CONTINUE MANULALLY!"
-    ask "CONTINUE MANUALLY" assign to qz6
-}
-}
-            capture line:2, column:1, length:21 assign to refundedTicketCheck
-    if (refundedTicketCheck != "OK - REFUND PROCESSED"){
-        ask "Contiue?" assign to qz5
+    choose "Do you want to refund?"{
+        when ("Yes") {
+            send "TRFU/NF"
+            send "TRFU/FM0"
+            call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFP"
+            }
+            }
+        }
+        when ("No, Update Needed!") {
+            choose "Do you want to continue manually?" until "Done!"{
+                when ("input another command") {
+                    ask "Enter command..." assign to command1
+                    send command1
+                }
+            }   
+        }
+        when ("No, ignore!") {
+
+        }
     }
+}
+}
+    
             send "RT" +pnr
             send "IR"
             call "z_FOPCASH_DEL"
