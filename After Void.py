@@ -613,40 +613,80 @@ else{
         }
 
 send "TWD/TKT" + Tn1FA1 + Tn1FA2
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
+    
+}
 capture line:1, column:1, length:14 assign to checkNextTKT
 if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn2FA1 + Tn2FA2
+}
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
     send "TWD/TKT" + Tn2FA1 + Tn2FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn2FA1 + Tn2FA2
 }
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
+    send "TWD/TKT" +Tn2FA1 + Tn2FA2
+}
 capture line:1, column:1, length:14 assign to checkNextTKT
 if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn3FA1 + Tn3FA2
+}
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
     send "TWD/TKT" + Tn3FA1 + Tn3FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn3FA1 + Tn3FA2
 }
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
+    send "TWD/TKT" +Tn3FA1 + Tn3FA2
+}
 capture line:1, column:1, length:14 assign to checkNextTKT
 if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn4FA1 + Tn4FA2
+}
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
     send "TWD/TKT" + Tn4FA1 + Tn4FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn4FA1 + Tn4FA2
 }
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
+    send "TWD/TKT" +Tn4FA1 + Tn4FA2
+}
 capture line:1, column:1, length:14 assign to checkNextTKT
 if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn5FA1 + Tn6FA2
+}
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
     send "TWD/TKT" + Tn5FA1 + Tn6FA2
 }
 capture line:3, column:32, length:3 assign to PAXST
 if (PAXST=="INF"){
   send "TWD/TKT" +Tn5FA1 + Tn5FA2
 }
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
+    send "TWD/TKT" +Tn5FA1 + Tn5FA2
+}
 capture line:1, column:1, length:14 assign to checkNextTKT
 if (checkNextTKT=="INVALID FORMAT"){
+    send "TWD/TKT" + Tn6FA1 + Tn6FA2
+}
+capture line:1, column:1, length:16 assign to check_Timout
+if (check_Timout=="XX ETKT TIME OUT"){
     send "TWD/TKT" + Tn6FA1 + Tn6FA2
 }
 
@@ -897,7 +937,10 @@ if (Bg6 =="0 "){
             assign " " to ref62
           }
           send "FXR/K"+ref62
-
+        capture line:1, column:1, length:16 assign to check_Timout
+        if (check_Timout=="XX ETKT TIME OUT"){
+            send "FXR/K"+ref62
+        }
 
 capture line:1, column:1, length:8 assign to checkAttn
 if (checkAttn=="**ATTN**"){
@@ -1648,6 +1691,10 @@ assign "0" to  totalRefundAmount
 if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
     send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck  
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1678,6 +1725,10 @@ if (FA_Check_TRUE_FALSE1 == "True"){
 if (FA_Check_TRUE_FALSE2 == "True"){
     send "TRFIG"
     send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1707,6 +1758,10 @@ if (FA_Check_TRUE_FALSE2 == "True"){
 if (FA_Check_TRUE_FALSE3 == "True"){
     send "TRFIG"
     send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+         send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck   
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1736,6 +1791,10 @@ if (FA_Check_TRUE_FALSE3 == "True"){
 if (FA_Check_TRUE_FALSE4 == "True"){
     send "TRFIG"
     send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1766,6 +1825,10 @@ if (FA_Check_TRUE_FALSE4 == "True"){
 if (FA_Check_TRUE_FALSE5 == "True"){
     send "TRFIG"
     send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1796,6 +1859,10 @@ if (FA_Check_TRUE_FALSE5 == "True"){
 if (FA_Check_TRUE_FALSE6 == "True"){
     send "TRFIG"
     send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1825,6 +1892,10 @@ if (FA_Check_TRUE_FALSE6 == "True"){
 if (FA_Check_TRUE_FALSE7 == "True"){
     send "TRFIG"
     send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1854,6 +1925,10 @@ if (FA_Check_TRUE_FALSE7 == "True"){
 if (FA_Check_TRUE_FALSE8 == "True"){
     send "TRFIG"
     send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1883,6 +1958,10 @@ if (FA_Check_TRUE_FALSE8 == "True"){
 if (FA_Check_TRUE_FALSE9 == "True"){
     send "TRFIG"
     send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1912,6 +1991,10 @@ if (FA_Check_TRUE_FALSE9 == "True"){
 if (FA_Check_TRUE_FALSE10 == "True"){
     send "TRFIG"
     send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1941,6 +2024,10 @@ if (FA_Check_TRUE_FALSE10 == "True"){
 if (FA_Check_TRUE_FALSE11 == "True"){
     send "TRFIG"
     send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1970,6 +2057,10 @@ if (FA_Check_TRUE_FALSE11 == "True"){
 if (FA_Check_TRUE_FALSE12 == "True"){
     send "TRFIG"
     send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -1999,6 +2090,10 @@ if (FA_Check_TRUE_FALSE12 == "True"){
 if (FA_Check_TRUE_FALSE13 == "True"){
     send "TRFIG"
     send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck 
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2028,6 +2123,10 @@ if (FA_Check_TRUE_FALSE13 == "True"){
 if (FA_Check_TRUE_FALSE14 == "True"){
     send "TRFIG"
     send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+         send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck   
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2057,6 +2156,10 @@ if (FA_Check_TRUE_FALSE14 == "True"){
 if (FA_Check_TRUE_FALSE15 == "True"){
     send "TRFIG"
     send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2086,6 +2189,10 @@ if (FA_Check_TRUE_FALSE15 == "True"){
 if (FA_Check_TRUE_FALSE16 == "True"){
     send "TRFIG"
     send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2116,6 +2223,10 @@ if (FA_Check_TRUE_FALSE16 == "True"){
 if (FA_Check_TRUE_FALSE17 == "True"){
     send "TRFIG"
     send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck 
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2145,6 +2256,10 @@ if (FA_Check_TRUE_FALSE17 == "True"){
 if (FA_Check_TRUE_FALSE18 == "True"){
     send "TRFIG"
     send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
+    capture line:1, column:1, length:16 assign to check_Timout
+    if (check_Timout=="XX ETKT TIME OUT"){
+        send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
+    }
     capture line:1, column:58, length:1 assign to checkATC
     assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
@@ -2237,7 +2352,7 @@ if (totalDealAmount >"0"){
 
     if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
-    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
+    send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck    
     capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
     send "TRFU/NF"
@@ -2245,7 +2360,15 @@ if (checkATC =="C"){
     call "TRFP"
     capture line:2, column:1, length:21 assign to checkRefundProcessed
             if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFig"
+                send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
+                send "TRFU/NF"
+                send "TRFU/FM0"
+                call "TRFP"
+                capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
                 send "TRFP"
+            }
             }
 }
 else{
@@ -2286,7 +2409,15 @@ if (checkATC =="C"){
     call "TRFP"
     capture line:2, column:1, length:21 assign to checkRefundProcessed
             if (checkRefundProcessed != "OK - REFUND PROCESSED"){
+                send "TRFig"
+                send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
+                send "TRFU/NF"
+                send "TRFU/FM0"
+                call "TRFP"
+            capture line:2, column:1, length:21 assign to checkRefundProcessed
+            if (checkRefundProcessed != "OK - REFUND PROCESSED"){
                 send "TRFP"
+            }
             }
 }
 else{
