@@ -1649,12 +1649,14 @@ if (FA_Check_TRUE_FALSE1 == "True"){
     send "TRFIG"
     send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1668,6 +1670,8 @@ if (FA_Check_TRUE_FALSE1 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
+    
 
 }
 
@@ -1675,12 +1679,14 @@ if (FA_Check_TRUE_FALSE2 == "True"){
     send "TRFIG"
     send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1694,6 +1700,7 @@ if (FA_Check_TRUE_FALSE2 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -1701,12 +1708,14 @@ if (FA_Check_TRUE_FALSE3 == "True"){
     send "TRFIG"
     send "TRF" +Tn3FA1 +" "+Tn3FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1720,6 +1729,7 @@ if (FA_Check_TRUE_FALSE3 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -1727,12 +1737,14 @@ if (FA_Check_TRUE_FALSE4 == "True"){
     send "TRFIG"
     send "TRF" +Tn4FA1 +" "+Tn4FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1746,6 +1758,7 @@ if (FA_Check_TRUE_FALSE4 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 
 }
@@ -1754,12 +1767,14 @@ if (FA_Check_TRUE_FALSE5 == "True"){
     send "TRFIG"
     send "TRF" +Tn5FA1 +" "+Tn5FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1773,6 +1788,7 @@ if (FA_Check_TRUE_FALSE5 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 
 }
@@ -1781,12 +1797,14 @@ if (FA_Check_TRUE_FALSE6 == "True"){
     send "TRFIG"
     send "TRF" +Tn6FA1 +" "+Tn6FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1800,6 +1818,7 @@ if (FA_Check_TRUE_FALSE6 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -1807,12 +1826,14 @@ if (FA_Check_TRUE_FALSE7 == "True"){
     send "TRFIG"
     send "TRF" +Tn7FA1 +" "+Tn7FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1826,6 +1847,7 @@ if (FA_Check_TRUE_FALSE7 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -1833,12 +1855,14 @@ if (FA_Check_TRUE_FALSE8 == "True"){
     send "TRFIG"
     send "TRF" +Tn8FA1 +" "+Tn8FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1852,6 +1876,7 @@ if (FA_Check_TRUE_FALSE8 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -1859,12 +1884,14 @@ if (FA_Check_TRUE_FALSE9 == "True"){
     send "TRFIG"
     send "TRF" +Tn9FA1 +" "+Tn9FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1878,6 +1905,7 @@ if (FA_Check_TRUE_FALSE9 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -1885,12 +1913,14 @@ if (FA_Check_TRUE_FALSE10 == "True"){
     send "TRFIG"
     send "TRF" +Tn10FA1 +" "+Tn10FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1904,6 +1934,7 @@ if (FA_Check_TRUE_FALSE10 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -1911,12 +1942,14 @@ if (FA_Check_TRUE_FALSE11 == "True"){
     send "TRFIG"
     send "TRF" +Tn11FA1 +" "+Tn11FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1930,6 +1963,7 @@ if (FA_Check_TRUE_FALSE11 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -1937,12 +1971,14 @@ if (FA_Check_TRUE_FALSE12 == "True"){
     send "TRFIG"
     send "TRF" +Tn12FA1 +" "+Tn12FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1956,6 +1992,7 @@ if (FA_Check_TRUE_FALSE12 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -1963,12 +2000,14 @@ if (FA_Check_TRUE_FALSE13 == "True"){
     send "TRFIG"
     send "TRF" +Tn13FA1 +" "+Tn13FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1982,6 +2021,7 @@ if (FA_Check_TRUE_FALSE13 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -1989,12 +2029,14 @@ if (FA_Check_TRUE_FALSE14 == "True"){
     send "TRFIG"
     send "TRF" +Tn14FA1 +" "+Tn14FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -2008,6 +2050,7 @@ if (FA_Check_TRUE_FALSE14 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -2015,12 +2058,14 @@ if (FA_Check_TRUE_FALSE15 == "True"){
     send "TRFIG"
     send "TRF" +Tn15FA1 +" "+Tn15FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -2034,6 +2079,7 @@ if (FA_Check_TRUE_FALSE15 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
@@ -2041,12 +2087,14 @@ if (FA_Check_TRUE_FALSE16 == "True"){
     send "TRFIG"
     send "TRF" +Tn16FA1 +" "+Tn16FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -2060,6 +2108,7 @@ if (FA_Check_TRUE_FALSE16 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 
 }
@@ -2068,12 +2117,14 @@ if (FA_Check_TRUE_FALSE17 == "True"){
     send "TRFIG"
     send "TRF" +Tn17FA1 +" "+Tn17FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -2087,6 +2138,7 @@ if (FA_Check_TRUE_FALSE17 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
     
 }
 
@@ -2094,12 +2146,14 @@ if (FA_Check_TRUE_FALSE18 == "True"){
     send "TRFIG"
     send "TRF" +Tn18FA1 +" "+Tn18FA2 +"/ATC" +NPcheck
     capture line:1, column:58, length:1 assign to checkATC
+    assign "Not Guranteed" to totalRefundEligibility
     if (checkATC =="C"){
-        assign "Guranteed!" to totalRefundEligibility 
+        assign "Guranteed" to totalRefundEligibility 
     }
-    else{
-        assign "Not Guranteed!" to totalRefundNoEligibility
+    if (checkATC =="U"){
+        assign "Guranteed" to totalRefundEligibility 
     }
+    if (totalRefundEligibility == "Guranteed"){
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -2113,6 +2167,7 @@ if (FA_Check_TRUE_FALSE18 == "True"){
         capture line:12, column:33, length:10 assign to ticketRefundAmount
     }
     append ";" + ticketRefundAmount to totalRefundAmount
+    }
 
 }
 
