@@ -520,7 +520,7 @@ else{
       capture line:6, column:62, length:2 assign to Bg1
       assign "1" to TQTSegmentNo
     }
-    if (TQTSegmentNo == "1"){
+    else{
       capture line:6, column:62, length:2 assign to Bg2
       assign "2" to TQTSegmentNo
     }
@@ -839,160 +839,6 @@ else{
       assign "6" to TQTSegmentNo
     }
   }
-
-else{
-
-    capture line:2, column:44, length:5 assign to DOITEST
-    capture line:2, column:57, length:8 assign to ticketingOffice
-
-  if (DOITEST!=today){
-    send "N0 Void as DOI-" +DOITEST
-    ask "Ignore?" assign to qz5
-    send "ig"
-  }
-
-capture line:4, column:47, length:1 assign to FST1
-if (FST1=="C"){
-           send "Please check status!"
-           ask "The CST checked in" assign to qz5
-           send "ig"
-}
-if (FST1=="V"){
-           send "Please check status!"
-           ask "The Ticket is Voided, Continue?" assign to qz5
-}
-
-if (segmentsCount=="1"){
-       capture line:4, column:62, length:2 assign to Bg1
-}
-
-if (segmentsCount=="2"){
-    capture line:4, column:62, length:2 assign to Bg1
-    capture line:5, column:30, length:2 assign to OK2
-    if (OK2=="OK"){
-        capture line:5, column:62, length:2 assign to Bg2
-    }
-    else{
-        capture line:6, column:62, length:2 assign to Bg2
-    }
-}
-
-if (segmentsCount=="3"){
-    capture line:4, column:62, length:2 assign to Bg1
-    capture line:5, column:30, length:2 assign to OK2
-    if (OK2=="OK"){
-        capture line:5, column:62, length:2 assign to Bg2
-    }
-    else{
-        capture line:6, column:62, length:2 assign to Bg2
-    }
-    capture line:6, column:30, length:2 assign to OK3
-    if (OK3=="OK"){
-        capture line:6, column:62, length:2 assign to Bg3
-    }
-    else{
-        capture line:7, column:62, length:2 assign to Bg3
-    }
-    
-}
-
-if (segmentsCount=="4"){
-    capture line:4, column:62, length:2 assign to Bg1
-    capture line:5, column:30, length:2 assign to OK2
-    if (OK2=="OK"){
-        capture line:5, column:62, length:2 assign to Bg2
-    }
-    else{
-        capture line:6, column:62, length:2 assign to Bg2
-    }
-    capture line:6, column:30, length:2 assign to OK3
-    if (OK3=="OK"){
-        capture line:6, column:62, length:2 assign to Bg3
-    }
-    else{
-        capture line:7, column:62, length:2 assign to Bg3
-    }
-    capture line:7, column:30, length:2 assign to OK4
-    if (OK4=="OK"){
-        capture line:7, column:62, length:2 assign to Bg4
-    }
-    else{
-        capture line:8, column:62, length:2 assign to Bg4
-    }
-}
-
-if (segmentsCount=="5"){
-    capture line:4, column:62, length:2 assign to Bg1
-    capture line:5, column:30, length:2 assign to OK2
-    if (OK2=="OK"){
-        capture line:5, column:62, length:2 assign to Bg2
-    }
-    else{
-        capture line:6, column:62, length:2 assign to Bg2
-    }
-    capture line:6, column:30, length:2 assign to OK3
-    if (OK3=="OK"){
-        capture line:6, column:62, length:2 assign to Bg3
-    }
-    else{
-        capture line:7, column:62, length:2 assign to Bg3
-    }
-    capture line:7, column:30, length:2 assign to OK4
-    if (OK4=="OK"){
-        capture line:7, column:62, length:2 assign to Bg4
-    }
-    else{
-        capture line:8, column:62, length:2 assign to Bg4
-    }
-    capture line:8, column:30, length:2 assign to OK5
-    if (OK5=="OK"){
-        capture line:8, column:62, length:2 assign to Bg5
-    }
-    else{
-        capture line:9, column:62, length:2 assign to Bg5
-    }
-}
-
-if (segmentsCount=="6"){
-    capture line:4, column:62, length:2 assign to Bg1
-    capture line:5, column:30, length:2 assign to OK2
-    if (OK2=="OK"){
-        capture line:5, column:62, length:2 assign to Bg2
-    }
-    else{
-        capture line:6, column:62, length:2 assign to Bg2
-    }
-    capture line:6, column:30, length:2 assign to OK3
-    if (OK3=="OK"){
-        capture line:6, column:62, length:2 assign to Bg3
-    }
-    else{
-        capture line:7, column:62, length:2 assign to Bg3
-    }
-    capture line:7, column:30, length:2 assign to OK4
-    if (OK4=="OK"){
-        capture line:7, column:62, length:2 assign to Bg4
-    }
-    else{
-        capture line:8, column:62, length:2 assign to Bg4
-    }
-    capture line:8, column:30, length:2 assign to OK5
-    if (OK5=="OK"){
-        capture line:8, column:62, length:2 assign to Bg5
-    }
-    else{
-        capture line:9, column:62, length:2 assign to Bg5
-    }
-    capture line:9, column:30, length:2 assign to OK6
-    if (OK6=="OK"){
-        capture line:9, column:62, length:2 assign to Bg6
-    }
-    else{
-        capture line:10, column:62, length:2 assign to Bg6
-    }
-}
-
-}
 
 if (Bg1 =="  "){
     assign "0p" to Bg1
@@ -1734,7 +1580,7 @@ send "FM5"
     assign "0" to eighth_TST
     assign "0" to ninth_TST
 
-send "TQT/500"
+send "TQT/T500"
 
 capture line:2, column:35, length:3 assign to PHP_Currency
 if (PHP_Currency=="PHP"){
@@ -1785,44 +1631,45 @@ if (PHP_Currency=="PHP"){
 
 if (first_TST != "0"){
     send "TQT/T" +first_TST +"/FM"
-    capture line:7, column:24, length:10 assign to fisrt_TQT_FM
+    capture line:7, column:28, length:6 assign to fisrt_TQT_FM
 }
 if (second_TST != "0"){
     send "TQT/T" +second_TST +"/FM"
-    capture line:8, column:24, length:10 assign to second_TQT_FM
+    capture line:7, column:28, length:6 assign to second_TQT_FM
 }
 if (third_TST != "0"){
     send "TQT/T" +third_TST +"/FM"
-    capture line:9, column:24, length:10 assign to third_TQT_FM
+    capture line:7, column:28, length:6 assign to third_TQT_FM
 }
 if (fourth_TST != "0"){
     send "TQT/T" +fourth_TST +"/FM"
-    capture line:10, column:24, length:10 assign to fourth_TQT_FM
+    capture line:7, column:28, length:6 assign to fourth_TQT_FM
 }
 if (fifth_TST != "0"){
     send "TQT/T" +fifth_TST +"/FM"
-    capture line:11, column:24, length:10 assign to fifth_TQT_FM
+    capture line:7, column:28, length:6 assign to fifth_TQT_FM
 }
 if (sixth_TST != "0"){
     send "TQT/T" +sixth_TST +"/FM"
-    capture line:12, column:24, length:10 assign to sixth_TQT_FM
+    capture line:7, column:28, length:6 assign to sixth_TQT_FM
 }   
 if (seventh_TST != "0"){
     send "TQT/T" +seventh_TST +"/FM"
-    capture line:13, column:24, length:10 assign to seventh_TQT_FM
+    capture line:7, column:28, length:6 assign to seventh_TQT_FM
 }
 if (eighth_TST != "0"){
     send "TQT/T" +eighth_TST +"/FM"
-    capture line:14, column:24, length:10 assign to eighth_TQT_FM
+    capture line:7, column:28, length:6 assign to eighth_TQT_FM
 }
 if (ninth_TST != "0"){
     send "TQT/T" +ninth_TST +"/FM"
-    capture line:15, column:24, length:10 assign to ninth_TQT_FM
+    capture line:7, column:28, length:6 assign to ninth_TQT_FM
 }
 
 send "DF" +fisrt_TQT_FM +";" +second_TQT_FM +";" +third_TQT_FM +";" +fourth_TQT_FM 
 +";" +fifth_TQT_FM +";" +sixth_TQT_FM +";" +seventh_TQT_FM +";" +eighth_TQT_FM +";" +ninth_TQT_FM
 
+capture line:2, column:1, length:10 assign to totalNewPrice
 capture line:6, column:1, length:1 assign to dfnextcheck
 if (dfnextcheck == ">"){
     capture line:4, column:1, length:10 assign to totalNewPrice
@@ -1859,6 +1706,30 @@ if (dfnextcheck == ">"){
     if (check_AED_Final == "-"){
         capture line:5, column:5, length:6 assign to totalNewPrice
     }
+    capture line:5, column:12, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:7 assign to totalNewPrice
+    }
+    capture line:5, column:13, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:8 assign to totalNewPrice
+    }
+    capture line:5, column:14, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:9 assign to totalNewPrice
+    }
+    capture line:5, column:15, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:10 assign to totalNewPrice
+    }
+    capture line:5, column:16, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:11 assign to totalNewPrice
+    }
+    capture line:5, column:17, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:12 assign to totalNewPrice
+    }
     
     send "FQC" +totalNewPrice +"AED/" +firstCurr
     capture line:5, column:7, length:1 assign to check_AED_Final
@@ -1880,6 +1751,30 @@ if (dfnextcheck == ">"){
     capture line:5, column:11, length:1 assign to check_AED_Final
     if (check_AED_Final == "-"){
         capture line:5, column:5, length:6 assign to totalNewPrice
+    }
+    capture line:5, column:12, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:7 assign to totalNewPrice
+    }
+    capture line:5, column:13, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:8 assign to totalNewPrice
+    }
+    capture line:5, column:14, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:9 assign to totalNewPrice
+    }
+    capture line:5, column:15, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:10 assign to totalNewPrice
+    }
+    capture line:5, column:16, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:11 assign to totalNewPrice
+    }
+    capture line:5, column:17, length:1 assign to check_AED_Final
+    if (check_AED_Final == "-"){
+        capture line:5, column:5, length:12 assign to totalNewPrice
     }
 
 
