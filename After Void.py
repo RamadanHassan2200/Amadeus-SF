@@ -2942,7 +2942,7 @@
                         send "XE" +APM_Line 
                     }
                     if (APN_Line != "0"){
-                        send "XN" +APN_Line
+                        send "XE" +APN_Line
                     }
                     send "APM-+" +APMDetails
                     send "APN-M+" +APMDetails +"/AR/p1"
