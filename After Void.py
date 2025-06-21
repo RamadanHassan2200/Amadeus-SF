@@ -2367,18 +2367,32 @@
     if (totalDealAmount >"0"){
         choose "Would you like to proceed with the refund?"{
             when ("Yes") {
+                send "IR"
                 send "RTJ"
-                capture line:2, column:5, length:3 assign to apcheck2
-                capture line:3, column:5, length:3 assign to apcheck3
-                capture line:4, column:5, length:3 assign to apcheck4
-                capture line:5, column:5, length:3 assign to apcheck5
-                capture line:6, column:5, length:3 assign to apcheck6
-                capture line:7, column:5, length:3 assign to apcheck7
-                capture line:8, column:5, length:3 assign to apcheck8
+                capture line:2, column:5, length:5 assign to apcheck2
+                capture line:3, column:5, length:5 assign to apcheck3
+                capture line:4, column:5, length:5 assign to apcheck4
+                capture line:5, column:5, length:5 assign to apcheck5
+                capture line:6, column:5, length:5 assign to apcheck6
+                capture line:7, column:5, length:5 assign to apcheck7
+                capture line:8, column:5, length:5 assign to apcheck8
+                capture line:9, column:5, length:5 assign to apcheck9
+                capture line:10, column:5, length:5 assign to apcheck10
+                capture line:11, column:5, length:5 assign to apcheck11
+                capture line:12, column:5, length:5 assign to apcheck12
+                capture line:13, column:5, length:5 assign to apcheck13
+                capture line:14, column:5, length:5 assign to apcheck14
+                capture line:15, column:5, length:5 assign to apcheck15
+                capture line:16, column:5, length:5 assign to apcheck16
+                capture line:17, column:5, length:5 assign to apcheck17
+                capture line:18, column:5, length:5 assign to apcheck18
 
                 assign "" to APMDetails
-                    assign "True" to VaildNo
-                    if (apcheck2 == "APM"){
+                assign "0" to APM_Line
+                assign "0" to APN_Line
+                
+                    if (apcheck2 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:2, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2391,9 +2405,26 @@
                         }
 
                         capture line:2, column:10, length:12 assign to APMDetails
+                        capture line:2, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck3 == "APM"){
+                    if (apcheck2 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:2, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:2, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:2, column:11, length:12 assign to APMDetails
+                        capture line:2, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck3 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:3, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2406,9 +2437,26 @@
                         }
 
                         capture line:3, column:10, length:12 assign to APMDetails
+                        capture line:3, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck4 == "APM"){
+                    if (apcheck3 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:3, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:3, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:3, column:11, length:12 assign to APMDetails
+                        capture line:3, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck4 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:4, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2421,9 +2469,26 @@
                         }
 
                         capture line:4, column:10, length:12 assign to APMDetails
+                        capture line:4, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck5 == "APM"){
+                    if (apcheck4 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:4, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:4, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:4, column:11, length:12 assign to APMDetails
+                        capture line:4, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck5 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:5, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2436,9 +2501,26 @@
                         }
 
                         capture line:5, column:10, length:12 assign to APMDetails
+                        capture line:5, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck6 == "APM"){
+                    if (apcheck5 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:5, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:5, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:5, column:11, length:12 assign to APMDetails
+                        capture line:5, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck6 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:6, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2451,9 +2533,26 @@
                         }
 
                         capture line:6, column:10, length:12 assign to APMDetails
+                        capture line:6, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck7 == "APM"){
+                    if (apcheck6 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:6, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:6, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:6, column:11, length:12 assign to APMDetails
+                        capture line:6, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck7 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:7, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2466,9 +2565,26 @@
                         }
 
                         capture line:7, column:10, length:12 assign to APMDetails
+                        capture line:7, column:1, length:3 assign to APM_Line
                     }
 
-                    if (apcheck8 == "APM"){
+                    if (apcheck7 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:7, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:7, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:7, column:11, length:12 assign to APMDetails
+                        capture line:7, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck8 == "APM +"){
+                        assign "True" to VaildNo
                         capture line:8, column:9, length:1 assign to apmNo
                         if (apmNo!="+"){
                             assign "False" to VaildNo
@@ -2481,12 +2597,353 @@
                         }
 
                         capture line:8, column:10, length:12 assign to APMDetails
+                        capture line:8, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck8 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:8, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:8, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:8, column:11, length:12 assign to APMDetails
+                        capture line:8, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck9 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:9, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:9, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:9, column:10, length:12 assign to APMDetails
+                        capture line:9, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck9 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:9, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:9, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:9, column:11, length:12 assign to APMDetails
+                        capture line:9, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck10 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:10, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:10, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:10, column:10, length:12 assign to APMDetails
+                        capture line:10, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck10 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:10, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:10, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:10, column:11, length:12 assign to APMDetails
+                        capture line:10, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck11 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:11, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:11, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:11, column:10, length:12 assign to APMDetails
+                        capture line:11, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck11 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:11, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:11, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:11, column:11, length:12 assign to APMDetails
+                        capture line:11, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck12 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:12, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:12, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:12, column:10, length:12 assign to APMDetails
+                        capture line:12, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck12 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:12, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:12, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:12, column:11, length:12 assign to APMDetails
+                        capture line:12, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck13 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:13, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:13, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:13, column:10, length:12 assign to APMDetails
+                        capture line:13, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck13 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:13, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:13, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:13, column:11, length:12 assign to APMDetails
+                        capture line:13, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck14 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:14, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:14, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:14, column:10, length:12 assign to APMDetails
+                        capture line:14, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck14 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:14, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:14, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:14, column:11, length:12 assign to APMDetails
+                        capture line:14, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck15 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:15, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:15, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:15, column:10, length:12 assign to APMDetails
+                        capture line:15, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck15 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:15, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:15, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:15, column:11, length:12 assign to APMDetails
+                        capture line:15, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck16 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:16, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:16, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:16, column:10, length:12 assign to APMDetails
+                        capture line:16, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck16 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:16, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:16, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:16, column:11, length:12 assign to APMDetails
+                        capture line:16, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck17 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:17, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:17, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:17, column:10, length:12 assign to APMDetails
+                        capture line:17, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck17 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:17, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:17, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:17, column:11, length:12 assign to APMDetails
+                        capture line:17, column:1, length:3 assign to APN_Line
+                    }
+
+                    if (apcheck18 == "APM +"){
+                        assign "True" to VaildNo
+                        capture line:18, column:9, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:18, column:22, length:1 assign to apmNo
+                        if (apmNo>="0"){
+                            if (apmNo<="9"){
+                                assign "False" to VaildNo
+                            }
+                        }
+
+                        capture line:18, column:10, length:12 assign to APMDetails
+                        capture line:18, column:1, length:3 assign to APM_Line
+                    }
+
+                    if (apcheck18 == "APN M"){
+                        assign "True" to VaildNo
+                        capture line:18, column:10, length:1 assign to apmNo
+                        if (apmNo!="+"){
+                            assign "False" to VaildNo
+                        }
+                        capture line:18, column:23, length:1 assign to apmNo
+                        if (apmNo!="/"){
+                            assign "False" to VaildNo
+                        }
+
+                        capture line:18, column:11, length:12 assign to APMDetails
+                        capture line:18, column:1, length:3 assign to APN_Line
                     }
 
                     if (VaildNo== "False"){
                         ask "Please write the Mobile Number Correctly:" assign to APMDetails
                     }
-
+                    if (APM_Line != "0"){
+                        send "XE" +APM_Line 
+                    }
+                    if (APN_Line != "0"){
+                        send "XN" +APN_Line
+                    }
                     send "APM-+" +APMDetails
                     send "APN-M+" +APMDetails +"/AR/p1"
 
