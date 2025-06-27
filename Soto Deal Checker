@@ -320,6 +320,17 @@ send "tqt/t500"
 
   ask "Please confirm the baggege... " assign to qz5
 
+  assign "0" to Price1
+  assign "0" to Price2
+  assign "0" to Price3
+  assign "0" to Price4
+  assign "0" to Price5
+  assign "0" to Price6
+  assign "0" to Price7
+  assign "0" to Price8
+  assign "0" to Price9
+  assign "0" to Price10
+
   send "TTH"
   capture line:3, column:1, length:7 assign to deleted_Statement
     if (deleted_Statement=="DELETED"){
@@ -860,9 +871,6 @@ send "tqt/t500"
     }
     if (paxCount > "8"){
         append ";" +Price9 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "9"){
-        append ";" +Price10 to totalOldTSTPrice_Statement
     }
 
     send "DF" + totalOldTSTPrice_Statement + "-" + totalNewPrice 
