@@ -1144,4 +1144,97 @@ if (checkATC =="C"){
     }
 }
 
+if (checkATC =="P"){
+  capture line:14, column:28, length:16 assign to check_GDS1
+  capture line:15, column:28, length:16 assign to check_GDS2
+  capture line:16, column:28, length:16 assign to check_GDS3
+  capture line:17, column:28, length:16 assign to check_GDS4
+  capture line:18, column:28, length:16 assign to check_GDS5
+
+  if (check_GDS1 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS2 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS3 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS4 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS5 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+
+  if (travelport_Galileo == "True"){
+    capture line:11, column:5, length:10 assign to checkCommission1
+    capture line:12, column:5, length:10 assign to checkCommission2
+    capture line:13, column:5, length:10 assign to checkCommission3
+    capture line:14, column:5, length:10 assign to checkCommissionAmount1
+    capture line:15, column:5, length:10 assign to checkCommissionAmount2
+    capture line:16, column:5, length:10 assign to checkCommissionAmount3
+    capture line:17, column:5, length:10 assign to checkCommissionAmount4
+    capture line:18, column:5, length:10 assign to checkCommissionAmount5
+
+    assign  "         0.00" to commissionAmount
+
+    if (checkCommission1 == "COMMISSION"){
+        capture line:11, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission2 == "COMMISSION"){
+        capture line:12, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommission3 == "COMMISSION"){
+        capture line:13, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommissionAmount1 == "COMMISSION"){
+        capture line:14, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommissionAmount2 == "COMMISSION"){
+        capture line:15, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommissionAmount3 == "COMMISSION"){
+        capture line:16, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommissionAmount4 == "COMMISSION"){
+        capture line:17, column:30, length:13 assign to commissionAmount
+    }
+    if (checkCommissionAmount5 == "COMMISSION"){
+        capture line:18, column:30, length:13 assign to commissionAmount
+    }
+
+    if (commissionAmount !="         0.00"){
+      send "TRFU/FM0"
+    }
+
+    capture line:10, column:5, length:12 assign to totalRefundcheck1
+    capture line:11, column:5, length:12 assign to totalRefundcheck2
+    capture line:12, column:5, length:12 assign to totalRefundcheck3
+
+    if (totalRefundcheck1 == "REFUND TOTAL"){
+        capture line:10, column:5, length:40 assign to totalRefundAmount
+        capture line:10, column:30, length:13 assign to amountRefunded
+    }
+    if (totalRefundcheck2 == "REFUND TOTAL"){
+        capture line:11, column:5, length:40 assign to totalRefundAmount
+        capture line:11, column:30, length:13 assign to amountRefunded
+    }
+    if (totalRefundcheck3 == "REFUND TOTAL"){
+        capture line:12, column:5, length:40 assign to totalRefundAmount
+        capture line:12, column:30, length:13 assign to amountRefunded
+    }
+    capture line:6, column:28, length:3 assign to refundCurrency
+
+    send "TRFU/NF"
+    send "TRFP"
+    capture line:2, column:1, length:21 assign to refundedTicketCheck
+    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
+        send ":" +totalRefundAmount +"  " +refundCurrency
+        ask "Continue?" assign to qz5
+    }
+  }
+
+}
+
 }

@@ -815,612 +815,763 @@ if (check_Ticket == "-"){
     capture line:23, column:48, length:14 assign to ticket151
 }
 
+assign "0" to ticketsNO
 
 if (ticket1 != "0"){
     send "TWD/TKT" +ticket1
-    send "1"
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket2 != "0"){
     send "TWD/TKT" +ticket2
-    send "2"
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket3 != "0"){
     send "TWD/TKT" +ticket3
-    send "3"
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket4 != "0"){
     send "TWD/TKT" +ticket4
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket5 != "0"){
     send "TWD/TKT" +ticket5
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket6 != "0"){
     send "TWD/TKT" +ticket6
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket7 != "0"){
     send "TWD/TKT" +ticket7
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket8 != "0"){
     send "TWD/TKT" +ticket8
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket9 != "0"){
     send "TWD/TKT" +ticket9
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket10 != "0"){
     send "TWD/TKT" +ticket10
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket11 != "0"){
     send "TWD/TKT" +ticket11
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket12 != "0"){
     send "TWD/TKT" +ticket12
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket13 != "0"){
     send "TWD/TKT" +ticket13
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket14 != "0"){
     send "TWD/TKT" +ticket14
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket15 != "0"){
     send "TWD/TKT" +ticket15
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket16 != "0"){
     send "TWD/TKT" +ticket16
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket17 != "0"){
     send "TWD/TKT" +ticket17
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket18 != "0"){
     send "TWD/TKT" +ticket18
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket19 != "0"){
     send "TWD/TKT" +ticket19
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket20 != "0"){
     send "TWD/TKT" +ticket20
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket21 != "0"){
     send "TWD/TKT" +ticket21
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket22 != "0"){
     send "TWD/TKT" +ticket22
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket23 != "0"){
     send "TWD/TKT" +ticket23
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket24 != "0"){
     send "TWD/TKT" +ticket24
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket25 != "0"){
     send "TWD/TKT" +ticket25
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket26 != "0"){
     send "TWD/TKT" +ticket26
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket27 != "0"){
     send "TWD/TKT" +ticket27
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket28 != "0"){
     send "TWD/TKT" +ticket28
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket29 != "0"){
     send "TWD/TKT" +ticket29
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket30 != "0"){
     send "TWD/TKT" +ticket30
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket31 != "0"){
     send "TWD/TKT" +ticket31
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket32 != "0"){
     send "TWD/TKT" +ticket32
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket33 != "0"){
     send "TWD/TKT" +ticket33
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket34 != "0"){
     send "TWD/TKT" +ticket34
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket35 != "0"){
     send "TWD/TKT" +ticket35
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket36 != "0"){
     send "TWD/TKT" +ticket36
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket37 != "0"){
     send "TWD/TKT" +ticket37
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket38 != "0"){
     send "TWD/TKT" +ticket38
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket39 != "0"){
     send "TWD/TKT" +ticket39
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket40 != "0"){
     send "TWD/TKT" +ticket40
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket41 != "0"){
     send "TWD/TKT" +ticket41
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket42 != "0"){
     send "TWD/TKT" +ticket42
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket43 != "0"){
     send "TWD/TKT" +ticket43
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket44 != "0"){
     send "TWD/TKT" +ticket44
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket45 != "0"){
     send "TWD/TKT" +ticket45
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket46 != "0"){
     send "TWD/TKT" +ticket46
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket47 != "0"){
     send "TWD/TKT" +ticket47
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket48 != "0"){
     send "TWD/TKT" +ticket48
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket49 != "0"){
     send "TWD/TKT" +ticket49
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket50 != "0"){
     send "TWD/TKT" +ticket50
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket51 != "0"){
     send "TWD/TKT" +ticket51
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket52 != "0"){
     send "TWD/TKT" +ticket52
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket53 != "0"){
     send "TWD/TKT" +ticket53
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket54 != "0"){
     send "TWD/TKT" +ticket54
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket55 != "0"){
     send "TWD/TKT" +ticket55
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket56 != "0"){
     send "TWD/TKT" +ticket56
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket57 != "0"){
     send "TWD/TKT" +ticket57
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket58 != "0"){
     send "TWD/TKT" +ticket58
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket59 != "0"){
     send "TWD/TKT" +ticket59
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket60 != "0"){
     send "TWD/TKT" +ticket60
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket61 != "0"){
     send "TWD/TKT" +ticket61
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket62 != "0"){
     send "TWD/TKT" +ticket62
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket63 != "0"){
     send "TWD/TKT" +ticket63
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket64 != "0"){
     send "TWD/TKT" +ticket64
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket65 != "0"){
     send "TWD/TKT" +ticket65
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket66 != "0"){
     send "TWD/TKT" +ticket66
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket67 != "0"){
     send "TWD/TKT" +ticket67
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket68 != "0"){
     send "TWD/TKT" +ticket68
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket69 != "0"){
     send "TWD/TKT" +ticket69
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket70 != "0"){
     send "TWD/TKT" +ticket70
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket71 != "0"){
     send "TWD/TKT" +ticket71
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket72 != "0"){
     send "TWD/TKT" +ticket72
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket73 != "0"){
     send "TWD/TKT" +ticket73
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket74 != "0"){
     send "TWD/TKT" +ticket74
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket75 != "0"){
     send "TWD/TKT" +ticket75
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket76 != "0"){
     send "TWD/TKT" +ticket76
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket77 != "0"){
     send "TWD/TKT" +ticket77
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket78 != "0"){
     send "TWD/TKT" +ticket78
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket79 != "0"){
     send "TWD/TKT" +ticket79
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket80 != "0"){
     send "TWD/TKT" +ticket80
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket81 != "0"){
     send "TWD/TKT" +ticket81
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5    
 }
 if (ticket82 != "0"){
     send "TWD/TKT" +ticket82
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket83 != "0"){
     send "TWD/TKT" +ticket83
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket84 != "0"){
     send "TWD/TKT" +ticket84
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket85 != "0"){
     send "TWD/TKT" +ticket85
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket86 != "0"){
     send "TWD/TKT" +ticket86
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket87 != "0"){
     send "TWD/TKT" +ticket87
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket88 != "0"){
     send "TWD/TKT" +ticket88
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket89 != "0"){
     send "TWD/TKT" +ticket89
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket90 != "0"){
     send "TWD/TKT" +ticket90
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket91 != "0"){
     send "TWD/TKT" +ticket91
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket92 != "0"){
     send "TWD/TKT" +ticket92
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket93 != "0"){
     send "TWD/TKT" +ticket93
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket94 != "0"){
     send "TWD/TKT" +ticket94
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket95 != "0"){
     send "TWD/TKT" +ticket95
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket96 != "0"){
     send "TWD/TKT" +ticket96
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket97 != "0"){
     send "TWD/TKT" +ticket97
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket98 != "0"){
     send "TWD/TKT" +ticket98
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket99 != "0"){
     send "TWD/TKT" +ticket99
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket100 != "0"){
     send "TWD/TKT" +ticket100
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket101 != "0"){
     send "TWD/TKT" +ticket101
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket102 != "0"){
     send "TWD/TKT" +ticket102
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket103 != "0"){
     send "TWD/TKT" +ticket103
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket104 != "0"){
     send "TWD/TKT" +ticket104
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket105 != "0"){
     send "TWD/TKT" +ticket105
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket106 != "0"){
     send "TWD/TKT" +ticket106
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket107 != "0"){
     send "TWD/TKT" +ticket107
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket108 != "0"){
     send "TWD/TKT" +ticket108
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket109 != "0"){
     send "TWD/TKT" +ticket109
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket110 != "0"){
     send "TWD/TKT" +ticket110
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket111 != "0"){
     send "TWD/TKT" +ticket111
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket112 != "0"){
     send "TWD/TKT" +ticket112
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket113 != "0"){
     send "TWD/TKT" +ticket113
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket114 != "0"){
     send "TWD/TKT" +ticket114
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket115 != "0"){
     send "TWD/TKT" +ticket115
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket116 != "0"){
     send "TWD/TKT" +ticket116
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket117 != "0"){
     send "TWD/TKT" +ticket117
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket118 != "0"){
     send "TWD/TKT" +ticket118
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket119 != "0"){
     send "TWD/TKT" +ticket119
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket120 != "0"){
     send "TWD/TKT" +ticket120
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket121 != "0"){
     send "TWD/TKT" +ticket121
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket122 != "0"){
     send "TWD/TKT" +ticket122
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket123 != "0"){
     send "TWD/TKT" +ticket123
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket124 != "0"){
     send "TWD/TKT" +ticket124
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket125 != "0"){
     send "TWD/TKT" +ticket125
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket126 != "0"){
     send "TWD/TKT" +ticket126
-    
+    send "TWD/TKT" +ticket
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket127 != "0"){
     send "TWD/TKT" +ticket127
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket128 != "0"){
     send "TWD/TKT" +ticket128
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket129 != "0"){
     send "TWD/TKT" +ticket129
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket130 != "0"){
     send "TWD/TKT" +ticket130
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket131 != "0"){
     send "TWD/TKT" +ticket131
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket132 != "0"){
     send "TWD/TKT" +ticket132
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket133 != "0"){
     send "TWD/TKT" +ticket133
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket134 != "0"){
     send "TWD/TKT" +ticket134
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket135 != "0"){
     send "TWD/TKT" +ticket135
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket136 != "0"){
     send "TWD/TKT" +ticket136
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket137 != "0"){
     send "TWD/TKT" +ticket137
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket138 != "0"){
     send "TWD/TKT" +ticket138
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket139 != "0"){
     send "TWD/TKT" +ticket139
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket140 != "0"){
     send "TWD/TKT" +ticket140
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket141 != "0"){
     send "TWD/TKT" +ticket141
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket142 != "0"){
     send "TWD/TKT" +ticket142
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket143 != "0"){
     send "TWD/TKT" +ticket143
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket144 != "0"){
     send "TWD/TKT" +ticket144
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket145 != "0"){
     send "TWD/TKT" +ticket145
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket146 != "0"){
     send "TWD/TKT" +ticket146
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket147 != "0"){
     send "TWD/TKT" +ticket147
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket148 != "0"){
     send "TWD/TKT" +ticket148
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 if (ticket149 != "0"){
     send "TWD/TKT" +ticket149
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5  
 }
 if (ticket150 != "0"){
     send "TWD/TKT" +ticket150
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5   
 }
 if (ticket151 != "0"){
     send "TWD/TKT" +ticket151
-    
+    call "z_ATC_Refund"
+    ask "Done?" assign to qz5
 }
 
 
