@@ -2969,14 +2969,14 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
                     send "TRFig"
                     send "TRF" +Tn1FA1 +" "+Tn1FA2 +"/ATC" +NPcheck
                     send "TRFU/NF"
-                    send "TRFU/FM0"
+                    
                     call "TRFP"
                     capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -2988,7 +2988,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3018,14 +3018,14 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
                     send "TRFig"
                     send "TRF" +Tn2FA1 +" "+Tn2FA2 +"/ATC" +NPcheck
                     send "TRFU/NF"
-                    send "TRFU/FM0"
+                    
                     call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3037,7 +3037,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3066,7 +3066,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3077,7 +3077,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3106,7 +3106,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3117,7 +3117,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3146,7 +3146,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3157,7 +3157,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3186,7 +3186,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3197,7 +3197,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3226,7 +3226,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3237,7 +3237,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3266,7 +3266,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3277,7 +3277,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3306,7 +3306,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3317,7 +3317,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3346,7 +3346,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3357,7 +3357,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3386,7 +3386,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3397,7 +3397,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3426,7 +3426,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3437,7 +3437,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3466,7 +3466,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3477,7 +3477,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3506,7 +3506,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3517,7 +3517,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3546,7 +3546,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3557,7 +3557,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3587,7 +3587,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3598,7 +3598,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3628,7 +3628,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3639,7 +3639,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3669,7 +3669,7 @@
         capture line:1, column:58, length:1 assign to checkATC
     if (checkATC =="C"){
         send "TRFU/NF"
-        send "TRFU/FM0"
+        
         call "TRFP"
         capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
@@ -3680,7 +3680,7 @@
         choose "Do you want to refund?"{
             when ("Yes") {
                 send "TRFU/NF"
-                send "TRFU/FM0"
+                
                 call "TRFP"
                 capture line:2, column:1, length:21 assign to checkRefundProcessed
                 if (checkRefundProcessed != "OK - REFUND PROCESSED"){
