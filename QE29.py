@@ -690,15 +690,15 @@ send "RTA"
         capture line:2, column:57, length:8 assign to ticketingOffice
 
     if (DOITEST==today){
-        send "N0 After Void for today flights" +DOITEST
-        ask "Ignore?" assign to qz5
+        send "FXR/K"
+        call "fast_search"
         send "IR"
         send "QN"
     }
 
     if (ticketingOffice!= thisOffice){
-        send "PV/" +ticketingOffice
-        mandatory ask "please continue in this office" assign to qz5
+        send "FXR/K"
+        call "fast_search"
         send "IR"
         send "QN"
     }
@@ -708,8 +708,6 @@ send "RTA"
         if (FST1!="A"){
             send "Please check status!"
             ask "The CST checked in" assign to qz5
-            send "IR"
-        send "QN"
         }
     }
 
