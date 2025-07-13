@@ -161,22 +161,21 @@ else{
 }
 }
 
+if (OriginCity!="MNL"){
+  assign "TRUE" to EXMNLCheck
+}
+if (Airline1=="GF"){
+    assign "TRUE" to EXMNLCheck
+}
+if (Airline1=="UL"){
+    assign "TRUE" to EXMNLCheck
+}
 
-  if (Airline1!="GF") {
-    send "Not EX-MNL Deal!"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-    call "EX_MNL"
-  }
-  
-  send "RHFA"
-  capture line:1, column:1, length:16 assign to check_Previuos_TKTs
-  if (check_Previuos_TKTs!="NO ELEMENT FOUND"){
-    send "SmartFlow does not support EX-MNL with previous TKTs"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-    call "EX_MNL"
-  }
+if (EXMNLCheck != "TRUE"){
+    send "THIS's NOT EX MNL DEAL!"
+    mandatory ask "PLease check the departure city/Airline again!" assign to qz5
+}
+
 
   send "tqt/t500"
   capture line:2, column:1, length:3 assign to TQTNumber1
@@ -1779,22 +1778,634 @@ if (dfnextcheck == ">"){
 
 
     send "df" +totalOldTSTPrice +"-" +totalNewPrice
-        
-    choose "Card or Cash" {
-        when ("Card "){
-            send "rtf"
-            call "z_FOPCASH_DEL" 
-            send "PDY"
-            send "PT*"
-        }
-        when ("Cash"){
-            send "df" +totalOldTSTPrice +"-" +totalNewPrice +"-8"
-            ask "Continue?" assign to qz5
-            send "rtf"
-            call "z_FOPCASH_DEL" 
-            send "FPCASH"
+
+    choose "Do you want to continue?" until "Yes"{
+        when ("No"){
         }
     }
+
+    send "IR"
+    send "IR"
+    send "TTE/All"
+    send "FXB/K/R,UP"
+capture line:1, column:1, length:8 assign to checkAttn
+if (checkAttn=="**ATTN**"){
+    mandatory ask "There's unavailable class(es)!" assign to qz5
+}
+
+capture line:6, column:20, length:6 assign to totals6
+capture line:7, column:20, length:6 assign to totals7
+capture line:8, column:20, length:6 assign to totals8
+capture line:9, column:20, length:6 assign to totals9
+capture line:10, column:20, length:6 assign to totals10
+capture line:11, column:20, length:6 assign to totals11
+capture line:12, column:20, length:6 assign to totals12
+capture line:13, column:20, length:6 assign to totals13
+capture line:14, column:20, length:6 assign to totals14
+capture line:15, column:20, length:6 assign to totals15
+capture line:16, column:20, length:6 assign to totals16
+
+if (totals6=="TOTALS"){
+     capture line:6, column:51, length:10 assign to totalNewPrice
+}
+if (totals7=="TOTALS"){
+     capture line:7, column:51, length:10 assign to totalNewPrice
+}
+if (totals8=="TOTALS"){
+     capture line:8, column:51, length:10 assign to totalNewPrice
+}
+if (totals9=="TOTALS"){
+     capture line:9, column:51, length:10 assign to totalNewPrice     
+}
+if (totals10=="TOTALS"){
+     capture line:10, column:51, length:10 assign to totalNewPrice
+}
+if (totals11=="TOTALS"){
+     capture line:11, column:51, length:10 assign to totalNewPrice
+}
+if (totals12=="TOTALS"){
+     capture line:12, column:51, length:10 assign to totalNewPrice
+}
+if (totals13=="TOTALS"){
+     capture line:13, column:51, length:10 assign to totalNewPrice
+}
+if (totals14=="TOTALS"){
+     capture line:14, column:51, length:10 assign to totalNewPrice
+}
+if (totals15=="TOTALS"){
+     capture line:15, column:51, length:10 assign to totalNewPrice
+}
+if (totals16=="TOTALS"){
+     capture line:16, column:51, length:10 assign to totalNewPrice
+}
+     
+     if (PassengerCount=="1"){
+          capture line:6, column:1, length:3 assign to checknewCurr6
+          capture line:7, column:1, length:3 assign to checknewCurr7
+          capture line:8, column:1, length:3 assign to checknewCurr8
+          capture line:9, column:1, length:3 assign to checknewCurr9
+          capture line:10, column:1, length:3 assign to checknewCurr10
+          capture line:11, column:1, length:3 assign to checknewCurr11
+          capture line:12, column:1, length:3 assign to checknewCurr12
+          capture line:13, column:1, length:3 assign to checknewCurr13
+          capture line:14, column:1, length:3 assign to checknewCurr14
+          capture line:15, column:1, length:3 assign to checknewCurr15
+          capture line:16, column:1, length:3 assign to checknewCurr16
+          capture line:17, column:1, length:3 assign to checknewCurr17
+          capture line:18, column:1, length:3 assign to checknewCurr18
+          capture line:19, column:1, length:3 assign to checknewCurr19
+          capture line:20, column:1, length:3 assign to checknewCurr20
+          capture line:21, column:1, length:3 assign to checknewCurr21
+          capture line:22, column:1, length:3 assign to checknewCurr22
+          capture line:23, column:1, length:3 assign to checknewCurr23
+
+          if (checknewCurr6 == "PHP"){
+               capture line:6, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr7 == "PHP"){
+               capture line:7, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr8 == "PHP"){
+               capture line:8, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr9 == "PHP"){
+               capture line:9, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr10 == "PHP"){
+               capture line:10, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr11 == "PHP"){
+               capture line:11, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr12 == "PHP"){
+               capture line:12, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr13 == "PHP"){
+               capture line:13, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr14 == "PHP"){
+               capture line:14, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr15 == "PHP"){
+               capture line:15, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr16 == "PHP"){
+               capture line:16, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr17 == "PHP"){
+               capture line:17, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr18 == "PHP"){
+               capture line:18, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr19 == "PHP"){
+               capture line:19, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr20 == "PHP"){
+               capture line:20, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr21 == "PHP"){
+               capture line:21, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr22 == "PHP"){
+               capture line:22, column:4, length:10 assign to totalNewPrice
+          }
+          if (checknewCurr23 == "PHP"){
+               capture line:23, column:4, length:10 assign to totalNewPrice
+          }
+     }
+
+            
+
+send "fqq1"
+
+
+      assign "True" to BaggageChecker1
+    assign "True" to BaggageChecker2
+    assign "True" to BaggageChecker3
+    assign "True" to BaggageChecker4
+    assign "True" to BaggageChecker5
+    assign "True" to BaggageChecker6
+
+capture line:6, column:59, length:2 assign to baggage1
+    if (baggage1=="BG"){
+            capture line:8, column:59, length:2 assign to fBg1
+            if (fBg1 != Bg1){
+              assign "False" to BaggageChecker1
+            }
+        if (segmentsCount=="2"){
+            capture line:9, column:59, length:2 assign to fBg2
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+        }
+        if (segmentsCount=="3"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+        }
+        if (segmentsCount=="4"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+        }
+        if (segmentsCount=="5"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+            capture line:12, column:59, length:2 assign to fBg5
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+        }
+        if (segmentsCount=="6"){
+            capture line:9, column:59, length:2 assign to fBg2
+            capture line:10, column:59, length:2 assign to fBg3
+            capture line:11, column:59, length:2 assign to fBg4
+            capture line:12, column:59, length:2 assign to fBg5
+            capture line:13, column:59, length:2 assign to fBg6
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+            if (fBg6!=Bg6){
+                assign "False" to BaggageChecker6
+            }
+        }
+       
+    }
+
+    capture line:7, column:59, length:2 assign to baggage2
+    if (baggage2=="BG"){
+        capture line:9, column:59, length:2 assign to fBg1
+            if (fBg1 != Bg1){ 
+                assign "False" to BaggageChecker1
+            }
+        if (segmentsCount=="2"){
+            capture line:10, column:59, length:2 assign to fBg2
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+        }
+        if (segmentsCount=="3"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+        }
+        if (segmentsCount=="4"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+        }
+        if (segmentsCount=="5"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+            capture line:13, column:59, length:2 assign to fBg5
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+        }
+        if (segmentsCount=="6"){
+            capture line:10, column:59, length:2 assign to fBg2
+            capture line:11, column:59, length:2 assign to fBg3
+            capture line:12, column:59, length:2 assign to fBg4
+            capture line:13, column:59, length:2 assign to fBg5
+            capture line:14, column:59, length:2 assign to fBg6
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+            if (fBg6!=Bg6){
+                assign "False" to BaggageChecker6
+            }
+        }
+    }
+
+    capture line:8, column:59, length:2 assign to baggage3
+    if (baggage3=="BG"){
+            capture line:10, column:59, length:2 assign to fBg1
+            if (fBg1 !=Bg1){
+                assign "False" to BaggageChecker1
+            }
+        if (segmentsCount=="2"){
+            capture line:11, column:59, length:2 assign to fBg2
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+        }
+        if (segmentsCount=="3"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+        }
+        if (segmentsCount=="4"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+        }
+        if (segmentsCount=="5"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+            capture line:14, column:59, length:2 assign to fBg5
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+        }
+        if (segmentsCount=="6"){
+            capture line:11, column:59, length:2 assign to fBg2
+            capture line:12, column:59, length:2 assign to fBg3
+            capture line:13, column:59, length:2 assign to fBg4
+            capture line:14, column:59, length:2 assign to fBg5
+            capture line:15, column:59, length:2 assign to fBg6
+            if (fBg2 !=Bg2){
+                assign "False" to BaggageChecker2
+            }
+            if (fBg3 !=Bg3){
+                assign "False" to BaggageChecker3
+            }
+            if (fBg4 !=Bg4){
+                assign "False" to BaggageChecker4
+            }
+            if (fBg5 !=Bg5){
+                assign "False" to BaggageChecker5
+            }
+            if (fBg6!=Bg6){
+                assign "False" to BaggageChecker6
+            }
+        }
+    }
+
+assign "Please check the baggage in: " to baggageCheckerStatment
+      if (BaggageChecker1 == "False"){
+      append "-1st-" to baggageCheckerStatment
+    }
+    if (BaggageChecker2 == "False"){
+      append "-2nd-" to baggageCheckerStatment
+    }
+    if (BaggageChecker3 == "False"){
+      append "-3rd-" to baggageCheckerStatment
+    }
+    if (BaggageChecker4 == "False"){
+      append "-4th-" to baggageCheckerStatment
+    }
+    if (BaggageChecker5 == "False"){
+      append "-5th-" to baggageCheckerStatment
+    }
+    if (BaggageChecker6 == "False"){
+      append "-6th-" to baggageCheckerStatment
+    }
+    
+    if (baggageCheckerStatment != "Please check the baggage in: "){
+      send "" +baggageCheckerStatment + " Segment(s)"
+      ask "Continue with FXP?" assign to qz5
+      send "FXP/R,UP"
+      assign "1" to fxp_TST
+      choose "Have got the requied TST?" until "Yes"{
+          when ("No"){
+            ask "Please Enter the TST NO:" assign to fxp_TST_NO
+            send "FQQ" + fxp_TST_NO
+          }
+      }
+      send "tte/all"
+          send "fxr/k/R,UP"
+        send "fxp/R,UP"
+group{
+       mandatory ask "ENTER the Adult TST line ( Please take 01 insstead of 1" assign to TST1
+       ask "ENTER the Child TST line" assign to TST2
+       ask "ENTER the Infant TST line" assign to TST3
+}
+// first line:
+capture line:3, column:1, length:2 assign to TSTLine1
+if (TSTLine1==TST1){
+    capture line:3, column:28, length:8 assign to PaxCount1
+}
+  capture line:4, column:1, length:2 assign to TSTLine2
+  if (TSTLine2==TST1){
+      capture line:4, column:28, length:8 assign to PaxCount1
+  }
+  capture line:5, column:1, length:2 assign to TSTLine3
+  if (TSTLine3==TST1){
+      capture line:5, column:28, length:8 assign to PaxCount1
+  }
+  capture line:6, column:1, length:2 assign to TSTLine4
+  if (TSTLine4==TST1){
+      capture line:6, column:28, length:8 assign to PaxCount1
+  }
+  capture line:7, column:1, length:2 assign to TSTLine5
+  if (TSTLine5==TST1){
+      capture line:7, column:28, length:8 assign to PaxCount1
+  }
+  capture line:8, column:1, length:2 assign to TSTLine6
+  if (TSTLine6==TST1){
+      capture line:8, column:28, length:8 assign to PaxCount1
+  }
+  capture line:9, column:1, length:2 assign to TSTLine7
+  if (TSTLine7==TST1){
+      capture line:9, column:28, length:8 assign to PaxCount1
+  }
+  capture line:10, column:1, length:2 assign to TSTLine8
+  if (TSTLine8==TST1){
+      capture line:10, column:28, length:8 assign to PaxCount1
+  }
+  capture line:11, column:1, length:2 assign to TSTLine9
+  if (TSTLine9==TST1){
+      capture line:11, column:28, length:8 assign to PaxCount1
+  }
+  capture line:12, column:1, length:2 assign to TSTLine10
+  if (TSTLine10==TST1){
+      capture line:12, column:28, length:8 assign to PaxCount1
+  }
+  capture line:13, column:1, length:2 assign to TSTLine11
+  if (TSTLine11==TST1){
+      capture line:13, column:28, length:8 assign to PaxCount1
+  }
+  capture line:14, column:1, length:2 assign to TSTLine12
+  if (TSTLine12==TST1){
+      capture line:14, column:28, length:8 assign to PaxCount1
+  }
+  capture line:15, column:1, length:2 assign to TSTLine13
+  if (TSTLine13==TST1){
+      capture line:15, column:28, length:8 assign to PaxCount1
+  }
+  capture line:16, column:1, length:2 assign to TSTLine14
+  if (TSTLine14==TST1){
+      capture line:16, column:28, length:8 assign to PaxCount1
+  }
+  capture line:17, column:1, length:2 assign to TSTLine15
+  if (TSTLine15==TST1){
+      capture line:17, column:28, length:8 assign to PaxCount1
+  }
+  capture line:18, column:1, length:2 assign to TSTLine16
+  if (TSTLine16==TST1){
+      capture line:18, column:28, length:8 assign to PaxCount1
+  }
+
+  // second line:
+    if (TSTLine1==TST2){
+        capture line:3, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine2==TST2){
+        capture line:4, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine3==TST2){
+        capture line:5, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine4==TST2){
+        capture line:6, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine5==TST2){
+        capture line:7, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine6==TST2){
+        capture line:8, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine7==TST2){
+        capture line:9, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine8==TST2){
+        capture line:10, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine9==TST2){
+        capture line:11, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine10==TST2){
+        capture line:12, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine11==TST2){
+        capture line:13, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine12==TST2){
+        capture line:14, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine13==TST2){
+        capture line:15, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine14==TST2){
+        capture line:16, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine15==TST2){
+        capture line:17, column:28, length:8 assign to PaxCount2
+    }
+    if (TSTLine16==TST2){
+        capture line:18, column:28, length:8 assign to PaxCount2
+    }
+      // third line:
+      if (TSTLine1==TST3){
+        capture line:3, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine2==TST3){
+        capture line:4, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine3==TST3){
+        capture line:5, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine4==TST3){
+        capture line:6, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine5==TST3){
+        capture line:7, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine6==TST3){
+        capture line:8, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine7==TST3){
+        capture line:9, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine8==TST3){
+        capture line:10, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine9==TST3){
+        capture line:11, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine10==TST3){
+        capture line:12, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine11==TST3){
+        capture line:13, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine12==TST3){
+        capture line:14, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine13==TST3){
+        capture line:15, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine14==TST3){
+        capture line:16, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine15==TST3){
+        capture line:17, column:28, length:8 assign to PaxCount3
+      }
+      if (TSTLine16==TST3){
+        capture line:18, column:28, length:8 assign to PaxCount3
+      }
+    
+// No Infant
+if (TST3 ==""){
+  // No Child
+  if (TST2 ==""){
+      send "FXT" +TST1 +"/" +PaxCount1
+  }
+  else{
+      send "FXT" +TST1 +"/" +PaxCount1
+      send "fxr/k/R,UP"
+      send "FXP/R,UP"
+      send "FXT" +TST2 +"/" +PaxCount2
+  }
+}
+else {
+  // No Child
+  if (TST2 ==""){
+      send "FXT" +TST1 +"/" +PaxCount1
+      send "fxr/k/R,UP"
+      send "FXP/R,UP"
+      send "FXT" +TST3 +"/" +PaxCount3
+  }
+  else{
+      send "FXT" +TST1 +"/" +PaxCount1
+      send "fxr/k/R,UP"
+      send "FXP/R,UP"
+      send "FXT" +TST2 +"/" +PaxCount2
+      send "fxr/k/R,UP"
+      send "FXP/R,UP"
+      send "FXT" +TST3 +"/" +PaxCount3
+  }
+  
+}
+
+    }
+
+send "FM5"
+call "z_FOPCASH_DEL" 
+send "PDY"
+send "PT*1"        
+call "z_RTTN_DEL"
     
     send "RF" +agtName +";ER"
     send "er"
@@ -1805,6 +2416,7 @@ capture line:1, column:1, length:36 assign to checkAfterTTP
 if (checkAfterTTP== "GTW/ETS: UNABLE TO PROCESS - TIMEOUT"){
   send "TTP/RT"
 }
+
 
 call "z_Name Sorter"
 ask "ok?" assign to qz5
