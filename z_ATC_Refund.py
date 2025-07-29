@@ -610,6 +610,7 @@ if (airline1 == "NE"){
 
 }
 
+if (ignored_Refund != "True"){
 send "DD" +today + "/" +DOI
 capture line:2, column:1, length:1 assign to checkDOIDays
 assign "True" to ticket_2_Years_Validity
@@ -1052,6 +1053,7 @@ if (segment1_General_Status_Open == "True"){
     }
   }
 
+}
 
 if (ignored_Refund != "True"){
 
@@ -1059,7 +1061,6 @@ assign "" to checkNP
 if (PCC_ID =="71201675"){
   assign "/T-NP" to checkNP
 }
-send "TRFIG"
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
