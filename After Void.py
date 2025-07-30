@@ -1055,75 +1055,85 @@
     }
         
         if (PassengerCount=="1"){
-            capture line:6, column:13, length:3 assign to checknewXT6
-            capture line:7, column:13, length:3 assign to checknewXT7
-            capture line:8, column:13, length:3 assign to checknewXT8
-            capture line:9, column:13, length:3 assign to checknewXT9
-            capture line:10, column:13, length:3 assign to checknewXT10
-            capture line:11, column:13, length:3 assign to checknewXT11
-            capture line:12, column:13, length:3 assign to checknewXT12
-            capture line:13, column:13, length:3 assign to checknewXT13
-            capture line:14, column:13, length:3 assign to checknewXT14
-            capture line:15, column:13, length:3 assign to checknewXT15
-            capture line:16, column:13, length:3 assign to checknewXT16
-            capture line:17, column:13, length:3 assign to checknewXT17
-            capture line:18, column:13, length:3 assign to checknewXT18
-            capture line:19, column:13, length:3 assign to checknewXT19
-            capture line:20, column:13, length:3 assign to checknewXT20
-            capture line:21, column:13, length:3 assign to checknewXT21
-            capture line:22, column:13, length:3 assign to checknewXT22
-
-            if (checknewXT6 == "-XT"){
-                capture line:7, column:4, length:10 assign to totalNewPrice
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT7 == "-XT"){
-                capture line:8, column:4, length:10 assign to totalNewPrice
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT8 == "-XT"){
-                capture line:9, column:4, length:10 assign to totalNewPrice
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT9 == "-XT"){
-                capture line:10, column:4, length:10 assign to totalNewPrice
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT10 == "-XT"){
-                capture line:11, column:4, length:10 assign to totalNewPrice
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT11 == "-XT"){
-                capture line:12, column:4, length:10 assign to totalNewPrice
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT12 == "-XT"){
-                capture line:13, column:4, length:10 assign to totalNewPrice
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT13 == "-XT"){
-                capture line:14, column:4, length:10 assign to totalNewPrice
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT14 == "-XT"){
-                capture line:15, column:4, length:10 assign to totalNewPrice
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT15 == "-XT"){
-                capture line:16, column:4, length:10 assign to totalNewPrice
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT16 == "-XT"){
-                capture line:17, column:4, length:10 assign to totalNewPrice
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
             }
-            if (checknewXT17 == "-XT"){
-                capture line:18, column:4, length:10 assign to totalNewPrice
-            }
-            if (checknewXT18 == "-XT"){
-                capture line:19, column:4, length:10 assign to totalNewPrice
-            }
-            if (checknewXT19 == "-XT"){
-                capture line:20, column:4, length:10 assign to totalNewPrice
-            }
-            if (checknewXT20 == "-XT"){
-                capture line:21, column:4, length:10 assign to totalNewPrice
-            }
-            if (checknewXT21 == "-XT"){
-                capture line:22, column:4, length:10 assign to totalNewPrice
-            }
-            if (checknewXT22 == "-XT"){
-                capture line:23, column:4, length:10 assign to totalNewPrice
-            }
+            
+            
         }
         
             
