@@ -1,3 +1,5 @@
+//Post_Sales
+
 choose "<h2><font size=\"4\"><h2><font color=\"BLUE\">What Quote do you want to check?<h2><font size=\"3\"><p><font color=\"RED\"><br> For reissue, please make sure to add the new segments before proceeding!.</font></p></font></h2></font></h2></font></h2>"{
     when ("Reissue") {
         assign "Reissue" to quoteType
@@ -6,13 +8,31 @@ choose "<h2><font size=\"4\"><h2><font color=\"BLUE\">What Quote do you want to 
         assign "Refund" to quoteType
     }
 }
-send "tqt/t500"
+
+  send "RTA"
+if (quoteType == "Reissue"){
+    group{
+    mandatory ask "<h2><font size=\"4\"><font color=\"RED\">Please enter the original segments no.</font></font></h2>" 
+    with format "^\d{1,3}([-,]\d{1,3})*$" assign to old_segments_No
+    mandatory ask "<h2><font size=\"3\"><font color=\"BLUE\">Please enter the NEW segments no...<br>Please enter the full route!</font></font></h2>"
+    with format "^\d{1,3}([-,]\d{1,3})*$" assign to new_segments_No
+    
+    }
+}
+if (quoteType == "Refund"){
+  group{        
+  mandatory ask "<h2><font size=\"4\"><font color=\"RED\">Please enter the original segments no.</font></font></h2>" 
+  with format "^\d{1,3}([-,]\d{1,3})*$" assign to old_segments_No
+  ask "<h2><font size=\"3\"><font color=\"BLUE\">Please enter the (Possible) USED segments no... (Original Classes for Elevate!)</font></font></h2>"
+  with format "^\d{1,3}([-,]\d{1,3})*$" assign to used_segments_No
+  }
+}
+
+send "TTH/ALL"
 
 capture line:1, column:1, length:13 assign to TQT_Checker
 if (TQT_Checker !="NO ACTIVE TST"){
 
-
-capture line:2, column:75, length: 5 assign to old_segments_No
 
   capture line:2, column:1, length:3 assign to TQTNumber1
   capture line:2, column:42, length:10 assign to TQTPrice1
@@ -329,85 +349,97 @@ capture line:2, column:75, length: 5 assign to old_segments_No
 
 }else{
   send "TTH"
-  mandator ask "Please enter the Same (Non INF) TTH Number as issued ticket... " with format "^\d{1,3}$" assign to heighestTST
+  mandatory ask "Please enter the Same (Non INF) TTH Number as issued ticket... " with format "^\s*\d{1,3}\s*$" assign to heighestTST
 }
+  mandatory ask "Please enter the Same (Non INF) TTH Number as issued ticket... " with format "^\s*\d{1,3}\s*$" assign to heighestTST
 
   send "TTH/T" +heighestTST
 
-assign "1" to faresCount
+assign "" to faresCount
     // First Capture fareBasis
     send "MD-AB  "
     capture line:1, column:1, length:4 assign to AB1
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis1_short
+        capture line:1, column:6, length:1 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:1 assign to fareBasis1
+        append "           " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis1_short
+        capture line:1, column:6, length:2 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:2 assign to fareBasis1
+        append "          " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis1_short
+        capture line:1, column:6, length:3 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:3 assign to fareBasis1
+        append "         " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:4 assign to fareBasis1
+        append "        " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:5 assign to fareBasis1
+        append "       " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:6 assign to fareBasis1
+        append "      " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:7 assign to fareBasis1
+        append "     " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:8 assign to fareBasis1
+        append "    " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:9 assign to fareBasis1
+        append "   " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:10 assign to fareBasis1
+        append "  " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:11 assign to fareBasis1
+        append " " to fareBasis1
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis1_short
+        capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:12 assign to fareBasis1
         append "1" to faresCount
       }
@@ -420,73 +452,72 @@ assign "1" to faresCount
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis2_short
         capture line:1, column:6, length:1 assign to fareBasis2
+        append "           " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis2_short
         capture line:1, column:6, length:2 assign to fareBasis2
+        append "          " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis2_short
         capture line:1, column:6, length:3 assign to fareBasis2
+        append "         " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:4 assign to fareBasis2
+        append "        " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:5 assign to fareBasis2
+        append "       " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:6 assign to fareBasis2
+        append "      " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:7 assign to fareBasis2
+        append "     " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:8 assign to fareBasis2
+        append "    " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:9 assign to fareBasis2
+        append "   " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:10 assign to fareBasis2
+        append "  " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:11 assign to fareBasis2
+        append " " to fareBasis2
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis2_short
         capture line:1, column:6, length:12 assign to fareBasis2
         append "1" to faresCount
       }
@@ -499,73 +530,72 @@ assign "1" to faresCount
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis3_short
         capture line:1, column:6, length:1 assign to fareBasis3
+        append "           " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis3_short
         capture line:1, column:6, length:2 assign to fareBasis3
+        append "          " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis3_short
         capture line:1, column:6, length:3 assign to fareBasis3
+        append "         " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:4 assign to fareBasis3
+        append "        " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:5 assign to fareBasis3
+        append "       " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:6 assign to fareBasis3
+        append "      " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:7 assign to fareBasis3
+        append "     " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:8 assign to fareBasis3
+        append "    " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:9 assign to fareBasis3
+        append "   " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:10 assign to fareBasis3
+        append "  " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:11 assign to fareBasis3
+        append " " to fareBasis3
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis3_short
         capture line:1, column:6, length:12 assign to fareBasis3
         append "1" to faresCount
       }
@@ -578,73 +608,72 @@ assign "1" to faresCount
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis4_short
         capture line:1, column:6, length:1 assign to fareBasis4
+        append "           " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis4_short
         capture line:1, column:6, length:2 assign to fareBasis4
+        append "          " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis4_short
         capture line:1, column:6, length:3 assign to fareBasis4
+        append "         " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:4 assign to fareBasis4
+        append "        " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:5 assign to fareBasis4
+        append "       " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:6 assign to fareBasis4
+        append "      " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:7 assign to fareBasis4
+        append "     " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:8 assign to fareBasis4
+        append "    " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:9 assign to fareBasis4
+        append "   " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:10 assign to fareBasis4
+        append "  " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:11 assign to fareBasis4
+        append " " to fareBasis4
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis4_short
         capture line:1, column:6, length:12 assign to fareBasis4
         append "1" to faresCount
       }
@@ -657,73 +686,72 @@ assign "1" to faresCount
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis5_short
         capture line:1, column:6, length:1 assign to fareBasis5
+        append "           " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis5_short
         capture line:1, column:6, length:2 assign to fareBasis5
+        append "          " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis5_short
         capture line:1, column:6, length:3 assign to fareBasis5
+        append "         " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:4 assign to fareBasis5
+        append "        " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:5 assign to fareBasis5
+        append "       " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:6 assign to fareBasis5
+        append "      " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:7 assign to fareBasis5
+        append "     " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:8 assign to fareBasis5
+        append "    " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:9 assign to fareBasis5
+        append "   " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:10 assign to fareBasis5
+        append "  " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:11 assign to fareBasis5
+        append " " to fareBasis5
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis5_short
         capture line:1, column:6, length:12 assign to fareBasis5
         append "1" to faresCount
       }
@@ -736,73 +764,72 @@ assign "1" to faresCount
     if (AB1=="AB  "){
       capture line:1, column:33, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:1 assign to fareBasis6_short
         capture line:1, column:6, length:1 assign to fareBasis6
+        append "           " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:34, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:2 assign to fareBasis6_short
         capture line:1, column:6, length:2 assign to fareBasis6
+        append "          " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:35, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:3 assign to fareBasis6_short
         capture line:1, column:6, length:3 assign to fareBasis6
+        append "         " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:36, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:4 assign to fareBasis6
+        append "        " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:37, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:5 assign to fareBasis6
+        append "       " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:38, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:6 assign to fareBasis6
+        append "      " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:39, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:7 assign to fareBasis6
+        append "     " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:40, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:8 assign to fareBasis6
+        append "    " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:41, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:9 assign to fareBasis6
+        append "   " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:42, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:10 assign to fareBasis6
+        append "  " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:43, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:11 assign to fareBasis6
+        append " " to fareBasis6
         append "1" to faresCount
       }
       capture line:1, column:44, length:2 assign to OK
       if (OK=="OK"){
-        capture line:1, column:6, length:4 assign to fareBasis6_short
         capture line:1, column:6, length:12 assign to fareBasis6
         append "1" to faresCount
       }
@@ -819,54 +846,125 @@ assign "1" to faresCount
     }//BOTT2
 
 
-    send "TTH/T" +heighestTST
+    send "MT" 
 
     // Baggage Checker
     send "MD-AA  "
     capture line:1, column:1, length:4 assign to AA1
     if (AA1=="AA  "){
       capture line:1, column:6, length:2 assign to Bg1
-      capture line:1, column:14, length:13 assign to flight1
-      capture line:1, column:22, length:5 assign to flight1_date
+      capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight1
+          capture line:1, column:23, length:7 assign to flight1_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight1_p1
+        capture line:1, column:16, length:11 assign to flight1_p2
+        append flight1_p1 +" "+ flight1_p2 to flight1
+        capture line:1, column:22, length:7 assign to flight1_date
+      }    
     }
-    if (faresCount=="11"){
+    if (faresCount>"1"){
+      send "MD-AA  "
       capture line:1, column:1, length:4 assign to AA1
       if (AA1=="AA  "){
         capture line:1, column:6, length:2 assign to Bg2
-        capture line:1, column:14, length:13 assign to flight2
-        capture line:1, column:22, length:5 assign to flight2_date
+        capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight2
+          capture line:1, column:23, length:7 assign to flight2_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight2_p1
+        capture line:1, column:16, length:11 assign to flight2_p2
+        append flight2_p1 +" "+ flight2_p2 to flight2
+        capture line:1, column:22, length:7 assign to flight2_date
+      }  
       }
     }
-    if (faresCount=="111"){
+    if (faresCount>"11"){
+      send "MD-AA  "
       capture line:1, column:1, length:4 assign to AA1
       if (AA1=="AA  "){
         capture line:1, column:6, length:2 assign to Bg3
-        capture line:1, column:14, length:13 assign to flight3
-        capture line:1, column:22, length:5 assign to flight3_date
+        capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight3
+          capture line:1, column:23, length:7 assign to flight3_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight3_p1
+        capture line:1, column:16, length:11 assign to flight3_p2
+        append flight3_p1 +" "+ flight3_p2 to flight3
+        capture line:1, column:22, length:7 assign to flight3_date
+      }  
       }
     }
-    if (faresCount=="1111"){
+    if (faresCount>"111"){
+      send "MD-AA  "
       capture line:1, column:1, length:4 assign to AA1
       if (AA1=="AA  "){
         capture line:1, column:6, length:2 assign to Bg4
-        capture line:1, column:14, length:13 assign to flight4
-        capture line:1, column:22, length:5 assign to flight4_date
+        capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight4
+          capture line:1, column:23, length:7 assign to flight4_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight4_p1
+        capture line:1, column:16, length:11 assign to flight4_p2
+        append flight4_p1 +" "+ flight4_p2 to flight4
+        capture line:1, column:22, length:7 assign to flight4_date
+      }  
       }
     }
-    if (faresCount=="11111"){
+    if (faresCount>"1111"){
+      send "MD-AA  "
       capture line:1, column:1, length:4 assign to AA1
       if (AA1=="AA  "){
         capture line:1, column:6, length:2 assign to Bg5
-        capture line:1, column:14, length:13 assign to flight5
-        capture line:1, column:22, length:5 assign to flight5_date
+        capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight5
+          capture line:1, column:23, length:7 assign to flight5_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight5_p1
+        capture line:1, column:16, length:11 assign to flight5_p2
+        append flight5_p1 +" "+ flight5_p2 to flight5
+        capture line:1, column:22, length:7 assign to flight5_date
+      }  
       }
     }
-    if (faresCount=="111111"){
+    if (faresCount>"11111"){
+      send "MD-AA  "
       capture line:1, column:1, length:4 assign to AA1
       if (AA1=="AA  "){
         capture line:1, column:6, length:2 assign to Bg6
-        capture line:1, column:14, length:13 assign to flight6
-        capture line:1, column:22, length:5 assign to flight6_date
+        capture line:1, column:19, length:1 assign to flight_check
+      if (flight_check >= "1"){
+        if (flight_check <= "9"){
+          capture line:1, column:14, length:14 assign to flight6
+          capture line:1, column:23, length:7 assign to flight6_date
+        }
+      }
+      else{
+        capture line:1, column:14, length:2 assign to flight6_p1
+        capture line:1, column:16, length:11 assign to flight6_p2
+        append flight6_p1 +" "+ flight6_p2 to flight6
+        capture line:1, column:22, length:7 assign to flight6_date
+      }  
       }
     }
 
@@ -914,7 +1012,7 @@ if (Bg6 =="NO"){
 
 
   // getting the issuing city and date of issue
-  send "TTH/T" +heighestTST
+  send "MT" 
   send "MD-RF-"
 
   capture line:1, column:5, length:2 assign to RF1
@@ -931,460 +1029,9256 @@ if (Bg6 =="NO"){
     }
   }
 
-  send "FXX/R," +DOI +"," +issuing_City
 
-
-
-
-if (quoteType=="Reissue"){
   
-
-    
-    
-}
-if (quoteType=="Refund"){
-  send "RT"
-
-   group {
-    ask "Please enter the Old Segments Number(s)... " with format "^\d+\s*(?:[,-]\s*\d+)*$" assign to old_segments_No
-    ask "Please enter the Used Segments Number(s)... " with format "^\d+\s*(?:[,-]\s*\d+)*$" assign to used_segments_No
-  }
-
-  if ()
-  send "TQT/T" +heighestTST
-
-  capture line:1, column:14, length:3 assign to issuing_City
-  capture line:1, column:27, length:5 assign to DOI
-
-    assign "" to fareBasis1
-    assign "" to fareBasis2
-    assign "" to fareBasis3
-    assign "" to fareBasis4
-    assign "" to fareBasis5
-    assign "" to fareBasis6
-
-    capture line:5, column:32, length:2 assign to TQTOK1
-  capture line:6, column:32, length:2 assign to TQTOK2
-  capture line:7, column:32, length:2 assign to TQTOK3
-  capture line:8, column:32, length:2 assign to TQTOK4
-  capture line:9, column:32, length:2 assign to TQTOK5
-  capture line:10, column:32, length:2 assign to TQTOK6
-  capture line:11, column:32, length:2 assign to TQTOK7
-  capture line:12, column:32, length:2 assign to TQTOK8
-  capture line:13, column:32, length:2 assign to TQTOK9
-  capture line:14, column:32, length:2 assign to TQTOK10
-  capture line:15, column:32, length:2 assign to TQTOK11
-  capture line:16, column:32, length:2 assign to TQTOK12
-  capture line:17, column:32, length:2 assign to TQTOK13
-  capture line:18, column:32, length:2 assign to TQTOK14
-  capture line:19, column:32, length:2 assign to TQTOK15
-
-  assign "0" to TQTSegmentNo
-
-  if (TQTOK1=="OK"){
-    capture line:5, column:35, length:12 assign to fareBasis1
-    capture line:5, column:62, length:2 assign to Bg1
-    assign "1" to TQTSegmentNo
-  }
-  if (TQTOK2=="OK"){
-    if (TQTSegmentNo == "0"){
-      capture line:6, column:35, length:12 assign to fareBasis1
-      capture line:6, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
+  //send "DD" +today + "/" +flight1_date 
+  //capture line:2, column:1, length:1 assign to checkpast
+  //capture line:2, column:2, length:2 assign to checktoday
+    if (checkpast == "-"){
+        assign "Passed" to flight1_status
     }
     else{
-      capture line:6, column:35, length:12 assign to fareBasis2
-      capture line:6, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
+      if (checktoday == "0"){
+          assign "Passed" to flight1_status
+      }
+      if (checktoday == "1"){
+          assign "Passed" to flight1_status
+      }
+      if (checktoday >"1"){
+          assign "Future" to flight1_status
+      }
+    }
+
+
+  send "MT" 
+  send "MD-AD "
+  capture line:1, column:6, length:3 assign to OB_City
+  capture line:1, column:9, length:3 assign to IB_City
+  if (OB_City == IB_City){
+    assign "True" to RoundTrip
+  }
+
+  send "DD"
+  capture line:2, column:38, length:2 assign to YY_DOI
+  send "DD" +today +"/" +DOI
+  capture line:2, column:1, length:1 assign to check_Before_After
+  if (check_Before_After != "-"){
+    send "DF" +YY_DOI +";1"
+    capture line:2, column:1, length:2 assign to YY_DOI
+  }
+  append YY_DOI to DOI
+
+
+  if (quoteType == "Reissue"){
+    send "FXX/RADT," +DOI +"," +issuing_City +"/S" +new_segments_No
+
+    send "FQQ1"
+   
+        capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK3=="OK"){
-    if (TQTSegmentNo == "0"){
-      capture line:7, column:35, length:12 assign to fareBasis1
-      capture line:7, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-      capture line:7, column:35, length:12 assign to fareBasis2
-      capture line:7, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:7, column:35, length:12 assign to fareBasis3
-      capture line:7, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK4=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:8, column:35, length:12 assign to fareBasis1
-      capture line:8, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:8, column:35, length:12 assign to fareBasis2
-      capture line:8, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:8, column:35, length:12 assign to fareBasis3
-      capture line:8, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-      capture line:8, column:35, length:12 assign to fareBasis4
-      capture line:8, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK5=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:9, column:35, length:12 assign to fareBasis1
-      capture line:9, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-      capture line:9, column:35, length:12 assign to fareBasis2
-      capture line:9, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:9, column:35, length:12 assign to fareBasis3
-      capture line:9, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:9, column:35, length:12 assign to fareBasis4
-      capture line:9, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:9, column:35, length:12 assign to fareBasis5
-      capture line:9, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK6=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:10, column:35, length:12 assign to fareBasis1
-      capture line:10, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:10, column:35, length:12 assign to fareBasis2
-      capture line:10, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:10, column:35, length:12 assign to fareBasis3
-      capture line:10, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:10, column:35, length:12 assign to fareBasis4
-      capture line:10, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:10, column:35, length:12 assign to fareBasis5
-      capture line:10, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:10, column:35, length:12 assign to fareBasis6
-      capture line:10, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK7=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:11, column:35, length:12 assign to fareBasis1
-      capture line:11, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:11, column:35, length:12 assign to fareBasis2
-      capture line:11, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:11, column:35, length:12 assign to fareBasis3
-      capture line:11, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:11, column:35, length:12 assign to fareBasis4
-      capture line:11, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:11, column:35, length:12 assign to fareBasis5
-      capture line:11, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:11, column:35, length:12 assign to fareBasis6
-      capture line:11, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK8=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:12, column:35, length:12 assign to fareBasis1
-      capture line:12, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:12, column:35, length:12 assign to fareBasis2
-      capture line:12, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:12, column:35, length:12 assign to fareBasis3
-      capture line:12, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:12, column:35, length:12 assign to fareBasis4
-      capture line:12, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:12, column:35, length:12 assign to fareBasis5
-      capture line:12, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:12, column:35, length:12 assign to fareBasis6
-      capture line:12, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK9=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:13, column:35, length:12 assign to fareBasis1
-      capture line:13, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:13, column:35, length:12 assign to fareBasis2
-      capture line:13, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:13, column:35, length:12 assign to fareBasis3
-      capture line:13, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:13, column:35, length:12 assign to fareBasis4
-      capture line:13, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:13, column:35, length:12 assign to fareBasis5
-      capture line:13, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:13, column:35, length:12 assign to fareBasis6
-      capture line:13, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK10=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:14, column:35, length:12 assign to fareBasis1
-      capture line:14, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:14, column:35, length:12 assign to fareBasis2
-      capture line:14, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:14, column:35, length:12 assign to fareBasis3
-      capture line:14, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:14, column:35, length:12 assign to fareBasis4
-      capture line:14, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:14, column:35, length:12 assign to fareBasis5
-      capture line:14, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:14, column:35, length:12 assign to fareBasis6
-      capture line:14, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK11=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:15, column:35, length:12 assign to fareBasis1
-      capture line:15, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:15, column:35, length:12 assign to fareBasis2
-      capture line:15, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:15, column:35, length:12 assign to fareBasis3
-      capture line:15, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:15, column:35, length:12 assign to fareBasis4
-      capture line:15, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:15, column:35, length:12 assign to fareBasis5
-      capture line:15, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:15, column:35, length:12 assign to fareBasis6
-      capture line:15, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK12=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:16, column:35, length:12 assign to fareBasis1
-      capture line:16, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+    
+    send "FQQ2"
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
     }
-    if (TQTSegmentNo == "1"){
-        capture line:16, column:35, length:12 assign to fareBasis2
-      capture line:16, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
     }
-    if (TQTSegmentNo == "2"){
-        capture line:16, column:35, length:12 assign to fareBasis3
-      capture line:16, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
     }
-    if (TQTSegmentNo == "3"){
-        capture line:16, column:35, length:12 assign to fareBasis4
-      capture line:16, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
     }
-    if (TQTSegmentNo == "4"){
-        capture line:16, column:35, length:12 assign to fareBasis5
-      capture line:16, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
     }
-    if (TQTSegmentNo == "5"){
-        capture line:16, column:35, length:12 assign to fareBasis6
-      capture line:16, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK13=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:17, column:35, length:12 assign to fareBasis1
-      capture line:17, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:17, column:35, length:12 assign to fareBasis2
-      capture line:17, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:17, column:35, length:12 assign to fareBasis3
-      capture line:17, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:17, column:35, length:12 assign to fareBasis4
-      capture line:17, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:17, column:35, length:12 assign to fareBasis5
-      capture line:17, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:17, column:35, length:12 assign to fareBasis6
-      capture line:17, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK14=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:18, column:35, length:12 assign to fareBasis1
-      capture line:18, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:18, column:35, length:12 assign to fareBasis2
-      capture line:18, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:18, column:35, length:12 assign to fareBasis3
-      capture line:18, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:18, column:35, length:12 assign to fareBasis4
-      capture line:18, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:18, column:35, length:12 assign to fareBasis5
-      capture line:18, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:18, column:35, length:12 assign to fareBasis6
-      capture line:18, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
     }
   }
-  if (TQTOK15=="OK"){
-    if (TQTSegmentNo == "0"){
-        capture line:19, column:35, length:12 assign to fareBasis1
-      capture line:19, column:62, length:2 assign to Bg1
-      assign "1" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "1"){
-        capture line:19, column:35, length:12 assign to fareBasis2
-      capture line:19, column:62, length:2 assign to Bg2
-      assign "2" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "2"){
-        capture line:19, column:35, length:12 assign to fareBasis3
-      capture line:19, column:62, length:2 assign to Bg3
-      assign "3" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "3"){
-        capture line:19, column:35, length:12 assign to fareBasis4
-      capture line:19, column:62, length:2 assign to Bg4
-      assign "4" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "4"){
-        capture line:19, column:35, length:12 assign to fareBasis5
-      capture line:19, column:62, length:2 assign to Bg5
-      assign "5" to TQTSegmentNo
-    }
-    if (TQTSegmentNo == "5"){
-        capture line:19, column:35, length:12 assign to fareBasis6
-      capture line:19, column:62, length:2 assign to Bg6
-      assign "6" to TQTSegmentNo
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
     }
   }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ3"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ4"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ5"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ6"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ7"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ8"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ9"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ10"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ11"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }
+
+      send "FQQ12"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to new_Fare_Checker
+    capture line:9, column:1, length:3 assign to new_Fare_Currency
+    capture line:9, column:4, length:9 assign to new_Fare_Amount
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:10, column:1, length:3 assign to new_Fare_Currency
+      capture line:10, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:11, column:1, length:3 assign to new_Fare_Currency
+      capture line:11, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:12, column:1, length:3 assign to new_Fare_Currency
+      capture line:12, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:13, column:1, length:3 assign to new_Fare_Currency
+      capture line:13, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:14, column:1, length:3 assign to new_Fare_Currency
+      capture line:14, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:15, column:1, length:3 assign to new_Fare_Currency
+      capture line:15, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:16, column:1, length:3 assign to new_Fare_Currency
+      capture line:16, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:17, column:1, length:3 assign to new_Fare_Currency
+      capture line:17, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+  if (new_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to new_Fare_Checker
+      capture line:18, column:1, length:3 assign to new_Fare_Currency
+      capture line:18, column:4, length:9 assign to new_Fare_Amount
+    }
+  }
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalNewPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalNewPrice
+                }
+            }
+      }  
+          
+    }//12
+      
+    }//11
+      
+    }//10
+      
+    }//9
+      
+    }//8
+      
+    }//7
+      
+    }//6
+      
+    }//5
+      
+    }//4
+      
+    }//3
+      
+    }//2
+    
+
+  }//Reissue
+  
+  
+  if (quoteType == "Refund"){
+    assign "0" to totalUsedPrice
+    if (used_segments_No != ""){
+      send "FXX/RADT," +DOI +",RUH/S" +used_segments_No
+     send "FQQ1"
+   
+        capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    send "FBG:" +fBg1 +"-" +fBg2 +"-" +fBg3 +"-" +fBg4 +"-" +fBg5 +"-" +fBg6
+    send "BG:" +Bg1 +"-" +Bg2 +"-" +Bg3 +"-" +Bg4 +"-" +Bg5 +"-" +Bg6
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+    
+    send "FQQ2"
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ3"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ4"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ5"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ6"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ7"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ8"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ9"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ10"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ11"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+      
+  
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }
+
+      send "FQQ12"
+      capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened != "CHECK SEQUENCE"){
+      capture line:6, column:59, length:2 assign to baggage1
+        if (baggage1=="BG"){
+                capture line:8, column:59, length:2 assign to fBg1
+            }
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:13, column:59, length:2 assign to fBg6
+        
+        }
+
+        capture line:7, column:59, length:2 assign to baggage2
+        if (baggage2=="BG"){
+            capture line:9, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:8, column:59, length:2 assign to baggage3
+        if (baggage3=="BG"){
+                capture line:10, column:59, length:2 assign to fBg1
+            if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+    if (fBg1 ==""){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="NO"){
+        assign "0p" to fBg1
+    }
+    if (fBg1 =="0 "){
+        assign "0P" to fBg1
+    }
+
+    if (fBg2 ==""){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="NO"){
+        assign "0p" to fBg2
+    }
+    if (fBg2 =="0 "){
+        assign "0P" to fBg2
+    }
+        
+    if (fBg3 ==""){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="NO"){
+        assign "0p" to fBg3
+    }
+    if (fBg3 =="0 "){
+        assign "0P" to fBg3
+    }
+
+    if (fBg4 ==""){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="NO"){
+        assign "0p" to fBg4
+    }
+    if (fBg4 =="0 "){
+        assign "0P" to fBg4
+    }
+            
+    if (fBg5 ==""){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="NO"){
+        assign "0p" to fBg5
+    }
+    if (fBg5 =="0 "){
+        assign "0P" to fBg5
+    }        
+
+    if (fBg6 ==""){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="NO"){
+        assign "0p" to fBg6
+    }
+    if (fBg6 =="0 "){
+        assign "0P" to fBg6
+    }
+
+    assign "False" to check_Baggage_Compatibility
+    if (fBg1 == Bg1){
+      assign "True" to check_Baggage_Compatibility
+      if (faresCount>"1"){
+        assign  "False" to check_Baggage_Compatibility
+        if (fBg2 == Bg2){
+          assign "True" to check_Baggage_Compatibility
+          if (faresCount>"11"){
+            assign "False" to check_Baggage_Compatibility
+            if (fBg3 == Bg3){
+              assign "True" to check_Baggage_Compatibility
+              if (faresCount>"111"){
+                assign "False" to check_Baggage_Compatibility
+                if (fBg4 == Bg4){
+                  assign "True" to check_Baggage_Compatibility
+                  if (faresCount>"1111"){
+                    assign "False" to check_Baggage_Compatibility
+                    if (fBg5 == Bg5){
+                      assign "True" to check_Baggage_Compatibility
+                      if (faresCount>"11111"){
+                        assign "False" to check_Baggage_Compatibility
+                        if (fBg6 == Bg6){
+                          assign "True" to check_Baggage_Compatibility
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+      if (check_Baggage_Compatibility == "True"){
+            capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:4, length:10 assign to totalUsedPrice
+                }
+            }
+      }  
+          
+    }//12
+      
+    }//11
+      
+    }//10
+      
+    }//9
+      
+    }//8
+      
+    }//7
+      
+    }//6
+      
+    }//5
+      
+    }//4
+      
+    }//3
+      
+    }//2 
+    }
+  }
+  
+  send "FXX/RADT," +DOI +"," +issuing_City +"/S" +old_segments_No
+  
+  capture line:4, column:1, length:2 assign to FXXN1
+  capture line:5, column:1, length:2 assign to FXXN2
+  capture line:6, column:1, length:2 assign to FXXN3
+  capture line:7, column:1, length:2 assign to FXXN4
+  capture line:8, column:1, length:2 assign to FXXN5
+  capture line:9, column:1, length:2 assign to FXXN6
+  capture line:10, column:1, length:2 assign to FXXN7
+  capture line:11, column:1, length:2 assign to FXXN8
+  capture line:12, column:1, length:2 assign to FXXN9
+  capture line:13, column:1, length:2 assign to FXXN10
+  capture line:14, column:1, length:2 assign to FXXN11
+  capture line:15, column:1, length:2 assign to FXXN12
+  capture line:16, column:1, length:2 assign to FXXN13
+  capture line:17, column:1, length:2 assign to FXXN14
+  capture line:18, column:1, length:2 assign to FXXN15
+  capture line:19, column:1, length:2 assign to FXXN16
+  capture line:20, column:1, length:2 assign to FXXN17
+
+  capture line:4, column:4, length:4 assign to FXXFareRule1
+  capture line:5, column:4, length:4 assign to FXXFareRule2
+  capture line:6, column:4, length:4 assign to FXXFareRule3
+  capture line:7, column:4, length:4 assign to FXXFareRule4
+  capture line:8, column:4, length:4 assign to FXXFareRule5
+  capture line:9, column:4, length:4 assign to FXXFareRule6
+  capture line:10, column:4, length:4 assign to FXXFareRule7
+  capture line:11, column:4, length:4 assign to FXXFareRule8
+  capture line:12, column:4, length:4 assign to FXXFareRule9
+  capture line:13, column:4, length:4 assign to FXXFareRule10
+  capture line:14, column:4, length:4 assign to FXXFareRule11
+  capture line:15, column:4, length:4 assign to FXXFareRule12
+  capture line:16, column:4, length:4 assign to FXXFareRule13
+  capture line:17, column:4, length:4 assign to FXXFareRule14
+  capture line:18, column:4, length:4 assign to FXXFareRule15
+  capture line:19, column:4, length:4 assign to FXXFareRule16
+  capture line:20, column:4, length:4 assign to FXXFareRule17
 
 
 
+  assign "False" to check_FareBasis_Compatibility
+  if (FXXFareRule1 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN1 
+    
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN1 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN1 
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule2 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN2 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN2 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN2 
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "2" to FXXfareBasisNumber
+    }
+  }
+  }
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule2 == "----"){
+    assign "True" to check_FareBasis_Compatibility
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule3 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN3 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN3 
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN3 
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "3" to FXXfareBasisNumber
+    }
+  }
+  }
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule3 == "----"){
+    assign "True" to check_FareBasis_Compatibility
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
+  }
+  }
+
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule4 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN4 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN4
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN4
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "4" to FXXfareBasisNumber
+    }
+  }
+  }
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule4 == "----"){
+    assign "True" to check_FareBasis_Compatibility
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "1" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule5 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN5 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN5
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN5
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "5" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule6 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN6 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN6
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN6
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "6" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule7 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN7 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN7
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN7
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "7" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule8 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN8 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN8
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN8
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "8" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule9 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN9 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN9
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN9
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "9" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule10 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN10
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN10
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN10
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "10" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule11 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN11 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN11
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN11
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "11" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule12 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN12 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN12
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN12
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "13" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule14 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN14 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN14
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN14
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "14" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule15 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN15
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN15
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN15
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "15" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule16 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN16
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN16
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN16
+    } 
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "16" to FXXfareBasisNumber
+    }
+  }
+  }
+
+  if (check_FareBasis_Compatibility == "False"){
+    if (FXXFareRule17 == fareBasis1_Shortcut){
+    assign "True" to check_FareBasis_Compatibility
+    send "FQQ" +FXXN17 
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN17
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXXN17
+    }
+
+    capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign "17" to FXXfareBasisNumber
+    }
+  }
+  }
+
+ if (check_FareBasis_Compatibility == "False"){
+  mandatory ask "Please Enter The FareRule No:" assign to FXX_test_FareRule_Number
+  send "FQQ" +FXX_test_FareRule_Number
+
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+    capture line:3, column:1, length:14 assign to check_FQQ_Opened
+    if (check_FQQ_Opened == "CHECK SEQUENCE"){
+      send "FQQ" +FXX_test_FareRule_Number
+    }
+
+  capture line:9, column:32, length:12 assign to FQQfareBasis1
+    if (FQQfareBasis1 != fareBasis1){
+      assign "False" to check_FareBasis_Compatibility
+    }
+
+    if (faresCount>"1"){
+      capture line:10, column:32, length:12 assign to FQQfareBasis2
+      if (FQQfareBasis2 != fareBasis2){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11"){
+      capture line:11, column:32, length:12 assign to FQQfareBasis3
+      if (FQQfareBasis3 != fareBasis3){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"111"){
+      capture line:12, column:32, length:12 assign to FQQfareBasis4
+      if (FQQfareBasis4 != fareBasis4){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"1111"){
+      capture line:13, column:32, length:12 assign to FQQfareBasis5
+      if (FQQfareBasis5 != fareBasis5){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (faresCount>"11111"){
+      capture line:14, column:32, length:12 assign to FQQfareBasis6
+      if (FQQfareBasis6 != fareBasis6){
+        assign "False" to check_FareBasis_Compatibility
+      }
+    }
+
+    if (check_FareBasis_Compatibility == "True"){
+      assign FXX_test_FareRule_Number to FXXfareBasisNumber
+    }
+ }
+
+  if (check_FareBasis_Compatibility == "False"){
+    send "Can't Find The Fare Rule!"
+    ask "Please Continue manually!" assign to fq5
+ }
+
+ send "FQQ" +FXXfareBasisNumber 
+ 
+
+  capture line:9, column:10, length:1 assign to check_dot
+  if (check_dot =="."){
+    assign "Captured" to original_Fare_Checker
+    capture line:9, column:1, length:3 assign to original_Fare_Currency
+    capture line:9, column:4, length:9 assign to original_Fare_Amount
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:10, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:10, column:1, length:3 assign to original_Fare_Currency
+      capture line:10, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:11, column:1, length:3 assign to original_Fare_Currency
+      capture line:11, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:11, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:11, column:1, length:3 assign to original_Fare_Currency
+      capture line:11, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:12, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:12, column:1, length:3 assign to original_Fare_Currency
+      capture line:12, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:13, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:13, column:1, length:3 assign to original_Fare_Currency
+      capture line:13, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:14, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:14, column:1, length:3 assign to original_Fare_Currency
+      capture line:14, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:15, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:15, column:1, length:3 assign to original_Fare_Currency
+      capture line:15, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:16, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:16, column:1, length:3 assign to original_Fare_Currency
+      capture line:16, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:17, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:17, column:1, length:3 assign to original_Fare_Currency
+      capture line:17, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+  if (original_Fare_Checker != "Captured"){
+    capture line:18, column:10, length:1 assign to check_dot
+    if (check_dot =="."){
+      assign "Captured" to original_Fare_Checker
+      capture line:18, column:1, length:3 assign to original_Fare_Currency
+      capture line:18, column:4, length:9 assign to original_Fare_Amount
+    }
+  }
+
+  capture line:11, column:10, length:1 assign to checkdot1
+            capture line:12, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:11, column:1, length:3 assign to oldCurrency
+                    capture line:11, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:12, column:10, length:1 assign to checkdot1
+            capture line:13, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:12, column:1, length:3 assign to oldCurrency
+                    capture line:12, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:13, column:10, length:1 assign to checkdot1
+            capture line:14, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:13, column:1, length:3 assign to oldCurrency
+                    capture line:13, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:14, column:10, length:1 assign to checkdot1
+            capture line:15, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:14, column:1, length:3 assign to oldCurrency
+                    capture line:14, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:15, column:10, length:1 assign to checkdot1
+            capture line:16, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:15, column:1, length:3 assign to oldCurrency
+                    capture line:15, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:16, column:10, length:1 assign to checkdot1
+            capture line:17, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:16, column:1, length:3 assign to oldCurrency
+                    capture line:16, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:17, column:10, length:1 assign to checkdot1
+            capture line:18, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:17, column:1, length:3 assign to oldCurrency
+                    capture line:17, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:18, column:10, length:1 assign to checkdot1
+            capture line:19, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:18, column:1, length:3 assign to oldCurrency
+                    capture line:18, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:19, column:10, length:1 assign to checkdot1
+            capture line:20, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:19, column:1, length:3 assign to oldCurrency
+                    capture line:19, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:20, column:10, length:1 assign to checkdot1
+            capture line:21, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:20, column:1, length:3 assign to oldCurrency
+                    capture line:20, column:4, length:10 assign to totalOldPrice
+                }
+            }
+            capture line:21, column:10, length:1 assign to checkdot1
+            capture line:22, column:10, length:1 assign to checkdot2
+            if (checkdot1=="."){
+                if (checkdot2!="."){
+                    capture line:21, column:1, length:3 assign to oldCurrency
+                    capture line:21, column:4, length:10 assign to totalOldPrice
+                }
+            }
+
+  
+  assign "1" to Fares
+  if (faresCount>"1"){
+    if (fareBasis1 != fareBasis2){
+      append "1" to Fares
+    }
+  }
+  if (faresCount>"11"){
+    if (fareBasis2 != fareBasis3){
+      append "1" to Fares
+    }
+  }
+  if (faresCount>"111"){
+    if (fareBasis3 != fareBasis4){
+      append "1" to Fares
+    }
+  }
+  if (faresCount>"1111"){
+    if (fareBasis4 != fareBasis5){
+      append "1" to Fares
+    }
+  }
+  if (faresCount>"11111"){
+    if (fareBasis5 != fareBasis6){
+      append "1" to Fares
+    }
+  }
+  
+  if (quoteType == "Reissue"){
+
+    send "DF" +totalOldPrice +"-" +totalNewPrice + ";" +totalNewPrice +"*0.15"
+  capture line:2, column:1, length:10 assign to FareDiff
+capture line:6, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:4, column:1, length:10 assign to FareDiff
 }
+capture line:5, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:3, column:1, length:10 assign to FareDiff
+}
+capture line:4, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:2, column:1, length:10 assign to FareDiff
+}
+
+  send "FQC" +FareDiff +oldCurrency +"/SAR"
+    capture line:5, column:7, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:2 assign to FareDiff
+    }
+    capture line:5, column:8, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:3 assign to FareDiff
+    }
+    capture line:5, column:9, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:4 assign to FareDiff
+    }
+    capture line:5, column:10, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:5 assign to FareDiff
+    }
+    capture line:5, column:11, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:6 assign to FareDiff
+    }
+    capture line:5, column:12, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:7 assign to FareDiff
+    }
+    capture line:5, column:13, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:8 assign to FareDiff
+    }
+    capture line:5, column:14, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:9 assign to FareDiff
+    }
+    capture line:5, column:15, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:10 assign to FareDiff
+    }
+    capture line:5, column:16, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:11 assign to FareDiff
+    }
+    capture line:5, column:17, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:12 assign to FareDiff
+    }
+
+    send "FQN" +FXXfareBasisNumber +"*PE"
+    send "MD-Changes"
+
+  if (Fares == "11"){
+    send "FQN" +FXXfareBasisNumber +"-2*PE"
+    send "MD-Changes"
+  }
+  if (Fares == "111"){
+    send "FQN" +FXXfareBasisNumber +"-3*PE"
+    send "MD-Changes"
+  }
+  if (Fares == "1111"){
+    send "FQN" +FXXfareBasisNumber +"-4*PE"
+    send "MD-Changes"
+  }
+  if (Fares == "11111"){
+    send "FQN" +FXXfareBasisNumber +"-5*PE"
+    send "MD-Changes"
+  }
+  if (Fares == "111111"){
+    send "FQN" +FXXfareBasisNumber +"-6*PE"
+    send "MD-Changes"
+  }
+
+  if (original_Fare_Currency == new_Fare_Currency){
+    if (new_Fare_Amount == original_Fare_Amount){
+      send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty"
+    }
+    else{
+      send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed please check if fare Downgraded)"
+    }
+  }
+  else{
+    send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed Different Fare Currency)"
+  }
+
+  }
+
+  if (quoteType == "Refund"){
+
+    send "DF " +totalOldPrice +"*0.15"
+       capture line:2, column:1, length:10 assign to Deducted
+      capture line:6, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:4, column:1, length:10 assign to Deducted
+    }
+    capture line:5, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:3, column:1, length:10 assign to Deducted
+    }
+    capture line:4, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:2, column:1, length:10 assign to Deducted
+    }
+
+    send "FQC" +Deducted +oldCurrency +"/SAR"
+    capture line:5, column:7, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:2 assign to Deducted
+    }
+    capture line:5, column:8, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:3 assign to Deducted
+    }
+    capture line:5, column:9, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:4 assign to Deducted
+    }
+    capture line:5, column:10, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:5 assign to Deducted
+    }
+    capture line:5, column:11, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:6 assign to Deducted
+    }
+    capture line:5, column:12, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:7 assign to Deducted
+    }
+    capture line:5, column:13, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:8 assign to Deducted
+    }
+    capture line:5, column:14, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:9 assign to Deducted
+    }
+    capture line:5, column:15, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:10 assign to Deducted
+    }
+    capture line:5, column:16, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:11 assign to Deducted
+    }
+    capture line:5, column:17, length:1 assign to check_Final_Dash
+    if (check_Final_Dash == "-"){
+        capture line:5, column:5, length:12 assign to Deducted
+    }
+
+    if (totalUsedPrice > "0"){
+      send "DF " +totalUsedPrice + ";" +totalUsedPrice +"*0.15" +";" +Deducted
+      capture line:2, column:1, length:10 assign to Deducted
+      capture line:6, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:4, column:1, length:10 assign to Deducted
+    }
+    capture line:5, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:3, column:1, length:10 assign to Deducted
+    }
+    capture line:4, column:1, length:1 assign to dfnextcheck
+    if (dfnextcheck == ">"){
+      capture line:2, column:1, length:10 assign to Deducted
+    }
+    }
+    
+
+    send "FQN" +FXXfareBasisNumber +"*PE"
+    send "MD-Cancellations"
+
+  if (Fares == "11"){
+    send "FQN" +FXXfareBasisNumber +"-2*PE"
+    send "MD-Cancellations"
+  }
+  if (Fares == "111"){
+    send "FQN" +FXXfareBasisNumber +"-3*PE"
+    send "MD-Cancellations"
+  }
+  if (Fares == "1111"){
+    send "FQN" +FXXfareBasisNumber +"-4*PE"
+    send "MD-Cancellations"
+  }
+  if (Fares == "11111"){
+    send "FQN" +FXXfareBasisNumber +"-5*PE"
+    send "MD-Cancellations"
+  }
+  if (Fares == "111111"){
+    send "FQN" +FXXfareBasisNumber +"-6*PE"
+    send "MD-Cancellations"
+  }
+  if (totalUsedPrice > "0"){
+    send "Total deductions: Penalty + SAR " +Deducted +" (NRF Taxes)"
+  }
+  else{
+    send "Total deductions: Penalty + "+oldCurrency +" " +Deducted +" (NRF Taxes)"
+  }
+   
+  }
+
+
+
