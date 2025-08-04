@@ -1097,9 +1097,8 @@ if (Bg6 =="NO"){
    
         capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -1123,12 +1122,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -1154,11 +1300,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -1184,6 +1476,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -1453,9 +1890,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -1479,12 +1915,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -1510,11 +2093,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -1540,6 +2269,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -1809,9 +2683,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -1835,12 +2708,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -1866,11 +2886,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -1896,6 +3062,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -2165,9 +3476,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -2191,12 +3501,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -2222,11 +3679,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -2252,6 +3855,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -2521,9 +4269,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -2547,12 +4294,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -2578,11 +4472,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -2608,6 +4648,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -2877,9 +5062,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -2903,12 +5087,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -2934,11 +5265,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -2964,6 +5441,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -3233,9 +5855,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -3259,12 +5880,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -3290,11 +6058,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -3320,6 +6234,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -3589,9 +6648,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -3615,12 +6673,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -3646,11 +6851,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -3676,6 +7027,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -3945,9 +7441,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -3971,12 +7466,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -4002,11 +7644,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -4032,6 +7820,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -4301,9 +8234,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -4327,12 +8259,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -4358,11 +8437,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -4388,6 +8613,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -4657,9 +9027,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -4683,12 +9052,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -4714,11 +9230,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -4744,6 +9406,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -5013,9 +9820,8 @@ if (Bg6 =="NO"){
     if (check_FQQ_Opened != "CHECK SEQUENCE"){
       capture line:6, column:59, length:2 assign to baggage1
         if (baggage1=="BG"){
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -5039,12 +9845,159 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
         if (baggage2=="BG"){
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -5070,11 +10023,157 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
         if (baggage3=="BG"){
                 capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -5100,6 +10199,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -5419,9 +10663,8 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (faresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
             if (faresCount == "111"){
@@ -5445,7 +10688,153 @@ if (Bg6 =="NO"){
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -5472,6 +10861,7 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
@@ -5497,6 +10887,151 @@ if (Bg6 =="NO"){
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -5522,7 +11057,8 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
+            capture line:10, column:59, length:2 assign to fBg1
+
             if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
@@ -5548,6 +11084,151 @@ if (Bg6 =="NO"){
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -5755,33 +11436,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -5808,31 +11634,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -5858,32 +11830,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -6090,33 +12208,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -6143,31 +12406,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -6193,32 +12602,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -6425,33 +12980,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -6478,31 +13178,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -6528,32 +13374,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -6760,33 +13752,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -6813,31 +13950,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -6863,32 +14146,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -7095,33 +14524,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -7148,31 +14722,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -7198,32 +14918,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -7430,33 +15296,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -7483,31 +15494,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -7533,32 +15690,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -7765,33 +16068,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -7818,31 +16266,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -7868,32 +16462,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -8100,33 +16840,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -8153,31 +17038,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -8203,32 +17234,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -8435,33 +17612,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -8488,31 +17810,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -8538,32 +18006,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -8770,33 +18384,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -8823,31 +18582,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -8873,32 +18778,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     if (fBg1 ==""){
@@ -9103,33 +19154,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:8, column:59, length:2 assign to fBg1
-            }
-            if (used_FaresCount == "11"){
+      capture line:8, column:59, length:2 assign to fBg1
+          if (faresCount == "11"){
                 capture line:9, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:9, column:59, length:2 assign to fBg2
                 capture line:10, column:59, length:2 assign to fBg3
                 capture line:11, column:59, length:2 assign to fBg4
                 capture line:12, column:59, length:2 assign to fBg5
                 capture line:13, column:59, length:2 assign to fBg6
+            }
         
+          capture line:9, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+        
+        }
+        }
+
+        capture line:10, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:11, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:12, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
+
+          capture line:13, column:11, length:13 assign to check_Surface_Connection
+          if (check_Surface_Connection == "S U R F A C E"){
+            if (faresCount == "11"){
+                capture line:9, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:9, column:59, length:2 assign to fBg2
+                capture line:10, column:59, length:2 assign to fBg3
+                capture line:11, column:59, length:2 assign to fBg4
+                capture line:12, column:59, length:2 assign to fBg5
+                capture line:14, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:7, column:59, length:2 assign to baggage2
@@ -9156,31 +19352,177 @@ if (Bg6 =="NO"){
             }
           }
             capture line:9, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+
+            if (faresCount == "11"){
                 capture line:10, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:10, column:59, length:2 assign to fBg2
                 capture line:11, column:59, length:2 assign to fBg3
                 capture line:12, column:59, length:2 assign to fBg4
                 capture line:13, column:59, length:2 assign to fBg5
                 capture line:14, column:59, length:2 assign to fBg6
             }
+
+            capture line:10, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:13, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+        }
+
+        capture line:14, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:10, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:10, column:59, length:2 assign to fBg2
+                capture line:11, column:59, length:2 assign to fBg3
+                capture line:12, column:59, length:2 assign to fBg4
+                capture line:13, column:59, length:2 assign to fBg5
+                capture line:15, column:59, length:2 assign to fBg6
+            }
+          }
         }
 
         capture line:8, column:59, length:2 assign to baggage3
@@ -9206,32 +19548,178 @@ if (Bg6 =="NO"){
               }
             }
           }
-                capture line:10, column:59, length:2 assign to fBg1
-            if (used_FaresCount == "11"){
+            capture line:10, column:59, length:2 assign to fBg1
+
+            if (faresCount == "11"){
                 capture line:11, column:59, length:2 assign to fBg2
             }
-            if (used_FaresCount == "111"){
+            if (faresCount == "111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
             }
-            if (used_FaresCount == "1111"){
+            if (faresCount == "1111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
             }
-            if (used_FaresCount == "11111"){
+            if (faresCount == "11111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
             }
-            if (used_FaresCount == "111111"){
+            if (faresCount == "111111"){
                 capture line:11, column:59, length:2 assign to fBg2
                 capture line:12, column:59, length:2 assign to fBg3
                 capture line:13, column:59, length:2 assign to fBg4
                 capture line:14, column:59, length:2 assign to fBg5
                 capture line:15, column:59, length:2 assign to fBg6
             }
+
+            capture line:11, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:12, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:12, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:12, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:13, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:13, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:14, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+            capture line:14, column:11, length:13 assign to check_Surface_Connection
+            if (check_Surface_Connection == "S U R F A C E"){
+              if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:15, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+            }
+
+        capture line:15, column:11, length:13 assign to check_Surface_Connection
+        if (check_Surface_Connection == "S U R F A C E"){
+          if (faresCount == "11"){
+                capture line:11, column:59, length:2 assign to fBg2
+            }
+            if (faresCount == "111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+            }
+            if (faresCount == "1111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+            }
+            if (faresCount == "11111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+            }
+            if (faresCount == "111111"){
+                capture line:11, column:59, length:2 assign to fBg2
+                capture line:12, column:59, length:2 assign to fBg3
+                capture line:13, column:59, length:2 assign to fBg4
+                capture line:14, column:59, length:2 assign to fBg5
+                capture line:16, column:59, length:2 assign to fBg6
+            }
+        }
         }
 
     
@@ -9483,37 +19971,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9542,37 +20075,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9591,37 +20169,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9651,37 +20274,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9700,37 +20368,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9761,37 +20474,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9810,37 +20568,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9870,37 +20673,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9930,37 +20778,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -9990,37 +20883,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10050,37 +20988,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10110,37 +21093,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10170,37 +21198,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10230,37 +21303,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10290,37 +21408,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10350,37 +21513,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10410,37 +21618,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10470,37 +21723,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10530,37 +21828,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10588,37 +21931,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
@@ -10647,37 +22035,82 @@ if (Bg6 =="NO"){
     }
 
     if (faresCount>"1"){
-      capture line:10, column:32, length:12 assign to FQQfareBasis2
-      if (FQQfareBasis2 != fareBasis2){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:10, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:11, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:10, column:32, length:12 assign to FQQfareBasis2
+        if (FQQfareBasis2 != fareBasis2){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11"){
-      capture line:11, column:32, length:12 assign to FQQfareBasis3
-      if (FQQfareBasis3 != fareBasis3){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:11, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:12, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:11, column:32, length:12 assign to FQQfareBasis3
+        if (FQQfareBasis3 != fareBasis3){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"111"){
-      capture line:12, column:32, length:12 assign to FQQfareBasis4
-      if (FQQfareBasis4 != fareBasis4){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:12, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:13, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:12, column:32, length:12 assign to FQQfareBasis4
+        if (FQQfareBasis4 != fareBasis4){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"1111"){
-      capture line:13, column:32, length:12 assign to FQQfareBasis5
-      if (FQQfareBasis5 != fareBasis5){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:13, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:14, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:13, column:32, length:12 assign to FQQfareBasis5
+        if (FQQfareBasis5 != fareBasis5){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
     if (faresCount>"11111"){
-      capture line:14, column:32, length:12 assign to FQQfareBasis6
-      if (FQQfareBasis6 != fareBasis6){
-        assign "False" to check_FareBasis_Compatibility
+      capture line:14, column:11, length:13 assign to check_Surface_Connection
+      if (check_Surface_Connection == "S U R F A C E"){
+        capture line:15, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
+      }
+      else{
+        capture line:14, column:32, length:12 assign to FQQfareBasis6
+        if (FQQfareBasis6 != fareBasis6){
+          assign "False" to check_FareBasis_Compatibility
+        }
       }
     }
 
