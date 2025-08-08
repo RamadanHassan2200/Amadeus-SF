@@ -875,1589 +875,6825 @@ if (PNRNumber > "198"){
 
 if (PNRNumber > "0"){
     send "RT" + PNR1
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "1"){
     send "RT" + PNR2
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "2"){
     send "RT" + PNR3
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "3"){
     send "RT" + PNR4
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "4"){
     send "RT" + PNR5
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 if (PNRNumber > "5"){
     send "RT" + PNR6
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "6"){
     send "RT" + PNR7
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "7"){
     send "RT" + PNR8
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "8"){
     send "RT" + PNR9
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "9"){
     send "RT" + PNR10
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "10"){
     send "RT" + PNR11
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "11"){
     send "RT" + PNR12
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "12"){
     send "RT" + PNR13
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 if (PNRNumber > "13"){
     send "RT" + PNR14
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "14"){
     send "RT" + PNR15
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "15"){
     send "RT" + PNR16
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "16"){
     send "RT" + PNR17
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "17"){
     send "RT" + PNR18
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "18"){
     send "RT" + PNR19
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "19"){
     send "RT" + PNR20
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
 if (PNRNumber > "20"){
     send "RT" + PNR21
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
+    send "tqt/t500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
+  assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+  send "TQT/T" +heighestTST
+
+  ask "Please confirm the baggege... " assign to qz5
+  send "ES ACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK3192-B"
+  send "RFR;ER"
+  
+   send "IG"
 }
 
-if (PNRNumber > "21"){
-    send "RT" + PNR22
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "22"){
-    send "RT" + PNR23
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "23"){
-    send "RT" + PNR24
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "24"){
-    send "RT" + PNR25
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "25"){
-    send "RT" + PNR26
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "26"){
-    send "RT" + PNR27
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "27"){
-    send "RT" + PNR28
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "28"){
-    send "RT" + PNR29
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "29"){
-    send "RT" + PNR30
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "30"){
-    send "RT" + PNR31
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "31"){
-    send "RT" + PNR32
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "32"){
-    send "RT" + PNR33
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "33"){
-    send "RT" + PNR34
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "34"){
-    send "RT" + PNR35
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "35"){
-    send "RT" + PNR36
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "36"){
-    send "RT" + PNR37
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "37"){
-    send "RT" + PNR38
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "38"){
-    send "RT" + PNR39
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "39"){
-    send "RT" + PNR40
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "40"){
-    send "RT" + PNR41
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "41"){
-    send "RT" + PNR42
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "42"){
-    send "RT" + PNR43
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "43"){
-    send "RT" + PNR44
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "44"){
-    send "RT" + PNR45
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "45"){
-    send "RT" + PNR46
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "46"){
-    send "RT" + PNR47
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "47"){
-    send "RT" + PNR48
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "48"){
-    send "RT" + PNR49
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "49"){
-    send "RT" + PNR50
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "50"){
-    send "RT" + PNR51
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "51"){
-    send "RT" + PNR52
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "52"){
-    send "RT" + PNR53
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "53"){
-    send "RT" + PNR54
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "54"){
-    send "RT" + PNR55
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "55"){
-    send "RT" + PNR56
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "56"){
-    send "RT" + PNR57
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "57"){
-    send "RT" + PNR58
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "58"){
-    send "RT" + PNR59
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "59"){
-    send "RT" + PNR60
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "60"){
-    send "RT" + PNR61
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "61"){
-    send "RT" + PNR62
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "62"){
-    send "RT" + PNR63
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "63"){
-    send "RT" + PNR64
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "64"){
-    send "RT" + PNR65
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "65"){
-    send "RT" + PNR66
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "66"){
-    send "RT" + PNR67
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "67"){
-    send "RT" + PNR68
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "68"){
-    send "RT" + PNR69
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "69"){
-    send "RT" + PNR70
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "70"){
-    send "RT" + PNR71
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "71"){
-    send "RT" + PNR72
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "72"){
-    send "RT" + PNR73
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "73"){
-    send "RT" + PNR74
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "74"){
-    send "RT" + PNR75
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "75"){
-    send "RT" + PNR76
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "76"){
-    send "RT" + PNR77
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "77"){
-    send "RT" + PNR78
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "78"){
-    send "RT" + PNR79
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "79"){
-    send "RT" + PNR80
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "80"){
-    send "RT" + PNR81
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "81"){
-    send "RT" + PNR82
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "82"){
-    send "RT" + PNR83
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "83"){
-    send "RT" + PNR84
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "84"){
-    send "RT" + PNR85
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "85"){
-    send "RT" + PNR86
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "86"){
-    send "RT" + PNR87
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "87"){
-    send "RT" + PNR88
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "88"){
-    send "RT" + PNR89
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "89"){
-    send "RT" + PNR90
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "90"){
-    send "RT" + PNR91
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "91"){
-    send "RT" + PNR92
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "92"){
-    send "RT" + PNR93
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "93"){
-    send "RT" + PNR94
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "94"){
-    send "RT" + PNR95
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "95"){
-    send "RT" + PNR96
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "96"){
-    send "RT" + PNR97
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "97"){
-    send "RT" + PNR98
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "98"){
-    send "RT" + PNR99
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "99"){
-    send "RT" + PNR100
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "100"){
-    send "RT" + PNR101
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "101"){
-    send "RT" + PNR102
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "102"){
-    send "RT" + PNR103
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "103"){
-    send "RT" + PNR104
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "104"){
-    send "RT" + PNR105
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-if (PNRNumber > "105"){
-    send "RT" + PNR106
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "106"){
-    send "RT" + PNR107
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "107"){
-    send "RT" + PNR108
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "108"){
-    send "RT" + PNR109
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "109"){
-    send "RT" + PNR110
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "110"){
-    send "RT" + PNR111
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "111"){
-    send "RT" + PNR112
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "112"){
-    send "RT" + PNR113
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-if (PNRNumber > "113"){
-    send "RT" + PNR114
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "114"){
-    send "RT" + PNR115
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "115"){
-    send "RT" + PNR116
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "116"){
-    send "RT" + PNR117
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "117"){
-    send "RT" + PNR118
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "118"){
-    send "RT" + PNR119
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "119"){
-    send "RT" + PNR120
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "120"){
-    send "RT" + PNR121
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "121"){
-    send "RT" + PNR122
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "122"){
-    send "RT" + PNR123
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "123"){
-    send "RT" + PNR124
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "124"){
-    send "RT" + PNR125
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "125"){
-    send "RT" + PNR126
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "126"){
-    send "RT" + PNR127
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "127"){
-    send "RT" + PNR128
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "128"){
-    send "RT" + PNR129
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "129"){
-    send "RT" + PNR130
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "130"){
-    send "RT" + PNR131
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "131"){
-    send "RT" + PNR132
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "132"){
-    send "RT" + PNR133
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "133"){
-    send "RT" + PNR134
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "134"){
-    send "RT" + PNR135
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "135"){
-    send "RT" + PNR136
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "136"){
-    send "RT" + PNR137
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "137"){
-    send "RT" + PNR138
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "138"){
-    send "RT" + PNR139
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "139"){
-    send "RT" + PNR140
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "140"){
-    send "RT" + PNR141
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "141"){
-    send "RT" + PNR142
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "142"){
-    send "RT" + PNR143
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "143"){
-    send "RT" + PNR144
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "144"){
-    send "RT" + PNR145
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "145"){
-    send "RT" + PNR146
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "146"){
-    send "RT" + PNR147
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "147"){
-    send "RT" + PNR148
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "148"){
-    send "RT" + PNR149
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "149"){
-    send "RT" + PNR150
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "150"){
-    send "RT" + PNR151
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "151"){
-    send "RT" + PNR152
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "152"){
-    send "RT" + PNR153
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "153"){
-    send "RT" + PNR154
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "154"){
-    send "RT" + PNR155
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "155"){
-    send "RT" + PNR156
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "156"){
-    send "RT" + PNR157
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "157"){
-    send "RT" + PNR158
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "158"){
-    send "RT" + PNR159
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "159"){
-    send "RT" + PNR160
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "160"){
-    send "RT" + PNR161
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "161"){
-    send "RT" + PNR162
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "162"){
-    send "RT" + PNR163
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "163"){
-    send "RT" + PNR164
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "164"){
-    send "RT" + PNR165
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "165"){
-    send "RT" + PNR166
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "166"){
-    send "RT" + PNR167
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "167"){
-    send "RT" + PNR168
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "168"){
-    send "RT" + PNR169
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "169"){
-    send "RT" + PNR170
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "170"){
-    send "RT" + PNR171
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "171"){
-    send "RT" + PNR172
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "172"){
-    send "RT" + PNR173
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "173"){
-    send "RT" + PNR174
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "174"){
-    send "RT" + PNR175
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "175"){
-    send "RT" + PNR176
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "176"){
-    send "RT" + PNR177
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "177"){
-    send "RT" + PNR178
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "178"){
-    send "RT" + PNR179
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "179"){
-    send "RT" + PNR180
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "180"){
-    send "RT" + PNR181
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "181"){
-    send "RT" + PNR182
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "182"){
-    send "RT" + PNR183
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "183"){
-    send "RT" + PNR184
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "184"){
-    send "RT" + PNR185
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "185"){
-    send "RT" + PNR186
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "186"){
-    send "RT" + PNR187
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "187"){
-    send "RT" + PNR188
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "188"){
-    send "RT" + PNR189
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "189"){
-    send "RT" + PNR190
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "190"){
-    send "RT" + PNR191
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "191"){
-    send "RT" + PNR192
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "192"){
-    send "RT" + PNR193
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "193"){
-    send "RT" + PNR194
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "194"){
-    send "RT" + PNR195
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "195"){
-    send "RT" + PNR196
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "196"){
-    send "RT" + PNR197
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "197"){
-    send "RT" + PNR198
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
-
-if (PNRNumber > "198"){
-    send "RT" + PNR199
-    send "MD-AI CR"
-    capture line:3, column:10, length:25 assign to OID
-    send "" + OID
-    ask "Continue?" assign to qz5
-}
 
