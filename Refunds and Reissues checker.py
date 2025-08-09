@@ -1074,6 +1074,9 @@ if (Bg6 =="NO"){
       mandatory ask date "The Date of Issue is in the past, please check!" with format DDMONYY assign to DOY
     }
   }
+  else{
+    
+  }
   append YY_DOI to DOI
   if (check_today == "0"){
     assign DOY to DOI
@@ -1082,6 +1085,10 @@ if (Bg6 =="NO"){
 
   if (quoteType == "Reissue"){
     send "FXX/RADT," +issuing_City +"/S" +new_segments_No
+    capture line:1, column:11, length:9 assign to check_FXX_Success
+    if (check_FXX_Success == "PAST DATE"){
+      send "FXX/RADT," +DOI +"," +issuing_City +"/S" +new_segments_No
+    }
 
     capture line:3, column:1, length:11 assign to check_FXX_Success
     if (check_FXX_Success == "FUTURE DATE"){
@@ -1684,27 +1691,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -2477,27 +2484,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -3270,27 +3277,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -4063,27 +4070,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -4856,27 +4863,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -5649,27 +5656,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -6442,27 +6449,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -7235,27 +7242,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -8028,27 +8035,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -8821,27 +8828,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -9614,27 +9621,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -10407,27 +10414,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -11292,27 +11299,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (faresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (faresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (faresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (faresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (faresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -12065,27 +12072,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -12837,27 +12844,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -13609,27 +13616,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -14381,27 +14388,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -15153,27 +15160,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -15925,27 +15932,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -16697,27 +16704,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -17469,27 +17476,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -18241,27 +18248,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -19013,27 +19020,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
@@ -19781,27 +19788,27 @@ if (Bg6 =="NO"){
     }
 
     assign "False" to check_Baggage_Compatibility
-    if (fBg1 == Bg1){
+    if (fBg1 >= Bg1){
       assign "True" to check_Baggage_Compatibility
       if (used_FaresCount>"1"){
         assign  "False" to check_Baggage_Compatibility
-        if (fBg2 == Bg2){
+        if (fBg2 >= Bg2){
           assign "True" to check_Baggage_Compatibility
           if (used_FaresCount>"11"){
             assign "False" to check_Baggage_Compatibility
-            if (fBg3 == Bg3){
+            if (fBg3 >= Bg3){
               assign "True" to check_Baggage_Compatibility
               if (used_FaresCount>"111"){
                 assign "False" to check_Baggage_Compatibility
-                if (fBg4 == Bg4){
+                if (fBg4 >= Bg4){
                   assign "True" to check_Baggage_Compatibility
                   if (used_FaresCount>"1111"){
                     assign "False" to check_Baggage_Compatibility
-                    if (fBg5 == Bg5){
+                    if (fBg5 >= Bg5){
                       assign "True" to check_Baggage_Compatibility
                       if (used_FaresCount>"11111"){
                         assign "False" to check_Baggage_Compatibility
-                        if (fBg6 == Bg6){
+                        if (fBg6 >= Bg6){
                           assign "True" to check_Baggage_Compatibility
                         }
                       }
