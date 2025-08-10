@@ -1727,169 +1727,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
     
     send "FQQ2"
@@ -2519,170 +2600,251 @@ if (Bg6 =="NO"){
     }
 
       if (check_Baggage_Compatibility == "True"){
-      
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ3"
@@ -3313,169 +3475,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ4"
@@ -4106,169 +4349,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ5"
@@ -4899,169 +5223,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ6"
@@ -5692,169 +6097,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ7"
@@ -6485,169 +6971,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ8"
@@ -7278,169 +7845,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ9"
@@ -8071,169 +8719,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ10"
@@ -8864,169 +9593,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ11"
@@ -9657,169 +10467,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }
 
       send "FQQ12"
@@ -10450,169 +11341,250 @@ if (Bg6 =="NO"){
 
       if (check_Baggage_Compatibility == "True"){
       
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to new_Fare_Checker
-    capture line:9, column:1, length:3 assign to new_Fare_Currency
-    capture line:9, column:4, length:9 assign to new_Fare_Amount
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:10, column:1, length:3 assign to new_Fare_Currency
-      capture line:10, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:11, column:1, length:3 assign to new_Fare_Currency
-      capture line:11, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:12, column:1, length:3 assign to new_Fare_Currency
-      capture line:12, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:13, column:1, length:3 assign to new_Fare_Currency
-      capture line:13, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:14, column:1, length:3 assign to new_Fare_Currency
-      capture line:14, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:15, column:1, length:3 assign to new_Fare_Currency
-      capture line:15, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:16, column:1, length:3 assign to new_Fare_Currency
-      capture line:16, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:17, column:1, length:3 assign to new_Fare_Currency
-      capture line:17, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-  if (new_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to new_Fare_Checker
-      capture line:18, column:1, length:3 assign to new_Fare_Currency
-      capture line:18, column:4, length:9 assign to new_Fare_Amount
-    }
-  }
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalNewPrice
-                }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalNewPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to new_Fare_Currency
+            assign Fare_Amount2 to new_Fare_Amount
+            }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalNewPrice
+          }
+        }
+        }
       }  
           
     }//12
@@ -11336,85 +12308,164 @@ if (Bg6 =="NO"){
     
 
       if (check_Baggage_Compatibility == "True"){
-      
-  
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+
+
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
     
     send "FQQ2"
@@ -12109,85 +13160,162 @@ if (Bg6 =="NO"){
     
 
       if (check_Baggage_Compatibility == "True"){
-      
-  
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+   
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ3"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -12883,83 +14011,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ4"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -13655,83 +14862,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ5"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -14427,83 +15713,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ6"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -15199,83 +16564,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ7"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -15971,83 +17415,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ8"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -16743,83 +18266,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ9"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -17515,83 +19117,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ10"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -18287,83 +19968,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ11"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -19057,83 +20817,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
       send "FQQ12"
       capture line:3, column:1, length:14 assign to check_FQQ_Opened
@@ -19825,83 +21664,162 @@ if (Bg6 =="NO"){
       if (check_Baggage_Compatibility == "True"){
       
   
-            capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:4, length:10 assign to totalUsedPrice
-                }
-            }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:4, length:10 assign to totalUsedPrice
-                }
-            }
+            
+        capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Fare_Amount2 to totalUsedPrice
+          }
+        }
+        }
       }
     }//12
     }//11
@@ -22134,181 +24052,262 @@ if (Bg6 =="NO"){
  send "FQQ" +FXXfareBasisNumber 
  
 
-  capture line:9, column:10, length:1 assign to check_dot
-  if (check_dot =="."){
-    assign "Captured" to original_Fare_Checker
-    capture line:9, column:1, length:3 assign to original_Fare_Currency
-    capture line:9, column:4, length:9 assign to original_Fare_Amount
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:10, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:10, column:1, length:3 assign to original_Fare_Currency
-      capture line:10, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:11, column:1, length:3 assign to original_Fare_Currency
-      capture line:11, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:11, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:11, column:1, length:3 assign to original_Fare_Currency
-      capture line:11, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:12, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:12, column:1, length:3 assign to original_Fare_Currency
-      capture line:12, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:13, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:13, column:1, length:3 assign to original_Fare_Currency
-      capture line:13, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:14, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:14, column:1, length:3 assign to original_Fare_Currency
-      capture line:14, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:15, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:15, column:1, length:3 assign to original_Fare_Currency
-      capture line:15, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:16, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:16, column:1, length:3 assign to original_Fare_Currency
-      capture line:16, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:17, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:17, column:1, length:3 assign to original_Fare_Currency
-      capture line:17, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
-  if (original_Fare_Checker != "Captured"){
-    capture line:18, column:10, length:1 assign to check_dot
-    if (check_dot =="."){
-      assign "Captured" to original_Fare_Checker
-      capture line:18, column:1, length:3 assign to original_Fare_Currency
-      capture line:18, column:4, length:9 assign to original_Fare_Amount
-    }
-  }
+  capture line:8, column:1, length:3 assign to Currency1
+        capture line:9, column:1, length:3 assign to Currency2
+        capture line:9, column:4, length:9 assign to Fare_Amount2
+        capture line:10, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
+            }
+        }
+        }
 
-  capture line:11, column:10, length:1 assign to checkdot1
-            capture line:12, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:11, column:1, length:3 assign to oldCurrency
-                    capture line:11, column:4, length:10 assign to totalOldPrice
-                }
+        capture line:9, column:1, length:3 assign to Currency1
+        capture line:10, column:1, length:3 assign to Currency2
+        capture line:10, column:4, length:9 assign to Fare_Amount2
+        capture line:11, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:12, column:10, length:1 assign to checkdot1
-            capture line:13, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:12, column:1, length:3 assign to oldCurrency
-                    capture line:12, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:10, column:1, length:3 assign to Currency1
+        capture line:11, column:1, length:3 assign to Currency2
+        capture line:11, column:4, length:9 assign to Fare_Amount2
+        capture line:12, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:13, column:10, length:1 assign to checkdot1
-            capture line:14, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:13, column:1, length:3 assign to oldCurrency
-                    capture line:13, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:11, column:1, length:3 assign to Currency1
+        capture line:12, column:1, length:3 assign to Currency2
+        capture line:12, column:4, length:9 assign to Fare_Amount2
+        capture line:13, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:14, column:10, length:1 assign to checkdot1
-            capture line:15, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:14, column:1, length:3 assign to oldCurrency
-                    capture line:14, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:12, column:1, length:3 assign to Currency1
+        capture line:13, column:1, length:3 assign to Currency2
+        capture line:13, column:4, length:9 assign to Fare_Amount2
+        capture line:14, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:15, column:10, length:1 assign to checkdot1
-            capture line:16, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:15, column:1, length:3 assign to oldCurrency
-                    capture line:15, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:13, column:1, length:3 assign to Currency1
+        capture line:14, column:1, length:3 assign to Currency2
+        capture line:14, column:4, length:9 assign to Fare_Amount2
+        capture line:15, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:16, column:10, length:1 assign to checkdot1
-            capture line:17, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:16, column:1, length:3 assign to oldCurrency
-                    capture line:16, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:14, column:1, length:3 assign to Currency1
+        capture line:15, column:1, length:3 assign to Currency2
+        capture line:15, column:4, length:9 assign to Fare_Amount2
+        capture line:16, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:17, column:10, length:1 assign to checkdot1
-            capture line:18, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:17, column:1, length:3 assign to oldCurrency
-                    capture line:17, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:15, column:1, length:3 assign to Currency1
+        capture line:16, column:1, length:3 assign to Currency2
+        capture line:16, column:4, length:9 assign to Fare_Amount2
+        capture line:17, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:18, column:10, length:1 assign to checkdot1
-            capture line:19, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:18, column:1, length:3 assign to oldCurrency
-                    capture line:18, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:16, column:1, length:3 assign to Currency1
+        capture line:17, column:1, length:3 assign to Currency2
+        capture line:17, column:4, length:9 assign to Fare_Amount2
+        capture line:18, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:19, column:10, length:1 assign to checkdot1
-            capture line:20, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:19, column:1, length:3 assign to oldCurrency
-                    capture line:19, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:17, column:1, length:3 assign to Currency1
+        capture line:18, column:1, length:3 assign to Currency2
+        capture line:18, column:4, length:9 assign to Fare_Amount2
+        capture line:19, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:20, column:10, length:1 assign to checkdot1
-            capture line:21, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:20, column:1, length:3 assign to oldCurrency
-                    capture line:20, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:18, column:1, length:3 assign to Currency1
+        capture line:19, column:1, length:3 assign to Currency2
+        capture line:19, column:4, length:9 assign to Fare_Amount2
+        capture line:20, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
-            capture line:21, column:10, length:1 assign to checkdot1
-            capture line:22, column:10, length:1 assign to checkdot2
-            if (checkdot1=="."){
-                if (checkdot2!="."){
-                    capture line:21, column:1, length:3 assign to oldCurrency
-                    capture line:21, column:4, length:10 assign to totalOldPrice
-                }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:19, column:1, length:3 assign to Currency1
+        capture line:20, column:1, length:3 assign to Currency2
+        capture line:20, column:4, length:9 assign to Fare_Amount2
+        capture line:21, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 != Currency1){
+          if (Currency2 == Currency3){
+            assign Currency1 to original_Fare_Currency
+            assign Fare_Amount2 to original_Fare_Amount
             }
+        }
+        }
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
+
+        capture line:20, column:1, length:3 assign to Currency1
+        capture line:21, column:1, length:3 assign to Currency2
+        capture line:21, column:4, length:9 assign to Fare_Amount2
+        capture line:22, column:1, length:3 assign to Currency3
+        if (Currency2 != "FAR"){
+        if (Currency2 == Currency1){
+          if (Currency2 != Currency3){
+            assign Currency2 to oldCurrency
+            assign Fare_Amount2 to totalOldPrice
+          }
+        }
+        }
 
   
   assign "1" to Fares
