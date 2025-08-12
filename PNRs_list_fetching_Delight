@@ -1192,7 +1192,7 @@ if (PNRNumber > "0"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -1518,7 +1518,7 @@ if (PNRNumber > "1"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -1844,7 +1844,7 @@ if (PNRNumber > "2"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -2170,7 +2170,7 @@ if (PNRNumber > "3"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -2496,7 +2496,7 @@ if (PNRNumber > "4"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -2821,7 +2821,7 @@ if (PNRNumber > "5"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -3147,7 +3147,7 @@ if (PNRNumber > "6"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -3473,7 +3473,7 @@ if (PNRNumber > "7"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -3799,7 +3799,7 @@ if (PNRNumber > "8"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -4125,7 +4125,7 @@ if (PNRNumber > "9"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -4451,7 +4451,7 @@ if (PNRNumber > "10"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -4777,7 +4777,7 @@ if (PNRNumber > "11"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -5103,7 +5103,7 @@ if (PNRNumber > "12"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -5428,7 +5428,7 @@ if (PNRNumber > "13"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -5754,7 +5754,7 @@ if (PNRNumber > "14"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -6080,7 +6080,7 @@ if (PNRNumber > "15"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -6406,7 +6406,7 @@ if (PNRNumber > "16"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -6732,7 +6732,7 @@ if (PNRNumber > "17"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -7058,7 +7058,7 @@ if (PNRNumber > "18"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -7384,7 +7384,7 @@ if (PNRNumber > "19"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
@@ -7710,7 +7710,7 @@ if (PNRNumber > "20"){
   send "TQT/T" +heighestTST
   ask "Continue?" assign to qz5
   
-   send "ESACCG82***-b,BEYLB3***-B,DXBAD3***-B,PEWPK2816-B"
+   send "ESGCKY26226L-B,LBV242839-B,BZV282265-B,DXBAD33RL-B"
 send "RFR;er"
   send "ER"
   
