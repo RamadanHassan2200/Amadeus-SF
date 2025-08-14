@@ -1,4 +1,4 @@
-//Post-Sales
+//Post-Sales V3.2
 
 choose "<h2><font size=\"4\"><h2><font color=\"BLUE\">What Quote do you want to check?<h2><font size=\"3\"><p><font color=\"RED\"><br> For reissue, please make sure to add the new segments before proceeding!.</font></p></font></h2></font></h2></font></h2>"{
     when ("Reissue") {
@@ -361,89 +361,111 @@ assign "" to faresCount
     send "MD-AB  "
     capture line:1, column:1, length:4 assign to AB1
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:1 assign to fareBasis1
         append "           " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:2 assign to fareBasis1
         append "          " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:3 assign to fareBasis1
         append "         " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:4 assign to fareBasis1
         append "        " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:5 assign to fareBasis1
         append "       " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:6 assign to fareBasis1
         append "      " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:7 assign to fareBasis1
         append "     " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:8 assign to fareBasis1
         append "    " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:9 assign to fareBasis1
         append "   " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:10 assign to fareBasis1
         append "  " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:11 assign to fareBasis1
         append " " to fareBasis1
         append "1" to faresCount
       }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis1_Shortcut
         capture line:1, column:6, length:12 assign to fareBasis1
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
 
     // Second Capture fareBasis
@@ -451,77 +473,99 @@ assign "" to faresCount
     capture line:1, column:1, length:4 assign to AB1
     if (AB1 != "BOTT"){
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis2
         append "           " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis2
         append "          " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis2
         append "         " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis2
         append "        " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:5 assign to fareBasis2
         append "       " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:6 assign to fareBasis2
         append "      " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:7 assign to fareBasis2
         append "     " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:8 assign to fareBasis2
         append "    " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:9 assign to fareBasis2
         append "   " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:10 assign to fareBasis2
         append "  " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:11 assign to fareBasis2
         append " " to fareBasis2
         append "1" to faresCount
       }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:12 assign to fareBasis2
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
     
     // Third Capture fareBasis
@@ -529,77 +573,99 @@ assign "" to faresCount
     capture line:1, column:1, length:4 assign to AB1
     if (AB1 != "BOTT"){
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis3
         append "           " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis3
         append "          " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis3
         append "         " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis3
         append "        " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:5 assign to fareBasis3
         append "       " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:6 assign to fareBasis3
         append "      " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:7 assign to fareBasis3
         append "     " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:8 assign to fareBasis3
         append "    " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:9 assign to fareBasis3
         append "   " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:10 assign to fareBasis3
         append "  " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:11 assign to fareBasis3
         append " " to fareBasis3
         append "1" to faresCount
       }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:12 assign to fareBasis3
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
     
     // Fourth Capture fareBasis
@@ -607,77 +673,95 @@ assign "" to faresCount
     capture line:1, column:1, length:4 assign to AB1
     if (AB1 != "BOTT"){
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis4
         append "           " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis4
         append "          " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis4
         append "         " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis4
         append "        " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:5 assign to fareBasis4
         append "       " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:6 assign to fareBasis4
         append "      " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:7 assign to fareBasis4
         append "     " to fareBasis4
         append "1" to faresCount
       }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:8 assign to fareBasis4
         append "    " to fareBasis4
         append "1" to faresCount
-      }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:9 assign to fareBasis4
         append "   " to fareBasis4
         append "1" to faresCount
-      }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:10 assign to fareBasis4
         append "  " to fareBasis4
         append "1" to faresCount
-      }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:11 assign to fareBasis4
         append " " to fareBasis4
         append "1" to faresCount
-      }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:12 assign to fareBasis4
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
     
     // Fifth Capture fareBasis
@@ -685,77 +769,88 @@ assign "" to faresCount
     capture line:1, column:1, length:4 assign to AB1
     if (AB1 != "BOTT"){
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis5
         append "           " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis5
         append "          " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis5
         append "         " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis5
         append "        " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:5 assign to fareBasis5
         append "       " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:6 assign to fareBasis5
         append "      " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:7 assign to fareBasis5
         append "     " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:8 assign to fareBasis5
         append "    " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:9 assign to fareBasis5
         append "   " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:10 assign to fareBasis5
         append "  " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:11 assign to fareBasis5
         append " " to fareBasis5
         append "1" to faresCount
-      }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:12 assign to fareBasis5
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
     
     // Sixth Capture fareBasis
@@ -763,77 +858,88 @@ assign "" to faresCount
     capture line:1, column:1, length:4 assign to AB1
     if (AB1 != "BOTT"){
     if (AB1=="AB  "){
-      capture line:1, column:33, length:2 assign to OK
-      if (OK=="OK"){
+      capture line:1, column:7, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:1 assign to fareBasis6
         append "           " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:34, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:8, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:2 assign to fareBasis6
         append "          " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:35, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:9, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:3 assign to fareBasis6
         append "         " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:36, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:10, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:4 assign to fareBasis6
         append "        " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:37, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:11, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:5 assign to fareBasis6
         append "       " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:38, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:12, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:6 assign to fareBasis6
         append "      " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:39, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:13, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:7 assign to fareBasis6
         append "     " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:40, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:14, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:8 assign to fareBasis6
         append "    " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:41, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:15, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:9 assign to fareBasis6
         append "   " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:42, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:16, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:10 assign to fareBasis6
         append "  " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:43, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:17, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:11 assign to fareBasis6
         append " " to fareBasis6
         append "1" to faresCount
-      }
-      capture line:1, column:44, length:2 assign to OK
-      if (OK=="OK"){
+      }else{
+      capture line:1, column:18, length:1 assign to space_Check
+      if (space_Check == " "){
         capture line:1, column:6, length:12 assign to fareBasis6
         append "1" to faresCount
       }
+      }//18
+      }//17
+      }//16
+      }//15
+      }//14
+      }//13
+      }//12
+      }//11
+      }//10
+      }//9
+      }//8
     }
     
     }//BOTT6

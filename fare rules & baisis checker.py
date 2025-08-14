@@ -645,70 +645,7 @@ if (OK2 == "NS"){
 }
 }
 
-//Exclude NRF classes , NE(N,S)
 
-if (airline1 == "NE"){
- assign "True" to NE_Refundable
-  if (class1 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class1 == "S"){
-    assign "False" to NE_Refundable
-  }
-
-  if (segCount >= "2"){
-   if (class2 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class2 == "S"){
-    assign "False" to NE_Refundable
-  }
-  }
-
-  if (segCount >= "3"){
-  if (class3 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class3 == "S"){
-    assign "False" to NE_Refundable
-  }
-  }
-
-  if (segCount >= "4"){
-  if (class4 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class4 == "S"){
-    assign "False" to NE_Refundable
-  }
-  }
-
-  if (segCount >= "5"){
-  if (class5 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class5 == "S"){
-    assign "False" to NE_Refundable
-  }
-  }
-
-  if (segCount >= "6"){
-   if (class6 == "N"){
-    assign "False" to NE_Refundable
-  }
-  if (class6 == "S"){
-    assign "False" to NE_Refundable
-  }
-  }
-
-  if (NE_Refundable != "True"){
-   send "NE is Non-Refundable for N,S Classes"
-   ask "Ignore the Refund" assign to qz5
-   call "FQD&FQP"
-  }
-
-
-}
 
 send "DD" +today + "/" +DOI
 capture line:2, column:1, length:1 assign to checkDOIDays
