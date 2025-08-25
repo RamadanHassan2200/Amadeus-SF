@@ -11,6 +11,10 @@ choose "<h2><font size=\"4\"><h2><font color=\"BLUE\">What Quote do you want to 
 
 send "TTH/ALL"
 capture line:2, column:75, length:6 assign to old_segments_No
+capture line:3, column:75, length:6 assign to old_segments_No_1
+if (old_segments_No_1 != old_segments_No){
+  append old_segments_No_1 to old_segments_No
+}
   send "RTA"
 if (quoteType == "Reissue"){
     group{
@@ -2077,6 +2081,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
     
     send "FQQ2"
@@ -2951,6 +2965,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ3"
@@ -3825,6 +3849,17 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
+
       }
 
       send "FQQ4"
@@ -4699,6 +4734,17 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
+
       }
 
       send "FQQ5"
@@ -5573,6 +5619,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ6"
@@ -6447,6 +6503,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ7"
@@ -7321,6 +7387,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ8"
@@ -8195,6 +8271,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ9"
@@ -9069,6 +9155,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ10"
@@ -9943,6 +10039,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ11"
@@ -10817,6 +10923,16 @@ if (Bg6 =="NO"){
           }
         }
         }
+
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }
 
       send "FQQ12"
@@ -11691,6 +11807,15 @@ if (Bg6 =="NO"){
           }
         }
         }
+        capture line:6, column:1, length:60 assign to fare_line1
+        capture line:7, column:1, length:60 assign to fare_line2
+        capture line:8, column:1, length:60 assign to fare_line3
+        capture line:9, column:1, length:60 assign to fare_line4
+        capture line:10, column:1, length:60 assign to fare_line5
+        capture line:11, column:1, length:60 assign to fare_line6
+        capture line:12, column:1, length:60 assign to fare_line7
+        capture line:13, column:1, length:60 assign to fare_line8
+        capture line:14, column:1, length:60 assign to fare_line9
       }  
           
     }//12
@@ -24575,20 +24700,45 @@ if (dfnextcheck == ">"){
   }
 
   if (original_Fare_Currency == new_Fare_Currency){
-    if (new_Fare_Amount == original_Fare_Amount){
-      send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty"
+    if (new_Fare_Amount >= original_Fare_Amount){
+      send "" + fare_line1 +"
+ " + fare_line2 +"
+ " + fare_line3 +"
+ " + fare_line4 +"
+ " + fare_line5 +"
+ " + fare_line6 +"
+ " + fare_line7 +"
+ " + fare_line8 +"
+ " + fare_line9 +"
+ "  +"
+ "  +"Reissue Charges = SAR " +" " +FareDiff +" + Penalty"
     }
     else{
-      if (new_Fare_Amount > original_Fare_Amount){
-        send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty"
-      }
-      else{
-      send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed please check if fare Downgraded)"
-      }
+      send "" + fare_line1 +"
+ " + fare_line2 +"
+ " + fare_line3 +"
+ " + fare_line4 +"
+ " + fare_line5 +"
+ " + fare_line6 +"
+ " + fare_line7 +"
+ " + fare_line8 +"
+ " + fare_line9 +"
+ "  +"
+ "  +"Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed please check if fare Downgraded)"
     }
   }
   else{
-    send "Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed Different Fare Currency)"
+    send "" + fare_line1 +"
+ " + fare_line2 +"
+ " + fare_line3 +"
+ " + fare_line4 +"
+ " + fare_line5 +"
+ " + fare_line6 +"
+ " + fare_line7 +"
+ " + fare_line8 +"
+ " + fare_line9 +"
+ "  +"
+ "  +"Reissue Charges = SAR " +" " +FareDiff +" + Penalty (Not Guranteed Different Fare Currency)"
   }
 
   }
