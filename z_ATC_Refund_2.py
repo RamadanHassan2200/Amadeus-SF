@@ -121,131 +121,131 @@ capture line:23, column:5, length:3 assign to gov1616
 
 if (gov1 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov11 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov2 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov22 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov3 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov33 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov4 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov44 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov5 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov55 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov6 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov66 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov7 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov77 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov8 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov88 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov9 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov99 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov10 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1010 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov11 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1111 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov12 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1212 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov13 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1313 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov14 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1414 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov15 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1515 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov16 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 if (gov1616 =="GOV"){
   send "Governmental Ticket ignore it!"
-  mandatory ask "Ignore?" assign to qz5
+  assign "True" to ignored_Refund
 }
 
 capture line:6, column:1, length:3 assign to FO_Check
@@ -499,12 +499,10 @@ if (FOCheck == "True"){
           if (FO_2_Years_Validity == "True"){
             if (dateDifference >= "730"){
               send "FO is Non-Refundable for 2 Years"
-              ask "Ignore the Refund" assign to qz5
               assign "True" to ignored_Refund
             }
           }else{
             send "FO is Non-Refundable for 2 Years"
-            ask "Ignore the Refund" assign to qz5
             assign "True" to ignored_Refund
           }
         }
@@ -702,14 +700,12 @@ if (checkDOIDays == "-"){
   if (ticket_2_Years_Validity != "True"){
     if (checkDOIDays > "364"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
-      mandatory ask "The Ticket is not valid for auto refund!" assign to qz5
       assign "True" to ignored_Refund
     }
   }
   else{
     if (checkDOIDays > "728"){
       send "THIS TICKET IS NOT VALID FOR REFUND! Expired Ticket!"
-      mandatory ask "The Ticket is not valid for auto refund!" assign to qz5
       assign "True" to ignored_Refund
     }
   }
@@ -717,7 +713,6 @@ if (checkDOIDays == "-"){
 }
 else{
   send "THIS TICKET IS NOT VALID FOR REFUND!, please void it!"
-  mandatory ask "The Ticket is not valid for auto refund!, Please void it" assign to qz5
   assign "True" to ignored_Refund
 }
 
@@ -862,7 +857,6 @@ if (airline1 =="KU"){
   }
   if (KU_Refundable != "True"){
     send "KU is Non-Refundable, Fully Unused"
-    ask "Ignore the Refund" assign to qz5
     assign "True" to ignored_Refund
   }
 }
@@ -982,11 +976,7 @@ if (segment1_General_Status_Open == "True"){
   if (check_Before_After != "-"){
     capture line:2, column:2, length:3 assign to check_Before_After
     if (check_Before_After >= "0"){
-      choose "This is a Future Ticket, Do you want to continue?" until "Yes" {
-        when ("No"){}
-      }
       assign "True" to ignored_Refund
-      assign "False" to status_NoShow
     }
   }
 
@@ -1001,7 +991,7 @@ if (PCC_ID =="71201675"){
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
+    send "TRFIG"
 }
 if (checkPending=="REFUND RECORD PENDING"){
 send "TRFIG"
@@ -1009,37 +999,66 @@ send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 }
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
-    ask "Continue?" assign to qz5
+    send "TRFIG"
 }
   
 capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
 
-    capture line:10, column:5, length:12 assign to totalRefundcheck1
-    capture line:11, column:5, length:12 assign to totalRefundcheck2
-    capture line:12, column:5, length:12 assign to totalRefundcheck3
-
-    if (totalRefundcheck1 == "REFUND TOTAL"){
-        capture line:10, column:5, length:40 assign to totalRefundAmount
-        capture line:10, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck2 == "REFUND TOTAL"){
-        capture line:11, column:5, length:40 assign to totalRefundAmount
-        capture line:11, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck3 == "REFUND TOTAL"){
-        capture line:12, column:5, length:40 assign to totalRefundAmount
-        capture line:12, column:30, length:13 assign to amountRefunded
-    }
-    capture line:6, column:28, length:3 assign to refundCurrency
-
     send "TRFU/NF"
-    send "TRFP"
-    capture line:2, column:1, length:21 assign to refundedTicketCheck
-    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
-        send ":" +totalRefundAmount +"  " +refundCurrency
-        ask "Continue?" assign to qz5
+    
+    capture line:9, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:9, column:33, length:10 assign to totalRefundAmount
     }
+    capture line:10, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:10, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:11, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:11, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:12, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:12, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:13, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:13, column:33, length:10 assign to totalRefundAmount
+    }
+
+
+    capture line: 11, column:1, length:3 assign to check_FP1
+    if (check_FP1 == "FP1"){
+      capture line:11, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 12, column:1, length:3 assign to check_FP2
+    if (check_FP2 == "FP1"){
+      capture line:12, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 13, column:1, length:3 assign to check_FP3
+    if (check_FP3 == "FP1"){
+      capture line:13, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 14, column:1, length:3 assign to check_FP4
+    if (check_FP4 == "FP1"){
+      capture line:14, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 15, column:1, length:3 assign to check_FP5
+    if (check_FP5 == "FP1"){
+      capture line:15, column:33, length:10 assign to FP_Amount
+    }
+
+
+    if (totalRefundAmount == FP_Amount){
+        send "TRFP"
+    }
+    else{
+      send "TRFU/FPA1" +totalRefundAmount
+      send "TRFP"
+    }
+ 
 }
 
 if (checkATC =="P"){
@@ -1066,32 +1085,58 @@ if (checkATC =="P"){
   }
 
   if (travelport_Galileo == "True"){
-
-    capture line:10, column:5, length:12 assign to totalRefundcheck1
-    capture line:11, column:5, length:12 assign to totalRefundcheck2
-    capture line:12, column:5, length:12 assign to totalRefundcheck3
-
-    if (totalRefundcheck1 == "REFUND TOTAL"){
-        capture line:10, column:5, length:40 assign to totalRefundAmount
-        capture line:10, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck2 == "REFUND TOTAL"){
-        capture line:11, column:5, length:40 assign to totalRefundAmount
-        capture line:11, column:30, length:13 assign to amountRefunded
-    }
-    if (totalRefundcheck3 == "REFUND TOTAL"){
-        capture line:12, column:5, length:40 assign to totalRefundAmount
-        capture line:12, column:30, length:13 assign to amountRefunded
-    }
-    capture line:6, column:28, length:3 assign to refundCurrency
-
     send "TRFU/NF"
-    send "TRFP"
-    capture line:2, column:1, length:21 assign to refundedTicketCheck
-    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
-        send ":" +totalRefundAmount +"  " +refundCurrency
-        ask "Continue?" assign to qz5
+    
+    capture line:9, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:9, column:33, length:10 assign to totalRefundAmount
     }
+    capture line:10, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:10, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:11, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:11, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:12, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:12, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:13, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:13, column:33, length:10 assign to totalRefundAmount
+    }
+
+
+    capture line: 11, column:1, length:3 assign to check_FP1
+    if (check_FP1 == "FP1"){
+      capture line:11, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 12, column:1, length:3 assign to check_FP2
+    if (check_FP2 == "FP1"){
+      capture line:12, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 13, column:1, length:3 assign to check_FP3
+    if (check_FP3 == "FP1"){
+      capture line:13, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 14, column:1, length:3 assign to check_FP4
+    if (check_FP4 == "FP1"){
+      capture line:14, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 15, column:1, length:3 assign to check_FP5
+    if (check_FP5 == "FP1"){
+      capture line:15, column:33, length:10 assign to FP_Amount
+    }
+
+    if (totalRefundAmount == FP_Amount){
+        send "TRFP"
+    }
+    else{
+      send "TRFU/FPA1" +totalRefundAmount
+      send "TRFP"
+    }    
   }
 
 }

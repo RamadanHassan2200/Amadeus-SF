@@ -1,4 +1,12 @@
 ask "Enter the Unused Tickets, (With/Without TWD/TKT)" assign to tickets_patch
+choose "Plesae select your prefred method" {
+    when ("No Monitor") {
+        assign "False" to Monitor
+    }
+    when ("Monitor") {
+        assign "True" to Monitor
+    }
+}
 send "IG"
 send  "SRT" +tickets_patch
 
@@ -819,759 +827,1514 @@ assign "0" to ticketsNO
 
 if (ticket1 != "0"){
     send "TWD/TKT" +ticket1
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket2 != "0"){
     send "TWD/TKT" +ticket2
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket3 != "0"){
     send "TWD/TKT" +ticket3
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket4 != "0"){
     send "TWD/TKT" +ticket4
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket5 != "0"){
     send "TWD/TKT" +ticket5
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket6 != "0"){
     send "TWD/TKT" +ticket6
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket7 != "0"){
     send "TWD/TKT" +ticket7
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket8 != "0"){
     send "TWD/TKT" +ticket8
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket9 != "0"){
     send "TWD/TKT" +ticket9
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket10 != "0"){
     send "TWD/TKT" +ticket10
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket11 != "0"){
     send "TWD/TKT" +ticket11
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket12 != "0"){
     send "TWD/TKT" +ticket12
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket13 != "0"){
     send "TWD/TKT" +ticket13
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket14 != "0"){
     send "TWD/TKT" +ticket14
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket15 != "0"){
     send "TWD/TKT" +ticket15
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket16 != "0"){
     send "TWD/TKT" +ticket16
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket17 != "0"){
     send "TWD/TKT" +ticket17
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket18 != "0"){
     send "TWD/TKT" +ticket18
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket19 != "0"){
     send "TWD/TKT" +ticket19
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket20 != "0"){
     send "TWD/TKT" +ticket20
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket21 != "0"){
     send "TWD/TKT" +ticket21
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket22 != "0"){
     send "TWD/TKT" +ticket22
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket23 != "0"){
     send "TWD/TKT" +ticket23
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket24 != "0"){
     send "TWD/TKT" +ticket24
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket25 != "0"){
     send "TWD/TKT" +ticket25
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket26 != "0"){
     send "TWD/TKT" +ticket26
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket27 != "0"){
     send "TWD/TKT" +ticket27
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket28 != "0"){
     send "TWD/TKT" +ticket28
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket29 != "0"){
     send "TWD/TKT" +ticket29
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket30 != "0"){
     send "TWD/TKT" +ticket30
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket31 != "0"){
     send "TWD/TKT" +ticket31
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket32 != "0"){
     send "TWD/TKT" +ticket32
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket33 != "0"){
     send "TWD/TKT" +ticket33
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket34 != "0"){
     send "TWD/TKT" +ticket34
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket35 != "0"){
     send "TWD/TKT" +ticket35
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket36 != "0"){
     send "TWD/TKT" +ticket36
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket37 != "0"){
     send "TWD/TKT" +ticket37
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket38 != "0"){
     send "TWD/TKT" +ticket38
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket39 != "0"){
     send "TWD/TKT" +ticket39
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket40 != "0"){
     send "TWD/TKT" +ticket40
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket41 != "0"){
     send "TWD/TKT" +ticket41
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket42 != "0"){
     send "TWD/TKT" +ticket42
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket43 != "0"){
     send "TWD/TKT" +ticket43
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket44 != "0"){
     send "TWD/TKT" +ticket44
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket45 != "0"){
     send "TWD/TKT" +ticket45
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket46 != "0"){
     send "TWD/TKT" +ticket46
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket47 != "0"){
     send "TWD/TKT" +ticket47
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket48 != "0"){
     send "TWD/TKT" +ticket48
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket49 != "0"){
     send "TWD/TKT" +ticket49
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket50 != "0"){
     send "TWD/TKT" +ticket50
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket51 != "0"){
     send "TWD/TKT" +ticket51
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket52 != "0"){
     send "TWD/TKT" +ticket52
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket53 != "0"){
     send "TWD/TKT" +ticket53
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket54 != "0"){
     send "TWD/TKT" +ticket54
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket55 != "0"){
     send "TWD/TKT" +ticket55
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket56 != "0"){
     send "TWD/TKT" +ticket56
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket57 != "0"){
     send "TWD/TKT" +ticket57
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket58 != "0"){
     send "TWD/TKT" +ticket58
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket59 != "0"){
     send "TWD/TKT" +ticket59
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket60 != "0"){
     send "TWD/TKT" +ticket60
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket61 != "0"){
     send "TWD/TKT" +ticket61
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket62 != "0"){
     send "TWD/TKT" +ticket62
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket63 != "0"){
     send "TWD/TKT" +ticket63
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket64 != "0"){
     send "TWD/TKT" +ticket64
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket65 != "0"){
     send "TWD/TKT" +ticket65
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket66 != "0"){
     send "TWD/TKT" +ticket66
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket67 != "0"){
     send "TWD/TKT" +ticket67
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket68 != "0"){
     send "TWD/TKT" +ticket68
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket69 != "0"){
     send "TWD/TKT" +ticket69
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket70 != "0"){
     send "TWD/TKT" +ticket70
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket71 != "0"){
     send "TWD/TKT" +ticket71
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket72 != "0"){
     send "TWD/TKT" +ticket72
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket73 != "0"){
     send "TWD/TKT" +ticket73
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket74 != "0"){
     send "TWD/TKT" +ticket74
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket75 != "0"){
     send "TWD/TKT" +ticket75
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket76 != "0"){
     send "TWD/TKT" +ticket76
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket77 != "0"){
     send "TWD/TKT" +ticket77
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket78 != "0"){
     send "TWD/TKT" +ticket78
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket79 != "0"){
     send "TWD/TKT" +ticket79
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket80 != "0"){
     send "TWD/TKT" +ticket80
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket81 != "0"){
     send "TWD/TKT" +ticket81
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5    
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5    
 }
 if (ticket82 != "0"){
     send "TWD/TKT" +ticket82
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket83 != "0"){
     send "TWD/TKT" +ticket83
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket84 != "0"){
     send "TWD/TKT" +ticket84
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket85 != "0"){
     send "TWD/TKT" +ticket85
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket86 != "0"){
     send "TWD/TKT" +ticket86
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket87 != "0"){
     send "TWD/TKT" +ticket87
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket88 != "0"){
     send "TWD/TKT" +ticket88
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket89 != "0"){
     send "TWD/TKT" +ticket89
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket90 != "0"){
     send "TWD/TKT" +ticket90
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket91 != "0"){
     send "TWD/TKT" +ticket91
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket92 != "0"){
     send "TWD/TKT" +ticket92
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket93 != "0"){
     send "TWD/TKT" +ticket93
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket94 != "0"){
     send "TWD/TKT" +ticket94
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket95 != "0"){
     send "TWD/TKT" +ticket95
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket96 != "0"){
     send "TWD/TKT" +ticket96
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket97 != "0"){
     send "TWD/TKT" +ticket97
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket98 != "0"){
     send "TWD/TKT" +ticket98
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket99 != "0"){
     send "TWD/TKT" +ticket99
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket100 != "0"){
     send "TWD/TKT" +ticket100
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket101 != "0"){
     send "TWD/TKT" +ticket101
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket102 != "0"){
     send "TWD/TKT" +ticket102
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket103 != "0"){
     send "TWD/TKT" +ticket103
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket104 != "0"){
     send "TWD/TKT" +ticket104
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket105 != "0"){
     send "TWD/TKT" +ticket105
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket106 != "0"){
     send "TWD/TKT" +ticket106
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket107 != "0"){
     send "TWD/TKT" +ticket107
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket108 != "0"){
     send "TWD/TKT" +ticket108
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket109 != "0"){
     send "TWD/TKT" +ticket109
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket110 != "0"){
     send "TWD/TKT" +ticket110
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket111 != "0"){
     send "TWD/TKT" +ticket111
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket112 != "0"){
     send "TWD/TKT" +ticket112
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket113 != "0"){
     send "TWD/TKT" +ticket113
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket114 != "0"){
     send "TWD/TKT" +ticket114
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket115 != "0"){
     send "TWD/TKT" +ticket115
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket116 != "0"){
     send "TWD/TKT" +ticket116
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket117 != "0"){
     send "TWD/TKT" +ticket117
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket118 != "0"){
     send "TWD/TKT" +ticket118
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket119 != "0"){
     send "TWD/TKT" +ticket119
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket120 != "0"){
     send "TWD/TKT" +ticket120
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket121 != "0"){
     send "TWD/TKT" +ticket121
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket122 != "0"){
     send "TWD/TKT" +ticket122
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket123 != "0"){
     send "TWD/TKT" +ticket123
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket124 != "0"){
     send "TWD/TKT" +ticket124
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket125 != "0"){
     send "TWD/TKT" +ticket125
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket126 != "0"){
     send "TWD/TKT" +ticket126
     send "TWD/TKT" +ticket
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket127 != "0"){
     send "TWD/TKT" +ticket127
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket128 != "0"){
     send "TWD/TKT" +ticket128
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket129 != "0"){
     send "TWD/TKT" +ticket129
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket130 != "0"){
     send "TWD/TKT" +ticket130
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket131 != "0"){
     send "TWD/TKT" +ticket131
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket132 != "0"){
     send "TWD/TKT" +ticket132
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket133 != "0"){
     send "TWD/TKT" +ticket133
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket134 != "0"){
     send "TWD/TKT" +ticket134
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket135 != "0"){
     send "TWD/TKT" +ticket135
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket136 != "0"){
     send "TWD/TKT" +ticket136
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket137 != "0"){
     send "TWD/TKT" +ticket137
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket138 != "0"){
     send "TWD/TKT" +ticket138
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket139 != "0"){
     send "TWD/TKT" +ticket139
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket140 != "0"){
     send "TWD/TKT" +ticket140
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket141 != "0"){
     send "TWD/TKT" +ticket141
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket142 != "0"){
     send "TWD/TKT" +ticket142
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket143 != "0"){
     send "TWD/TKT" +ticket143
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket144 != "0"){
     send "TWD/TKT" +ticket144
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket145 != "0"){
     send "TWD/TKT" +ticket145
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket146 != "0"){
     send "TWD/TKT" +ticket146
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket147 != "0"){
     send "TWD/TKT" +ticket147
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket148 != "0"){
     send "TWD/TKT" +ticket148
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 if (ticket149 != "0"){
     send "TWD/TKT" +ticket149
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5  
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5  
 }
 if (ticket150 != "0"){
     send "TWD/TKT" +ticket150
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5   
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5   
 }
 if (ticket151 != "0"){
     send "TWD/TKT" +ticket151
+    if (Monitor == "True"){
     call "z_ATC_Refund"
-    ask "Done?" assign to qz5
+    }
+    else{
+    call "z_ATC_Refund_2"
+    }
+    //ask "Done?" assign to qz5
 }
 
 
