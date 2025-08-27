@@ -1040,6 +1040,11 @@ if (checkATC =="C"){
         send ":" +totalRefundAmount +"  " +refundCurrency
         ask "Continue?" assign to qz5
     }
+    capture line:1, column:1, length:24 assign to checkPending
+        if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+        }
 }
 
 if (checkATC =="P"){
@@ -1092,6 +1097,11 @@ if (checkATC =="P"){
         send ":" +totalRefundAmount +"  " +refundCurrency
         ask "Continue?" assign to qz5
     }
+    capture line:1, column:1, length:24 assign to checkPending
+        if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+        }
   }
 
 }

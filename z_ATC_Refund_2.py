@@ -1053,10 +1053,20 @@ if (checkATC =="C"){
 
     if (totalRefundAmount == FP_Amount){
         send "TRFP"
+        capture line:1, column:1, length:24 assign to checkPending
+        if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+        }
     }
     else{
       send "TRFU/FPA1" +totalRefundAmount
       send "TRFP"
+      capture line:1, column:1, length:24 assign to checkPending
+      if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+      }
     }
  
 }
@@ -1132,10 +1142,20 @@ if (checkATC =="P"){
 
     if (totalRefundAmount == FP_Amount){
         send "TRFP"
+        capture line:1, column:1, length:24 assign to checkPending
+        if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+        }
     }
     else{
       send "TRFU/FPA1" +totalRefundAmount
       send "TRFP"
+      capture line:1, column:1, length:24 assign to checkPending
+      if (checkPending=="NEED ITINERARY INDICATOR"){
+          send "TRFU/SI"
+          send "TRFP"
+      }
     }    
   }
 
