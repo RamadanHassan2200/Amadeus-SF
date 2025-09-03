@@ -86,6 +86,7 @@ if (HK1Test=="HK"){
   assign "1" to segmentsCount
   capture line:2, column:6, length:2 assign to Airline1
   capture line:2, column:15, length:5 assign to TravelDate
+  capture line:2, column:17, length:3 assign to TravelMonth
   capture line:2, column:23, length:3 assign to OriginCity
   capture line:2, column:32, length:1 assign to PassengerCount
   capture line:3, column:30, length:2 assign to HKnextTest
@@ -123,6 +124,7 @@ if (HK2Test=="HK"){
   assign "1" to segmentsCount
   capture line:3, column:6, length:2 assign to Airline1
   capture line:3, column:15, length:5 assign to TravelDate
+  capture line:3, column:17, length:3 assign to TravelMonth
   capture line:3, column:23, length:3 assign to OriginCity
   capture line:3, column:32, length:1 assign to PassengerCount
   capture line:4, column:30, length:2 assign to HKnextTest
@@ -207,6 +209,13 @@ else{
     send "XQ airline is non-voidable, not (EX-PAK)"
     ask "Stop and Review" assign to qz5
     send "ig"
+  }
+
+  if (Airline1=="QR"){
+    if (TravelMonth != "SEP"){
+      send "QR OB is outside Sep, not (EX-PAK)!"
+      ask "Stop and Review" assign to qz5
+    }
   }
 
 if (OriginCity=="AAW"){
