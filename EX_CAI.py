@@ -1,6 +1,4 @@
-// for Cairo Office
-
-//retrirval
+//EX_CAI
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
 
@@ -159,50 +157,152 @@ else{
 }
 }
 
-// ignore >4 segments or >6 passengers
+// MS T,W,S,E,G check
+capture line:2, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
 
-// Checking the Airline
+capture line:3, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
 
-// Non-voidable airlines: A3, ER, H1, NP, R5, UK with AI
-  if (Airline1=="A3") {
-    send "A3 airline is non-voidable for (P,U,T,S) Classes"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
-  if (Airline1=="ER"){
-    send "ER airline is non-voidable"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
-  if (Airline1=="H1"){
-    send "H1 airline is non-voidable"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
-  if (Airline1=="R5"){
-    send "R5 airline is non-voidable"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
-  if (Airline1=="UK"){
-    send "UK airline is non-voidable"
-    ask "Stop and Review" assign to qz5
-    send "ig"
-  }
+capture line:4, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
+
+capture line:5, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
+
+capture line:6, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
+
+capture line:7, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
+
+capture line:8, column:13, length:1 assign to MSClass
+if (MSClass=="T"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="W"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="S"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="E"){
+    assign "True" to MSClassCheck
+}
+if (MSClass=="G"){
+    assign "True" to MSClassCheck
+}
+
   if (Airline1=="NE"){
-    send "NE airline is non-voidable within 24 Hrs"
+    send "NE airline is not EX EGY!"
     ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+  if (Airline1=="NP"){
+    send "NP airline is not EX-EGY!"
+    ask "Stop and Review" assign to qz5
+    send "ig"
   }
   if (Airline1=="SV"){
-    send "SV airline is non-voidable (EX-EGY)"
+    send "SV airline is not EX EGY!"
     ask "Stop and Review" assign to qz5
     send "ig"
   }
   if (Airline1=="XQ"){
-    send "XQ airline is non-voidable (EX-EGY)"
+    send "XQ airline is not EX EGY!"
     ask "Stop and Review" assign to qz5
     send "ig"
   }
+  if (Airline1=="XY"){
+    send "XY airline is not EX EGY!"
+    ask "Stop and Review" assign to qz5
+    send "ig"
+  }
+
 
 if (OriginCity=="ASW"){
   assign "TRUE" to EXEGYCheck
@@ -234,21 +334,39 @@ if (OriginCity=="RMF"){
 if (OriginCity=="SSH"){
   assign "TRUE" to EXEGYCheck
 }
-
 if (EXEGYCheck != "TRUE"){
     send "THIS's NOT EX EGY DEAL!"
     mandatory ask "PLease check the departure city again!" assign to qz5
 }
 
-  //Today dates aren't considered
-  if (TravelDate == today){
-    send  "No void for today flights"
-    ask "Check again please!" assign to qz
+ send  "DD" +OriginCity
+  capture line:2, column:13, length:2 assign to OriginCityCurrentTime1
+  capture line:2, column:15, length:2 assign to OriginCityCurrentTime2
+  capture line:2, column:30, length:5 assign to OriginCityCurrentDate
+  send "DD" +OriginCityCurrentDate +"/" + TravelDate
+  capture line:2, column:1, length:1 assign to checkpast
+  capture line:2, column:1, length:2 assign to checktoday
+  if (checkpast == "-"){
+    send "Flight Departed!"
+    ask "Ignore!" assign to qz5
     send "ig"
   }
-// Checking Airline(s) and Travel date and passenger count//
+  if (checktoday == " 0"){
+    send "DF"  +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 +"-" +TravelTime1 +"*60-" +TravelTime2 
+    capture line:2, column:1, length:1 assign to checkTimePast
+    capture line:2, column:1, length:5 assign to checkTimeDifference
+    if (checkTimePast == "-"){
+      send "Flight Departed!"
+      ask "Ignore!" assign to qz5
+      send "ig"
+    }
+    if (checkTimeDifference<= "120"){
+      send "Flight is within 2Hrs"
+      ask "Continue?" assign to qz5
+    }
+  }
 
-      send "tqm"
+send "tqm"
          capture line:1, column:1, length:20 assign to emdTest
 
         if (emdTest != "NO TSM RECORD EXISTS"){
@@ -256,9 +374,7 @@ if (EXEGYCheck != "TRUE"){
           mandatory ask "Ignore!" assign to qz5 
           send "ig"
         }
-            
-//confirming there's no EMD
-    send "rttn"
+        send "rttn"
 
         capture line:2, column:5, length:2 assign to FA1
           if (FA1=="FA"){
@@ -399,6 +515,10 @@ if (checkticketopenness=="SECURED ETKT RECORD(S)"){
 }
 capture line:1, column:1, length:14 assign to checkticketopenness
 if (checkticketopenness=="INVALID FORMAT"){
+  assign "FALSE" to TWDOpened
+}
+capture line:1, column:1, length:16 assign to checkticketopenness
+if (checkticketopenness=="NO ELEMENT FOUND"){
   assign "FALSE" to TWDOpened
 }
 if (TWDOpened=="FALSE"){
@@ -1069,21 +1189,14 @@ else{
 
     capture line:2, column:44, length:5 assign to DOITEST
     capture line:2, column:57, length:8 assign to ticketingOffice
-
-  if (DOITEST!=today){
-    send "N0 Void as DOI-" +DOITEST
-    ask "Ignore?" assign to qz5
-    send "ig"
-  }
+  
 
 capture line:4, column:47, length:1 assign to FST1
 if (FST1=="C"){
-           send "Please check status!"
            ask "The CST checked in" assign to qz5
            send "ig"
 }
 if (FST1=="V"){
-           send "Please check status!"
            ask "The Ticket is Voided, Continue?" assign to qz5
 }
 
@@ -1332,7 +1445,53 @@ else{
 }//8
 capture line:2, column:1, length:10 assign to totalOldTSTPrice
 
-send "FXR/K"
+assign "0P" to airlinePercentage
+if (Airline1 == "SM"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "MS"){
+    if (MSClassCheck == "True"){
+        assign "4P" to airlinePercentage
+    }
+    else{
+        assign "4P" to airlinePercentage
+    }
+}
+if (Airline1 == "EK"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "QR"){
+    assign "6P" to airlinePercentage
+}
+if (Airline1 == "GF"){
+    assign "6P" to airlinePercentage
+}
+if (Airline1 == "KU"){
+    assign "6P" to airlinePercentage
+}
+if (Airline1 == "EY"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "WY"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "AT"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "BA"){
+    assign "5P" to airlinePercentage
+}
+if (Airline1 == "TU"){
+    assign "3P" to airlinePercentage
+}
+if (Airline1 == "AZ"){
+    assign "4P" to airlinePercentage
+}
+if (Airline1 == "TK"){
+    assign "5P" to airlinePercentage
+}
+
+send "FXR/K/R,UP/ZO-" +airlinePercentage
 capture line:1, column:1, length:8 assign to checkAttn
 if (checkAttn=="**ATTN**"){
     mandatory ask "There's unavailable class(es)!" assign to qz5
@@ -1732,7 +1891,10 @@ assign "Please check the baggage in: " to baggageCheckerStatment
       mandatory ask "Continue?" assign to qz5
     }
 
-    send "FQC" +totalNewPrice +"EGP/" +firstCurr
+    send "FQC" +totalNewPrice +"EGP/AED"
+    capture line:4, column:4, length:5 assign to AEDdeal
+    send "FQC" +AEDdeal +"AED/" +firstCurr
+
             if (firstCurr=="AED"){
            capture line:4, column:4, length:5 assign to curr2deal
           }
@@ -1740,9 +1902,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
            capture line:4, column:4, length:8 assign to curr2deal
           }
           send "df" +totalOldTSTPrice +"-" +curr2deal
-                 capture line:2, column:1, length:11 assign to diff
-                 send "df" + curr2deal +"*0.04;" +diff
-                capture line:2, column:1, length:10 assign to egy1deal
+            capture line:2, column:1, length:10 assign to egy1deal
 
                   // send "Void the ticket(s)!"
                     choose "Have you void the ticket(s)?" until "Yes"{
@@ -1754,7 +1914,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                     send "RF" +agtName +";ER"
                     send "ir"
                     send "tte/all"
-                    send "FXB/K"
+                    send "FXB/K/R,UP"
                     send "fqq1"
 
             assign "True" to BaggageChecker1
@@ -2034,7 +2194,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         if (CheckSM == "SIMULTANEOUS"){ //1
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                            send "RF" +agtName +";ER"
                     capture line:1, column:1, length:7 assign to Warning
                         if (Warning =="WARNING"){
                             send "er"
@@ -2043,7 +2203,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         if (CheckSM == "SIMULTANEOUS"){ //2
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                            send "RF" +agtName +";ER"
                             capture line:1, column:1, length:7 assign to Warning
                             if (Warning =="WARNING"){
                                 send "er"
@@ -2052,7 +2212,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                             if (CheckSM == "SIMULTANEOUS"){ //3
                                 send "ir"
                                 send "tte/all"
-                    send "FXB/K"                                send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                                send "RF" +agtName +";ER"
                             capture line:1, column:1, length:7 assign to Warning
                             if (Warning =="WARNING"){
                                 send "er"
@@ -2061,7 +2221,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                             if (CheckSM == "SIMULTANEOUS"){ //4
                                 send "ir"
                                 send "tte/all"
-                    send "FXB/K"                                send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                                send "RF" +agtName +";ER"
                                 capture line:1, column:1, length:7 assign to Warning
                                 if (Warning =="WARNING"){
                                     send "er"
@@ -2070,7 +2230,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                                 if (CheckSM == "SIMULTANEOUS"){ //5
                                  send "ir"
                                  send "tte/all"
-                    send "FXB/K"                                 send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                                 send "RF" +agtName +";ER"
                                  }//5
                                 }//4
                               }//3
@@ -2087,7 +2247,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         when ("No"){
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "RF" +agtName +";ER"
+                    send "FXB/K/R,UP"                            send "RF" +agtName +";ER"
                             send "er"
                             call "z_Deal Checker"
 
@@ -2096,7 +2256,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         when ("No"){
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            send "fqq1"
+                    send "FXB/K/R,UP"                            send "fqq1"
         assign "True" to BaggageChecker1
     assign "True" to BaggageChecker2
     assign "True" to BaggageChecker3
@@ -2374,7 +2534,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                         when ("No"){
                             send "ir"
                             send "tte/all"
-                    send "FXB/K"                            
+                    send "FXB/K/R,UP"                            
                     send "RF" +agtName +";ER"
                             send "er"
                             call "z_Deal Checker"
@@ -2495,7 +2655,7 @@ if (checkAfterTTP== "GTW/ETS: UNABLE TO PROCESS - TIMEOUT"){
 capture line:1, column: 1, length: 12 assign to CheckSM2
 if (CheckSM2 == "SIMULTANEOUS"){
 send "ir"
-if (checkCardFund == "TRUE"){
+if (checkCardFund == "FALSE"){
 if (Airline1=="UJ"){
     send "FPCash"
 }
