@@ -1,782 +1,144 @@
-//Soto Deal Checker
-ask "Enter the PNR: " assign to pnr
-send "RT" +pnr
-
-send "tqt/t500"
-  capture line:2, column:1, length:3 assign to TQTNumber1
-  capture line:2, column:42, length:10 assign to TQTPrice1
-  capture line:3, column:1, length:3 assign to TQTNumber2
-  capture line:3, column:42, length:10 assign to TQTPrice2
-  capture line:4, column:1, length:3 assign to TQTNumber3
-  capture line:4, column:42, length:10 assign to TQTPrice3
-  capture line:5, column:1, length:3 assign to TQTNumber4
-  capture line:5, column:42, length:10 assign to TQTPrice4
-  capture line:6, column:1, length:3 assign to TQTNumber5
-  capture line:6, column:42, length:10 assign to TQTPrice5
-  capture line:7, column:1, length:3 assign to TQTNumber6
-  capture line:7, column:42, length:10 assign to TQTPrice6
-  capture line:8, column:1, length:3 assign to TQTNumber7
-  capture line:8, column:42, length:10 assign to TQTPrice7
-  capture line:9, column:1, length:3 assign to TQTNumber8
-  capture line:9, column:42, length:10 assign to TQTPrice8
-  capture line:10, column:1, length:3 assign to TQTNumber9
-  capture line:10, column:42, length:10 assign to TQTPrice9
-  capture line:11, column:1, length:3 assign to TQTNumber10
-  capture line:11, column:42, length:10 assign to TQTPrice10
-  capture line:12, column:1, length:3 assign to TQTNumber11
-  capture line:12, column:42, length:10 assign to TQTPrice11
-  capture line:13, column:1, length:3 assign to TQTNumber12
-  capture line:13, column:42, length:10 assign to TQTPrice12
-  capture line:14, column:1, length:3 assign to TQTNumber13
-  capture line:14, column:42, length:10 assign to TQTPrice13
-  capture line:15, column:1, length:3 assign to TQTNumber14
-  capture line:15, column:42, length:10 assign to TQTPrice14
-  capture line:16, column:1, length:3 assign to TQTNumber15
-  capture line:16, column:42, length:10 assign to TQTPrice15
-  capture line:17, column:1, length:3 assign to TQTNumber16
-  capture line:17, column:42, length:10 assign to TQTPrice16
-  capture line:18, column:1, length:3 assign to TQTNumber17
-  capture line:18, column:42, length:10 assign to TQTPrice17
-  capture line:19, column:1, length:3 assign to TQTNumber18
-  capture line:19, column:42, length:10 assign to TQTPrice18
-
-  assign "0" to heighestTST
-  if (TQTNumber1=="DEL"){
-    assign "0" to TQTNumber1
-  } 
-  if (TQTNumber1==""){
-    assign "0" to TQTNumber1
-  }
-  if (TQTNumber2=="DEL"){
-    assign "0" to TQTNumber2
-  } 
-  if (TQTNumber2==""){
-    assign "0" to TQTNumber2
-  }
-  if (TQTNumber3=="DEL"){
-    assign "0" to TQTNumber3
-  } 
-  if (TQTNumber3==""){
-    assign "0" to TQTNumber3
-  }
-  if (TQTNumber4=="DEL"){
-    assign "0" to TQTNumber4
-  } 
-  if (TQTNumber4==""){
-    assign "0" to TQTNumber4
-  }
-  if (TQTNumber5=="DEL"){
-    assign "0" to TQTNumber5
-  } 
-  if (TQTNumber5==""){
-    assign "0" to TQTNumber5
-  }
-  if (TQTNumber6=="DEL"){
-    assign "0" to TQTNumber6
-  } 
-  if (TQTNumber6==""){
-    assign "0" to TQTNumber6
-  }
-  if (TQTNumber7=="DEL"){
-    assign "0" to TQTNumber7
-  } 
-  if (TQTNumber7==""){
-    assign "0" to TQTNumber7
-  }
-  if (TQTNumber8=="DEL"){
-    assign "0" to TQTNumber8
-  } 
-  if (TQTNumber8==""){
-    assign "0" to TQTNumber8
-  }
-  if (TQTNumber9=="DEL"){
-    assign "0" to TQTNumber9
-  } 
-  if (TQTNumber9==""){
-    assign "0" to TQTNumber9
-  }
-  if (TQTNumber10=="DEL"){
-    assign "0" to TQTNumber10
-  } 
-  if (TQTNumber10==""){
-    assign "0" to TQTNumber10
-  }
-  if (TQTNumber11=="DEL"){
-    assign "0" to TQTNumber11
-  } 
-  if (TQTNumber11==""){
-    assign "0" to TQTNumber11
-  }
-  if (TQTNumber12=="DEL"){
-    assign "0" to TQTNumber12
-  } 
-  if (TQTNumber12==""){
-    assign "0" to TQTNumber12
-  }
-  if (TQTNumber13=="DEL"){
-    assign "0" to TQTNumber13
-  } 
-  if (TQTNumber13==""){
-    assign "0" to TQTNumber13
-  }
-  if (TQTNumber14=="DEL"){
-    assign "0" to TQTNumber14
-  } 
-  if (TQTNumber14==""){
-    assign "0" to TQTNumber14
-  }
-  if (TQTNumber15=="DEL"){
-    assign "0" to TQTNumber15
-  } 
-  if (TQTNumber15==""){
-    assign "0" to TQTNumber15
-  }
-  if (TQTNumber16=="DEL"){
-    assign "0" to TQTNumber16
-  } 
-  if (TQTNumber16==""){
-    assign "0" to TQTNumber16
-  }
-  if (TQTNumber17=="DEL"){
-    assign "0" to TQTNumber17
-  } 
-  if (TQTNumber17==""){
-    assign "0" to TQTNumber17
-  }
-  if (TQTNumber18=="DEL"){
-    assign "0" to TQTNumber18
-  } 
-  if (TQTNumber18==""){
-    assign "0" to TQTNumber18
-  }
-
-  if (TQTPrice1 =="E TTH     "){
-      assign "0" to TQTPrice1
-  }
-  if (TQTPrice2 =="E TTH     "){
-      assign "0" to TQTPrice2
-  }
-  if (TQTPrice3 =="E TTH     "){
-      assign "0" to TQTPrice3
-  }
-  if (TQTPrice4 =="E TTH     "){
-      assign "0" to TQTPrice4
-  }
-  if (TQTPrice5 =="E TTH     "){
-      assign "0" to TQTPrice5
-  }
-  if (TQTPrice6 =="E TTH     "){
-      assign "0" to TQTPrice6
-  }
-  if (TQTPrice7 =="E TTH     "){
-      assign "0" to TQTPrice7
-  }
-  if (TQTPrice8 =="E TTH     "){
-      assign "0" to TQTPrice8
-  }
-  if (TQTPrice9 =="E TTH     "){
-      assign "0" to TQTPrice9
-  }
-  if (TQTPrice10 =="E TTH     "){
-      assign "0" to TQTPrice10
-  }
-  if (TQTPrice11 =="E TTH     "){
-      assign "0" to TQTPrice11
-  }
-  if (TQTPrice12 =="E TTH     "){
-      assign "0" to TQTPrice12
-  }
-  if (TQTPrice13 =="E TTH     "){
-      assign "0" to TQTPrice13
-  }
-  if (TQTPrice14 =="E TTH     "){
-      assign "0" to TQTPrice14
-  }
-  if (TQTPrice15 =="E TTH     "){
-      assign "0" to TQTPrice15
-  }
-  if (TQTPrice16 =="E TTH     "){
-      assign "0" to TQTPrice16
-  }
-  if (TQTPrice17 =="E TTH     "){
-      assign "0" to TQTPrice17
-  }
-  if (TQTPrice18 =="E TTH     "){
-      assign "0" to TQTPrice18
-  }
-
-  assign "0" to heighestPrice
-        
-  if (TQTNumber1!="0"){
-    if (TQTPrice1>heighestPrice){
-      assign TQTNumber1 to heighestTST
-      assign TQTPrice1 to heighestPrice
-    }
-  }
-  if (TQTNumber2!="0"){
-    if (TQTPrice2>heighestPrice){
-      assign TQTNumber2 to heighestTST
-      assign TQTPrice2 to heighestPrice
-    }
-  }
-  if (TQTNumber3!="0"){
-    if (TQTPrice3>heighestPrice){
-      assign TQTNumber3 to heighestTST
-      assign TQTPrice3 to heighestPrice
-    }
-  }
-  if (TQTNumber4!="0"){
-    if (TQTPrice4>heighestPrice){
-      assign TQTNumber4 to heighestTST
-      assign TQTPrice4 to heighestPrice
-    }
-  }
-  if (TQTNumber5!="0"){
-    if (TQTPrice5>heighestPrice){
-      assign TQTNumber5 to heighestTST
-      assign TQTPrice5 to heighestPrice
-    }
-  }
-  if (TQTNumber6!="0"){
-    if (TQTPrice6>heighestPrice){
-      assign TQTNumber6 to heighestTST
-      assign TQTPrice6 to heighestPrice
-    }
-  }
-  if (TQTNumber7!="0"){
-    if (TQTPrice7>heighestPrice){
-      assign TQTNumber7 to heighestTST
-      assign TQTPrice7 to heighestPrice
-    }
-  }
-  if (TQTNumber8!="0"){
-    if (TQTPrice8>heighestPrice){
-      assign TQTNumber8 to heighestTST
-      assign TQTPrice8 to heighestPrice
-    }
-  }
-  if (TQTNumber9!="0"){
-    if (TQTPrice9>heighestPrice){
-      assign TQTNumber9 to heighestTST
-      assign TQTPrice9 to heighestPrice
-    }
-  }
-  if (TQTNumber10!="0"){
-    if (TQTPrice10>heighestPrice){
-      assign TQTNumber10 to heighestTST
-      assign TQTPrice10 to heighestPrice
-    }
-  }
-  if (TQTNumber11!="0"){
-    if (TQTPrice11>heighestPrice){
-      assign TQTNumber11 to heighestTST
-      assign TQTPrice11 to heighestPrice
-    }
-  }
-  if (TQTNumber12!="0"){
-    if (TQTPrice12>heighestPrice){
-      assign TQTNumber12 to heighestTST
-      assign TQTPrice12 to heighestPrice
-    }
-  }
-  if (TQTNumber13!="0"){
-    if (TQTPrice13>heighestPrice){
-      assign TQTNumber13 to heighestTST
-      assign TQTPrice13 to heighestPrice
-    }
-  }
-  if (TQTNumber14!="0"){
-    if (TQTPrice14>heighestPrice){
-      assign TQTNumber14 to heighestTST
-      assign TQTPrice14 to heighestPrice
-    }
-  }
-  if (TQTNumber15!="0"){
-    if (TQTPrice15>heighestPrice){
-      assign TQTNumber15 to heighestTST
-      assign TQTPrice15 to heighestPrice
-    }
-  }
-  if (TQTNumber16!="0"){
-    if (TQTPrice16>heighestPrice){
-      assign TQTNumber16 to heighestTST
-      assign TQTPrice16 to heighestPrice
-    }
-  }
-  if (TQTNumber17!="0"){
-    if (TQTPrice17>heighestPrice){
-      assign TQTNumber17 to heighestTST
-      assign TQTPrice17 to heighestPrice
-    }
-  }
-  if (TQTNumber18!="0"){
-    if (TQTPrice18>heighestPrice){
-      assign TQTNumber18 to heighestTST
-      assign TQTPrice18 to heighestPrice
-    }
-  }
-
-  send "TQT/T" +heighestTST
-
-  ask "Please confirm the baggege... " assign to qz5
-
-  assign "0" to Price1
-  assign "0" to Price2
-  assign "0" to Price3
-  assign "0" to Price4
-  assign "0" to Price5
-  assign "0" to Price6
-  assign "0" to Price7
-  assign "0" to Price8
-  assign "0" to Price9
-  assign "0" to Price10
-
+  //SOTO_DEAL_CHECKER
+  mandatory ask "Enter PNR" with format "^[A-Za-z0-9]{6}$" assign to PNR
+  send "RT" + PNR
   send "TTH"
-  capture line:3, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:4, column:11, length: 24 assign to PAX1
-        capture line:4, column:35, length: 3 assign to Curr1
-        capture line:4, column:39, length: 10 assign to Price1
-
-        capture line:5, column:11, length: 24 assign to PAX2
-        capture line:5, column:35, length: 3 assign to Curr2
-        capture line:5, column:39, length: 10 assign to Price2
-
-        capture line:6, column:11, length: 24 assign to PAX3
-        capture line:6, column:35, length: 3 assign to Curr3
-        capture line:6, column:39, length: 10 assign to Price3
-
-        capture line:7, column:11, length: 24 assign to PAX4
-        capture line:7, column:35, length: 3 assign to Curr4
-        capture line:7, column:39, length: 10 assign to Price4
-
-        capture line:8, column:11, length: 24 assign to PAX5
-        capture line:8, column:35, length: 3 assign to Curr5
-        capture line:8, column:39, length: 10 assign to Price5
-
-        capture line:9, column:11, length: 24 assign to PAX6
-        capture line:9, column:35, length: 3 assign to Curr6
-        capture line:9, column:39, length: 10 assign to Price6
-
-        capture line:10, column:11, length: 24 assign to PAX7
-        capture line:10, column:35, length: 3 assign to Curr7
-        capture line:10, column:39, length: 10 assign to Price7
-
-        capture line:11, column:11, length: 24 assign to PAX8
-        capture line:11, column:35, length: 3 assign to Curr8
-        capture line:11, column:39, length: 10 assign to Price8
-
-        capture line:12, column:11, length: 24 assign to PAX9
-        capture line:12, column:35, length: 3 assign to Curr9
-        capture line:12, column:39, length: 10 assign to Price9
-    }
-  
-    capture line:4, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:5, column:11, length: 24 assign to PAX1
-        capture line:5, column:35, length: 3 assign to Curr1
-        capture line:5, column:39, length: 10 assign to Price1
-
-        capture line:6, column:11, length: 24 assign to PAX2
-        capture line:6, column:35, length: 3 assign to Curr2
-        capture line:6, column:39, length: 10 assign to Price2
-
-        capture line:7, column:11, length: 24 assign to PAX3
-        capture line:7, column:35, length: 3 assign to Curr3
-        capture line:7, column:39, length: 10 assign to Price3
-
-        capture line:8, column:11, length: 24 assign to PAX4
-        capture line:8, column:35, length: 3 assign to Curr4
-        capture line:8, column:39, length: 10 assign to Price4
-
-        capture line:9, column:11, length: 24 assign to PAX5
-        capture line:9, column:35, length: 3 assign to Curr5
-        capture line:9, column:39, length: 10 assign to Price5
-
-        capture line:10, column:11, length: 24 assign to PAX6
-        capture line:10, column:35, length: 3 assign to Curr6
-        capture line:10, column:39, length: 10 assign to Price6
-
-        capture line:11, column:11, length: 24 assign to PAX7
-        capture line:11, column:35, length: 3 assign to Curr7
-        capture line:11, column:39, length: 10 assign to Price7
-
-        capture line:12, column:11, length: 24 assign to PAX8
-        capture line:12, column:35, length: 3 assign to Curr8
-        capture line:12, column:39, length: 10 assign to Price8
-
-        capture line:13, column:11, length: 24 assign to PAX9
-        capture line:13, column:35, length: 3 assign to Curr9
-        capture line:13, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:5, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:6, column:11, length: 24 assign to PAX1
-        capture line:6, column:35, length: 3 assign to Curr1
-        capture line:6, column:39, length: 10 assign to Price1
-
-        capture line:7, column:11, length: 24 assign to PAX2
-        capture line:7, column:35, length: 3 assign to Curr2
-        capture line:7, column:39, length: 10 assign to Price2
-
-        capture line:8, column:11, length: 24 assign to PAX3
-        capture line:8, column:35, length: 3 assign to Curr3
-        capture line:8, column:39, length: 10 assign to Price3
-
-        capture line:9, column:11, length: 24 assign to PAX4
-        capture line:9, column:35, length: 3 assign to Curr4
-        capture line:9, column:39, length: 10 assign to Price4
-
-        capture line:10, column:11, length: 24 assign to PAX5
-        capture line:10, column:35, length: 3 assign to Curr5
-        capture line:10, column:39, length: 10 assign to Price5
-
-        capture line:11, column:11, length: 24 assign to PAX6
-        capture line:11, column:35, length: 3 assign to Curr6
-        capture line:11, column:39, length: 10 assign to Price6
-
-        capture line:12, column:11, length: 24 assign to PAX7
-        capture line:12, column:35, length: 3 assign to Curr7
-        capture line:12, column:39, length: 10 assign to Price7
-
-        capture line:13, column:11, length: 24 assign to PAX8
-        capture line:13, column:35, length: 3 assign to Curr8
-        capture line:13, column:39, length: 10 assign to Price8
-
-        capture line:14, column:11, length: 24 assign to PAX9
-        capture line:14, column:35, length: 3 assign to Curr9
-        capture line:14, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:6, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:7, column:11, length: 24 assign to PAX1
-        capture line:7, column:35, length: 3 assign to Curr1
-        capture line:7, column:39, length: 10 assign to Price1
-
-        capture line:8, column:11, length: 24 assign to PAX2
-        capture line:8, column:35, length: 3 assign to Curr2
-        capture line:8, column:39, length: 10 assign to Price2
-
-        capture line:9, column:11, length: 24 assign to PAX3
-        capture line:9, column:35, length: 3 assign to Curr3
-        capture line:9, column:39, length: 10 assign to Price3
-
-        capture line:10, column:11, length: 24 assign to PAX4
-        capture line:10, column:35, length: 3 assign to Curr4
-        capture line:10, column:39, length: 10 assign to Price4
-
-        capture line:11, column:11, length: 24 assign to PAX5
-        capture line:11, column:35, length: 3 assign to Curr5
-        capture line:11, column:39, length: 10 assign to Price5
-
-        capture line:12, column:11, length: 24 assign to PAX6
-        capture line:12, column:35, length: 3 assign to Curr6
-        capture line:12, column:39, length: 10 assign to Price6
-
-        capture line:13, column:11, length: 24 assign to PAX7
-        capture line:13, column:35, length: 3 assign to Curr7
-        capture line:13, column:39, length: 10 assign to Price7
-
-        capture line:14, column:11, length: 24 assign to PAX8
-        capture line:14, column:35, length: 3 assign to Curr8
-        capture line:14, column:39, length: 10 assign to Price8
-
-        capture line:15, column:11, length: 24 assign to PAX9
-        capture line:15, column:35, length: 3 assign to Curr9
-        capture line:15, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:7, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:8, column:11, length: 24 assign to PAX1
-        capture line:8, column:35, length: 3 assign to Curr1
-        capture line:8, column:39, length: 10 assign to Price1
-
-        capture line:9, column:11, length: 24 assign to PAX2
-        capture line:9, column:35, length: 3 assign to Curr2
-        capture line:9, column:39, length: 10 assign to Price2
-
-        capture line:10, column:11, length: 24 assign to PAX3
-        capture line:10, column:35, length: 3 assign to Curr3
-        capture line:10, column:39, length: 10 assign to Price3
-
-        capture line:11, column:11, length: 24 assign to PAX4
-        capture line:11, column:35, length: 3 assign to Curr4
-        capture line:11, column:39, length: 10 assign to Price4
-
-        capture line:12, column:11, length: 24 assign to PAX5
-        capture line:12, column:35, length: 3 assign to Curr5
-        capture line:12, column:39, length: 10 assign to Price5
-
-        capture line:13, column:11, length: 24 assign to PAX6
-        capture line:13, column:35, length: 3 assign to Curr6
-        capture line:13, column:39, length: 10 assign to Price6
-
-        capture line:14, column:11, length: 24 assign to PAX7
-        capture line:14, column:35, length: 3 assign to Curr7
-        capture line:14, column:39, length: 10 assign to Price7
-
-        capture line:15, column:11, length: 24 assign to PAX8
-        capture line:15, column:35, length: 3 assign to Curr8
-        capture line:15, column:39, length: 10 assign to Price8
-
-        capture line:16, column:11, length: 24 assign to PAX9
-        capture line:16, column:35, length: 3 assign to Curr9
-        capture line:16, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:8, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:9, column:11, length: 24 assign to PAX1
-        capture line:9, column:35, length: 3 assign to Curr1
-        capture line:9, column:39, length: 10 assign to Price1
-
-        capture line:10, column:11, length: 24 assign to PAX2
-        capture line:10, column:35, length: 3 assign to Curr2
-        capture line:10, column:39, length: 10 assign to Price2
-
-        capture line:11, column:11, length: 24 assign to PAX3
-        capture line:11, column:35, length: 3 assign to Curr3
-        capture line:11, column:39, length: 10 assign to Price3
-
-        capture line:12, column:11, length: 24 assign to PAX4
-        capture line:12, column:35, length: 3 assign to Curr4
-        capture line:12, column:39, length: 10 assign to Price4
-
-        capture line:13, column:11, length: 24 assign to PAX5
-        capture line:13, column:35, length: 3 assign to Curr5
-        capture line:13, column:39, length: 10 assign to Price5
-
-        capture line:14, column:11, length: 24 assign to PAX6
-        capture line:14, column:35, length: 3 assign to Curr6
-        capture line:14, column:39, length: 10 assign to Price6
-
-        capture line:15, column:11, length: 24 assign to PAX7
-        capture line:15, column:35, length: 3 assign to Curr7
-        capture line:15, column:39, length: 10 assign to Price7
-
-        capture line:16, column:11, length: 24 assign to PAX8
-        capture line:16, column:35, length: 3 assign to Curr8
-        capture line:16, column:39, length: 10 assign to Price8
-
-        capture line:17, column:11, length: 24 assign to PAX9
-        capture line:17, column:35, length: 3 assign to Curr9
-        capture line:17, column:39, length: 10 assign to Price9 
-    }
-    
-    capture line:9, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:10, column:11, length: 24 assign to PAX1
-        capture line:10, column:35, length: 3 assign to Curr1
-        capture line:10, column:39, length: 10 assign to Price1
-
-        capture line:11, column:11, length: 24 assign to PAX2
-        capture line:11, column:35, length: 3 assign to Curr2
-        capture line:11, column:39, length: 10 assign to Price2
-
-        capture line:12, column:11, length: 24 assign to PAX3
-        capture line:12, column:35, length: 3 assign to Curr3
-        capture line:12, column:39, length: 10 assign to Price3
-
-        capture line:13, column:11, length: 24 assign to PAX4
-        capture line:13, column:35, length: 3 assign to Curr4
-        capture line:13, column:39, length: 10 assign to Price4
-
-        capture line:14, column:11, length: 24 assign to PAX5
-        capture line:14, column:35, length: 3 assign to Curr5
-        capture line:14, column:39, length: 10 assign to Price5
-
-        capture line:15, column:11, length: 24 assign to PAX6
-        capture line:15, column:35, length: 3 assign to Curr6
-        capture line:15, column:39, length: 10 assign to Price6
-
-        capture line:16, column:11, length: 24 assign to PAX7
-        capture line:16, column:35, length: 3 assign to Curr7
-        capture line:16, column:39, length: 10 assign to Price7
-
-        capture line:17, column:11, length: 24 assign to PAX8
-        capture line:17, column:35, length: 3 assign to Curr8
-        capture line:17, column:39, length: 10 assign to Price8
-
-        capture line:18, column:11, length: 24 assign to PAX9
-        capture line:18, column:35, length: 3 assign to Curr9
-        capture line:18, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:10, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:11, column:11, length: 24 assign to PAX1
-        capture line:11, column:35, length: 3 assign to Curr1
-        capture line:11, column:39, length: 10 assign to Price1
-
-        capture line:12, column:11, length: 24 assign to PAX2
-        capture line:12, column:35, length: 3 assign to Curr2
-        capture line:12, column:39, length: 10 assign to Price2
-
-        capture line:13, column:11, length: 24 assign to PAX3
-        capture line:13, column:35, length: 3 assign to Curr3
-        capture line:13, column:39, length: 10 assign to Price3
-
-        capture line:14, column:11, length: 24 assign to PAX4
-        capture line:14, column:35, length: 3 assign to Curr4
-        capture line:14, column:39, length: 10 assign to Price4
-
-        capture line:15, column:11, length: 24 assign to PAX5
-        capture line:15, column:35, length: 3 assign to Curr5
-        capture line:15, column:39, length: 10 assign to Price5
-
-        capture line:16, column:11, length: 24 assign to PAX6
-        capture line:16, column:35, length: 3 assign to Curr6
-        capture line:16, column:39, length: 10 assign to Price6
-
-        capture line:17, column:11, length: 24 assign to PAX7
-        capture line:17, column:35, length: 3 assign to Curr7
-        capture line:17, column:39, length: 10 assign to Price7
-
-        capture line:18, column:11, length: 24 assign to PAX8
-        capture line:18, column:35, length: 3 assign to Curr8
-        capture line:18, column:39, length: 10 assign to Price8
-
-        capture line:19, column:11, length: 24 assign to PAX9
-        capture line:19, column:35, length: 3 assign to Curr9
-        capture line:19, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:11, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:12, column:11, length: 24 assign to PAX1
-        capture line:12, column:35, length: 3 assign to Curr1
-        capture line:12, column:39, length: 10 assign to Price1
-
-        capture line:12, column:11, length: 24 assign to PAX2
-        capture line:12, column:35, length: 3 assign to Curr2
-        capture line:12, column:39, length: 10 assign to Price2
-
-        capture line:13, column:11, length: 24 assign to PAX3
-        capture line:13, column:35, length: 3 assign to Curr3
-        capture line:13, column:39, length: 10 assign to Price3
-
-        capture line:14, column:11, length: 24 assign to PAX4
-        capture line:14, column:35, length: 3 assign to Curr4
-        capture line:14, column:39, length: 10 assign to Price4
-
-        capture line:15, column:11, length: 24 assign to PAX5
-        capture line:15, column:35, length: 3 assign to Curr5
-        capture line:15, column:39, length: 10 assign to Price5
-
-        capture line:16, column:11, length: 24 assign to PAX6
-        capture line:16, column:35, length: 3 assign to Curr6
-        capture line:16, column:39, length: 10 assign to Price6
-
-        capture line:17, column:11, length: 24 assign to PAX7
-        capture line:17, column:35, length: 3 assign to Curr7
-        capture line:17, column:39, length: 10 assign to Price7
-
-        capture line:18, column:11, length: 24 assign to PAX8
-        capture line:18, column:35, length: 3 assign to Curr8
-        capture line:18, column:39, length: 10 assign to Price8
-
-        capture line:19, column:11, length: 24 assign to PAX9
-        capture line:19, column:35, length: 3 assign to Curr9
-        capture line:19, column:39, length: 10 assign to Price9 
-    }
-
-    capture line:12, column:1, length:7 assign to deleted_Statement
-    if (deleted_Statement=="DELETED"){
-        capture line:13, column:11, length: 24 assign to PAX1
-        capture line:13, column:35, length: 3 assign to Curr1
-        capture line:13, column:39, length: 10 assign to Price1
-
-        capture line:14, column:11, length: 24 assign to PAX2
-        capture line:14, column:35, length: 3 assign to Curr2
-        capture line:14, column:39, length: 10 assign to Price2
-
-        capture line:15, column:11, length: 24 assign to PAX3
-        capture line:15, column:35, length: 3 assign to Curr3
-        capture line:15, column:39, length: 10 assign to Price3
-
-        capture line:16, column:11, length: 24 assign to PAX4
-        capture line:16, column:35, length: 3 assign to Curr4
-        capture line:16, column:39, length: 10 assign to Price4
-
-        capture line:17, column:11, length: 24 assign to PAX5
-        capture line:17, column:35, length: 3 assign to Curr5
-        capture line:17, column:39, length: 10 assign to Price5
-
-        capture line:18, column:11, length: 24 assign to PAX6
-        capture line:18, column:35, length: 3 assign to Curr6
-        capture line:18, column:39, length: 10 assign to Price6
-
-        capture line:19, column:11, length: 24 assign to PAX7
-        capture line:19, column:35, length: 3 assign to Curr7
-        capture line:19, column:39, length: 10 assign to Price7
-
-        capture line:20, column:11, length: 24 assign to PAX8
-        capture line:20, column:35, length: 3 assign to Curr8
-        capture line:20, column:39, length: 10 assign to Price8
-
-        capture line:21, column:11, length: 24 assign to PAX9
-        capture line:21, column:35, length: 3 assign to Curr9
-        capture line:21, column:39, length: 10 assign to Price9 
-    }
-
-    assign "1" to paxCount
-
-    if (PAX2 == PAX1){
-            assign "1" to paxCount
-    }
-    else{
-        if (Curr2 == Curr1){
-            assign "2" to paxCount
+        group {
+            mandatory ask "Supplier Cost:" assign to supplierCost
+            select "What is the currency of the supplier cost? " 
+            from "AED,SAR,USD" assign to supplierCostCurr
+            select "ALL OR EACH"
+            from "EACH (If all ADT),ALL" assign to supplierCostType
         }
-        if (Curr3 == Curr1){
-            if (PAX3 == PAX1){
-                assign "2" to paxCount
+
+        assign "0" to OriginalAmount_1
+        assign "0" to OriginalAmount_2
+        assign "0" to OriginalAmount_3
+        assign "0" to OriginalAmount_4
+        assign "0" to OriginalAmount_5
+        assign "0" to OriginalAmount_6
+        assign "0" to OriginalAmount_7
+        assign "0" to OriginalAmount_8
+        assign "0" to OriginalAmount_9
+
+        capture line:1, column:1, length:2 assign to TST_Check
+        if (TST_Check == "**"){
+            send "TTH/ALL"
+            capture line:2, column:35, length:3 assign to OriginalCurr
+            capture line:2, column:41, length:10 assign to OriginalAmount_1
+            capture line:3, column:41, length:10 assign to OriginalAmount_2
+            capture line:4, column:41, length:10 assign to OriginalAmount_3
+            capture line:5, column:41, length:10 assign to OriginalAmount_4
+            capture line:6, column:41, length:10 assign to OriginalAmount_5
+            capture line:7, column:41, length:10 assign to OriginalAmount_6
+            capture line:8, column:41, length:10 assign to OriginalAmount_7
+            capture line:9, column:41, length:10 assign to OriginalAmount_8
+            capture line:10, column:41, length:10 assign to OriginalAmount_9
+        }
+        else{
+            capture line:24, column:1, length:2 assign to scrollable_TTH
+            if (scrollable_TTH == ")>"){
+                send "MD-DELETED"
             }
-            else{
-                assign "3" to paxCount
-                if (Curr4 == Curr1){
-                    if (PAX4 == PAX1){
-                        assign "3" to paxCount
+            capture line:1, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:2, column:35, length:3 assign to OriginalCurr
+                capture line:2, column:11, length:24 assign to Original_Pax_1
+                capture line:2, column:41, length:10 assign to OriginalAmount_1
+                capture line:3, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:3, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:4, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:4, column:41, length:10 assign to OriginalAmount_3
                     }
-                    else{
-                        assign "4" to paxCount
-                        if (Curr5 == Curr1){
-                            if (PAX5 == PAX1){
-                                assign "4" to paxCount
+                }
+                }
+                capture line:5, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:5, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:6, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:6, column:41, length:10 assign to OriginalAmount_5
                             }
-                            else{
-                                assign "5" to paxCount
-                                if (Curr6 == Curr1){
-                                    if (PAX6 == PAX1){
-                                        assign "5" to paxCount
+                        }
+                    }
+                }
+                }
+                capture line:7, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:7, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:8, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:8, column:41, length:10 assign to OriginalAmount_7
                                     }
-                                    else{
-                                        assign "6" to paxCount
-                                        if (Curr7 == Curr1){
-                                            if (PAX7 == PAX1){
-                                                assign "6" to paxCount
-                                            }
-                                            else{
-                                                assign "7" to paxCount
-                                                if (Curr8 == Curr1){
-                                                    if (PAX8 == PAX1){
-                                                        assign "7" to paxCount
-                                                    }
-                                                    else{
-                                                        assign "8" to paxCount
-                                                        if (Curr9 == Curr1){
-                                                            if (PAX9 == PAX1){
-                                                                assign "8" to paxCount
-                                                            }
-                                                            else{
-                                                                assign "9" to paxCount
-                                                            }
-                                                        }
-                                                    }
-                                                }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:9, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:10, column:41, length:10 assign to OriginalAmount_9
                                             }
                                         }
                                     }
@@ -785,20 +147,1454 @@ send "tqt/t500"
                         }
                     }
                 }
-                
+                }
             }
+            capture line:2, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:3, column:35, length:3 assign to OriginalCurr
+                capture line:3, column:11, length:24 assign to Original_Pax_1
+                capture line:3, column:41, length:10 assign to OriginalAmount_1
+                capture line:4, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:4, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:5, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:5, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:6, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:6, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:7, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:7, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:8, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:8, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:9, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:10, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:11, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+            capture line:3, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:4, column:35, length:3 assign to OriginalCurr
+                capture line:4, column:11, length:24 assign to Original_Pax_1
+                capture line:4, column:41, length:10 assign to OriginalAmount_1
+                capture line:5, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:5, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:6, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:6, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:7, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:7, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:8, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:8, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:9, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:10, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:11, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:12, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:4, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:5, column:35, length:3 assign to OriginalCurr
+                capture line:5, column:11, length:24 assign to Original_Pax_1
+                capture line:5, column:41, length:10 assign to OriginalAmount_1
+                capture line:6, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:6, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:7, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:7, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:8, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:8, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:9, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:10, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:11, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:12, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:13, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:5, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:6, column:35, length:3 assign to OriginalCurr
+                capture line:6, column:11, length:24 assign to Original_Pax_1
+                capture line:6, column:41, length:10 assign to OriginalAmount_1
+                capture line:7, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:7, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:8, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:8, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:9, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:10, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:11, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:12, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:13, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:14, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:6, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:7, column:35, length:3 assign to OriginalCurr
+                capture line:7, column:11, length:24 assign to Original_Pax_1
+                capture line:7, column:41, length:10 assign to OriginalAmount_1
+                capture line:8, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:8, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:9, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:9, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:10, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:11, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:12, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:13, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:14, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:15, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:7, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:8, column:35, length:3 assign to OriginalCurr
+                capture line:8, column:11, length:24 assign to Original_Pax_1
+                capture line:8, column:41, length:10 assign to OriginalAmount_1
+                capture line:9, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:9, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:10, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:10, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:11, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:12, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:13, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:14, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:15, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:16, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:8, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:9, column:35, length:3 assign to OriginalCurr
+                capture line:9, column:11, length:24 assign to Original_Pax_1
+                capture line:9, column:41, length:10 assign to OriginalAmount_1
+                capture line:10, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:10, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:11, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:11, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:12, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:13, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:14, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:15, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:16, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:17, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:9, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:10, column:35, length:3 assign to OriginalCurr
+                capture line:10, column:11, length:24 assign to Original_Pax_1
+                capture line:10, column:41, length:10 assign to OriginalAmount_1
+                capture line:11, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:11, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:12, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:12, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:13, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:14, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:15, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:16, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:17, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:18, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:10, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:11, column:35, length:3 assign to OriginalCurr
+                capture line:11, column:11, length:24 assign to Original_Pax_1
+                capture line:11, column:41, length:10 assign to OriginalAmount_1
+                capture line:12, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:12, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:13, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:13, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:14, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:15, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:16, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:17, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:18, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:19, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:19, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:11, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:12, column:35, length:3 assign to OriginalCurr
+                capture line:12, column:11, length:24 assign to Original_Pax_1
+                capture line:12, column:41, length:10 assign to OriginalAmount_1
+                capture line:13, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:13, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:14, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:14, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:15, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:16, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:17, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:18, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:19, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:19, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:20, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:20, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:12, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:13, column:35, length:3 assign to OriginalCurr
+                capture line:13, column:11, length:24 assign to Original_Pax_1
+                capture line:13, column:41, length:10 assign to OriginalAmount_1
+                capture line:14, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:14, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:15, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:15, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:16, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:17, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:18, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:19, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:19, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:20, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:20, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:21, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:21, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:13, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:14, column:35, length:3 assign to OriginalCurr
+                capture line:14, column:11, length:24 assign to Original_Pax_1
+                capture line:14, column:41, length:10 assign to OriginalAmount_1
+                capture line:15, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:15, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:16, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:16, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:17, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:18, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:19, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:19, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:20, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:20, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:21, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:21, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:22, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:22, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+
+            capture line:14, column:1, length:7 assign to deleted_Statement
+            if (deleted_Statement == "DELETED"){
+                capture line:15, column:35, length:3 assign to OriginalCurr
+                capture line:15, column:11, length:24 assign to Original_Pax_1
+                capture line:15, column:41, length:10 assign to OriginalAmount_1
+                capture line:16, column:11, length:24 assign to Original_Pax_2
+                if (Original_Pax_2 !=""){
+                if (Original_Pax_2 != Original_Pax_1){
+                    capture line:16, column:41, length:10 assign to OriginalAmount_2
+                }
+                }
+                capture line:17, column:11, length:24 assign to Original_Pax_3
+                if (Original_Pax_3 !=""){
+                if (Original_Pax_3 != Original_Pax_1){
+                    if (Original_Pax_3 != Original_Pax_2){
+                        capture line:17, column:41, length:10 assign to OriginalAmount_3
+                    }
+                }
+                }
+                capture line:18, column:11, length:24 assign to Original_Pax_4
+                if (Original_Pax_4 !=""){
+                if (Original_Pax_4 != Original_Pax_1){
+                    if (Original_Pax_4 != Original_Pax_2){
+                        if (Original_Pax_4 != Original_Pax_3){
+                            capture line:18, column:41, length:10 assign to OriginalAmount_4
+                        }
+                    }
+                }
+                }
+                capture line:19, column:11, length:24 assign to Original_Pax_5
+                if (Original_Pax_5 !=""){
+                if (Original_Pax_5 != Original_Pax_1){
+                    if (Original_Pax_5 != Original_Pax_2){
+                        if (Original_Pax_5 != Original_Pax_3){
+                            if (Original_Pax_5 != Original_Pax_4){
+                                capture line:19, column:41, length:10 assign to OriginalAmount_5
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:20, column:11, length:24 assign to Original_Pax_6
+                if (Original_Pax_6 !=""){
+                if (Original_Pax_6 != Original_Pax_1){
+                    if (Original_Pax_6 != Original_Pax_2){
+                        if (Original_Pax_6 != Original_Pax_3){
+                            if (Original_Pax_6 != Original_Pax_4){
+                                if (Original_Pax_6 != Original_Pax_5){
+                                    capture line:20, column:41, length:10 assign to OriginalAmount_6
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:21, column:11, length:24 assign to Original_Pax_7
+                if (Original_Pax_7 !=""){
+                if (Original_Pax_7 != Original_Pax_1){
+                    if (Original_Pax_7 != Original_Pax_2){
+                        if (Original_Pax_7 != Original_Pax_3){
+                            if (Original_Pax_7 != Original_Pax_4){
+                                if (Original_Pax_7 != Original_Pax_5){
+                                    if (Original_Pax_7 != Original_Pax_6){
+                                        capture line:21, column:41, length:10 assign to OriginalAmount_7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:22, column:11, length:24 assign to Original_Pax_8
+                if (Original_Pax_8 !=""){
+                if (Original_Pax_8 != Original_Pax_1){
+                    if (Original_Pax_8 != Original_Pax_2){
+                        if (Original_Pax_8 != Original_Pax_3){
+                            if (Original_Pax_8 != Original_Pax_4){
+                                if (Original_Pax_8 != Original_Pax_5){
+                                    if (Original_Pax_8 != Original_Pax_6){
+                                        if (Original_Pax_8 != Original_Pax_7){
+                                            capture line:22, column:41, length:10 assign to OriginalAmount_8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+                capture line:23, column:11, length:24 assign to Original_Pax_9
+                if (Original_Pax_9 !=""){
+                if (Original_Pax_9 != Original_Pax_1){
+                    if (Original_Pax_9 != Original_Pax_2){
+                        if (Original_Pax_9 != Original_Pax_3){
+                            if (Original_Pax_9 != Original_Pax_4){
+                                if (Original_Pax_9 != Original_Pax_5){
+                                    if (Original_Pax_9 != Original_Pax_6){
+                                        if (Original_Pax_9 != Original_Pax_7){
+                                            if (Original_Pax_9 != Original_Pax_8){
+                                                capture line:23, column:41, length:10 assign to OriginalAmount_9
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }     
+            
         }
-    }
 
-    group {
-       mandatory ask "Please Enter the total Supplier cost: " assign to supplierCost
-       select "What is the currency of the supplier cost? " 
-       from "AED,SAR,USD" assign to supplierCostCurr
-    }
-
-    send "FQC" + supplierCost + "" + supplierCostCurr + "/" + Curr1 
-
-   capture line:5, column:7, length:1 assign to check_AED_Final
+    send "FQC" + supplierCost + supplierCostCurr +"/" + OriginalCurr
+    capture line:5, column:7, length:1 assign to check_AED_Final
     if (check_AED_Final == "-"){
         capture line:5, column:5, length:2 assign to totalNewPrice
     }
@@ -842,186 +1638,99 @@ send "tqt/t500"
     if (check_AED_Final == "-"){
         capture line:5, column:5, length:12 assign to totalNewPrice
     }
+        if (supplierCostType == "ALL"){
+            send "DF" + OriginalAmount_1 + ";" + OriginalAmount_2 + ";" + OriginalAmount_3 
+            + ";" + OriginalAmount_4 + ";" + OriginalAmount_5 + ";" + OriginalAmount_6 
+            + ";" + OriginalAmount_7 + ";" + OriginalAmount_8 + ";" + OriginalAmount_9
+            + "-" + totalNewPrice 
+        }
+        else{
 
-    if (paxCount > "0"){
-        assign Price1 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "1"){
-        append ";" +Price2 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "2"){
-        append ";" +Price3 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "3"){
-        append ";" +Price4 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "4"){
-        append ";" +Price5 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "5"){
-        append ";" +Price6 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "6"){
-        append ";" +Price7 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "7"){
-        append ";" +Price8 to totalOldTSTPrice_Statement
-    }
-    if (paxCount > "8"){
-        append ";" +Price9 to totalOldTSTPrice_Statement
-    }
+            append OriginalAmount_1 +"-" +totalNewPrice to DF_Statement
+            append ";" + OriginalAmount_2 to DF_Statement
+            if (OriginalAmount_2 != ""){
+            if (OriginalAmount_2 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_3 to DF_Statement
+            if (OriginalAmount_3 != ""){
+            if (OriginalAmount_3 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_4 to DF_Statement
+            if (OriginalAmount_4 != ""){
+            if (OriginalAmount_4 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_5 to DF_Statement
+            if (OriginalAmount_5 != ""){
+            if (OriginalAmount_5 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_6 to DF_Statement
+            if (OriginalAmount_6 != ""){
+            if (OriginalAmount_6 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_7 to DF_Statement
+            if (OriginalAmount_7 != ""){
+            if (OriginalAmount_7 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_8 to DF_Statement
+            if (OriginalAmount_8 != ""){
+            if (OriginalAmount_8 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
+            append ";" + OriginalAmount_9 to DF_Statement
+            if (OriginalAmount_9 != ""){
+            if (OriginalAmount_9 != "0"){
+                append "-" + totalNewPrice to DF_Statement
+            }
+            else{
+                append "- 0" to DF_Statement
+            }
+            }
 
-    send "DF" + totalOldTSTPrice_Statement + "-" + totalNewPrice 
+            send "DF" + DF_Statement
+            capture line:2, column:1, length:10 assign to totalDeal
+            capture line:6, column:1, length:1 assign to dfnextcheck
+            if (dfnextcheck == ">"){
+                capture line:4, column:1, length:10 assign to totalDeal
+            }
+            capture line:5, column:1, length:1 assign to dfnextcheck
+            if (dfnextcheck == ">"){
+                capture line:3, column:1, length:10 assign to totalDeal
+            }
 
-    ask "Continue? " assign to qz6
-
-    send "RTTN"
-
-    capture line:2, column:5, length:2 assign to FA_Check1
-    capture line:2, column:12, length:14 assign to FA1
-
-    capture line:3, column:5, length:2 assign to FA_Check2
-    capture line:3, column:12, length:14 assign to FA2
-
-    capture line:4, column:5, length:2 assign to FA_Check3
-    capture line:4, column:12, length:14 assign to FA3
-
-    capture line:5, column:5, length:2 assign to FA_Check4
-    capture line:5, column:12, length:14 assign to FA4
-
-    capture line:6, column:5, length:2 assign to FA_Check5
-    capture line:6, column:12, length:14 assign to FA5
-
-    capture line:7, column:5, length:2 assign to FA_Check6
-    capture line:7, column:12, length:14 assign to FA6
-
-    capture line:8, column:5, length:2 assign to FA_Check7
-    capture line:8, column:12, length:14 assign to FA7
-
-    capture line:9, column:5, length:2 assign to FA_Check8
-    capture line:9, column:12, length:14 assign to FA8
-
-    capture line:10, column:5, length:2 assign to FA_Check9
-    capture line:10, column:12, length:14 assign to FA9
-
-    capture line:11, column:5, length:2 assign to FA_Check10
-    capture line:11, column:12, length:14 assign to FA10
-
-    capture line:12, column:5, length:2 assign to FA_Check11
-    capture line:12, column:12, length:14 assign to FA11
-
-    capture line:13, column:5, length:2 assign to FA_Check12
-    capture line:13, column:12, length:14 assign to FA12
-
-    capture line:14, column:5, length:2 assign to FA_Check13
-    capture line:14, column:12, length:14 assign to FA13
-
-    capture line:15, column:5, length:2 assign to FA_Check14
-    capture line:15, column:12, length:14 assign to FA14
-
-    capture line:16, column:5, length:2 assign to FA_Check15
-    capture line:16, column:12, length:14 assign to FA15
-
-    capture line:17, column:5, length:2 assign to FA_Check16
-    capture line:17, column:12, length:14 assign to FA16
-
-    capture line:18, column:5, length:2 assign to FA_Check17
-    capture line:18, column:12, length:14 assign to FA17
-
-    capture line:19, column:5, length:2 assign to FA_Check18
-    capture line:19, column:12, length:14 assign to FA18
-
-    capture line:20, column:5, length:2 assign to FA_Check19
-    capture line:20, column:12, length:14 assign to FA19
-
-    capture line:21, column:5, length:2 assign to FA_Check20
-    capture line:21, column:12, length:14 assign to FA20
-
-    
-    assign "" to name1_Statement
-    assign "" to name2_Statement
-    assign "" to name3_Statement
-    assign "" to name4_Statement
-    assign "" to name5_Statement
-    assign "" to name6_Statement
-    assign "" to name7_Statement
-    assign "" to name8_Statement
-    assign "" to name9_Statement
-
-    append PAX1 to name1_Statement
-    if (FA_Check1 == "FA"){
-        append "      " + FA1 to name1_Statement
-    }
-
-    if (PaxCount1 > "1"){
-        append PAX2 to name2_Statement
-    }
-    if (FA_Check2 == "FA"){
-        append "      " + FA2 to name2_Statement
-    }
-    
-    if (PaxCount1 > "2"){
-        append PAX3 to name3_Statement
-    }
-    if (FA_Check3 == "FA"){
-        append "      " + FA3 to name3_Statement
-    }
-    
-    if (PaxCount1 > "3"){
-        append PAX4 to name4_Statement
-    }
-    if (FA_Check4 == "FA"){
-        append "      " + FA4 to name4_Statement
-    }
-    
-    if (PaxCount1 > "4"){
-        append PAX5 to name5_Statement
-    }
-    if (FA_Check5 == "FA"){
-        append "      " + FA5 to name5_Statement
-    }
-    
-    if (PaxCount1 > "5"){
-        append PAX6 to name6_Statement
-    }
-    if (FA_Check6 == "FA"){
-        append "      " + FA6 to name6_Statement
-    }
-    
-    if (PaxCount1 > "6"){
-        append PAX7 to name7_Statement
-    }
-    if (FA_Check7 == "FA"){
-        append "      " + FA7 to name7_Statement
-    }
-    
-    if (PaxCount1 > "7"){
-        append PAX8 to name8_Statement
-    }
-    if (FA_Check8 == "FA"){
-        append "      " + FA8 to name8_Statement
-    }
-    
-    if (PaxCount1 > "8"){
-        append PAX9 to name9_Statement
-    }
-    if (FA_Check9 == "FA"){
-        append "      " + FA9 to name9_Statement
-    }
-    
-
-    send "    " +name1_Statement +"
-    " +name2_Statement +"
-    " +name3_Statement +"
-    " +name4_Statement +"
-    " +name5_Statement +"
-    " +name6_Statement +"
-    " +name7_Statement +"
-    " +name8_Statement +"
-    " +name9_Statement
-
-    ask "Continue?" assign to qz5
-
-    call "Soto Deal Checker" 
-
-
+            send "SOTO DEAL: " + totalDeal
+        }
+        call "SOTO_DEAL_CHECKER"
