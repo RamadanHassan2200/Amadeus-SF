@@ -29,19 +29,18 @@ if (check_Fare_Component == "FARE COMPONENT"){
 }
 if (FQN_Refundable == "NRF"){
 if (FQN_Airline !="AI"){
-send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: Non-Refundable" +"
-No-Show Penalty: Non-Refundable"
+send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty:     NON-REFUNDABLE" +"
+RMNo-Show Penalty:     NON-REFUNDABLE"
 }//AI
 }
-else{
     send "MD-CANCELLATIONS"
     assign "" to normal_Penalty
     assign "" to noshow_Penalty
-    assign "" to FQN_Currency
+    assign "AAA" to FQN_Currency
 
 if (FQN_Airline == "SM"){
-    send "MD-CANCEL/REFUND"
+    send "MD-CANCEL/REFUND."
     capture line:1, column:1, length:6 assign to check_CNX_Charge
     if (check_CNX_Charge == "CHARGE"){
         capture line:1, column:8, length:3 assign to FQN_Currency
@@ -496,73 +495,484 @@ if (FQN_Airline == "SM"){
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     
     send "MD-NO-SHOW"
@@ -1017,78 +1427,483 @@ if (FQN_Airline == "SM"){
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
 
     send "DF" +normal_Penalty +";" +noshow_Penalty
     capture line:2, column:1, length:12 assign to noshow_Penalty
 
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
-No-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 
 }//SM
 
 if (FQN_Airline == "MS"){
-    send "MD-CANCEL/REFUND"
+    send "MD-CANCEL/REFUND."
     capture line:1, column:1, length:6 assign to check_CNX_Charge
     if (check_CNX_Charge == "CHARGE"){
         capture line:1, column:8, length:3 assign to FQN_Currency
@@ -1529,6 +2344,366 @@ if (FQN_Airline == "MS"){
                                         if (check_Dot1 != "."){
                                             append check_Dot1 to normal_Penalty
                                             capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
                                             if (check_Dot1 != "."){
                                                 append check_Dot1 to normal_Penalty
                                             }
@@ -1547,69 +2722,120 @@ if (FQN_Airline == "MS"){
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     
     
@@ -2065,80 +3291,491 @@ if (FQN_Airline == "MS"){
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
 
 
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
-No-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 
 }//MS
 
@@ -2231,12 +3868,12 @@ if (FQN_Airline == "GF"){
         assign "0" to noshow_Penalty
     }
 
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: USD "  + normal_Penalty + "
-No-Show Penalty: USD "  + noshow_Penalty
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
     }
     else{
-        send "MD-CANCEL/REFUND"
+        send "MD-CANCEL/REFUND."
     capture line:1, column:1, length:6 assign to check_CNX_Charge
     if (check_CNX_Charge == "CHARGE"){
         capture line:1, column:8, length:3 assign to FQN_Currency
@@ -2689,75 +4326,486 @@ No-Show Penalty: USD "  + noshow_Penalty
                 }
             }
         }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }   
 
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     
     
@@ -3213,87 +5261,517 @@ No-Show Penalty: USD "  + noshow_Penalty
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
 
     send "DF" +normal_Penalty +";" +noshow_Penalty
     capture line:2, column:1, length:12 assign to noshow_Penalty
 
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
-No-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 
     }
 }//GF
 
 if (FQN_Airline == "PR"){
+     
+     capture line:3, column: 17, length:9 assign to check_CNX_permission
+     if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+        assign "NON-REFUNDABLE" to noshow_Penalty
+     }
+     capture line:4, column: 17, length:9 assign to check_CNX_permission
+     if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+        assign "NON-REFUNDABLE" to noshow_Penalty
+     }
+     capture line:5, column: 17, length:9 assign to check_CNX_permission
+     if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+        assign "NON-REFUNDABLE" to noshow_Penalty
+     }
+
+    if (normal_Penalty != "NON-REFUNDABLE"){
+
     send "MD-REFUND."
     capture line:1, column:1, length:6 assign to check_CNX_Charge
     if (check_CNX_Charge == "CHARGE"){
@@ -3749,65 +6227,470 @@ if (FQN_Airline == "PR"){
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     
     
@@ -4263,79 +7146,1427 @@ if (FQN_Airline == "PR"){
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
 
+    send "MD-REFUND."
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        assign "" to noshow_Penalty
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+
+
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+
+    if (noshow_Penalty != "900"){
     send "DF" +normal_Penalty +";" +noshow_Penalty
     capture line:2, column:1, length:12 assign to noshow_Penalty
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
-No-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+    }
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 
 }//PR
 
 if (FQN_Airline == "EY"){
     if (FQN_Refundable == " - "){
-        send "MD-CANCEL/REFUND"
+        send "MD-CANCEL/REFUND."
         capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
@@ -4422,12 +8653,12 @@ if (FQN_Airline == "EY"){
         assign "0" to noshow_Penalty
     }
 
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: USD "  + normal_Penalty + "
-No-Show Penalty: USD "  + noshow_Penalty
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
     }
     else{
-        send "MD-CANCEL/REFUND"
+        send "MD-CANCEL/REFUND."
     capture line:1, column:1, length:6 assign to check_CNX_Charge
     if (check_CNX_Charge == "CHARGE"){
         capture line:1, column:8, length:3 assign to FQN_Currency
@@ -4880,78 +9111,2463 @@ No-Show Penalty: USD "  + noshow_Penalty
                 }
             }
         }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }   
 
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
     }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
     
     send "MD-CANCELLATIONS"
+    send "MD-NO-SHOW"
+    if (normal_Penalty == "NON-REFUNDABLE"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    else{
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    }
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//EY
+
+if (FQN_Airline == "QR"){
+    if (FQN_Refundable == " - "){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+        send "MD-."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
     send "MD-NO-SHOW"
 
     capture line:1, column:1, length:6 assign to check_CNX_Charge
@@ -5404,84 +12020,10621 @@ No-Show Penalty: USD "  + noshow_Penalty
         }
     }
 
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:8, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:9, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:10, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:11, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:12, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:13, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:14, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:15, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:16, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:17, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:18, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:19, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:20, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:21, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
     capture line:1, column:22, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
     }
     capture line:1, column:23, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to noshow_Penalty
     }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
 
-
-    send "Fare Rule: " + FQN_FareBasis + "
-Normal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
-No-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 
     }
-}//EY
+}//QR
+
+if (FQN_Airline == "TK"){
+    if (FQN_Refundable == " - "){
+        send "MD-CANCELLATIONS"
+        send "MD-NO-SHOW"
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+
+        send "MD-NO-SHOW"
+        if (FQN_Refundable == "NRF"){
+            assign "NON-REFUNDABLE" to noshow_Penalty
+        }
+        else{
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+
+    }// non- NRF
+
+        send "MD-CANCEL/REFUND."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//TK
+
+if (FQN_Airline == "VF"){
+    if (FQN_Refundable == " - "){
+        send "MD-CANCELLATIONS"
+        send "MD-NO-SHOW"
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+
+        send "MD-NO-SHOW"
+        if (FQN_Refundable == "NRF"){
+            assign "NON-REFUNDABLE" to noshow_Penalty
+        }
+        else{
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+
+    }// non- NRF
+
+        send "MD-CANCEL/REFUND."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//VF
+
+if (FQN_Airline == "ET"){
+    if (FQN_Refundable == " - "){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:24, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:25, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:26, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:27, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:28, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:29, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:30, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:31, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:32, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+        send "MD-."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
+    send "MD-NO-SHOW"
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//ET
+
+if (FQN_Airline == "AT"){
+    if (FQN_Refundable == " - "){
+        send "MD-REFUND."
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+        send "MD-REFUND."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
+    send "MD-NO-SHOW"
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//AT
+
+if (FQN_Airline == "WY"){
+    if (FQN_Refundable == " - "){
+        send "MD-REFUND."
+        capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+        assign "0" to noshow_Penalty
+    }
+
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency +" "  + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
+    }
+    else{
+        send "MD-REFUND."
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                                capture line:1, column:22, length:1 assign to check_Dot1
+                                                if (check_Dot1 != "."){
+                                                    assign "ERROR!" to normal_Penalty
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to normal_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to normal_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to normal_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to normal_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to normal_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to normal_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to normal_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to normal_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to normal_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to normal_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to normal_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to normal_Penalty
+    }
+    
+    if (FQN_Refundable == "NRF"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    else{
+    send "MD-NO-SHOW"
+
+    capture line:1, column:1, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:8, length:3 assign to FQN_Currency
+        capture line:1, column:12, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:13, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:14, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:15, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:16, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:17, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:18, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:19, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:20, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:21, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:2, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:9, length:3 assign to FQN_Currency
+        capture line:1, column:13, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:14, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:15, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:16, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:17, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:18, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:19, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:20, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:21, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:22, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:3, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:10, length:3 assign to FQN_Currency
+        capture line:1, column:14, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:15, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:16, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:17, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:18, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:19, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:20, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:21, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:22, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:23, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    capture line:1, column:4, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:11, length:3 assign to FQN_Currency
+        capture line:1, column:15, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:16, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:17, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:18, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:19, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:20, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:21, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:22, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:23, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:24, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:5, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:12, length:3 assign to FQN_Currency
+        capture line:1, column:16, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:17, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:18, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:19, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:20, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:21, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:22, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:23, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:24, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:25, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:6, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:13, length:3 assign to FQN_Currency
+        capture line:1, column:17, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:18, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:19, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:20, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:21, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:22, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:23, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:24, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:25, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:26, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:7, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:14, length:3 assign to FQN_Currency
+        capture line:1, column:18, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:19, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:20, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:21, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:22, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:23, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:24, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:25, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:26, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:27, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:8, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:15, length:3 assign to FQN_Currency
+        capture line:1, column:19, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:20, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:21, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:22, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:23, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:24, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:25, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:26, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:27, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:28, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:9, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:16, length:3 assign to FQN_Currency
+        capture line:1, column:20, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:21, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:22, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:23, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:24, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:25, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:26, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:27, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:28, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:29, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:10, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:17, length:3 assign to FQN_Currency
+        capture line:1, column:21, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:22, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:23, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:24, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:25, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:26, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:27, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:28, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:29, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:30, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:11, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:18, length:3 assign to FQN_Currency
+        capture line:1, column:22, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:23, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:24, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:25, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:26, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:27, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:28, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:29, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:30, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:31, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:12, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:19, length:3 assign to FQN_Currency
+        capture line:1, column:23, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:24, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:25, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:26, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:27, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:28, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:29, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:30, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:31, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:32, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:13, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:20, length:3 assign to FQN_Currency
+        capture line:1, column:24, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:25, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:26, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:27, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:28, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:29, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:30, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:31, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:32, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:33, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:14, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:21, length:3 assign to FQN_Currency
+        capture line:1, column:25, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:26, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:27, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:28, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:29, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:30, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:31, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:32, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:33, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:34, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:15, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:22, length:3 assign to FQN_Currency
+        capture line:1, column:26, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:27, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:28, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:29, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:30, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:31, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:32, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:33, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:34, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:35, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:16, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:23, length:3 assign to FQN_Currency
+        capture line:1, column:27, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:28, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:29, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:30, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:31, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:32, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:33, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:34, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:35, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:36, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:17, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:24, length:3 assign to FQN_Currency
+        capture line:1, column:28, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:29, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:30, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:31, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:32, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:33, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:34, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:35, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:36, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:37, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    capture line:1, column:18, length:6 assign to check_CNX_Charge
+    if (check_CNX_Charge == "CHARGE"){
+        capture line:1, column:25, length:3 assign to FQN_Currency
+        capture line:1, column:29, length:1 assign to check_Dot1
+        if (check_Dot1 != "."){
+            append check_Dot1 to noshow_Penalty
+            capture line:1, column:30, length:1 assign to check_Dot1
+            if (check_Dot1 != "."){
+                append check_Dot1 to noshow_Penalty
+                capture line:1, column:31, length:1 assign to check_Dot1
+                if (check_Dot1 != "."){
+                    append check_Dot1 to noshow_Penalty
+                    capture line:1, column:32, length:1 assign to check_Dot1
+                    if (check_Dot1 != "."){
+                        append check_Dot1 to noshow_Penalty
+                        capture line:1, column:33, length:1 assign to check_Dot1
+                        if (check_Dot1 != "."){
+                            append check_Dot1 to noshow_Penalty
+                            capture line:1, column:34, length:1 assign to check_Dot1
+                            if (check_Dot1 != "."){
+                                append check_Dot1 to noshow_Penalty
+                                capture line:1, column:35, length:1 assign to check_Dot1
+                                if (check_Dot1 != "."){
+                                    append check_Dot1 to noshow_Penalty
+                                    capture line:1, column:36, length:1 assign to check_Dot1
+                                    if (check_Dot1 != "."){
+                                        append check_Dot1 to noshow_Penalty
+                                        capture line:1, column:37, length:1 assign to check_Dot1
+                                        if (check_Dot1 != "."){
+                                            append check_Dot1 to noshow_Penalty
+                                            capture line:1, column:38, length:1 assign to check_Dot1
+                                            if (check_Dot1 != "."){
+                                                append check_Dot1 to noshow_Penalty
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    capture line:1, column:7, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:8, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:9, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:10, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:11, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:12, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:13, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:14, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:15, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:16, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:17, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:18, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:19, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:20, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:21, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:22, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    capture line:1, column:23, length:9 assign to check_CNX_permission
+    if (check_CNX_permission == "PERMITTED"){
+        assign "0" to noshow_Penalty
+    }
+    if (check_CNX_permission == "NON-REFUN"){
+        assign "NON-REFUNDABLE" to noshow_Penalty
+    }
+    }
+
+    
+    send "RMFare Rule: " + FQN_FareBasis + "
+RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
+RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
+
+    }
+}//WY
 
 
 
-}// non NRF
+
+
+
+
