@@ -558,7 +558,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:15, column:5, length:3 assign to tx_No
+ capture line:15, column:4, length:3 assign to tx_No
 capture line:15, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -607,7 +607,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:16, column:5, length:3 assign to tx_No
+capture line:16, column:4, length:3 assign to tx_No
 capture line:16, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -656,7 +656,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:17, column:5, length:3 assign to tx_No
+capture line:17, column:4, length:3 assign to tx_No
 capture line:17, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -705,7 +705,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:18, column:5, length:3 assign to tx_No
+capture line:18, column:4, length:3 assign to tx_No
 capture line:18, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -754,7 +754,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:19, column:5, length:3 assign to tx_No
+capture line:19, column:4, length:3 assign to tx_No
 capture line:19, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -803,7 +803,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:20, column:5, length:3 assign to tx_No
+capture line:20, column:4, length:3 assign to tx_No
 capture line:20, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -852,7 +852,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:21, column:5, length:3 assign to tx_No
+capture line:21, column:4, length:3 assign to tx_No
 capture line:21, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -901,7 +901,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:22, column:5, length:3 assign to tx_No
+capture line:22, column:4, length:3 assign to tx_No
 capture line:22, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -950,7 +950,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:23, column:5, length:3 assign to tx_No
+capture line:23, column:4, length:3 assign to tx_No
 capture line:23, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1490,7 +1490,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:15, column:5, length:3 assign to tx_No
+capture line:15, column:4, length:3 assign to tx_No
 capture line:15, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1539,7 +1539,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:16, column:5, length:3 assign to tx_No
+capture line:16, column:4, length:3 assign to tx_No
 capture line:16, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1588,7 +1588,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:17, column:5, length:3 assign to tx_No
+capture line:17, column:4, length:3 assign to tx_No
 capture line:17, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1637,7 +1637,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:18, column:5, length:3 assign to tx_No
+capture line:18, column:4, length:3 assign to tx_No
 capture line:18, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1686,7 +1686,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:19, column:5, length:3 assign to tx_No
+capture line:19, column:4, length:3 assign to tx_No
 capture line:19, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1735,7 +1735,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:20, column:5, length:3 assign to tx_No
+capture line:20, column:4, length:3 assign to tx_No
 capture line:20, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1784,7 +1784,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:21, column:5, length:3 assign to tx_No
+capture line:21, column:4, length:3 assign to tx_No
 capture line:21, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1833,7 +1833,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:22, column:5, length:3 assign to tx_No
+capture line:22, column:4, length:3 assign to tx_No
 capture line:22, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -1882,7 +1882,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:23, column:5, length:3 assign to tx_No
+capture line:23, column:4, length:3 assign to tx_No
 capture line:23, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2422,7 +2422,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:15, column:5, length:3 assign to tx_No
+capture line:15, column:4, length:3 assign to tx_No
 capture line:15, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2471,7 +2471,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:16, column:5, length:3 assign to tx_No
+capture line:16, column:4, length:3 assign to tx_No
 capture line:16, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2520,7 +2520,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:17, column:5, length:3 assign to tx_No
+capture line:17, column:4, length:3 assign to tx_No
 capture line:17, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2569,7 +2569,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:18, column:5, length:3 assign to tx_No
+capture line:18, column:4, length:3 assign to tx_No
 capture line:18, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2618,7 +2618,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:19, column:5, length:3 assign to tx_No
+capture line:19, column:4, length:3 assign to tx_No
 capture line:19, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2667,7 +2667,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:20, column:5, length:3 assign to tx_No
+capture line:20, column:4, length:3 assign to tx_No
 capture line:20, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2716,7 +2716,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:21, column:5, length:3 assign to tx_No
+capture line:21, column:4, length:3 assign to tx_No
 capture line:21, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2765,7 +2765,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:22, column:5, length:3 assign to tx_No
+capture line:22, column:4, length:3 assign to tx_No
 capture line:22, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -2814,7 +2814,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:23, column:5, length:3 assign to tx_No
+capture line:23, column:4, length:3 assign to tx_No
 capture line:23, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3354,7 +3354,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:15, column:5, length:3 assign to tx_No
+capture line:15, column:4, length:3 assign to tx_No
 capture line:15, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3403,7 +3403,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:16, column:5, length:3 assign to tx_No
+capture line:16, column:4, length:3 assign to tx_No
 capture line:16, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3452,7 +3452,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:17, column:5, length:3 assign to tx_No
+capture line:17, column:4, length:3 assign to tx_No
 capture line:17, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3501,7 +3501,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:18, column:5, length:3 assign to tx_No
+capture line:18, column:4, length:3 assign to tx_No
 capture line:18, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3550,7 +3550,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:19, column:5, length:3 assign to tx_No
+capture line:19, column:4, length:3 assign to tx_No
 capture line:19, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3599,7 +3599,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:20, column:5, length:3 assign to tx_No
+capture line:20, column:4, length:3 assign to tx_No
 capture line:20, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3648,7 +3648,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:21, column:5, length:3 assign to tx_No
+capture line:21, column:4, length:3 assign to tx_No
 capture line:21, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3697,7 +3697,7 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:22, column:5, length:3 assign to tx_No
+capture line:22, column:4, length:3 assign to tx_No
 capture line:22, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
@@ -3746,7 +3746,8 @@ if (tx_name == tax15){
     send "TRFu/TX" +tx_No
 }
 }
-capture line:23, column:5, length:3 assign to tx_No
+capture line:23, column:4, length:3 assign to tx_No
+
 capture line:23, column:20, length:2 assign to tx_name
 if (tx_name != ""){
 if (tx_name == tax1){
