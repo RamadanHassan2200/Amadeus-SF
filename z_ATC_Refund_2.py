@@ -2469,55 +2469,55 @@ if (airline1 == "WY"){
     send "MD-CANCELLATIONS"
     call "FQN_Refund_Fetcher"
  send "RTR"
-  capture line:4, column:25, length:3 assign to penalty_Currency
-  capture line:4, column:29, length:10 assign to no_Show_Penalty_Original
+  capture line:7, column:25, length:3 assign to penalty_Currency
+  capture line:7, column:29, length:10 assign to no_Show_Penalty_Original
   if (no_Show_Penalty_Original != "NON-REFUND"){
-  capture line:4, column:29, length:1 assign to no_Show_Penalty_Original
-    capture line:4, column:30, length:1 assign to no_Show_Penalty_p
+  capture line:7, column:29, length:1 assign to no_Show_Penalty_Original
+    capture line:7, column:30, length:1 assign to no_Show_Penalty_p
     if (no_Show_Penalty_p != " "){
     if (no_Show_Penalty_p != ""){
       append no_Show_Penalty_p to no_Show_Penalty_Original
-      capture line:4, column:31, length:1 assign to no_Show_Penalty_p
+      capture line:7, column:31, length:1 assign to no_Show_Penalty_p
       if (no_Show_Penalty_p != " "){
       if (no_Show_Penalty_p != ""){
         append no_Show_Penalty_p to no_Show_Penalty_Original
-        capture line:4, column:32, length:1 assign to no_Show_Penalty_p
+        capture line:7, column:32, length:1 assign to no_Show_Penalty_p
         if (no_Show_Penalty_p != " "){
         if (no_Show_Penalty_p != ""){
             append no_Show_Penalty_p to no_Show_Penalty_Original
-            capture line:4, column:33, length:1 assign to no_Show_Penalty_p
+            capture line:7, column:33, length:1 assign to no_Show_Penalty_p
             if (no_Show_Penalty_p != " "){
             if (no_Show_Penalty_p != ""){
                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                capture line:4, column:34, length:1 assign to no_Show_Penalty_p
+                capture line:7, column:34, length:1 assign to no_Show_Penalty_p
                 if (no_Show_Penalty_p != " "){
                 if (no_Show_Penalty_p != ""){
                     append no_Show_Penalty_p to no_Show_Penalty_Original
-                    capture line:4, column:35, length:1 assign to no_Show_Penalty_p
+                    capture line:7, column:35, length:1 assign to no_Show_Penalty_p
                     if (no_Show_Penalty_p != " "){
                     if (no_Show_Penalty_p != ""){
                       append no_Show_Penalty_p to no_Show_Penalty_Original
-                      capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                      capture line:7, column:36, length:1 assign to no_Show_Penalty_p
                       if (no_Show_Penalty_p != " "){
                       if (no_Show_Penalty_p != ""){
                         append no_Show_Penalty_p to no_Show_Penalty_Original
-                        capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                        capture line:7, column:36, length:1 assign to no_Show_Penalty_p
                         if (no_Show_Penalty_p != " "){
                         if (no_Show_Penalty_p != ""){
                           append no_Show_Penalty_p to no_Show_Penalty_Original
-                          capture line:4, column:37, length:1 assign to no_Show_Penalty_p
+                          capture line:7, column:37, length:1 assign to no_Show_Penalty_p
                           if (no_Show_Penalty_p != " "){
                           if (no_Show_Penalty_p != ""){
                             append no_Show_Penalty_p to no_Show_Penalty_Original
-                            capture line:4, column:38, length:1 assign to no_Show_Penalty_p
+                            capture line:7, column:38, length:1 assign to no_Show_Penalty_p
                             if (no_Show_Penalty_p != " "){
                             if (no_Show_Penalty_p != ""){
                               append no_Show_Penalty_p to no_Show_Penalty_Original
-                              capture line:4, column:39, length:1 assign to no_Show_Penalty_p
+                              capture line:7, column:39, length:1 assign to no_Show_Penalty_p
                               if (no_Show_Penalty_p != " "){
                               if (no_Show_Penalty_p != ""){
                                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                                capture line:4, column:40, length:1 assign to no_Show_Penalty_p
+                                capture line:7, column:40, length:1 assign to no_Show_Penalty_p
                                 if (no_Show_Penalty_p != " "){
                                 if (no_Show_Penalty_p != ""){
                                   append no_Show_Penalty_p to no_Show_Penalty_Original
@@ -2603,55 +2603,55 @@ if (airline1 == "WY"){
     send "MD-CANCELLATIONS"
     call "FQN_Refund_Fetcher"
  send "RTR"
-  capture line:4, column:25, length:3 assign to penalty_Currency
-  capture line:4, column:29, length:10 assign to no_Show_Penalty_Original
+  capture line:10, column:25, length:3 assign to penalty_Currency
+  capture line:10, column:29, length:10 assign to no_Show_Penalty_Original
   if (no_Show_Penalty_Original != "NON-REFUND"){
-  capture line:4, column:29, length:1 assign to no_Show_Penalty_Original
-    capture line:4, column:30, length:1 assign to no_Show_Penalty_p
+  capture line:10, column:29, length:1 assign to no_Show_Penalty_Original
+    capture line:10, column:30, length:1 assign to no_Show_Penalty_p
     if (no_Show_Penalty_p != " "){
     if (no_Show_Penalty_p != ""){
       append no_Show_Penalty_p to no_Show_Penalty_Original
-      capture line:4, column:31, length:1 assign to no_Show_Penalty_p
+      capture line:10, column:31, length:1 assign to no_Show_Penalty_p
       if (no_Show_Penalty_p != " "){
       if (no_Show_Penalty_p != ""){
         append no_Show_Penalty_p to no_Show_Penalty_Original
-        capture line:4, column:32, length:1 assign to no_Show_Penalty_p
+        capture line:10, column:32, length:1 assign to no_Show_Penalty_p
         if (no_Show_Penalty_p != " "){
         if (no_Show_Penalty_p != ""){
             append no_Show_Penalty_p to no_Show_Penalty_Original
-            capture line:4, column:33, length:1 assign to no_Show_Penalty_p
+            capture line:10, column:33, length:1 assign to no_Show_Penalty_p
             if (no_Show_Penalty_p != " "){
             if (no_Show_Penalty_p != ""){
                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                capture line:4, column:34, length:1 assign to no_Show_Penalty_p
+                capture line:10, column:34, length:1 assign to no_Show_Penalty_p
                 if (no_Show_Penalty_p != " "){
                 if (no_Show_Penalty_p != ""){
                     append no_Show_Penalty_p to no_Show_Penalty_Original
-                    capture line:4, column:35, length:1 assign to no_Show_Penalty_p
+                    capture line:10, column:35, length:1 assign to no_Show_Penalty_p
                     if (no_Show_Penalty_p != " "){
                     if (no_Show_Penalty_p != ""){
                       append no_Show_Penalty_p to no_Show_Penalty_Original
-                      capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                      capture line:10, column:36, length:1 assign to no_Show_Penalty_p
                       if (no_Show_Penalty_p != " "){
                       if (no_Show_Penalty_p != ""){
                         append no_Show_Penalty_p to no_Show_Penalty_Original
-                        capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                        capture line:10, column:36, length:1 assign to no_Show_Penalty_p
                         if (no_Show_Penalty_p != " "){
                         if (no_Show_Penalty_p != ""){
                           append no_Show_Penalty_p to no_Show_Penalty_Original
-                          capture line:4, column:37, length:1 assign to no_Show_Penalty_p
+                          capture line:10, column:37, length:1 assign to no_Show_Penalty_p
                           if (no_Show_Penalty_p != " "){
                           if (no_Show_Penalty_p != ""){
                             append no_Show_Penalty_p to no_Show_Penalty_Original
-                            capture line:4, column:38, length:1 assign to no_Show_Penalty_p
+                            capture line:10, column:38, length:1 assign to no_Show_Penalty_p
                             if (no_Show_Penalty_p != " "){
                             if (no_Show_Penalty_p != ""){
                               append no_Show_Penalty_p to no_Show_Penalty_Original
-                              capture line:4, column:39, length:1 assign to no_Show_Penalty_p
+                              capture line:10, column:39, length:1 assign to no_Show_Penalty_p
                               if (no_Show_Penalty_p != " "){
                               if (no_Show_Penalty_p != ""){
                                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                                capture line:4, column:40, length:1 assign to no_Show_Penalty_p
+                                capture line:10, column:40, length:1 assign to no_Show_Penalty_p
                                 if (no_Show_Penalty_p != " "){
                                 if (no_Show_Penalty_p != ""){
                                   append no_Show_Penalty_p to no_Show_Penalty_Original
@@ -2737,55 +2737,55 @@ if (airline1 == "WY"){
     send "MD-CANCELLATIONS"
     call "FQN_Refund_Fetcher"
  send "RTR"
-  capture line:4, column:25, length:3 assign to penalty_Currency
-  capture line:4, column:29, length:10 assign to no_Show_Penalty_Original
+  capture line:13, column:25, length:3 assign to penalty_Currency
+  capture line:13, column:29, length:10 assign to no_Show_Penalty_Original
   if (no_Show_Penalty_Original != "NON-REFUND"){
-  capture line:4, column:29, length:1 assign to no_Show_Penalty_Original
-    capture line:4, column:30, length:1 assign to no_Show_Penalty_p
+  capture line:13, column:29, length:1 assign to no_Show_Penalty_Original
+    capture line:13, column:30, length:1 assign to no_Show_Penalty_p
     if (no_Show_Penalty_p != " "){
     if (no_Show_Penalty_p != ""){
       append no_Show_Penalty_p to no_Show_Penalty_Original
-      capture line:4, column:31, length:1 assign to no_Show_Penalty_p
+      capture line:13, column:31, length:1 assign to no_Show_Penalty_p
       if (no_Show_Penalty_p != " "){
       if (no_Show_Penalty_p != ""){
         append no_Show_Penalty_p to no_Show_Penalty_Original
-        capture line:4, column:32, length:1 assign to no_Show_Penalty_p
+        capture line:13, column:32, length:1 assign to no_Show_Penalty_p
         if (no_Show_Penalty_p != " "){
         if (no_Show_Penalty_p != ""){
             append no_Show_Penalty_p to no_Show_Penalty_Original
-            capture line:4, column:33, length:1 assign to no_Show_Penalty_p
+            capture line:13, column:33, length:1 assign to no_Show_Penalty_p
             if (no_Show_Penalty_p != " "){
             if (no_Show_Penalty_p != ""){
                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                capture line:4, column:34, length:1 assign to no_Show_Penalty_p
+                capture line:13, column:34, length:1 assign to no_Show_Penalty_p
                 if (no_Show_Penalty_p != " "){
                 if (no_Show_Penalty_p != ""){
                     append no_Show_Penalty_p to no_Show_Penalty_Original
-                    capture line:4, column:35, length:1 assign to no_Show_Penalty_p
+                    capture line:13, column:35, length:1 assign to no_Show_Penalty_p
                     if (no_Show_Penalty_p != " "){
                     if (no_Show_Penalty_p != ""){
                       append no_Show_Penalty_p to no_Show_Penalty_Original
-                      capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                      capture line:13, column:36, length:1 assign to no_Show_Penalty_p
                       if (no_Show_Penalty_p != " "){
                       if (no_Show_Penalty_p != ""){
                         append no_Show_Penalty_p to no_Show_Penalty_Original
-                        capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                        capture line:13, column:36, length:1 assign to no_Show_Penalty_p
                         if (no_Show_Penalty_p != " "){
                         if (no_Show_Penalty_p != ""){
                           append no_Show_Penalty_p to no_Show_Penalty_Original
-                          capture line:4, column:37, length:1 assign to no_Show_Penalty_p
+                          capture line:13, column:37, length:1 assign to no_Show_Penalty_p
                           if (no_Show_Penalty_p != " "){
                           if (no_Show_Penalty_p != ""){
                             append no_Show_Penalty_p to no_Show_Penalty_Original
-                            capture line:4, column:38, length:1 assign to no_Show_Penalty_p
+                            capture line:13, column:38, length:1 assign to no_Show_Penalty_p
                             if (no_Show_Penalty_p != " "){
                             if (no_Show_Penalty_p != ""){
                               append no_Show_Penalty_p to no_Show_Penalty_Original
-                              capture line:4, column:39, length:1 assign to no_Show_Penalty_p
+                              capture line:13, column:39, length:1 assign to no_Show_Penalty_p
                               if (no_Show_Penalty_p != " "){
                               if (no_Show_Penalty_p != ""){
                                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                                capture line:4, column:40, length:1 assign to no_Show_Penalty_p
+                                capture line:13, column:40, length:1 assign to no_Show_Penalty_p
                                 if (no_Show_Penalty_p != " "){
                                 if (no_Show_Penalty_p != ""){
                                   append no_Show_Penalty_p to no_Show_Penalty_Original
@@ -2871,55 +2871,55 @@ if (airline1 == "WY"){
     send "MD-CANCELLATIONS"
     call "FQN_Refund_Fetcher"
  send "RTR"
-  capture line:4, column:25, length:3 assign to penalty_Currency
-  capture line:4, column:29, length:10 assign to no_Show_Penalty_Original
+  capture line:16, column:25, length:3 assign to penalty_Currency
+  capture line:16, column:29, length:10 assign to no_Show_Penalty_Original
   if (no_Show_Penalty_Original != "NON-REFUND"){
-  capture line:4, column:29, length:1 assign to no_Show_Penalty_Original
-    capture line:4, column:30, length:1 assign to no_Show_Penalty_p
+  capture line:16, column:29, length:1 assign to no_Show_Penalty_Original
+    capture line:16, column:30, length:1 assign to no_Show_Penalty_p
     if (no_Show_Penalty_p != " "){
     if (no_Show_Penalty_p != ""){
       append no_Show_Penalty_p to no_Show_Penalty_Original
-      capture line:4, column:31, length:1 assign to no_Show_Penalty_p
+      capture line:16, column:31, length:1 assign to no_Show_Penalty_p
       if (no_Show_Penalty_p != " "){
       if (no_Show_Penalty_p != ""){
         append no_Show_Penalty_p to no_Show_Penalty_Original
-        capture line:4, column:32, length:1 assign to no_Show_Penalty_p
+        capture line:16, column:32, length:1 assign to no_Show_Penalty_p
         if (no_Show_Penalty_p != " "){
         if (no_Show_Penalty_p != ""){
             append no_Show_Penalty_p to no_Show_Penalty_Original
-            capture line:4, column:33, length:1 assign to no_Show_Penalty_p
+            capture line:16, column:33, length:1 assign to no_Show_Penalty_p
             if (no_Show_Penalty_p != " "){
             if (no_Show_Penalty_p != ""){
                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                capture line:4, column:34, length:1 assign to no_Show_Penalty_p
+                capture line:16, column:34, length:1 assign to no_Show_Penalty_p
                 if (no_Show_Penalty_p != " "){
                 if (no_Show_Penalty_p != ""){
                     append no_Show_Penalty_p to no_Show_Penalty_Original
-                    capture line:4, column:35, length:1 assign to no_Show_Penalty_p
+                    capture line:16, column:35, length:1 assign to no_Show_Penalty_p
                     if (no_Show_Penalty_p != " "){
                     if (no_Show_Penalty_p != ""){
                       append no_Show_Penalty_p to no_Show_Penalty_Original
-                      capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                      capture line:16, column:36, length:1 assign to no_Show_Penalty_p
                       if (no_Show_Penalty_p != " "){
                       if (no_Show_Penalty_p != ""){
                         append no_Show_Penalty_p to no_Show_Penalty_Original
-                        capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                        capture line:16, column:36, length:1 assign to no_Show_Penalty_p
                         if (no_Show_Penalty_p != " "){
                         if (no_Show_Penalty_p != ""){
                           append no_Show_Penalty_p to no_Show_Penalty_Original
-                          capture line:4, column:37, length:1 assign to no_Show_Penalty_p
+                          capture line:16, column:37, length:1 assign to no_Show_Penalty_p
                           if (no_Show_Penalty_p != " "){
                           if (no_Show_Penalty_p != ""){
                             append no_Show_Penalty_p to no_Show_Penalty_Original
-                            capture line:4, column:38, length:1 assign to no_Show_Penalty_p
+                            capture line:16, column:38, length:1 assign to no_Show_Penalty_p
                             if (no_Show_Penalty_p != " "){
                             if (no_Show_Penalty_p != ""){
                               append no_Show_Penalty_p to no_Show_Penalty_Original
-                              capture line:4, column:39, length:1 assign to no_Show_Penalty_p
+                              capture line:16, column:39, length:1 assign to no_Show_Penalty_p
                               if (no_Show_Penalty_p != " "){
                               if (no_Show_Penalty_p != ""){
                                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                                capture line:4, column:40, length:1 assign to no_Show_Penalty_p
+                                capture line:16, column:40, length:1 assign to no_Show_Penalty_p
                                 if (no_Show_Penalty_p != " "){
                                 if (no_Show_Penalty_p != ""){
                                   append no_Show_Penalty_p to no_Show_Penalty_Original
@@ -3005,55 +3005,55 @@ if (airline1 == "WY"){
     send "MD-CANCELLATIONS"
     call "FQN_Refund_Fetcher"
  send "RTR"
-  capture line:4, column:25, length:3 assign to penalty_Currency
-  capture line:4, column:29, length:10 assign to no_Show_Penalty_Original
+  capture line:19, column:25, length:3 assign to penalty_Currency
+  capture line:19, column:29, length:10 assign to no_Show_Penalty_Original
   if (no_Show_Penalty_Original != "NON-REFUND"){
-  capture line:4, column:29, length:1 assign to no_Show_Penalty_Original
-    capture line:4, column:30, length:1 assign to no_Show_Penalty_p
+  capture line:19, column:29, length:1 assign to no_Show_Penalty_Original
+    capture line:19, column:30, length:1 assign to no_Show_Penalty_p
     if (no_Show_Penalty_p != " "){
     if (no_Show_Penalty_p != ""){
       append no_Show_Penalty_p to no_Show_Penalty_Original
-      capture line:4, column:31, length:1 assign to no_Show_Penalty_p
+      capture line:19, column:31, length:1 assign to no_Show_Penalty_p
       if (no_Show_Penalty_p != " "){
       if (no_Show_Penalty_p != ""){
         append no_Show_Penalty_p to no_Show_Penalty_Original
-        capture line:4, column:32, length:1 assign to no_Show_Penalty_p
+        capture line:19, column:32, length:1 assign to no_Show_Penalty_p
         if (no_Show_Penalty_p != " "){
         if (no_Show_Penalty_p != ""){
             append no_Show_Penalty_p to no_Show_Penalty_Original
-            capture line:4, column:33, length:1 assign to no_Show_Penalty_p
+            capture line:19, column:33, length:1 assign to no_Show_Penalty_p
             if (no_Show_Penalty_p != " "){
             if (no_Show_Penalty_p != ""){
                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                capture line:4, column:34, length:1 assign to no_Show_Penalty_p
+                capture line:19, column:34, length:1 assign to no_Show_Penalty_p
                 if (no_Show_Penalty_p != " "){
                 if (no_Show_Penalty_p != ""){
                     append no_Show_Penalty_p to no_Show_Penalty_Original
-                    capture line:4, column:35, length:1 assign to no_Show_Penalty_p
+                    capture line:19, column:35, length:1 assign to no_Show_Penalty_p
                     if (no_Show_Penalty_p != " "){
                     if (no_Show_Penalty_p != ""){
                       append no_Show_Penalty_p to no_Show_Penalty_Original
-                      capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                      capture line:19, column:36, length:1 assign to no_Show_Penalty_p
                       if (no_Show_Penalty_p != " "){
                       if (no_Show_Penalty_p != ""){
                         append no_Show_Penalty_p to no_Show_Penalty_Original
-                        capture line:4, column:36, length:1 assign to no_Show_Penalty_p
+                        capture line:19, column:36, length:1 assign to no_Show_Penalty_p
                         if (no_Show_Penalty_p != " "){
                         if (no_Show_Penalty_p != ""){
                           append no_Show_Penalty_p to no_Show_Penalty_Original
-                          capture line:4, column:37, length:1 assign to no_Show_Penalty_p
+                          capture line:19, column:37, length:1 assign to no_Show_Penalty_p
                           if (no_Show_Penalty_p != " "){
                           if (no_Show_Penalty_p != ""){
                             append no_Show_Penalty_p to no_Show_Penalty_Original
-                            capture line:4, column:38, length:1 assign to no_Show_Penalty_p
+                            capture line:19, column:38, length:1 assign to no_Show_Penalty_p
                             if (no_Show_Penalty_p != " "){
                             if (no_Show_Penalty_p != ""){
                               append no_Show_Penalty_p to no_Show_Penalty_Original
-                              capture line:4, column:39, length:1 assign to no_Show_Penalty_p
+                              capture line:19, column:39, length:1 assign to no_Show_Penalty_p
                               if (no_Show_Penalty_p != " "){
                               if (no_Show_Penalty_p != ""){
                                 append no_Show_Penalty_p to no_Show_Penalty_Original
-                                capture line:4, column:40, length:1 assign to no_Show_Penalty_p
+                                capture line:19, column:40, length:1 assign to no_Show_Penalty_p
                                 if (no_Show_Penalty_p != " "){
                                 if (no_Show_Penalty_p != ""){
                                   append no_Show_Penalty_p to no_Show_Penalty_Original
