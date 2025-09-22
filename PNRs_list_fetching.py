@@ -873,1193 +873,1795 @@ if (PNRNumber > "198"){
 
 /////////////////////////////////////////////////////////////////
 
+assign "" to PNRs_List
 if (PNRNumber > "0"){
     send "RT" + PNR1
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR1 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "1"){
     send "RT" + PNR2
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR2 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "2"){
     send "RT" + PNR3
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR3 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "3"){
     send "RT" + PNR4
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR4 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "4"){
     send "RT" + PNR5
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR5 + ", " to PNRs_List
+    }
 }
 if (PNRNumber > "5"){
     send "RT" + PNR6
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR6 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "6"){
     send "RT" + PNR7
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR7 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "7"){
     send "RT" + PNR8
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR8 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "8"){
     send "RT" + PNR9
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR9 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "9"){
     send "RT" + PNR10
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR10 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "10"){
     send "RT" + PNR11
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR11 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "11"){
     send "RT" + PNR12
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR12 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "12"){
     send "RT" + PNR13
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR13 + ", " to PNRs_List
+    }
 }
 if (PNRNumber > "13"){
     send "RT" + PNR14
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR14 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "14"){
     send "RT" + PNR15
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR15 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "15"){
     send "RT" + PNR16
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR16 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "16"){
     send "RT" + PNR17
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR17 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "17"){
     send "RT" + PNR18
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR18 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "18"){
     send "RT" + PNR19
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR19 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "19"){
     send "RT" + PNR20
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR20 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "20"){
     send "RT" + PNR21
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR21 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "21"){
     send "RT" + PNR22
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR22 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "22"){
     send "RT" + PNR23
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR23 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "23"){
     send "RT" + PNR24
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR24 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "24"){
     send "RT" + PNR25
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR25 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "25"){
     send "RT" + PNR26
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR26 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "26"){
     send "RT" + PNR27
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR27 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "27"){
     send "RT" + PNR28
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR28 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "28"){
     send "RT" + PNR29
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR29 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "29"){
     send "RT" + PNR30
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR30 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "30"){
     send "RT" + PNR31
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR31 + ", " to PNRs_List
+    }
+
 }
 
 if (PNRNumber > "31"){
     send "RT" + PNR32
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR32 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "32"){
     send "RT" + PNR33
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR33 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "33"){
     send "RT" + PNR34
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR34 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "34"){
     send "RT" + PNR35
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR35 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "35"){
     send "RT" + PNR36
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR36 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "36"){
     send "RT" + PNR37
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR37 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "37"){
     send "RT" + PNR38
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR38 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "38"){
     send "RT" + PNR39
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR39 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "39"){
     send "RT" + PNR40
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR40 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "40"){
     send "RT" + PNR41
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR41 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "41"){
     send "RT" + PNR42
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR42 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "42"){
     send "RT" + PNR43
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR43 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "43"){
     send "RT" + PNR44
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR44 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "44"){
     send "RT" + PNR45
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR45 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "45"){
     send "RT" + PNR46
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR46 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "46"){
     send "RT" + PNR47
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR47 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "47"){
     send "RT" + PNR48
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR48 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "48"){
     send "RT" + PNR49
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR49 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "49"){
     send "RT" + PNR50
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR50 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "50"){
     send "RT" + PNR51
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR51 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "51"){
     send "RT" + PNR52
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR52 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "52"){
     send "RT" + PNR53
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR53 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "53"){
     send "RT" + PNR54
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR54 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "54"){
     send "RT" + PNR55
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR55 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "55"){
     send "RT" + PNR56
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR56 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "56"){
     send "RT" + PNR57
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR57 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "57"){
     send "RT" + PNR58
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR58 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "58"){
     send "RT" + PNR59
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR59 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "59"){
     send "RT" + PNR60
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR60 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "60"){
     send "RT" + PNR61
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR61 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "61"){
     send "RT" + PNR62
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR62 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "62"){
     send "RT" + PNR63
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR63 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "63"){
     send "RT" + PNR64
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR64 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "64"){
     send "RT" + PNR65
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR65 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "65"){
     send "RT" + PNR66
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR66 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "66"){
     send "RT" + PNR67
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR67 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "67"){
     send "RT" + PNR68
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR68 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "68"){
     send "RT" + PNR69
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR69 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "69"){
     send "RT" + PNR70
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR70 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "70"){
     send "RT" + PNR71
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR71 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "71"){
     send "RT" + PNR72
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR72 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "72"){
     send "RT" + PNR73
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR73 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "73"){
     send "RT" + PNR74
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR74 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "74"){
     send "RT" + PNR75
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR75 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "75"){
     send "RT" + PNR76
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR76 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "76"){
     send "RT" + PNR77
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR77 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "77"){
     send "RT" + PNR78
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR78 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "78"){
     send "RT" + PNR79
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR79 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "79"){
     send "RT" + PNR80
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR80 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "80"){
     send "RT" + PNR81
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR81 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "81"){
     send "RT" + PNR82
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR82 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "82"){
     send "RT" + PNR83
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR83 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "83"){
     send "RT" + PNR84
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR84 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "84"){
     send "RT" + PNR85
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR85 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "85"){
     send "RT" + PNR86
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR86 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "86"){
     send "RT" + PNR87
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR87 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "87"){
     send "RT" + PNR88
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR88 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "88"){
     send "RT" + PNR89
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR89 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "89"){
     send "RT" + PNR90
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR90 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "90"){
     send "RT" + PNR91
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR91 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "91"){
     send "RT" + PNR92
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR92 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "92"){
     send "RT" + PNR93
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR93 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "93"){
     send "RT" + PNR94
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR94 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "94"){
     send "RT" + PNR95
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR95 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "95"){
     send "RT" + PNR96
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR96 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "96"){
     send "RT" + PNR97
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR97 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "97"){
     send "RT" + PNR98
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR98 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "98"){
     send "RT" + PNR99
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR99 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "99"){
     send "RT" + PNR100
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR100 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "100"){
     send "RT" + PNR101
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR101 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "101"){
     send "RT" + PNR102
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR102 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "102"){
     send "RT" + PNR103
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR103 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "103"){
     send "RT" + PNR104
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR104 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "104"){
     send "RT" + PNR105
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR105 + ", " to PNRs_List
+    }
 }
 if (PNRNumber > "105"){
     send "RT" + PNR106
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR106 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "106"){
     send "RT" + PNR107
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR107 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "107"){
     send "RT" + PNR108
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR108 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "108"){
     send "RT" + PNR109
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR109 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "109"){
     send "RT" + PNR110
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR110 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "110"){
     send "RT" + PNR111
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR111 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "111"){
     send "RT" + PNR112
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR112 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "112"){
     send "RT" + PNR113
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR113 + ", " to PNRs_List
+    }
 }
 if (PNRNumber > "113"){
     send "RT" + PNR114
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR114 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "114"){
     send "RT" + PNR115
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR115 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "115"){
     send "RT" + PNR116
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR116 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "116"){
     send "RT" + PNR117
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR117 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "117"){
     send "RT" + PNR118
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR118 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "118"){
     send "RT" + PNR119
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR119 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "119"){
     send "RT" + PNR120
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR120 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "120"){
     send "RT" + PNR121
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR121 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "121"){
     send "RT" + PNR122
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR122 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "122"){
     send "RT" + PNR123
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR123 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "123"){
     send "RT" + PNR124
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR124 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "124"){
     send "RT" + PNR125
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR125 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "125"){
     send "RT" + PNR126
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR126 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "126"){
     send "RT" + PNR127
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR127 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "127"){
     send "RT" + PNR128
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR128 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "128"){
     send "RT" + PNR129
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR129 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "129"){
     send "RT" + PNR130
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR130 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "130"){
     send "RT" + PNR131
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR131 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "131"){
     send "RT" + PNR132
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR132 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "132"){
     send "RT" + PNR133
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR133 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "133"){
     send "RT" + PNR134
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR134 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "134"){
     send "RT" + PNR135
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR135 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "135"){
     send "RT" + PNR136
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR136 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "136"){
     send "RT" + PNR137
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR137 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "137"){
     send "RT" + PNR138
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR138 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "138"){
     send "RT" + PNR139
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR139 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "139"){
     send "RT" + PNR140
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR140 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "140"){
     send "RT" + PNR141
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR141 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "141"){
     send "RT" + PNR142
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR142 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "142"){
     send "RT" + PNR143
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR143 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "143"){
     send "RT" + PNR144
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR144 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "144"){
     send "RT" + PNR145
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR145 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "145"){
     send "RT" + PNR146
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR146 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "146"){
     send "RT" + PNR147
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR147 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "147"){
     send "RT" + PNR148
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR148 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "148"){
     send "RT" + PNR149
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR149 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "149"){
     send "RT" + PNR150
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR150 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "150"){
     send "RT" + PNR151
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR151 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "151"){
     send "RT" + PNR152
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR152 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "152"){
     send "RT" + PNR153
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR153 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "153"){
     send "RT" + PNR154
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR154 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "154"){
     send "RT" + PNR155
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR155 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "155"){
     send "RT" + PNR156
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR156 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "156"){
     send "RT" + PNR157
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR157 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "157"){
     send "RT" + PNR158
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR158 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "158"){
     send "RT" + PNR159
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR159 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "159"){
     send "RT" + PNR160
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR160 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "160"){
     send "RT" + PNR161
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR161 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "161"){
     send "RT" + PNR162
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR162 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "162"){
     send "RT" + PNR163
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR163 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "163"){
     send "RT" + PNR164
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR164 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "164"){
     send "RT" + PNR165
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR165 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "165"){
     send "RT" + PNR166
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR166 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "166"){
     send "RT" + PNR167
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR167 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "167"){
     send "RT" + PNR168
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR168 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "168"){
     send "RT" + PNR169
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR169 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "169"){
     send "RT" + PNR170
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR170 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "170"){
     send "RT" + PNR171
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR171 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "171"){
     send "RT" + PNR172
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR172 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "172"){
     send "RT" + PNR173
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR173 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "173"){
     send "RT" + PNR174
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR174 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "174"){
     send "RT" + PNR175
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR175 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "175"){
     send "RT" + PNR176
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR176 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "176"){
     send "RT" + PNR177
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR177 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "177"){
     send "RT" + PNR178
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR178 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "178"){
     send "RT" + PNR179
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR179 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "179"){
     send "RT" + PNR180
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR180 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "180"){
     send "RT" + PNR181
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR181 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "181"){
     send "RT" + PNR182
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR182 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "182"){
     send "RT" + PNR183
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR183 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "183"){
     send "RT" + PNR184
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR184 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "184"){
     send "RT" + PNR185
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR185 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "185"){
     send "RT" + PNR186
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR186 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "186"){
     send "RT" + PNR187
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR187 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "187"){
     send "RT" + PNR188
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR188 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "188"){
     send "RT" + PNR189
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR189 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "189"){
     send "RT" + PNR190
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR190 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "190"){
     send "RT" + PNR191
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR191 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "191"){
     send "RT" + PNR192
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR192 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "192"){
     send "RT" + PNR193
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR193 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "193"){
     send "RT" + PNR194
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR194 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "194"){
     send "RT" + PNR195
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR195 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "195"){
     send "RT" + PNR196
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR196 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "196"){
     send "RT" + PNR197
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR197 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "197"){
     send "RT" + PNR198
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR198 + ", " to PNRs_List
+    }
 }
 
 if (PNRNumber > "198"){
     send "RT" + PNR199
-    send "FXR/k"
     call "fast_search"
+    capture line:1, column:32, length:7 assign to success_indicator
+    if (success_indicator == "Success"){
+        append PNR199 + ", " to PNRs_List
+    }
 }
+
+send "SRT" + PNRs_List
+ask "Continue?" assign to continue_response
 
