@@ -897,45 +897,63 @@ send "tqm"
   }
 
 if (Bg1 =="  "){
-    assign "0p" to Bg1
+    assign "0" to Bg1
 }
 if (Bg1 =="NO"){
-    assign "0p" to Bg1
+    assign "0" to Bg1
+}
+if (Bg1 =="0K"){
+    assign "0" to Bg1
 }
 
 if (Bg2 =="  "){
-    assign "0p" to Bg2
+    assign "0" to Bg2
 }
 if (Bg2 =="NO"){
-    assign "0p" to Bg2
+    assign "0" to Bg2
+}
+if (Bg2 =="0K"){
+    assign "0" to Bg2
 }
 
 if (Bg3 =="  "){
-    assign "0p" to Bg3
+    assign "0" to Bg3
 }
 if (Bg3 =="NO"){
-    assign "0p" to Bg3
+    assign "0" to Bg3
+}
+if (Bg3 =="0K"){
+    assign "0" to Bg3
 }
 
 if (Bg4 =="  "){
-    assign "0p" to Bg4
+    assign "0" to Bg4
 }
 if (Bg4 =="NO"){
-    assign "0p" to Bg4
+    assign "0" to Bg4
+}
+if (Bg4 =="0K"){
+    assign "0" to Bg4
 }
 
 if (Bg5 =="  "){
-    assign "0p" to Bg5
+    assign "0" to Bg5
 }
 if (Bg5 =="NO"){
-    assign "0p" to Bg5
+    assign "0" to Bg5
+}
+if (Bg5 =="0K"){
+    assign "0" to Bg5
 }
 
 if (Bg6 =="  "){
-    assign "0p" to Bg6
+    assign "0" to Bg6
 }
 if (Bg6 =="NO"){
-    assign "0p" to Bg6
+    assign "0" to Bg6
+}
+if (Bg6 =="0K"){
+    assign "0" to Bg6
 }
 
 
@@ -1343,7 +1361,7 @@ if (general_FF != "True"){
     append "/FF" to FF_Statement
     append FF_Seg1 +"-" +FF_Seg1_FF to FF_Statement
     if (FF_Seg2 != ""){
-        append FF_Seg2 +"-" +FF_Seg2_FF to FF_Statement
+        append "/FF" +FF_Seg2 +"-" +FF_Seg2_FF to FF_Statement
     }
     if (FF_Seg3 != ""){
         append "/FF" +FF_Seg3 +"-" +FF_Seg3_FF to FF_Statement
