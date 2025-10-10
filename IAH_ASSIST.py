@@ -213,7 +213,7 @@ send "tqm"
           send "ig"
         }
 
-  send "tqt/t500"
+  send "TQT/T500"
   capture line:2, column:1, length:3 assign to TQTNumber1
   capture line:2, column:42, length:10 assign to TQTPrice1
   capture line:3, column:1, length:3 assign to TQTNumber2
@@ -1047,7 +1047,7 @@ if (check_AFF == "AFF"){
     }
 }
 
-if (TQTSegmentNo == "2"){
+if (segmentsCount == "2"){
 send "MD-AFF"
 capture line:1, column:1, length:3 assign to check_AFF
 if (check_AFF == "AFF"){
@@ -1095,7 +1095,7 @@ if (check_AFF == "AFF"){
 }
 }
 
-if (TQTSegmentNo == "3"){
+if (segmentsCount == "3"){
 send "MD-AFF"
 capture line:1, column:1, length:3 assign to check_AFF
 if (check_AFF == "AFF"){
@@ -1143,7 +1143,7 @@ if (check_AFF == "AFF"){
 }
 }
 
-if (TQTSegmentNo == "4"){
+if (segmentsCount == "4"){
 send "MD-AFF"
 capture line:1, column:1, length:3 assign to check_AFF
 if (check_AFF == "AFF"){
@@ -1191,7 +1191,7 @@ if (check_AFF == "AFF"){
 }
 }
 
-if (TQTSegmentNo == "5"){
+if (segmentsCount == "5"){
     send "MD-AFF"
 capture line:1, column:1, length:3 assign to check_AFF
 if (check_AFF == "AFF"){
@@ -1239,7 +1239,7 @@ if (check_AFF == "AFF"){
 }
 }
 
-if (TQTSegmentNo == "6"){
+if (segmentsCount == "6"){
     send "MD-AFF"
 capture line:1, column:1, length:3 assign to check_AFF
 if (check_AFF == "AFF"){
