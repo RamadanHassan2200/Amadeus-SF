@@ -1443,29 +1443,29 @@ if (segCount=="1"){
 
 assign "" to airline_TourCode
 if (airline1 == "PR"){
-  assign "U*C5YQ" to airline_TourCode
+  assign ",U*C5YQ" to airline_TourCode
 }
 if (airline1 == "QR"){
-  assign "U202201" to airline_TourCode
+  assign ",U202201" to airline_TourCode
 }
 //if (airline1 == "SM"){
-//  assign "U09" to airline_TourCode
+//  assign ",U09" to airline_TourCode
 //}
 if (airline1 == "SN"){
-  assign "U385910" to airline_TourCode
+  assign ",U385910" to airline_TourCode
 }
 //if (airline1 == "SV"){
-//  assign "U*SEE24,U*MOS05" to airline_TourCode
+//  assign ",U*SEE24,U*MOS05" to airline_TourCode
 //}
 if (airline1 == "WY"){
-  assign "U584562" to airline_TourCode
+  assign ".U584562" to airline_TourCode
 }
 if (airline1 == "RJ"){
-  assign "P" to airline_TourCode
+  assign ",P" to airline_TourCode
 }
 
 
-  send "FQD" +city1 +FQDCommand +"/R,up" +DOI +"," +airline_TourCode
+  send "FQD" +city1 +FQDCommand +"/R,UP," +DOI  +airline_TourCode
 
 
   capture line:4, column:1, length:2 assign to FQDN1
