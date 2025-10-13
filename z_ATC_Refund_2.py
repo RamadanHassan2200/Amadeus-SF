@@ -3383,6 +3383,9 @@ if (fare_Paid =="F "){
       if (AL_Code == "079"){
         assign "FALSE" to tax_refund_eligible
       }
+      if (AL_Code == "077"){
+        assign "FALSE" to tax_refund_eligible
+      }
     }
     if (zer_Value == " 0"){
       assign "True" to tax_refund_eligible
@@ -3506,7 +3509,7 @@ if (fare_Paid =="F "){
         send "SRT2 YQYR"
       }
       if (AL_Code == "077"){
-        send "SRT2 YQYR"
+        send "TRFIG"
       }
       if (AL_Code == "079"){
         send "TRFIG"
