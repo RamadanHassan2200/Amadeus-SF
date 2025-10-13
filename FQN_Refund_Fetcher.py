@@ -35,6 +35,18 @@ RMNo-Show Penalty:     NON-REFUNDABLE"
 }//AI
 }
     send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
     assign "" to normal_Penalty
     assign "" to noshow_Penalty
     assign "AAA" to FQN_Currency
@@ -8553,10 +8565,19 @@ if (FQN_Airline == "PR"){
     }
 
     if (noshow_Penalty != "900"){
-    send "DF" +normal_Penalty +";" +noshow_Penalty
-    capture line:2, column:1, length:12 assign to noshow_Penalty
+        send "MT"
+        send "MD-CANCELLATION / REFUNDS"
+        capture line:2, column:37, length:7 assign to onefee_PR
+        if (onefee_PR != "ONE FEE"){
+            send "DF" +normal_Penalty +";" +noshow_Penalty
+            capture line:2, column:1, length:12 assign to noshow_Penalty
+        }
     }
     }
+
+    
+
+
 
     send "RMFare Rule: " + FQN_FareBasis + "
 RMNormal  Penalty: " +FQN_Currency + " " + normal_Penalty + "
@@ -9594,6 +9615,19 @@ RMNo-Show Penalty: " +FQN_Currency +" "  + noshow_Penalty
     }
     
     send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
+    
     send "MD-NO-SHOW"
     if (normal_Penalty == "NON-REFUNDABLE"){
         assign "NON-REFUNDABLE" to noshow_Penalty
@@ -10542,6 +10576,18 @@ RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 if (FQN_Airline == "QR"){
     if (FQN_Refundable == " - "){
         send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
         capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
@@ -12512,6 +12558,18 @@ RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 if (FQN_Airline == "TK"){
     if (FQN_Refundable == " - "){
         send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
         send "MD-NO-SHOW"
         capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
@@ -14593,6 +14651,18 @@ RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 if (FQN_Airline == "VF"){
     if (FQN_Refundable == " - "){
         send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
         send "MD-NO-SHOW"
         capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
@@ -16674,6 +16744,18 @@ RMNo-Show Penalty: " +FQN_Currency + " " + noshow_Penalty
 if (FQN_Airline == "ET"){
     if (FQN_Refundable == " - "){
         send "MD-CANCELLATIONS"
+    capture line:1, column:3, length:13 assign to CNX_Conditions
+    if (CNX_Conditions != "CANCELLATIONS"){
+        send "MD-CANCELLATIONS"
+        capture line:1, column:3, length:13 assign to CNX_Conditions
+        if (CNX_Conditions != "CANCELLATIONS"){
+            send "MD-CANCELLATIONS"
+            capture line:1, column:3, length:13 assign to CNX_Conditions
+            if (CNX_Conditions != "CANCELLATIONS"){
+                send "MD-CANCELLATIONS"
+            }
+        }
+    }
         capture line:1, column:7, length:9 assign to check_CNX_permission
     if (check_CNX_permission == "PERMITTED"){
         assign "0" to normal_Penalty
