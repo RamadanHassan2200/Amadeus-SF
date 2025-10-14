@@ -171,10 +171,11 @@ else{
   send "ig"
 }
 }
-
-  if (Airline1 != "EY"){
-    send "NOT ETihad Ticket!"
-    ask "Stop and Review" assign to qz5
+  if (Airline1 != "KU"){
+    if (Airline1 != "EY"){
+      send "NOT ETihad Ticket!"
+      ask "Stop and Review" assign to qz5
+    }
   }
 
  send  "DD" +OriginCity
@@ -1382,6 +1383,7 @@ else{
     send "FXB/K/R,UP/FF-" +FF1
 }
 
+if (Airline1 == "EY"){
 capture line:6, column:20, length:6 assign to totals6
 capture line:7, column:20, length:6 assign to totals7
 capture line:8, column:20, length:6 assign to totals8
@@ -1504,6 +1506,124 @@ if (totals16=="TOTALS"){
           }
      }
             
+}
+if (Airline1 == "KU"){
+
+    assign "0" to first_TST
+    assign "0" to second_TST
+    assign "0" to third_TST
+    assign "0" to fourth_TST
+    assign "0" to fifth_TST
+    assign "0" to sixth_TST
+    assign "0" to seventh_TST
+    assign "0" to eighth_TST
+    assign "0" to ninth_TST
+
+send "TQT/T500"
+
+capture line:2, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:2, column:1, length:2 assign to first_TST
+}
+capture line:3, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:3, column:1, length:2 assign to second_TST
+}
+capture line:4, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:4, column:1, length:2 assign to third_TST
+}
+capture line:5, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:5, column:1, length:2 assign to fourth_TST
+}
+capture line:6, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:6, column:1, length:2 assign to fifth_TST
+}
+capture line:7, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:7, column:1, length:2 assign to sixth_TST
+}
+capture line:8, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:8, column:1, length:2 assign to seventh_TST
+}
+capture line:9, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:9, column:1, length:2 assign to eighth_TST
+}
+capture line:10, column:35, length:3 assign to USD_Currency
+if (USD_Currency=="USD"){
+    capture line:10, column:1, length:2 assign to ninth_TST
+}
+
+    assign "0" to fisrt_TQT_FM
+    assign "0" to second_TQT_FM
+    assign "0" to third_TQT_FM
+    assign "0" to fourth_TQT_FM
+    assign "0" to fifth_TQT_FM
+    assign "0" to sixth_TQT_FM
+    assign "0" to seventh_TQT_FM
+    assign "0" to eighth_TQT_FM
+    assign "0" to ninth_TQT_FM
+
+if (first_TST != "0"){
+    send "TQT/T" +first_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to fisrt_TQT_FM
+}
+if (second_TST != "0"){
+    send "TQT/T" +second_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to second_TQT_FM
+}
+if (third_TST != "0"){
+    send "TQT/T" +third_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to third_TQT_FM
+}
+if (fourth_TST != "0"){
+    send "TQT/T" +fourth_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to fourth_TQT_FM
+}
+if (fifth_TST != "0"){
+    send "TQT/T" +fifth_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to fifth_TQT_FM
+}
+if (sixth_TST != "0"){
+    send "TQT/T" +sixth_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to sixth_TQT_FM
+}   
+if (seventh_TST != "0"){
+    send "TQT/T" +seventh_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to seventh_TQT_FM
+}
+if (eighth_TST != "0"){
+    send "TQT/T" +eighth_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to eighth_TQT_FM
+}
+if (ninth_TST != "0"){
+    send "TQT/T" +ninth_TST +"/FM5"
+    capture line:7, column:28, length:6 assign to ninth_TQT_FM
+}
+
+send "DF" +fisrt_TQT_FM +";" +second_TQT_FM +";" +third_TQT_FM +";" +fourth_TQT_FM 
++";" +fifth_TQT_FM +";" +sixth_TQT_FM +";" +seventh_TQT_FM +";" +eighth_TQT_FM +";" +ninth_TQT_FM
+
+capture line:2, column:1, length:10 assign to totalNewPrice
+capture line:6, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:4, column:1, length:10 assign to totalNewPrice
+}
+capture line:5, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:3, column:1, length:10 assign to totalNewPrice
+}
+capture line:4, column:1, length:1 assign to dfnextcheck
+if (dfnextcheck == ">"){
+    capture line:2, column:1, length:10 assign to totalNewPrice
+}
+
+}
+
 
 send "fqq1"
 
@@ -1795,7 +1915,13 @@ assign "Please check the baggage in: " to baggageCheckerStatment
 call "z_RTTN_DEL"               
 send "rtf"
 call "z_FM_DEL"
-send "FM0"
+if (Airline1 == "EY"){
+  send "FM0"
+}
+if (Airline1 == "KU"){
+  send "FM5"
+}
+
 call "z_FOPCASH_DEL" 
 send "PDY"
 send "PT*1"
