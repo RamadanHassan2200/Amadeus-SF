@@ -265,11 +265,6 @@ if (FO_Check=="FO "){
 
 if (FO_Check == "/FC"){
   capture line:6, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:7, column:1, length:3 assign to FO_Check
@@ -286,12 +281,7 @@ if (FO_Check=="FO "){
       }
 }
 if (FO_Check == "/FC"){
-  capture line:7, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
+  capture line:6, column:5, length:3 assign to FC_City
 }
 
 capture line:8, column:1, length:3 assign to FO_Check
@@ -309,11 +299,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:8, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:9, column:1, length:3 assign to FO_Check
@@ -331,11 +316,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:9, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:10, column:1, length:3 assign to FO_Check
@@ -353,11 +333,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:10, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:11, column:1, length:3 assign to FO_Check
@@ -375,11 +350,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:11, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:12, column:1, length:3 assign to FO_Check
@@ -397,11 +367,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:12, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:13, column:1, length:3 assign to FO_Check
@@ -419,11 +384,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:13, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:14, column:1, length:3 assign to FO_Check
@@ -441,11 +401,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:14, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:15, column:1, length:3 assign to FO_Check
@@ -463,11 +418,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:15, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:16, column:1, length:3 assign to FO_Check
@@ -485,11 +435,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:16, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:17, column:1, length:3 assign to FO_Check
@@ -507,11 +452,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:17, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:18, column:1, length:3 assign to FO_Check
@@ -529,11 +469,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:18, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:19, column:1, length:3 assign to FO_Check
@@ -551,11 +486,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:19, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:20, column:1, length:3 assign to FO_Check
@@ -573,11 +503,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:20, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:21, column:1, length:3 assign to FO_Check
@@ -595,11 +520,6 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:21, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
-  }
 }
 
 capture line:22, column:1, length:3 assign to FO_Check
@@ -617,10 +537,11 @@ if (FO_Check=="FO "){
 }
 if (FO_Check == "/FC"){
   capture line:22, column:5, length:3 assign to FC_City
-  if (FOCheck == "True"){
-    if (FC_City != city1){
-      assign "True" to ignored_Refund
-    }
+}
+
+if (FOCheck == "True"){
+  if (FC_City != city1){
+    assign "True" to ignored_Refund
   }
 }
 
