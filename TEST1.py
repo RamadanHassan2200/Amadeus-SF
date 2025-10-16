@@ -84,73 +84,38 @@ send "rt" +pnr
 
 // Checking Airline(s) and Travel date and passenger count
 send "RTA"
-
-capture line:2, column:30, length:2 assign to HK1Test
-if (HK1Test=="HK"){
-  assign "1" to segmentsCount
-  capture line:2, column:6, length:2 assign to Airline1
-  capture line:2, column:15, length:5 assign to TravelDate
-  capture line:2, column:23, length:3 assign to OriginCity
-  capture line:2, column:32, length:1 assign to PassengerCount
-  capture line:3, column:30, length:2 assign to HKnextTest
-  capture line:2, column:35, length:4 assign to TravelTime
-  capture line:2, column:35, length:2 assign to TravelTime1
-  capture line:2, column:37, length:2 assign to TravelTime2
-  if (HKnextTest=="HK"){
-    assign "2" to segmentsCount
-    capture line:4, column:30, length:2 assign to HK3Test
-    if (HK3Test=="HK"){
-      assign "3" to segmentsCount
-      capture line:5, column:30, length:2 assign to HK4Test
-      if (HK4Test=="HK"){
-          assign "4" to segmentsCount
-          capture line:6, column:30, length:2 assign to HK5Test
-          if (HK5Test=="HK"){
-            assign "5" to segmentsCount
-            capture line:7, column:30, length:2 assign to HK6Test
-            if (HK6Test=="HK"){
-                assign "6" to segmentsCount
-                capture line:8, column:30, length:2 assign to HK7Test
-                if (HK7Test=="HK"){
-                    send "SmartFlow now working on more than 6 segments"
-                    ask "ignore?" assign to qz5
-                    send "ig"
-                    call "test1"
-                }
-            }
-          }
-      }
-    }
-  }
-
-}
-else{
-capture line:3, column:30, length:2 assign to HK2Test
-if (HK2Test=="HK"){
-  assign "1" to segmentsCount
-  capture line:3, column:6, length:2 assign to Airline1
-  capture line:3, column:15, length:5 assign to TravelDate
-  capture line:3, column:23, length:3 assign to OriginCity
-  capture line:3, column:32, length:1 assign to PassengerCount
-  capture line:4, column:30, length:2 assign to HKnextTest
-  capture line:3, column:35, length:4 assign to TravelTime
-  capture line:3, column:35, length:2 assign to TravelTime1
-  capture line:3, column:37, length:2 assign to TravelTime2
-      if (HKnextTest=="HK"){
+    capture line:2, column:30, length:2 assign to HK1Test
+    if (HK1Test=="HK"){
+    assign "1" to segmentsCount
+    capture line:2, column:2, length:2 assign to seg_No1
+    capture line:2, column:6, length:2 assign to Airline1
+    capture line:2, column:15, length:5 assign to TravelDate
+    capture line:2, column:23, length:3 assign to OriginCity
+    capture line:2, column:32, length:1 assign to PassengerCount
+    capture line:3, column:30, length:2 assign to HKnextTest
+    capture line:2, column:35, length:4 assign to TravelTime
+    capture line:2, column:35, length:2 assign to TravelTime1
+    capture line:2, column:37, length:2 assign to TravelTime2
+    if (HKnextTest=="HK"){
         assign "2" to segmentsCount
-        capture line:5, column:30, length:2 assign to HK3Test
+        capture line:3, column:2, length:2 assign to seg_No2
+        capture line:4, column:30, length:2 assign to HK3Test
         if (HK3Test=="HK"){
-          assign "3" to segmentsCount
-          capture line:6, column:30, length:2 assign to HK4Test
-          if (HK4Test=="HK"){
-              assign "4" to segmentsCount
-              capture line:7, column:30, length:2 assign to HK5Test
-              if (HK5Test=="HK"){
+        assign "3" to segmentsCount
+        capture line:4, column:2, length:2 assign to seg_No3
+        capture line:5, column:30, length:2 assign to HK4Test
+        if (HK4Test=="HK"){
+            assign "4" to segmentsCount
+            capture line:5, column:2, length:2 assign to seg_No4
+            capture line:6, column:30, length:2 assign to HK5Test
+            if (HK5Test=="HK"){
                 assign "5" to segmentsCount
-                capture line:8, column:30, length:2 assign to HK6Test
+                capture line:6, column:2, length:2 assign to seg_No5
+                capture line:7, column:30, length:2 assign to HK6Test
                 if (HK6Test=="HK"){
                     assign "6" to segmentsCount
-                    capture line:9, column:30, length:2 assign to HK7Test
+                    capture line:7, column:2, length:2 assign to seg_No6
+                    capture line:8, column:30, length:2 assign to HK7Test
                     if (HK7Test=="HK"){
                         send "SmartFlow now working on more than 6 segments"
                         ask "ignore?" assign to qz5
@@ -158,11 +123,57 @@ if (HK2Test=="HK"){
                         call "test1"
                     }
                 }
-              }
-          }
+            }
         }
-      }
-}
+        }
+    }
+
+    }
+    else{
+    capture line:3, column:30, length:2 assign to HK2Test
+    if (HK2Test=="HK"){
+    assign "1" to segmentsCount
+    capture line:3, column:2, length:2 assign to seg_No1
+    capture line:3, column:6, length:2 assign to Airline1
+    capture line:3, column:15, length:5 assign to TravelDate
+    capture line:3, column:23, length:3 assign to OriginCity
+    capture line:3, column:32, length:1 assign to PassengerCount
+    capture line:4, column:30, length:2 assign to HKnextTest
+    capture line:3, column:35, length:4 assign to TravelTime
+    capture line:3, column:35, length:2 assign to TravelTime1
+    capture line:3, column:37, length:2 assign to TravelTime2
+        if (HKnextTest=="HK"){
+            assign "2" to segmentsCount
+            capture line:4, column:2, length:2 assign to seg_No2
+            capture line:5, column:30, length:2 assign to HK3Test
+            if (HK3Test=="HK"){
+            assign "3" to segmentsCount
+            capture line:5, column:2, length:2 assign to seg_No3
+            capture line:6, column:30, length:2 assign to HK4Test
+            if (HK4Test=="HK"){
+                assign "4" to segmentsCount
+                capture line:6, column:2, length:2 assign to seg_No4
+                capture line:7, column:30, length:2 assign to HK5Test
+                if (HK5Test=="HK"){
+                    assign "5" to segmentsCount
+                    capture line:7, column:2, length:2 assign to seg_No5
+                    capture line:8, column:30, length:2 assign to HK6Test
+                    if (HK6Test=="HK"){
+                        assign "6" to segmentsCount
+                        capture line:8, column:2, length:2 assign to seg_No6
+                        capture line:9, column:30, length:2 assign to HK7Test
+                        if (HK7Test=="HK"){
+                            send "SmartFlow now working on more than 6 segments"
+                            ask "ignore?" assign to qz5
+                            send "ig"
+                            call "test1"
+                        }
+                    }
+                }
+            }
+            }
+        }
+    }
 else{
   send "Not Confirmed Segemnts please, check again!"
   ask "Stop and Review" assign to qz5
@@ -249,10 +260,16 @@ else{
   capture line:2, column:1, length:1 assign to checkpast
   capture line:2, column:1, length:2 assign to checktoday
   if (checkpast == "-"){
-    send "Flight Departed!"
-    ask "Ignore!" assign to qz5
-    send "ig"
-  }
+        send "RTA"
+        choose "Is flight in the past?" {
+            when ("Yes"){
+                send "Ig"
+            }
+            when ("No"){
+
+            }
+        }
+    }
   if (checktoday == " 0"){
     send "DF"  +TravelTime1 +"*60-" +TravelTime2 +"-" +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 
     capture line:2, column:1, length:1 assign to checkTimePast
@@ -377,6 +394,7 @@ if (OriginCity=="SSH"){
           capture line:1, column:1, length:20 assign to emdTest
           if (emdTest != "NO TSM RECORD EXISTS"){
           send "EMD! Please stop and check."
+          mandatory ask "Ignore" assign to qz5
           send "ig"
           }
 
@@ -682,6 +700,9 @@ if (Bg1 =="NO"){
 if (Bg1 =="0 "){
     assign "0P" to Bg1
 }
+if (Bg1 =="0K"){
+    assign "0P" to Bg1
+}
 
 if (Bg2 ==""){
     assign "0p" to Bg2
@@ -692,6 +713,10 @@ if (Bg2 =="NO"){
 if (Bg2 =="0 "){
     assign "0P" to Bg2
 }
+if (Bg2 =="0K"){
+    assign "0P" to Bg2
+}
+
     
 if (Bg3 ==""){
     assign "0p" to Bg3
@@ -700,6 +725,9 @@ if (Bg3 =="NO"){
     assign "0p" to Bg3
 }
 if (Bg3 =="0 "){
+    assign "0P" to Bg3
+}
+if (Bg3 =="0K"){
     assign "0P" to Bg3
 }
 
@@ -712,6 +740,9 @@ if (Bg4 =="NO"){
 if (Bg4 =="0 "){
     assign "0P" to Bg4
 }
+if (Bg4 =="0K"){
+    assign "0P" to Bg4
+}
         
 if (Bg5 ==""){
     assign "0p" to Bg5
@@ -720,6 +751,9 @@ if (Bg5 =="NO"){
     assign "0p" to Bg5
 }
 if (Bg5 =="0 "){
+    assign "0P" to Bg5
+} 
+if (Bg5 =="0K"){
     assign "0P" to Bg5
 }        
 
@@ -732,8 +766,48 @@ if (Bg6 =="NO"){
 if (Bg6 =="0 "){
     assign "0P" to Bg6
 }
+if (Bg6 =="0K"){
+    assign "0P" to Bg6
+}
 
-  send "tqt/t500"
+  send "TQT/T500"
+  capture line:2, column:1, length:3 assign to TQTNumber1
+  capture line:2, column:42, length:10 assign to TQTPrice1
+  capture line:3, column:1, length:3 assign to TQTNumber2
+  capture line:3, column:42, length:10 assign to TQTPrice2
+  capture line:4, column:1, length:3 assign to TQTNumber3
+  capture line:4, column:42, length:10 assign to TQTPrice3
+  capture line:5, column:1, length:3 assign to TQTNumber4
+  capture line:5, column:42, length:10 assign to TQTPrice4
+  capture line:6, column:1, length:3 assign to TQTNumber5
+  capture line:6, column:42, length:10 assign to TQTPrice5
+  capture line:7, column:1, length:3 assign to TQTNumber6
+  capture line:7, column:42, length:10 assign to TQTPrice6
+  capture line:8, column:1, length:3 assign to TQTNumber7
+  capture line:8, column:42, length:10 assign to TQTPrice7
+  capture line:9, column:1, length:3 assign to TQTNumber8
+  capture line:9, column:42, length:10 assign to TQTPrice8
+  capture line:10, column:1, length:3 assign to TQTNumber9
+  capture line:10, column:42, length:10 assign to TQTPrice9
+  capture line:11, column:1, length:3 assign to TQTNumber10
+  capture line:11, column:42, length:10 assign to TQTPrice10
+  capture line:12, column:1, length:3 assign to TQTNumber11
+  capture line:12, column:42, length:10 assign to TQTPrice11
+  capture line:13, column:1, length:3 assign to TQTNumber12
+  capture line:13, column:42, length:10 assign to TQTPrice12
+  capture line:14, column:1, length:3 assign to TQTNumber13
+  capture line:14, column:42, length:10 assign to TQTPrice13
+  capture line:15, column:1, length:3 assign to TQTNumber14
+  capture line:15, column:42, length:10 assign to TQTPrice14
+  capture line:16, column:1, length:3 assign to TQTNumber15
+  capture line:16, column:42, length:10 assign to TQTPrice15
+  capture line:17, column:1, length:3 assign to TQTNumber16
+  capture line:17, column:42, length:10 assign to TQTPrice16
+  capture line:18, column:1, length:3 assign to TQTNumber17
+  capture line:18, column:42, length:10 assign to TQTPrice17
+  capture line:19, column:1, length:3 assign to TQTNumber18
+  capture line:19, column:42, length:10 assign to TQTPrice18
+
   capture line:1, column:1, length:2 assign to testTST
     
   capture line:2, column:35, length:3 assign to firstCurr
@@ -812,6 +886,656 @@ else{
         assign "0" to previousTotalDeal
     }
 
+assign "0" to heighestTST
+  if (TQTNumber1=="DEL"){
+    assign "0" to TQTNumber1
+  } 
+  if (TQTNumber1==""){
+    assign "0" to TQTNumber1
+  }
+  if (TQTNumber2=="DEL"){
+    assign "0" to TQTNumber2
+  } 
+  if (TQTNumber2==""){
+    assign "0" to TQTNumber2
+  }
+  if (TQTNumber3=="DEL"){
+    assign "0" to TQTNumber3
+  } 
+  if (TQTNumber3==""){
+    assign "0" to TQTNumber3
+  }
+  if (TQTNumber4=="DEL"){
+    assign "0" to TQTNumber4
+  } 
+  if (TQTNumber4==""){
+    assign "0" to TQTNumber4
+  }
+  if (TQTNumber5=="DEL"){
+    assign "0" to TQTNumber5
+  } 
+  if (TQTNumber5==""){
+    assign "0" to TQTNumber5
+  }
+  if (TQTNumber6=="DEL"){
+    assign "0" to TQTNumber6
+  } 
+  if (TQTNumber6==""){
+    assign "0" to TQTNumber6
+  }
+  if (TQTNumber7=="DEL"){
+    assign "0" to TQTNumber7
+  } 
+  if (TQTNumber7==""){
+    assign "0" to TQTNumber7
+  }
+  if (TQTNumber8=="DEL"){
+    assign "0" to TQTNumber8
+  } 
+  if (TQTNumber8==""){
+    assign "0" to TQTNumber8
+  }
+  if (TQTNumber9=="DEL"){
+    assign "0" to TQTNumber9
+  } 
+  if (TQTNumber9==""){
+    assign "0" to TQTNumber9
+  }
+  if (TQTNumber10=="DEL"){
+    assign "0" to TQTNumber10
+  } 
+  if (TQTNumber10==""){
+    assign "0" to TQTNumber10
+  }
+  if (TQTNumber11=="DEL"){
+    assign "0" to TQTNumber11
+  } 
+  if (TQTNumber11==""){
+    assign "0" to TQTNumber11
+  }
+  if (TQTNumber12=="DEL"){
+    assign "0" to TQTNumber12
+  } 
+  if (TQTNumber12==""){
+    assign "0" to TQTNumber12
+  }
+  if (TQTNumber13=="DEL"){
+    assign "0" to TQTNumber13
+  } 
+  if (TQTNumber13==""){
+    assign "0" to TQTNumber13
+  }
+  if (TQTNumber14=="DEL"){
+    assign "0" to TQTNumber14
+  } 
+  if (TQTNumber14==""){
+    assign "0" to TQTNumber14
+  }
+  if (TQTNumber15=="DEL"){
+    assign "0" to TQTNumber15
+  } 
+  if (TQTNumber15==""){
+    assign "0" to TQTNumber15
+  }
+  if (TQTNumber16=="DEL"){
+    assign "0" to TQTNumber16
+  } 
+  if (TQTNumber16==""){
+    assign "0" to TQTNumber16
+  }
+  if (TQTNumber17=="DEL"){
+    assign "0" to TQTNumber17
+  } 
+  if (TQTNumber17==""){
+    assign "0" to TQTNumber17
+  }
+  if (TQTNumber18=="DEL"){
+    assign "0" to TQTNumber18
+  } 
+  if (TQTNumber18==""){
+    assign "0" to TQTNumber18
+  }
+
+  if (TQTPrice1 =="E TTH     "){
+      assign "0" to TQTPrice1
+  }
+  if (TQTPrice2 =="E TTH     "){
+      assign "0" to TQTPrice2
+  }
+  if (TQTPrice3 =="E TTH     "){
+      assign "0" to TQTPrice3
+  }
+  if (TQTPrice4 =="E TTH     "){
+      assign "0" to TQTPrice4
+  }
+  if (TQTPrice5 =="E TTH     "){
+      assign "0" to TQTPrice5
+  }
+  if (TQTPrice6 =="E TTH     "){
+      assign "0" to TQTPrice6
+  }
+  if (TQTPrice7 =="E TTH     "){
+      assign "0" to TQTPrice7
+  }
+  if (TQTPrice8 =="E TTH     "){
+      assign "0" to TQTPrice8
+  }
+  if (TQTPrice9 =="E TTH     "){
+      assign "0" to TQTPrice9
+  }
+  if (TQTPrice10 =="E TTH     "){
+      assign "0" to TQTPrice10
+  }
+  if (TQTPrice11 =="E TTH     "){
+      assign "0" to TQTPrice11
+  }
+  if (TQTPrice12 =="E TTH     "){
+      assign "0" to TQTPrice12
+  }
+  if (TQTPrice13 =="E TTH     "){
+      assign "0" to TQTPrice13
+  }
+  if (TQTPrice14 =="E TTH     "){
+      assign "0" to TQTPrice14
+  }
+  if (TQTPrice15 =="E TTH     "){
+      assign "0" to TQTPrice15
+  }
+  if (TQTPrice16 =="E TTH     "){
+      assign "0" to TQTPrice16
+  }
+  if (TQTPrice17 =="E TTH     "){
+      assign "0" to TQTPrice17
+  }
+  if (TQTPrice18 =="E TTH     "){
+      assign "0" to TQTPrice18
+  }
+
+  assign "0" to heighestPrice
+        
+  if (TQTNumber1!="0"){
+    if (TQTPrice1>heighestPrice){
+      assign TQTNumber1 to heighestTST
+      assign TQTPrice1 to heighestPrice
+    }
+  }
+  if (TQTNumber2!="0"){
+    if (TQTPrice2>heighestPrice){
+      assign TQTNumber2 to heighestTST
+      assign TQTPrice2 to heighestPrice
+    }
+  }
+  if (TQTNumber3!="0"){
+    if (TQTPrice3>heighestPrice){
+      assign TQTNumber3 to heighestTST
+      assign TQTPrice3 to heighestPrice
+    }
+  }
+  if (TQTNumber4!="0"){
+    if (TQTPrice4>heighestPrice){
+      assign TQTNumber4 to heighestTST
+      assign TQTPrice4 to heighestPrice
+    }
+  }
+  if (TQTNumber5!="0"){
+    if (TQTPrice5>heighestPrice){
+      assign TQTNumber5 to heighestTST
+      assign TQTPrice5 to heighestPrice
+    }
+  }
+  if (TQTNumber6!="0"){
+    if (TQTPrice6>heighestPrice){
+      assign TQTNumber6 to heighestTST
+      assign TQTPrice6 to heighestPrice
+    }
+  }
+  if (TQTNumber7!="0"){
+    if (TQTPrice7>heighestPrice){
+      assign TQTNumber7 to heighestTST
+      assign TQTPrice7 to heighestPrice
+    }
+  }
+  if (TQTNumber8!="0"){
+    if (TQTPrice8>heighestPrice){
+      assign TQTNumber8 to heighestTST
+      assign TQTPrice8 to heighestPrice
+    }
+  }
+  if (TQTNumber9!="0"){
+    if (TQTPrice9>heighestPrice){
+      assign TQTNumber9 to heighestTST
+      assign TQTPrice9 to heighestPrice
+    }
+  }
+  if (TQTNumber10!="0"){
+    if (TQTPrice10>heighestPrice){
+      assign TQTNumber10 to heighestTST
+      assign TQTPrice10 to heighestPrice
+    }
+  }
+  if (TQTNumber11!="0"){
+    if (TQTPrice11>heighestPrice){
+      assign TQTNumber11 to heighestTST
+      assign TQTPrice11 to heighestPrice
+    }
+  }
+  if (TQTNumber12!="0"){
+    if (TQTPrice12>heighestPrice){
+      assign TQTNumber12 to heighestTST
+      assign TQTPrice12 to heighestPrice
+    }
+  }
+  if (TQTNumber13!="0"){
+    if (TQTPrice13>heighestPrice){
+      assign TQTNumber13 to heighestTST
+      assign TQTPrice13 to heighestPrice
+    }
+  }
+  if (TQTNumber14!="0"){
+    if (TQTPrice14>heighestPrice){
+      assign TQTNumber14 to heighestTST
+      assign TQTPrice14 to heighestPrice
+    }
+  }
+  if (TQTNumber15!="0"){
+    if (TQTPrice15>heighestPrice){
+      assign TQTNumber15 to heighestTST
+      assign TQTPrice15 to heighestPrice
+    }
+  }
+  if (TQTNumber16!="0"){
+    if (TQTPrice16>heighestPrice){
+      assign TQTNumber16 to heighestTST
+      assign TQTPrice16 to heighestPrice
+    }
+  }
+  if (TQTNumber17!="0"){
+    if (TQTPrice17>heighestPrice){
+      assign TQTNumber17 to heighestTST
+      assign TQTPrice17 to heighestPrice
+    }
+  }
+  if (TQTNumber18!="0"){
+    if (TQTPrice18>heighestPrice){
+      assign TQTNumber18 to heighestTST
+      assign TQTPrice18 to heighestPrice
+    }
+  }
+
+   send "TTH/T" +heighestTST
+
+assign "" to FF_Statement
+send "MD-AFF"
+capture line:1, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+  assign "True" to FF_Exist
+    capture line:1, column:10, length:1 assign to FF1
+    capture line:1, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF1
+        capture line:1, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF1
+            capture line:1, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF1
+                capture line:1, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF1
+                    capture line:1, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF1
+                        capture line:1, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF1
+                            capture line:1, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF1
+                                capture line:1, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF1
+                                    capture line:1, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF1
+                                        capture line:1, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF1
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+capture line:2, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+    capture line:2, column:10, length:1 assign to FF2
+    capture line:2, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF2
+        capture line:2, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF2
+            capture line:2, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF2
+                capture line:2, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF2
+                    capture line:2, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF2
+                        capture line:2, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF2
+                            capture line:2, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF2
+                                capture line:2, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF2
+                                    capture line:2, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF2
+                                        capture line:2, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF2
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+capture line:3, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+    capture line:3, column:10, length:1 assign to FF3
+    capture line:3, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF3
+        capture line:3, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF3
+            capture line:3, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF3
+                capture line:3, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF3
+                    capture line:3, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF3
+                        capture line:3, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF3
+                            capture line:3, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF3
+                                capture line:3, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF3
+                                    capture line:3, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF3
+                                        capture line:3, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF3
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+capture line:4, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+    capture line:4, column:10, length:1 assign to FF4
+    capture line:4, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF4
+        capture line:4, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF4
+            capture line:4, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF4
+                capture line:4, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF4
+                    capture line:4, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF4
+                        capture line:4, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF4
+                            capture line:4, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF4
+                                capture line:4, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF4
+                                    capture line:4, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF4
+                                        capture line:4, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF4
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+capture line:5, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+    capture line:5, column:10, length:1 assign to FF5
+    capture line:5, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF5
+        capture line:5, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF5
+            capture line:5, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF5
+                capture line:5, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF5
+                    capture line:5, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF5
+                        capture line:5, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF5
+                            capture line:5, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF5
+                                capture line:5, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF5
+                                    capture line:5, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF5
+                                        capture line:5, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF5
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+capture line:6, column:1, length:3 assign to check_AFF
+if (check_AFF == "AFF"){
+    capture line:6, column:10, length:1 assign to FF6
+    capture line:6, column:11, length:1 assign to FF_check
+    if (FF_check != " "){
+        append FF_check to FF6
+        capture line:6, column:12, length:1 assign to FF_check
+        if (FF_check != " "){
+            append FF_check to FF6
+            capture line:6, column:13, length:1 assign to FF_check
+            if (FF_check != " "){
+                append FF_check to FF6
+                capture line:6, column:14, length:1 assign to FF_check
+                if (FF_check != " "){
+                    append FF_check to FF6
+                    capture line:6, column:15, length:1 assign to FF_check
+                    if (FF_check != " "){
+                        append FF_check to FF6
+                        capture line:6, column:16, length:1 assign to FF_check
+                        if (FF_check != " "){
+                            append FF_check to FF6
+                            capture line:6, column:17, length:1 assign to FF_check
+                            if (FF_check != " "){
+                                append FF_check to FF6
+                                capture line:6, column:18, length:1 assign to FF_check
+                                if (FF_check != " "){
+                                    append FF_check to FF6
+                                    capture line:6, column:19, length:1 assign to FF_check
+                                    if (FF_check != " "){
+                                        append FF_check to FF6
+                                        capture line:6, column:20, length:1 assign to FF_check
+                                        if (FF_check != " "){
+                                            append FF_check to FF6
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
+assign "True" to general_FF 
+if (segmentsCount > "1"){
+    if (FF1 != FF2){
+        assign "False" to general_FF 
+    }
+}
+if (segmentsCount > "2"){
+    if (FF2 != FF3){
+        assign "False" to general_FF 
+    }
+}
+if (segmentsCount > "3"){
+    if (FF3 != FF4){
+        assign "False" to general_FF 
+    }
+}
+if (segmentsCount > "4"){
+    if (FF4 != FF5){
+        assign "False" to general_FF 
+    }
+}
+if (segmentsCount > "5"){
+    if (FF5 != FF6){
+        assign "False" to general_FF 
+    }
+}
+
+if (general_FF != "True"){
+    append seg_No1 to FF_Seg1
+    append FF1 to FF_Seg1_FF
+    assign "" to FF_Seg2
+    assign "" to FF_Seg2_FF
+    assign "" to FF_Seg3
+    assign "" to FF_Seg3_FF
+    assign "" to FF_Seg4
+    assign "" to FF_Seg4_FF
+    assign "" to FF_Seg5
+    assign "" to FF_Seg5_FF
+    assign "" to FF_Seg6
+    assign "" to FF_Seg6_FF
+
+    if (segmentsCount > "1"){
+        if (FF1 != FF2){
+            append seg_No2 to FF_Seg2
+            append FF2 to FF_Seg2_FF
+        }
+    }
+    if (segmentsCount > "2"){
+        if (FF2 != FF3){
+            append seg_No3 to FF_Seg3
+            append FF3 to FF_Seg3_FF
+        }
+    }
+    if (segmentsCount > "3"){
+        if (FF3 != FF4){
+            append seg_No4 to FF_Seg4
+            append FF4 to FF_Seg4_FF
+        }
+    }
+    if (segmentsCount > "4"){
+        if (FF4 != FF5){
+            append seg_No5 to FF_Seg5
+            append FF5 to FF_Seg5_FF
+        }
+    }
+    if (segmentsCount > "5"){
+        if (FF5 != FF6){
+            append seg_No6 to FF_Seg6
+            append FF6 to FF_Seg6_FF
+        }
+    }
+    append "/FF" to FF_Statement
+    append FF_Seg1 +"-" +FF_Seg1_FF to FF_Statement
+    if (FF_Seg2 != ""){
+        append "/FF" +FF_Seg2 +"-" +FF_Seg2_FF to FF_Statement
+    }
+    if (FF_Seg3 != ""){
+        append "/FF" +FF_Seg3 +"-" +FF_Seg3_FF to FF_Statement
+    }
+    if (FF_Seg4 != ""){
+        append "/FF" +FF_Seg4 +"-" +FF_Seg4_FF to FF_Statement
+    }
+    if (FF_Seg5 != ""){
+        append "/FF" +FF_Seg5 +"-" +FF_Seg5_FF to FF_Statement
+    }
+    if (FF_Seg6 != ""){
+        append "/FF" +FF_Seg6 +"-" +FF_Seg6_FF to FF_Statement
+    }
+    
+}
+else{
+  if (FF_Exist == "True"){
+    append "/FF-" +FF1 to FF_Statement
+  }
+}
+if (FF_Exist != "True"){
+    assign ""  to FF_Statement
+  }
+
 
           assign "/R,U,UP" to ref62
           //FXR/K
@@ -841,7 +1565,10 @@ else{
           if (thisOfficeName == "CAIEG3645"){
             assign " " to ref62
           }
-          send "FXR/K"+ref62
+
+
+
+          send "FXR/K"+ref62 +FF_Statement
 
 capture line:1, column:1, length:8 assign to checkAttn
 if (checkAttn=="**ATTN**"){
@@ -1304,7 +2031,7 @@ if (fBg6 =="0 "){
                       send "ir"
                       send "ir"
                       send "tte/all"              
-                      send "FXB/K"+ref62
+                      send "FXB/K"+ref62 +FF_Statement
                       send "fqq1"
 
             assign "True" to BaggageChecker1
@@ -1581,7 +2308,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                       if (CheckSM == "SIMULTANEOUS"){
                       send "ir"
                       send "tte/all"
-                      send "FXB/K"+ref62
+                      send "FXB/K"+ref62 +FF_Statement
                       send "rf" +agtName +";er" 
                       send "er"
                       }
@@ -1596,7 +2323,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                            when ("No"){
                               send "ir"
                               send "tte/all"
-                              send "FXB/K"+ref62
+                              send "FXB/K"+ref62 +FF_Statement
                               send "rf" +agtName +";er"
                               capture line:1, column:1, length:7 assign to Warning
                               if (Warning =="WARNING"){send "er"
@@ -1605,7 +2332,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
                                   if (CheckSM == "SIMULTANEOUS"){
                                   send "ir"
                                   send "tte/all"
-                                  send "FXB/K"+ref62
+                                  send "FXB/K"+ref62 +FF_Statement
                                   send "rf" +agtName +";er" 
                                   send "er"
                                   }
@@ -1703,7 +2430,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
               when ("Try SBF"){
           
                      //FXR/K/SBF-1
-          send "FXR/K" +ref62 +"/SBF-1"
+          send "FXR/K" +ref62 +FF_Statement +"/SBF-1"
 
 capture line:6, column:20, length:6 assign to totals6
 capture line:7, column:20, length:6 assign to totals7
@@ -2159,14 +2886,14 @@ if (fBg6 =="0 "){
                       send "ir"
                       send "ir"
                       send "tte/all"
-                      send "FXB/K" +ref62 +"/SBF-1"
+                      send "FXB/K" +ref62 +FF_Statement +"/SBF-1"
                       send "rf" +agtName +";er"
                       send "er"
                       capture line:1, column: 1, length: 12 assign to CheckSM
                       if (CheckSM == "SIMULTANEOUS"){
                       send "ir"
                       send "tte/all"
-                      send "FXB/K" +ref62 +"/SBF-1"
+                      send "FXB/K" +ref62 +FF_Statement +"/SBF-1"
                       send "rf" +agtName +";er" 
                       send "er"
                       }
@@ -2181,7 +2908,7 @@ if (fBg6 =="0 "){
                            when ("No"){
                               send "ir"
                               send "tte/all"
-                              send "FXB/K" +ref62 +"/SBF-1"
+                              send "FXB/K" +ref62 +FF_Statement +"/SBF-1"
                               send "rf" +agtName +";er"
                               capture line:1, column:1, length:7 assign to Warning
                               if (Warning =="WARNING"){send "er"
@@ -2190,7 +2917,7 @@ if (fBg6 =="0 "){
                                   if (CheckSM == "SIMULTANEOUS"){
                                   send "ir"
                                   send "tte/all"
-                                  send "FXB/K" +ref62 +"/SBF-1"
+                                  send "FXB/K" +ref62 +FF_Statement +"/SBF-1"
                                   send "rf" +agtName +";er" 
                                   send "er"
                                   }
