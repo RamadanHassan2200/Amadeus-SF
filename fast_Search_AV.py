@@ -80,6 +80,7 @@
   }
   if (starFound == "True"){
     assign "True" to After_Void_Refundable
+    send "IR"
       send "RTA"
     capture line:2, column:30, length:2 assign to HK1Test
     if (HK1Test=="HK"){
@@ -3047,13 +3048,14 @@ if (FF_Exist != "True"){
     send "DF" +totalRefundAmount +"-" +totalNewPrice
     capture line:2, column:1, length:10 assign to totalDealAmount
 
-    if (totalDealAmount >=100){
+    if (totalDealAmount >= "100"){
       if (After_Void_Refundable != "False"){
         send "SRTSuccess"
       }
     }
 
   }
- 
+    
+    send "IG"
 
   
