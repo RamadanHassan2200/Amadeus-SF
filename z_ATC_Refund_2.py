@@ -3875,6 +3875,9 @@ assign "" to checkNP
 if (PCC_ID =="71201675"){
   assign "/T-NP" to checkNP
 }
+if (PCC_ID =="71212960"){
+  assign "/T-NP" to checkNP
+}
 send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3 +"/ATC" +checkNP
 capture line:1, column:1, length:21 assign to checkPending
 if (checkPending=="NO FARE FOR BOOKING C"){
