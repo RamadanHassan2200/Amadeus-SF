@@ -1,5 +1,4 @@
-// IAH_KU
-
+// IAH_KU_BEY_MS
 //retrirval
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
@@ -160,6 +159,19 @@ else{
 }
 }
 
+  if (Airline1!="KU"){
+    if (Airline1!="MS"){
+      send "This PNR is not for KU or MS airline"
+      choose "Please select airline"{
+        when ("KU"){
+          assign "KU" to Airline1 
+        }
+        when ("MS"){
+          assign "MS" to Airline1
+        }
+      }
+    }
+  }
 
   send "tqt/t500"
   capture line:2, column:1, length:3 assign to TQTNumber1
@@ -1947,6 +1959,204 @@ else {
     }
     }
 
+    if (Airline1 == "MS"){
+      send "RTF"
+      assign "False" to fm_Exist
+      capture line:2, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:3, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:4, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:5, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:6, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:7, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:8, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:9, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:10, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:11, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:12, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:13, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:14, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:15, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:16, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:17, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:18, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:19, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:20, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:21, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:22, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:23, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      if (fm_Exist == "False"){
+      capture line:24, column:1, length:2 assign to fmline
+      if (fmline == ")>"){
+       send "MD"
+      }
+      capture line:2, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:3, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:4, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:5, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:6, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:7, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:8, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:9, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:10, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:11, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:12, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:13, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:14, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:15, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:16, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:17, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:18, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:19, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:20, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:21, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:22, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      capture line:23, column:5, length:2 assign to fmline
+      if (fmline == "FM"){
+        assign "True" to fm_Exist
+      }
+      }
+
+      if (fm_Exist != "False"){
+        ask "Enter Currnt commision amount:" assign to commission
+      }
+      else{
+        assign "0" to commission
+      }
+      call "z_FM_DEL"
+      send "FM" + commission
+      send "DF" + commission + ";5"
+      capture line:2, column:1, length:2 assign to deal_commission
+    }
+
     assign "0" to first_TST
     assign "0" to second_TST
     assign "0" to third_TST
@@ -2006,40 +2216,44 @@ if (USD_Currency=="USD"){
     assign "0" to eighth_TQT_FM
     assign "0" to ninth_TQT_FM
 
+    
+if (Airline1 == "KU"){
+    assign "5" to deal_commission
+}
 if (first_TST != "0"){
-    send "TQT/T" +first_TST +"/FM5"
+    send "TQT/T" +first_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to fisrt_TQT_FM
 }
 if (second_TST != "0"){
-    send "TQT/T" +second_TST +"/FM5"
+    send "TQT/T" +second_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to second_TQT_FM
 }
 if (third_TST != "0"){
-    send "TQT/T" +third_TST +"/FM5"
+    send "TQT/T" +third_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to third_TQT_FM
 }
 if (fourth_TST != "0"){
-    send "TQT/T" +fourth_TST +"/FM5"
+    send "TQT/T" +fourth_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to fourth_TQT_FM
 }
 if (fifth_TST != "0"){
-    send "TQT/T" +fifth_TST +"/FM5"
+    send "TQT/T" +fifth_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to fifth_TQT_FM
 }
 if (sixth_TST != "0"){
-    send "TQT/T" +sixth_TST +"/FM5"
+    send "TQT/T" +sixth_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to sixth_TQT_FM
 }   
 if (seventh_TST != "0"){
-    send "TQT/T" +seventh_TST +"/FM5"
+    send "TQT/T" +seventh_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to seventh_TQT_FM
 }
 if (eighth_TST != "0"){
-    send "TQT/T" +eighth_TST +"/FM5"
+    send "TQT/T" +eighth_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to eighth_TQT_FM
 }
 if (ninth_TST != "0"){
-    send "TQT/T" +ninth_TST +"/FM5"
+    send "TQT/T" +ninth_TST +"/FM" + deal_commission
     capture line:7, column:23, length:10 assign to ninth_TQT_FM
 }
 
@@ -2116,9 +2330,16 @@ if (dfnextcheck == ">"){
     }
 
    
-call "z_FM_DEL"
 
-send "FM5"
+
+if (Airline1 == "KU"){
+  call "z_FM_DEL"
+  send "FM0"
+}
+
+
+
+
 call "z_FOPCASH_DEL" 
 send "PDY"
 send "PT*1"        
@@ -2138,4 +2359,4 @@ if (checkAfterTTP== "GTW/ETS: UNABLE TO PROCESS - TIMEOUT"){
 call "z_Name Sorter"
 ask "ok?" assign to qz5
 
-call "IAH_KU"
+call "IAH_KU_BEY_MS"
