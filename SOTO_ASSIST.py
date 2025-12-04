@@ -233,13 +233,20 @@ if (PNRNumber > "0"){
     send "RT" + PNR1
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -249,13 +256,20 @@ if (PNRNumber > "1"){
     send "RT" + PNR2
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -265,13 +279,20 @@ if (PNRNumber > "2"){
     send "RT" + PNR3
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -281,13 +302,20 @@ if (PNRNumber > "3"){
     send "RT" + PNR4
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -297,13 +325,20 @@ if (PNRNumber > "4"){
     send "RT" + PNR5
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -312,13 +347,20 @@ if (PNRNumber > "5"){
     send "RT" + PNR6
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -328,13 +370,20 @@ if (PNRNumber > "6"){
     send "RT" + PNR7
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -344,13 +393,20 @@ if (PNRNumber > "7"){
     send "RT" + PNR8
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -360,13 +416,20 @@ if (PNRNumber > "8"){
     send "RT" + PNR9
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -376,13 +439,20 @@ if (PNRNumber > "9"){
     send "RT" + PNR10
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -392,13 +462,20 @@ if (PNRNumber > "10"){
     send "RT" + PNR11
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -408,13 +485,20 @@ if (PNRNumber > "11"){
     send "RT" + PNR12
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -424,13 +508,20 @@ if (PNRNumber > "12"){
     send "RT" + PNR13
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -439,13 +530,20 @@ if (PNRNumber > "13"){
     send "RT" + PNR14
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -455,13 +553,20 @@ if (PNRNumber > "14"){
     send "RT" + PNR15
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -471,13 +576,20 @@ if (PNRNumber > "15"){
     send "RT" + PNR16
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -487,13 +599,20 @@ if (PNRNumber > "16"){
     send "RT" + PNR17
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -503,13 +622,20 @@ if (PNRNumber > "17"){
     send "RT" + PNR18
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -519,13 +645,20 @@ if (PNRNumber > "18"){
     send "RT" + PNR19
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -535,13 +668,20 @@ if (PNRNumber > "19"){
     send "RT" + PNR20
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -551,13 +691,20 @@ if (PNRNumber > "20"){
     send "RT" + PNR21
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -567,13 +714,20 @@ if (PNRNumber > "21"){
     send "RT" + PNR22
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -583,13 +737,20 @@ if (PNRNumber > "22"){
     send "RT" + PNR23
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -599,13 +760,20 @@ if (PNRNumber > "23"){
     send "RT" + PNR24
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -615,13 +783,20 @@ if (PNRNumber > "24"){
     send "RT" + PNR25
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -631,13 +806,20 @@ if (PNRNumber > "25"){
     send "RT" + PNR26
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -647,13 +829,20 @@ if (PNRNumber > "26"){
     send "RT" + PNR27
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -663,13 +852,20 @@ if (PNRNumber > "27"){
     send "RT" + PNR28
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -679,13 +875,20 @@ if (PNRNumber > "28"){
     send "RT" + PNR29
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -695,13 +898,20 @@ if (PNRNumber > "29"){
     send "RT" + PNR30
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -711,13 +921,20 @@ if (PNRNumber > "30"){
     send "RT" + PNR31
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -727,13 +944,20 @@ if (PNRNumber > "31"){
     send "RT" + PNR32
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -743,13 +967,20 @@ if (PNRNumber > "32"){
     send "RT" + PNR33
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -759,13 +990,20 @@ if (PNRNumber > "33"){
     send "RT" + PNR34
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -775,13 +1013,20 @@ if (PNRNumber > "34"){
     send "RT" + PNR35
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -791,13 +1036,20 @@ if (PNRNumber > "35"){
     send "RT" + PNR36
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -807,13 +1059,20 @@ if (PNRNumber > "36"){
     send "RT" + PNR37
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -823,13 +1082,20 @@ if (PNRNumber > "37"){
     send "RT" + PNR38
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -839,13 +1105,20 @@ if (PNRNumber > "38"){
     send "RT" + PNR39
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -855,13 +1128,20 @@ if (PNRNumber > "39"){
     send "RT" + PNR40
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -871,13 +1151,20 @@ if (PNRNumber > "40"){
     send "RT" + PNR41
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -887,13 +1174,20 @@ if (PNRNumber > "41"){
     send "RT" + PNR42
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -903,13 +1197,20 @@ if (PNRNumber > "42"){
     send "RT" + PNR43
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -919,13 +1220,20 @@ if (PNRNumber > "43"){
     send "RT" + PNR44
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -935,13 +1243,20 @@ if (PNRNumber > "44"){
     send "RT" + PNR45
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -951,13 +1266,20 @@ if (PNRNumber > "45"){
     send "RT" + PNR46
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -967,13 +1289,20 @@ if (PNRNumber > "46"){
     send "RT" + PNR47
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -983,13 +1312,20 @@ if (PNRNumber > "47"){
     send "RT" + PNR48
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -999,13 +1335,20 @@ if (PNRNumber > "48"){
     send "RT" + PNR49
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"
@@ -1015,13 +1358,20 @@ if (PNRNumber > "49"){
     send "RT" + PNR50
     send "IR"
     send shareCommand
+    capture line:1, column:1, length:10 assign to check_Share_Success
+    if (check_Share_Success == "RESTRICTED"){
+            assign "True" to escp
+            ask "Done?" assign to qz5
+    }
     send "RFSF;ER"
     capture line:1, column:1, length:7 assign to check_Share_Success
     if (check_Share_Success != "INVALID"){
         send "ER"
         capture line:1, column:1, length:7 assign to check_Share_Success
         if (check_Share_Success != "SECURED"){
-            ask "Done?" assign to qz5
+            if (escp == "True"){
+                ask "Done?" assign to qz5
+            }
         }
     }
     send "IG"

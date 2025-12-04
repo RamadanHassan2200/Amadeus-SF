@@ -1742,6 +1742,7 @@ assign "Please check the baggage in: " to baggageCheckerStatment
     if (baggageCheckerStatment != "Please check the baggage in: "){
       send "" +baggageCheckerStatment + " Segment(s)"
       ask "Continue with FXP?" assign to qz5
+      send "IR"
       send "FXP/R,UP"
       assign "1" to fxp_TST
       choose "Have got the requied TST?" until "Yes"{
@@ -1751,7 +1752,6 @@ assign "Please check the baggage in: " to baggageCheckerStatment
           }
       }
       send "tte/all"
-          send "fxr/k/R,UP"
         send "fxp/R,UP"
 group{
        mandatory ask "ENTER the Adult TST line ( Please take 01 insstead of 1" assign to TST1
@@ -2151,6 +2151,7 @@ else {
       else{
         assign "0" to commission
       }
+      call "z_FM_DEL"
       call "z_FM_DEL"
       send "FM" + commission
       send "DF" + commission + ";5"

@@ -1,0 +1,4043 @@
+{
+    "id": "order-2ffc7461-22fb-4805-81c6-80a824a50bee",
+    "createdAt": "2025-12-03T11:38:43+0000",
+    "updatedAt": "2025-12-03T21:19:22+0000",
+    "status": 58,
+    "paymentStatus": 78,
+    "_id": "69302143cf61df252c505132",
+    "orderNumber": "A251203724252",
+    "trackId": "aeb450ab-29e0-4d5c-beb1-f3eaabb89942",
+    "customerId": "63756f7a2bdadb522168c3bf",
+    "cartId": "69302024cdecd359dd6e3d32",
+    "storeId": 52,
+    "groupId": 2,
+    "products": [
+        {
+            "id": "prod-bc5761ac-46f5-40e7-8fa2-5e5960e30d33",
+            "createdAt": "2025-12-03T11:38:43+0000",
+            "updatedAt": "2025-12-03T11:43:00+0000",
+            "_id": "69302143ad5dd1624c1ad58f",
+            "options": {
+                "canDisplay": true,
+                "inputVat": 0,
+                "outputVat": 0,
+                "log": {
+                    "vat": 0,
+                    "details": {
+                        "items": [],
+                        "rate": 0.15,
+                        "subTotal": 0
+                    }
+                },
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 71,
+            "status": 58,
+            "vendorStatus": "Pending",
+            "supplierStatus": "Pending",
+            "qty": 1,
+            "valid": true,
+            "name": "vat",
+            "code": "vat",
+            "type": "vat",
+            "category": "vat",
+            "allowedPaymentMethods": [
+                {
+                    "provider": "checkoutcom",
+                    "label": "Credit Card",
+                    "applemid": "merchant.com.almosafer.alrajhi.travel"
+                },
+                {
+                    "provider": "tabby",
+                    "label": "Tabby"
+                },
+                {
+                    "provider": "tamara",
+                    "label": "Tamara"
+                },
+                {
+                    "provider": "stcpay",
+                    "label": "STC Pay"
+                }
+            ],
+            "price": {
+                "base": 0,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 0,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 0,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "id": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                        "total": 0
+                    },
+                    {
+                        "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                        "total": 0
+                    },
+                    {
+                        "id": "prod-011ed62e-ffa0-4a7f-b334-343e6fc179d2",
+                        "total": 0
+                    },
+                    {
+                        "id": "prod-985fc14e-367b-43ef-9ac6-37780edc7431",
+                        "total": 0
+                    },
+                    {
+                        "id": "prod-1eb826ad-db46-4bc9-8b6e-59d5b3e8b9e5",
+                        "total": 0
+                    }
+                ]
+            },
+            "isProduct": false,
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": 0,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 0,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 0,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "orderId": "69302143cf61df252c505132",
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "69302143ad5dd1624c1ad58f",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "69302143ad5dd1624c1ad58f",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Pending",
+                    "status": 71
+                }
+            ],
+            "emails": {
+                "ticket": true
+            },
+            "expiredAt": null,
+            "cartId": null,
+            "orderedAt": null,
+            "additionalData": {
+                "seatReservedTime": null,
+                "orderTracking": {
+                    "checkBookingTime": null,
+                    "pnrTime": null,
+                    "pricingTime": null,
+                    "tstTime": null,
+                    "startBookingTime": null
+                },
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Pending",
+            "ahsGroupName": "Almosafer IOS SA"
+        },
+        {
+            "id": "prod-011ed62e-ffa0-4a7f-b334-343e6fc179d2",
+            "createdAt": "2025-12-03T11:38:43+0000",
+            "updatedAt": "2025-12-03T11:43:00+0000",
+            "_id": "6930214364b1ad395c0d4e76",
+            "options": {
+                "canDisplay": true,
+                "inputVat": 0,
+                "outputVat": 0,
+                "maxUsageId": null,
+                "mainProductIds": [
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ],
+                "mainProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                "dbId": "67f66e2f1fcf66069dbba659",
+                "dbUpdatedAt": "2025-08-14T08:43:05.325",
+                "blockedRewards": null,
+                "blockedRedeems": null,
+                "mdrEnabled": true,
+                "mdrStatus": "MDR_APPLIED",
+                "mdrDetails": {
+                    "mdrKey": "flight_1_destination=hkt;flight_1_isdomestic=false;flight_1_isroundtrip=true;flight_1_validatingcarrier=ey",
+                    "mdrTargets": {
+                        "amount": "4.25%"
+                    },
+                    "mdrOriginalTargetValues": {
+                        "amount": "6%"
+                    }
+                },
+                "modifierDetails": [
+                    {
+                        "modifierCode": "variant_d",
+                        "modifierValue": 0,
+                        "ruleValueBeforeModifier": 96.22,
+                        "ruleValueAfterModifier": 96.22
+                    }
+                ],
+                "displayRule": "SHOW_ALL",
+                "ruleActionType": "MDR",
+                "ruleActionTypeDetails": {
+                    "type": "MDR",
+                    "originalAmount": "6%",
+                    "newAmount": "4.25%",
+                    "calculatedAmount": 96.22,
+                    "customRuleUser": "",
+                    "customRuleNotes": "",
+                    "customRuleId": ""
+                },
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 78,
+            "status": 58,
+            "vendorStatus": "58",
+            "supplierStatus": "58",
+            "qty": 1,
+            "valid": true,
+            "type": "rule",
+            "category": "rule",
+            "code": "alm_servicefee_variant_d",
+            "name": "Service fee",
+            "description": "Service fee",
+            "vendorConfirmationNumber": "OK",
+            "supplierConfirmationNumber": "OK",
+            "price": {
+                "base": 96.22,
+                "currencyRate": 1,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 96.22,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 96.22,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "id": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                        "total": 96.22,
+                        "vat": 0
+                    }
+                ]
+            },
+            "isProduct": false,
+            "additionalData": {
+                "couponCode": "ALM_Servicefee_variant_d",
+                "evaluatedOn": "OP_PERCENTAGE",
+                "promotionType": "SERVICE_FEE",
+                "seatReservedTime": null,
+                "orderTracking": {
+                    "checkBookingTime": null,
+                    "pnrTime": null,
+                    "pricingTime": null,
+                    "tstTime": null,
+                    "startBookingTime": null
+                },
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": 96.22,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 96.22,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 96.22,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "emails": {
+                "ticket": true
+            },
+            "orderId": "69302143cf61df252c505132",
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "6930214364b1ad395c0d4e76",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "6930214364b1ad395c0d4e76",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Authorised",
+                    "status": 78
+                }
+            ],
+            "expiredAt": null,
+            "cartId": null,
+            "orderedAt": null,
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Authorised",
+            "ahsGroupName": "Almosafer IOS SA"
+        },
+        {
+            "id": "prod-985fc14e-367b-43ef-9ac6-37780edc7431",
+            "createdAt": "2025-12-03T11:38:43+0000",
+            "updatedAt": "2025-12-03T11:43:00+0000",
+            "_id": "693021438a4a012a65a1198a",
+            "options": {
+                "canDisplay": true,
+                "inputVat": 0,
+                "outputVat": 0,
+                "maxUsageId": null,
+                "mainProductIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                ],
+                "mainProductId": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                "dbId": "67f66e2f1fcf66069dbba659",
+                "dbUpdatedAt": "2025-08-14T08:43:05.325",
+                "blockedRewards": null,
+                "blockedRedeems": null,
+                "mdrEnabled": true,
+                "mdrStatus": "MDR_APPLIED",
+                "mdrDetails": {
+                    "mdrKey": "flight_1_destination=jed;flight_1_isdomestic=false;flight_1_isroundtrip=true;flight_1_validatingcarrier=g9",
+                    "mdrTargets": {
+                        "amount": "4.75%"
+                    },
+                    "mdrOriginalTargetValues": {
+                        "amount": "6%"
+                    }
+                },
+                "modifierDetails": [
+                    {
+                        "modifierCode": "variant_d",
+                        "modifierValue": 0,
+                        "ruleValueBeforeModifier": 111.5702,
+                        "ruleValueAfterModifier": 111.5702
+                    }
+                ],
+                "displayRule": "SHOW_ALL",
+                "ruleActionType": "MDR",
+                "ruleActionTypeDetails": {
+                    "type": "MDR",
+                    "originalAmount": "6%",
+                    "newAmount": "4.75%",
+                    "calculatedAmount": 111.5702,
+                    "customRuleUser": "",
+                    "customRuleNotes": "",
+                    "customRuleId": ""
+                },
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 78,
+            "status": 58,
+            "vendorStatus": "58",
+            "supplierStatus": "58",
+            "qty": 1,
+            "valid": true,
+            "type": "rule",
+            "category": "rule",
+            "code": "alm_servicefee_variant_d",
+            "name": "Service fee",
+            "description": "Service fee",
+            "vendorConfirmationNumber": "OK",
+            "supplierConfirmationNumber": "OK",
+            "price": {
+                "base": 111.5702,
+                "currencyRate": 1,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 111.5702,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 111.5702,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                        "total": 111.5702,
+                        "vat": 0
+                    }
+                ]
+            },
+            "isProduct": false,
+            "additionalData": {
+                "couponCode": "ALM_Servicefee_variant_d",
+                "evaluatedOn": "OP_PERCENTAGE",
+                "promotionType": "SERVICE_FEE",
+                "seatReservedTime": null,
+                "orderTracking": {
+                    "checkBookingTime": null,
+                    "pnrTime": null,
+                    "pricingTime": null,
+                    "tstTime": null,
+                    "startBookingTime": null
+                },
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": 111.5702,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 111.5702,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 111.5702,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "emails": {
+                "ticket": true
+            },
+            "orderId": "69302143cf61df252c505132",
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "693021438a4a012a65a1198a",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "693021438a4a012a65a1198a",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Authorised",
+                    "status": 78
+                }
+            ],
+            "expiredAt": null,
+            "cartId": null,
+            "orderedAt": null,
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Authorised",
+            "ahsGroupName": "Almosafer IOS SA"
+        },
+        {
+            "id": "prod-1eb826ad-db46-4bc9-8b6e-59d5b3e8b9e5",
+            "createdAt": "2025-12-03T11:38:43+0000",
+            "updatedAt": "2025-12-03T11:43:01+0000",
+            "_id": "69302143d52e8b38f8e25af8",
+            "options": {
+                "canDisplay": true,
+                "inputVat": 0,
+                "outputVat": 0,
+                "maxUsageId": "173528112025",
+                "mainProductIds": [
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                ],
+                "mainProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                "dbId": "6929c4df5514e432fc5ab66b",
+                "dbUpdatedAt": "2025-11-28T16:32:28.856",
+                "blockedRewards": [
+                    "qitaf",
+                    "fursan",
+                    "mokafa",
+                    "shukran",
+                    "wallet"
+                ],
+                "blockedRedeems": [
+                    "qitaf",
+                    "mokafa",
+                    "wallet",
+                    "fursan",
+                    "shukran"
+                ],
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 78,
+            "status": 58,
+            "vendorStatus": "58",
+            "supplierStatus": "58",
+            "qty": 1,
+            "valid": true,
+            "type": "rule",
+            "category": "coupon",
+            "code": "flynow-f-on-l2-sa-dec25",
+            "name": "FLYNOW",
+            "description": "FLYNOW",
+            "vendorConfirmationNumber": "OK",
+            "supplierConfirmationNumber": "OK",
+            "price": {
+                "base": -192.8254,
+                "currencyRate": 1,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": -192.8254,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": -192.8254,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "id": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                        "total": -94.6393,
+                        "vat": 0
+                    },
+                    {
+                        "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                        "total": -98.1861,
+                        "vat": 0
+                    }
+                ]
+            },
+            "isProduct": false,
+            "additionalData": {
+                "couponCode": "FLYNOW-F-ON-L2-SA-Dec25",
+                "evaluatedOn": "OP_PERCENTAGE",
+                "promotionType": "STANDARD",
+                "seatReservedTime": null,
+                "orderTracking": {
+                    "checkBookingTime": null,
+                    "pnrTime": null,
+                    "pricingTime": null,
+                    "tstTime": null,
+                    "startBookingTime": null
+                },
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": -192.8254,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 0,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": -192.8254,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": -192.8254,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "emails": {
+                "ticket": true
+            },
+            "orderId": "69302143cf61df252c505132",
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "69302143d52e8b38f8e25af8",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "69302143d52e8b38f8e25af8",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Authorised",
+                    "status": 78
+                }
+            ],
+            "expiredAt": null,
+            "cartId": null,
+            "orderedAt": null,
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Authorised",
+            "ahsGroupName": "Almosafer IOS SA"
+        },
+        {
+            "id": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+            "createdAt": "2025-12-03T11:33:55+0000",
+            "updatedAt": "2025-12-03T21:19:22+0000",
+            "_id": "693020231d575c393a789096",
+            "options": {
+                "canDisplay": true,
+                "listingPrice": {
+                    "totals": 2264,
+                    "currency": "SAR",
+                    "oldTotals": 2264,
+                    "oldCurrency": "SAR"
+                },
+                "fare": {
+                    "legDetails": [
+                        {
+                            "segment": [
+                                {
+                                    "indicator": [
+                                        "T"
+                                    ],
+                                    "classOfLeg": "L",
+                                    "cabinCode": "M",
+                                    "cabinText": "Economy",
+                                    "fareBasis": "LNN00H7F",
+                                    "indexCtrl": 1,
+                                    "flightCode": "604",
+                                    "marketingCarrierId": "EY",
+                                    "mealService": null,
+                                    "freeBaggage": {
+                                        "cabin": {
+                                            "code": null,
+                                            "qty": 1,
+                                            "quantity": null,
+                                            "dimensions": null,
+                                            "unit": "KG",
+                                            "text": "7 KG",
+                                            "allowance": 7,
+                                            "refNumber": null,
+                                            "totalWeight": null,
+                                            "perPieceWeight": null,
+                                            "perPieceWeightFlag": null
+                                        },
+                                        "checkIn": null
+                                    },
+                                    "fc": "1",
+                                    "fcFareBasis": "LNN00H7F",
+                                    "fareFamily": "Economy Basic",
+                                    "fareFamilyCode": "YBASIC"
+                                },
+                                {
+                                    "indicator": [],
+                                    "classOfLeg": "L",
+                                    "cabinCode": "M",
+                                    "cabinText": "Economy",
+                                    "fareBasis": "LNN00H7F",
+                                    "indexCtrl": 1,
+                                    "flightCode": "414",
+                                    "marketingCarrierId": "EY",
+                                    "mealService": null,
+                                    "freeBaggage": {
+                                        "cabin": {
+                                            "code": null,
+                                            "qty": 1,
+                                            "quantity": null,
+                                            "dimensions": null,
+                                            "unit": "KG",
+                                            "text": "7 KG",
+                                            "allowance": 7,
+                                            "refNumber": null,
+                                            "totalWeight": null,
+                                            "perPieceWeight": null,
+                                            "perPieceWeightFlag": null
+                                        },
+                                        "checkIn": null
+                                    },
+                                    "fc": "1",
+                                    "fcFareBasis": "LNN00H7F",
+                                    "fareFamily": "Economy Basic",
+                                    "fareFamilyCode": "YBASIC"
+                                }
+                            ],
+                            "price": []
+                        }
+                    ],
+                    "item": {
+                        "basis": [
+                            "00H7F"
+                        ],
+                        "type": [
+                            "RP"
+                        ]
+                    },
+                    "routingId": null,
+                    "vendor": "AMD"
+                },
+                "leg": [
+                    {
+                        "id": "657101b",
+                        "originId": "JED",
+                        "destinationId": "HKT",
+                        "departure": "2025-12-09T05:55:00",
+                        "arrival": "2025-12-09T23:05:00",
+                        "flightCode": "EY-604",
+                        "validatingCarrier": "EY",
+                        "stopCount": 1,
+                        "stopId": [
+                            "AUH"
+                        ],
+                        "segmentId": [
+                            "353528e4",
+                            "934e893d"
+                        ],
+                        "path": [
+                            "JED",
+                            "AUH",
+                            "HKT"
+                        ],
+                        "duration": {
+                            "text": "13h 10m",
+                            "value": null,
+                            "unit": null
+                        },
+                        "index": 1,
+                        "flags": [],
+                        "groupId": null,
+                        "direction": "outbound",
+                        "flightCodes": null,
+                        "stopSummary": null,
+                        "journeyKey": null,
+                        "fareFamily": {
+                            "fareFamilyCode": "YBASIC",
+                            "fareFamilyName": "Economy Basic"
+                        },
+                        "operatingCarriers": [
+                            "EY"
+                        ],
+                        "originCountry": "SA",
+                        "destinationCountry": "TH",
+                        "originCity": "jeddah",
+                        "destinationCity": "phuket",
+                        "departureUTC": "2025-12-09T02:55:00",
+                        "arrivalUTC": "2025-12-09T16:05:00",
+                        "arrivalDateTime": null,
+                        "departureDateTime": null
+                    }
+                ],
+                "flightCodes": [
+                    "EY-604"
+                ],
+                "path": [
+                    "EY-604",
+                    "EY-414"
+                ],
+                "segment": [
+                    {
+                        "id": "353528e4",
+                        "departure": "2025-12-09T05:55:00",
+                        "departureAirport": {
+                            "code": "JED",
+                            "terminal": "1",
+                            "terminalValue": null
+                        },
+                        "arrival": "2025-12-09T09:20:00",
+                        "carrierType": "32Q",
+                        "flightCode": "EY-604",
+                        "fareFamily": "Economy Basic",
+                        "marketingCarrierId": "EY",
+                        "operatingCarrierId": "EY",
+                        "duration": {
+                            "text": "02h 25m",
+                            "value": 145,
+                            "unit": null
+                        },
+                        "flightDistance": {
+                            "text": null,
+                            "value": null
+                        },
+                        "layover": [],
+                        "technicalStops": null,
+                        "connectingTime": null,
+                        "arrivalAirport": {
+                            "code": "AUH",
+                            "terminal": "A",
+                            "terminalValue": null
+                        },
+                        "fareFamilyCode": "YBASIC",
+                        "departureUTC": "2025-12-09T02:55:00",
+                        "arrivalUTC": "2025-12-09T05:20:00",
+                        "departureDateTime": null,
+                        "arrivalDateTime": null
+                    },
+                    {
+                        "id": "934e893d",
+                        "departure": "2025-12-09T13:50:00",
+                        "departureAirport": {
+                            "code": "AUH",
+                            "terminal": "A",
+                            "terminalValue": null
+                        },
+                        "arrival": "2025-12-09T23:05:00",
+                        "carrierType": "789",
+                        "flightCode": "EY-414",
+                        "fareFamily": "Economy Basic",
+                        "marketingCarrierId": "EY",
+                        "operatingCarrierId": "EY",
+                        "duration": {
+                            "text": "06h 15m",
+                            "value": 375,
+                            "unit": null
+                        },
+                        "flightDistance": {
+                            "text": null,
+                            "value": null
+                        },
+                        "layover": [],
+                        "technicalStops": null,
+                        "connectingTime": {
+                            "text": "04h 30m",
+                            "value": 270,
+                            "unit": null
+                        },
+                        "arrivalAirport": {
+                            "code": "HKT",
+                            "terminal": "I",
+                            "terminalValue": null
+                        },
+                        "fareFamilyCode": "YBASIC",
+                        "departureUTC": "2025-12-09T09:50:00",
+                        "arrivalUTC": "2025-12-09T16:05:00",
+                        "departureDateTime": null,
+                        "arrivalDateTime": null
+                    }
+                ],
+                "legId": [
+                    "657101b"
+                ],
+                "validatingCarrier": "EY",
+                "perLegLuggage": false,
+                "inputVat": 0,
+                "outputVat": 0,
+                "luggage": [],
+                "pax": [
+                    {
+                        "info": {
+                            "ref": 1,
+                            "type": "ADT"
+                        },
+                        "totals": {
+                            "refundable": null,
+                            "couponDiscount": 0,
+                            "luggage": 0,
+                            "mu": 0,
+                            "penalty": 0,
+                            "total": 1132,
+                            "tax": 721,
+                            "vat": 0,
+                            "base": 411,
+                            "currency": "SAR",
+                            "supplierTotal": 1132,
+                            "supplierBase": 411,
+                            "supplierTax": 721,
+                            "supplierCurrency": "SAR",
+                            "supplierVat": 0,
+                            "airlineVat": 0,
+                            "taxWithOutVAT": 721,
+                            "oldCouponDiscount": 0,
+                            "oldBase": 411,
+                            "oldTax": 721,
+                            "oldTotal": 1132,
+                            "oldMu": 0,
+                            "oldPenalty": 0,
+                            "oldVat": 0,
+                            "oldLuggage": 0,
+                            "oldCurrency": "SAR"
+                        },
+                        "ptc": {
+                            "apisRequired": true,
+                            "idRequired": true,
+                            "dobRequired": true,
+                            "passportRequired": true,
+                            "nationalIdRequired": false,
+                            "documentType": [
+                                {
+                                    "type": "passport",
+                                    "enabled": true,
+                                    "issuingCountry": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    },
+                                    "nationality": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "nationalId",
+                                    "enabled": false
+                                },
+                                {
+                                    "type": "iqamaId",
+                                    "enabled": false
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "info": {
+                            "ref": 2,
+                            "type": "ADT"
+                        },
+                        "totals": {
+                            "refundable": null,
+                            "couponDiscount": 0,
+                            "luggage": 0,
+                            "mu": 0,
+                            "penalty": 0,
+                            "total": 1132,
+                            "tax": 721,
+                            "vat": 0,
+                            "base": 411,
+                            "currency": "SAR",
+                            "supplierTotal": 1132,
+                            "supplierBase": 411,
+                            "supplierTax": 721,
+                            "supplierCurrency": "SAR",
+                            "supplierVat": 0,
+                            "airlineVat": 0,
+                            "taxWithOutVAT": 721,
+                            "oldCouponDiscount": 0,
+                            "oldBase": 411,
+                            "oldTax": 721,
+                            "oldTotal": 1132,
+                            "oldMu": 0,
+                            "oldPenalty": 0,
+                            "oldVat": 0,
+                            "oldLuggage": 0,
+                            "oldCurrency": "SAR"
+                        },
+                        "ptc": {
+                            "apisRequired": true,
+                            "idRequired": true,
+                            "dobRequired": true,
+                            "passportRequired": true,
+                            "nationalIdRequired": false,
+                            "documentType": [
+                                {
+                                    "type": "passport",
+                                    "enabled": true,
+                                    "issuingCountry": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    },
+                                    "nationality": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "nationalId",
+                                    "enabled": false
+                                },
+                                {
+                                    "type": "iqamaId",
+                                    "enabled": false
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "itineraryId": "EY1_0_64476_1-b4a40ccd_AMD_V3",
+                "nid": "1764761561452279358",
+                "ahsGroupName": "",
+                "hasFrequentFlyerOptions": true,
+                "hasMealOptions": true,
+                "hasSpecialRequestOption": true,
+                "vatConfig": {
+                    "product": false,
+                    "markup": false,
+                    "discount": false,
+                    "method": "AUTO"
+                },
+                "direction": "outbound",
+                "hasFareFamilies": true,
+                "isMultiPNR": true,
+                "fareRules": {
+                    "statusCode": 200,
+                    "data": [
+                        {
+                            "origin": "JED",
+                            "destination": "HKT",
+                            "pricingTime": "2025-12-03T11:33:54.919Z",
+                            "departureTime": "2025-12-09T05:55:00",
+                            "unit": "minute",
+                            "change": {
+                                "condition": [],
+                                "status": "NOT_ALLOWED"
+                            },
+                            "cancellation": {
+                                "condition": [],
+                                "status": "NOT_ALLOWED"
+                            },
+                            "createdAt": "2025-12-03T11:38:59.318Z",
+                            "nid": "1764761561452279358",
+                            "currency": "SAR",
+                            "refundMethod": "internal refund",
+                            "tags": {
+                                "change": "NO_REISSUE",
+                                "wallet_change": "NO",
+                                "cancellation": "NO_REFUND",
+                                "wallet_cancellation": "NO"
+                            }
+                        }
+                    ]
+                },
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 78,
+            "status": 58,
+            "vendorStatus": "Auto Confirmed",
+            "supplierStatus": "Auto Confirmed",
+            "qty": 1,
+            "valid": true,
+            "type": "flight",
+            "isManual": false,
+            "expiredAt": "2025-12-05T11:33:55+0000",
+            "isProduct": true,
+            "allowedPaymentMethods": [
+                {
+                    "provider": "checkoutcom",
+                    "label": "Credit Card",
+                    "applemid": "merchant.com.almosafer.alrajhi.travel"
+                },
+                {
+                    "provider": "tabby",
+                    "label": "Tabby"
+                },
+                {
+                    "provider": "tamara",
+                    "label": "Tamara"
+                },
+                {
+                    "provider": "stcpay",
+                    "label": "STC Pay"
+                }
+            ],
+            "price": {
+                "base": 822,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 1442,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2264,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2264,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 411
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 721
+                            }
+                        ],
+                        "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                        "type": "ADT",
+                        "ref": 1,
+                        "total": 1132,
+                        "tickets": [
+                            {
+                                "ticketNumber": "607-5066769843",
+                                "ticketSubType": "",
+                                "total": 1132,
+                                "vat": 0,
+                                "totalWithVat": 1132,
+                                "currency": "SAR"
+                            }
+                        ]
+                    },
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 411
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 721
+                            }
+                        ],
+                        "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                        "type": "ADT",
+                        "ref": 2,
+                        "total": 1132,
+                        "tickets": [
+                            {
+                                "ticketNumber": "607-5066769842",
+                                "ticketSubType": "",
+                                "total": 1132,
+                                "vat": 0,
+                                "totalWithVat": 1132,
+                                "currency": "SAR"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "vendorPrice": {
+                "base": 822,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 1442,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2264,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2264,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": []
+            },
+            "supplierPrice": {
+                "base": 822,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 1442,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2264,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2264,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "SAR",
+                "totalCurrency": "SAR"
+            },
+            "code": "531d9cf90aa3a8fb9c6c34a88af8bcc6",
+            "displayItemName": "multiPNRflight",
+            "additionalData": {
+                "officeId": "RUHAA28WH",
+                "ticketingOfficeId": "RUHAA2218",
+                "validatingCarrier": "EY",
+                "isDomestic": false,
+                "ticketingType": "",
+                "tzOfDepartureAirport": "+03:00",
+                "searchType": "Roundtrip",
+                "experiment": "variant_d",
+                "experiment_a": true,
+                "cid": "b4a40ccd",
+                "isTstCreated": true,
+                "itineraryId": "EY1_0_64476_1-b4a40ccd_AMD_V3",
+                "isV3Search": true,
+                "isV3Pricing": true,
+                "paxTypeCount": {
+                    "adult": 2,
+                    "child": 0,
+                    "infant": 0,
+                    "totalSeats": 2
+                },
+                "query": "JED-HKT/2025-12-09/2025-12-17/Economy/2Adult/0Child/0Infant",
+                "isV2Search": false,
+                "orderTracking": {
+                    "pricingTime": "2025-12-03T11:33:54+0000",
+                    "pnrTrackingId": "amd-eb7059ba-fab8-44ee-80cf-5daefc33b493",
+                    "pnrPollingAttempts": 2,
+                    "pnrLastReadHistoryId": 30,
+                    "pnrTime": "2025-12-03T11:38:49+0000",
+                    "tstTime": "2025-12-03T11:38:51+0000",
+                    "startBookingLaunched": true,
+                    "startBookingTime": "2025-12-03T11:39:01+0000",
+                    "ticketingTrackingId": "amd-c53e1afa-737e-458c-98d3-14d44efb43db",
+                    "ticketingLastReadHistoryId": 22,
+                    "ticketingPollingAttempts": 46,
+                    "checkBookingTime": null
+                },
+                "fareUuid": "f2d4de10-d03b-11f0-bdf6-c1192a020c3b",
+                "transactionIdentifier": "",
+                "isPromoCodeApplied": false,
+                "hasMixedFareFamily": false,
+                "posCountry": "SA",
+                "distributionChannel": "",
+                "isMultiTicket": false,
+                "nexusSessionId": "08f41c4c-7cbd-454a-8ce2-14fbf2192b48",
+                "includedVatPercentage": 0,
+                "supplierVat": 0,
+                "originalVendorPrice": {
+                    "base": 822,
+                    "tax": 1442,
+                    "vat": 0,
+                    "total": 2264,
+                    "currency": "SAR"
+                },
+                "direction": "outbound",
+                "exchange": {
+                    "Base": {
+                        "symbol": "SAR",
+                        "name": "Saudi Riyal",
+                        "name_ar": "ريال سعودي",
+                        "symbol_native": "ر.س.‏",
+                        "decimal_digits": 2,
+                        "rounding": 0,
+                        "code": "SAR",
+                        "name_plural": "Saudi riyals"
+                    },
+                    "Equivalent": [
+                        {
+                            "symbol": "SAR",
+                            "name": "Saudi Riyal",
+                            "name_ar": "ريال سعودي",
+                            "symbol_native": "ر.س.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "SAR",
+                            "name_plural": "Saudi riyals",
+                            "rate": 1,
+                            "Rate": 1,
+                            "date": "2025-12-02 09:10:48"
+                        },
+                        {
+                            "symbol": "AED",
+                            "name": "United Arab Emirates Dirham",
+                            "name_ar": "درهم اماراتي",
+                            "symbol_native": "د.إ.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "AED",
+                            "name_plural": "UAE dirhams",
+                            "rate": 0.97834,
+                            "Rate": 0.97834,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "QAR",
+                            "name": "Qatari Rial",
+                            "name_ar": "ريال قطري",
+                            "symbol_native": "ر.ق.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "QAR",
+                            "name_plural": "Qatari rials",
+                            "rate": 0.975302,
+                            "Rate": 0.975302,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "KWD",
+                            "name": "Kuwaiti Dinar",
+                            "name_ar": "دينار كويتي",
+                            "symbol_native": "د.ك.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "KWD",
+                            "name_plural": "Kuwaiti dinars",
+                            "rate": 0.0818,
+                            "Rate": 0.0818,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "BHD",
+                            "name": "Bahraini Dinar",
+                            "name_ar": "دينار بحريني",
+                            "symbol_native": "د.ب.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "BHD",
+                            "name_plural": "Bahraini dinars",
+                            "rate": 0.10042,
+                            "Rate": 0.10042,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "$",
+                            "name": "US Dollar",
+                            "name_ar": "دولار أمريكي",
+                            "symbol_native": "$",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "USD",
+                            "name_plural": "US dollars",
+                            "rate": 0.266396,
+                            "Rate": 0.266396,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "€",
+                            "name": "Euro",
+                            "name_ar": "يورو",
+                            "symbol_native": "€",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "EUR",
+                            "name_plural": "euros",
+                            "rate": 0.229463,
+                            "Rate": 0.229463,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "£",
+                            "name": "British Pound Sterling",
+                            "name_ar": "الجنيه الاسترليني",
+                            "symbol_native": "£",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "GBP",
+                            "name_plural": "British pounds sterling",
+                            "rate": 0.201652,
+                            "Rate": 0.201652,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "EGP",
+                            "name": "Egyptian Pound",
+                            "name_ar": "جنيه مصري",
+                            "symbol_native": "ج.م.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "EGP",
+                            "name_plural": "Egyptian pounds",
+                            "rate": 12.654343,
+                            "Rate": 12.654343,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "₹",
+                            "name": "Indian Rupee",
+                            "name_ar": "روبية هندية",
+                            "symbol_native": "₹",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "INR",
+                            "name_plural": "Indian rupees",
+                            "rate": 23.925653,
+                            "Rate": 23.925653,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "OMR",
+                            "name": "Omani Rial",
+                            "name_ar": "ريال عماني",
+                            "symbol_native": "ر.ع.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "OMR",
+                            "name_plural": "Omani rials",
+                            "rate": 0.102432,
+                            "Rate": 0.102432,
+                            "date": "2025-12-02 09:46:03"
+                        }
+                    ]
+                },
+                "exchangeRates": {
+                    "Base": "SAR",
+                    "Equivalent": {
+                        "SAR-SAR": 1,
+                        "AED-SAR": 1.021856,
+                        "QAR-SAR": 1.029018,
+                        "KWD-SAR": 12.230774,
+                        "BHD-SAR": 9.954618,
+                        "USD-SAR": 3.752767,
+                        "EUR-SAR": 4.376507,
+                        "GBP-SAR": 4.988721,
+                        "EGP-SAR": 0.078782,
+                        "INR-SAR": 0.041601,
+                        "OMR-SAR": 9.760124
+                    }
+                },
+                "analyticsData": {
+                    "fareFamilies": {
+                        "successfullyFetched": true,
+                        "selectedFareFamily": {
+                            "name": "Economy Basic",
+                            "price": 2264
+                        },
+                        "cheapestFareFamily": {
+                            "name": "Economy Basic",
+                            "price": 2264,
+                            "priceDifference": 0
+                        },
+                        "mostExpensiveFareFamily": {
+                            "name": "Economy Deluxe",
+                            "price": 3016,
+                            "priceDifference": 752
+                        }
+                    }
+                },
+                "expiredAt": "2025-12-03 11:53:55",
+                "hasFreeInsurance": false,
+                "isMultiPNR": true,
+                "_pricingRules": {
+                    "hasQitaf": false,
+                    "hasWallet": false,
+                    "ahsGroupName": "",
+                    "cartKeycartType": "flight",
+                    "departureTerminal": "1",
+                    "arrivalTerminal": "I",
+                    "stopCount": 1,
+                    "totalSeat": 2,
+                    "validatingCarrier": "EY",
+                    "isDomestic": false,
+                    "isMultiPNR": true,
+                    "direction": "outbound",
+                    "operatingCarrier": "EY",
+                    "vendor": "amd",
+                    "supplier": "EY",
+                    "category": "flight",
+                    "type": "flight",
+                    "totalPax": 2,
+                    "experiment": "variant_d",
+                    "experiment_a": true,
+                    "loggedIn": true,
+                    "isRoundTrip": true,
+                    "isMultiCity": false,
+                    "isOneWay": false,
+                    "origin": "JED",
+                    "destination": "HKT",
+                    "originCountryCode": "SA",
+                    "destinationCountryCode": "TH",
+                    "isStopLegFirst": true,
+                    "flightCode": [
+                        "EY-604"
+                    ],
+                    "flightPath": [
+                        "JED-HKT"
+                    ],
+                    "isSotoBooking": false,
+                    "leg_0_cabin": "economy",
+                    "leg_0_fareBasis": "LNN00H7F",
+                    "leg_0_cabinCode": "M",
+                    "leg_0_classOfLeg": "L",
+                    "cartKeyFirstDepartureTime": "2025-12-09T05:55:00",
+                    "clientVersion": "",
+                    "cartKeyLastArrivalTime": "2025-12-09T23:05:00",
+                    "daysBeforeCheckin": 6,
+                    "hoursBeforeDeparture": 135.33,
+                    "base": 822,
+                    "cartKeybase": 822,
+                    "cartKeytax": 1442,
+                    "total": 2264,
+                    "totalWithoutVat": 2264,
+                    "totalPriceWithoutVat": 2264,
+                    "isVatApplied": false,
+                    "cartKeytotalSeat": 2,
+                    "fareFamily": "Economy Basic"
+                },
+                "isV3SSR": true,
+                "ssr": [
+                    {
+                        "seatIndex": 1,
+                        "luggage": []
+                    },
+                    {
+                        "seatIndex": 2,
+                        "luggage": []
+                    }
+                ],
+                "miscellaneousDescription": {
+                    "type": "Luggage Surcharge",
+                    "value": 0
+                },
+                "isV3SellSeat": true,
+                "isSeatReserved": true,
+                "seatReservedTime": "2025-12-03T11:34:36+0000",
+                "uiControls": {
+                    "disableContactForm": false,
+                    "disableTravellersForm": false,
+                    "disableSSRForm": false
+                },
+                "priceCompareResult": {
+                    "reason": "No supplier price in Sell seat response"
+                },
+                "session": "{\"group_id\":\"Booking\",\"active_context\":\"Air_SellFromRecommendation\",\"status\":\"P\",\"pooling_type\":\"stateless\",\"reserved_at\":\"\",\"reserved_for_id\":\"\",\"reserved_for_context\":\"\",\"destination\":\"RUHAA28WH\",\"source_office\":\"RUHAA28WH\",\"env\":\"production\",\"app_id\":\"1ASIWTJWTJA\",\"session_id\":\"0R2YJXXDOW\",\"security_token\":\"15BNZ7W69BTS736POEFT0T719W\",\"sequence_number\":1,\"query_in_progress\":false,\"is_valid\":true,\"created_at\":\"1764761708711\",\"updated_at\":\"1764761708711\",\"last_query_date\":\"1764761708711\",\"number_of_requests\":1}",
+                "amdSessionId": "0R2YJXXDOW",
+                "showAgeRestrictionFormDisclaimer": {
+                    "EY": false
+                },
+                "mmEnabled": false,
+                "mmSuccessful": false,
+                "isVccPayment": true,
+                "vccProvider": "mastercard_direct",
+                "proceedForManualQueueEvaluation": true,
+                "isManuallyApproved": true,
+                "touchless": {
+                    "status": "completed",
+                    "start_date": "2025-12-03T11:39:01+0000",
+                    "end_date": "2025-12-03T11:42:52+0000",
+                    "touchless_office_id": "RUHAA2218"
+                },
+                "dealAmounts": [],
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "supplierName": "EY",
+            "addedBy": "flight-api",
+            "vendorName": "amd",
+            "name": "657101b-EY-604",
+            "category": "flight",
+            "index": 0,
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": 822,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 1442,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2264,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2264,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "emails": {
+                "ticket": true
+            },
+            "traveller": [
+                {
+                    "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                    "createdAt": "2025-12-03T11:43:00+0000",
+                    "updatedAt": "2025-12-03T11:43:00+0000",
+                    "_id": "6930206e5adb51319413145d",
+                    "title": "Mr",
+                    "firstName": "YOUSEF",
+                    "middleName": "AWWADH",
+                    "lastName": "ALHARTHI",
+                    "type": "ADT",
+                    "birthDate": "1994-08-21",
+                    "nationality": "SA",
+                    "originalTicketNo": "",
+                    "ticketType": "",
+                    "ticketSubType": "",
+                    "eTicket": "607-5066769843",
+                    "additionalData": {
+                        "index": 1,
+                        "type": "ADT",
+                        "seatIndex": 1,
+                        "isPrimaryContact": true
+                    },
+                    "travellerId": {
+                        "id": "tvid-b4c748cf-1609-4f34-ae9d-ef64d37c236a",
+                        "createdAt": "2025-12-03T11:43:00+0000",
+                        "updatedAt": "2025-12-03T11:43:00+0000",
+                        "_id": "693022446ff18531bd8c262a",
+                        "type": "passport",
+                        "number": "BG86754",
+                        "issueDate": "",
+                        "expiryDate": "2029-07-31",
+                        "issueCountry": "SA"
+                    }
+                },
+                {
+                    "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                    "createdAt": "2025-12-03T11:43:00+0000",
+                    "updatedAt": "2025-12-03T11:43:00+0000",
+                    "_id": "6930206e36d3747582c9ad88",
+                    "title": "Mrs",
+                    "firstName": "HIND",
+                    "middleName": "NASSER",
+                    "lastName": "ALHARTHI",
+                    "type": "ADT",
+                    "birthDate": "1991-12-24",
+                    "nationality": "SA",
+                    "originalTicketNo": "",
+                    "ticketType": "",
+                    "ticketSubType": "",
+                    "eTicket": "607-5066769842",
+                    "additionalData": {
+                        "index": 2,
+                        "type": "ADT",
+                        "seatIndex": 2
+                    },
+                    "travellerId": {
+                        "id": "tvid-3a310846-abb9-492b-ab9b-8ea67ba317b6",
+                        "createdAt": "2025-12-03T11:43:00+0000",
+                        "updatedAt": "2025-12-03T11:43:00+0000",
+                        "_id": "69302244b104442b7d94d948",
+                        "type": "passport",
+                        "number": "BR92000",
+                        "issueDate": "",
+                        "expiryDate": "2030-04-15",
+                        "issueCountry": "SA"
+                    }
+                }
+            ],
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "New",
+                    "status": 10
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Pending",
+                    "status": 71
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Authorised",
+                    "status": 78
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:51+0000",
+                    "updatedAt": "2025-12-03T11:38:51+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Booking in Progress",
+                    "status": 18
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:51+0000",
+                    "updatedAt": "2025-12-03T11:38:51+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "PNR in Progress",
+                    "status": 25
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:52+0000",
+                    "updatedAt": "2025-12-03T11:38:52+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "TST in Progress",
+                    "status": 35
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:52+0000",
+                    "updatedAt": "2025-12-03T11:38:52+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "TST Created",
+                    "status": 39
+                },
+                {
+                    "createdAt": "2025-12-03T11:39:00+0000",
+                    "updatedAt": "2025-12-03T11:39:00+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Confirm Decision",
+                    "status": 50
+                },
+                {
+                    "createdAt": "2025-12-03T11:39:01+0000",
+                    "updatedAt": "2025-12-03T11:39:01+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm Queue",
+                    "status": 55
+                },
+                {
+                    "createdAt": "2025-12-03T11:42:54+0000",
+                    "updatedAt": "2025-12-03T11:42:54+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm Started",
+                    "status": 54
+                },
+                {
+                    "createdAt": "2025-12-03T11:42:54+0000",
+                    "updatedAt": "2025-12-03T11:42:54+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm in Progress",
+                    "status": 56
+                },
+                {
+                    "createdAt": "2025-12-03T11:43:00+0000",
+                    "updatedAt": "2025-12-03T11:43:00+0000",
+                    "type": "status_history",
+                    "productId": "693020231d575c393a789096",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                }
+            ],
+            "orderId": "69302143cf61df252c505132",
+            "vendorConfirmationNumber": "9CCFF4",
+            "supplierConfirmationNumber": "9CCFF4",
+            "cartId": null,
+            "orderedAt": null,
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Authorised",
+            "ahsGroupName": "Almosafer IOS SA"
+        },
+        {
+            "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+            "createdAt": "2025-12-03T11:33:56+0000",
+            "updatedAt": "2025-12-03T11:43:01+0000",
+            "_id": "69302024c24bd228e5e8a561",
+            "options": {
+                "canDisplay": true,
+                "listingPrice": {
+                    "totals": 2348.8456,
+                    "currency": "SAR",
+                    "oldTotals": 2348.8456,
+                    "oldCurrency": "SAR"
+                },
+                "fare": {
+                    "legDetails": [
+                        {
+                            "price": {
+                                "total": 2348.84,
+                                "luggage": 0,
+                                "penalty": 0,
+                                "originCurrency": "AED",
+                                "pax": null,
+                                "vat": null,
+                                "tax": 322.99,
+                                "currency": "SAR",
+                                "totals": null,
+                                "base": 2025.85
+                            },
+                            "segment": [
+                                {
+                                    "cabinCode": "Economy",
+                                    "mealService": null,
+                                    "freeBaggage": {
+                                        "checkIn": null,
+                                        "cabin": {
+                                            "unit": "KG",
+                                            "code": null,
+                                            "quantity": null,
+                                            "refNumber": null,
+                                            "perPieceWeight": null,
+                                            "qty": 1,
+                                            "perPieceWeightFlag": null,
+                                            "totalWeight": null,
+                                            "allowance": 10,
+                                            "text": "10 KG",
+                                            "dimensions": null
+                                        }
+                                    },
+                                    "classOfLeg": null,
+                                    "cabinText": "Economy",
+                                    "availability": null
+                                },
+                                {
+                                    "cabinCode": "Economy",
+                                    "mealService": null,
+                                    "freeBaggage": {
+                                        "checkIn": null,
+                                        "cabin": {
+                                            "unit": "KG",
+                                            "code": null,
+                                            "quantity": null,
+                                            "refNumber": null,
+                                            "perPieceWeight": null,
+                                            "qty": 1,
+                                            "perPieceWeightFlag": null,
+                                            "totalWeight": null,
+                                            "allowance": 10,
+                                            "text": "10 KG",
+                                            "dimensions": null
+                                        }
+                                    },
+                                    "classOfLeg": null,
+                                    "cabinText": "Economy",
+                                    "availability": null
+                                }
+                            ],
+                            "index": 0,
+                            "vendorRef": ""
+                        }
+                    ],
+                    "item": {
+                        "basis": [],
+                        "type": []
+                    },
+                    "routingId": null,
+                    "vendor": "ONE"
+                },
+                "leg": [
+                    {
+                        "arrival": "2025-12-17T23:35:00",
+                        "groupId": null,
+                        "flags": [],
+                        "hasFareFamilies": true,
+                        "destinationId": "JED",
+                        "segments": [
+                            {
+                                "fareFamilyCode": "Basic",
+                                "departureAirport": {
+                                    "code": "HKT",
+                                    "terminalValue": null,
+                                    "terminal": ""
+                                },
+                                "technicalStops": null,
+                                "arrival": "2025-12-17T15:45:00",
+                                "legID": "4f8a25d8",
+                                "hasFareFamilies": true,
+                                "RPH": "G9$HKT/SHJ$3157746$20251217115500$20251217154500",
+                                "duration": {
+                                    "unit": null,
+                                    "text": "06h 50m",
+                                    "value": 410
+                                },
+                                "operatingCarrierId": "G9",
+                                "id": "2d178a23",
+                                "marketingCarrierId": "G9",
+                                "direction": "outbound",
+                                "flightCode": "G9-700",
+                                "isBasicFareFamily": false,
+                                "fareKey": "Basic-HKT/SHJ/JED",
+                                "carrierType": "A321",
+                                "flightDistance": {
+                                    "text": null,
+                                    "value": null
+                                },
+                                "cabinCode": "Y",
+                                "isSpecialBaggageRoute": false,
+                                "cabinText": "Economy",
+                                "departure": "2025-12-17T11:55:00",
+                                "fareFamily": "Basic",
+                                "connectingTime": null,
+                                "layover": [],
+                                "arrivalAirport": {
+                                    "code": "SHJ",
+                                    "terminalValue": null,
+                                    "terminal": ""
+                                }
+                            },
+                            {
+                                "fareFamilyCode": "Basic",
+                                "departureAirport": {
+                                    "code": "SHJ",
+                                    "terminalValue": null,
+                                    "terminal": ""
+                                },
+                                "technicalStops": null,
+                                "arrival": "2025-12-17T23:35:00",
+                                "legID": "4f8a25d8",
+                                "hasFareFamilies": true,
+                                "RPH": "G9$SHJ/JED$3213089$20251217212500$20251217233500",
+                                "duration": {
+                                    "unit": null,
+                                    "text": "03h 10m",
+                                    "value": 190
+                                },
+                                "operatingCarrierId": "G9",
+                                "id": "295604e4",
+                                "marketingCarrierId": "G9",
+                                "direction": "outbound",
+                                "flightCode": "G9-219",
+                                "isBasicFareFamily": false,
+                                "fareKey": "Basic-HKT/SHJ/JED",
+                                "carrierType": "A321",
+                                "flightDistance": {
+                                    "text": null,
+                                    "value": null
+                                },
+                                "cabinCode": "Y",
+                                "isSpecialBaggageRoute": false,
+                                "cabinText": "Economy",
+                                "departure": "2025-12-17T21:25:00",
+                                "fareFamily": "Basic",
+                                "connectingTime": null,
+                                "layover": [],
+                                "arrivalAirport": {
+                                    "code": "JED",
+                                    "terminalValue": null,
+                                    "terminal": "North Term"
+                                }
+                            }
+                        ],
+                        "duration": {
+                            "unit": null,
+                            "text": "15h 40m",
+                            "value": 940
+                        },
+                        "path": [
+                            "HKT",
+                            "SHJ",
+                            "JED"
+                        ],
+                        "originId": "HKT",
+                        "segmentId": [
+                            "2d178a23",
+                            "295604e4"
+                        ],
+                        "id": "cb299b7f",
+                        "direction": "inbound",
+                        "flightCode": "G9-700",
+                        "isBasicFareFamily": true,
+                        "fareKey": "Basic-HKT/SHJ/JED",
+                        "stopId": [
+                            "SHJ"
+                        ],
+                        "index": null,
+                        "stopCount": 1,
+                        "isSpecialBaggageRoute": false,
+                        "leg-connectingTime": [
+                            {
+                                "text": "05h 40m",
+                                "value": 340
+                            }
+                        ],
+                        "flightCodes": null,
+                        "stopSummary": null,
+                        "validatingCarrier": "G9",
+                        "departure": "2025-12-17T11:55:00",
+                        "fareFamily": {
+                            "fareFamilyCode": "Basic"
+                        },
+                        "journeyKey": "",
+                        "originCountry": "TH",
+                        "destinationCountry": "SA",
+                        "originCity": "phuket",
+                        "destinationCity": "jeddah",
+                        "departureUTC": "2025-12-17T04:55:00",
+                        "arrivalUTC": "2025-12-17T20:35:00",
+                        "arrivalDateTime": null,
+                        "departureDateTime": null
+                    }
+                ],
+                "flightCodes": [
+                    "G9-700",
+                    "G9-219"
+                ],
+                "path": [
+                    "G9-700",
+                    "G9-219"
+                ],
+                "segment": [
+                    {
+                        "departureAirport": {
+                            "code": "HKT",
+                            "terminalValue": null,
+                            "terminal": ""
+                        },
+                        "technicalStops": null,
+                        "flightCode": "G9-700",
+                        "arrival": "2025-12-17T15:45:00",
+                        "carrierType": "A321",
+                        "RPH": "G9$HKT/SHJ$3157746$20251217115500$20251217154500",
+                        "flightDistance": {
+                            "text": null,
+                            "value": null
+                        },
+                        "duration": {
+                            "unit": null,
+                            "text": "06h 50m",
+                            "value": 410
+                        },
+                        "cabinCode": "Y",
+                        "cabinText": "Economy",
+                        "operatingCarrierId": "G9",
+                        "departureDateTime": "2025-12-17T11:55:00+0000",
+                        "departure": "2025-12-17T11:55:00",
+                        "connectingTime": null,
+                        "id": "2d178a23",
+                        "fareFamily": "Basic",
+                        "arrivalDateTime": "2025-12-17T15:45:00+0000",
+                        "layover": [],
+                        "arrivalAirport": {
+                            "code": "SHJ",
+                            "terminalValue": null,
+                            "terminal": ""
+                        },
+                        "marketingCarrierId": "G9",
+                        "departureUTC": "2025-12-17T04:55:00",
+                        "arrivalUTC": "2025-12-17T11:45:00"
+                    },
+                    {
+                        "departureAirport": {
+                            "code": "SHJ",
+                            "terminalValue": null,
+                            "terminal": ""
+                        },
+                        "technicalStops": null,
+                        "flightCode": "G9-219",
+                        "arrival": "2025-12-17T23:35:00",
+                        "carrierType": "A321",
+                        "RPH": "G9$SHJ/JED$3213089$20251217212500$20251217233500",
+                        "flightDistance": {
+                            "text": null,
+                            "value": null
+                        },
+                        "duration": {
+                            "unit": null,
+                            "text": "03h 10m",
+                            "value": 190
+                        },
+                        "cabinCode": "Y",
+                        "cabinText": "Economy",
+                        "operatingCarrierId": "G9",
+                        "departureDateTime": "2025-12-17T21:25:00+0000",
+                        "departure": "2025-12-17T21:25:00",
+                        "connectingTime": null,
+                        "id": "295604e4",
+                        "fareFamily": "Basic",
+                        "arrivalDateTime": "2025-12-17T23:35:00+0000",
+                        "layover": [],
+                        "arrivalAirport": {
+                            "code": "JED",
+                            "terminalValue": null,
+                            "terminal": "North Term"
+                        },
+                        "marketingCarrierId": "G9",
+                        "departureUTC": "2025-12-17T17:25:00",
+                        "arrivalUTC": "2025-12-17T20:35:00"
+                    }
+                ],
+                "legId": [
+                    "cb299b7f"
+                ],
+                "validatingCarrier": "G9",
+                "perLegLuggage": true,
+                "inputVat": 0,
+                "outputVat": 0,
+                "luggage": [
+                    {
+                        "options": [
+                            {
+                                "amount": 40.8851,
+                                "code": 1,
+                                "quantity": 1,
+                                "maxQuantity": 1,
+                                "vat": 0,
+                                "weight": 20,
+                                "tax": 0,
+                                "maxWeight": 20,
+                                "supplierTax": 0,
+                                "supplierBase": 40,
+                                "supplierVat": 0,
+                                "supplierTotal": 40,
+                                "total": 40.8851,
+                                "supplierAmount": "40.0",
+                                "currency": "SAR",
+                                "id": "56eea1bb",
+                                "baggageCode": "20 Kg 1 Piece",
+                                "supplierCurrency": "AED",
+                                "base": 40.8851
+                            },
+                            {
+                                "amount": 89.9471,
+                                "code": 2,
+                                "quantity": 2,
+                                "maxQuantity": 2,
+                                "vat": 0,
+                                "weight": 30,
+                                "tax": 0,
+                                "maxWeight": 30,
+                                "supplierTax": 0,
+                                "supplierBase": 88,
+                                "supplierVat": 0,
+                                "supplierTotal": 88,
+                                "total": 89.9471,
+                                "supplierAmount": "88.0",
+                                "currency": "SAR",
+                                "id": "7f1b2fd6",
+                                "baggageCode": "30 Kg Total in 2 Piece",
+                                "supplierCurrency": "AED",
+                                "base": 89.9471
+                            },
+                            {
+                                "amount": 163.5402,
+                                "code": 3,
+                                "quantity": 2,
+                                "maxQuantity": 2,
+                                "vat": 0,
+                                "weight": 40,
+                                "tax": 0,
+                                "maxWeight": 40,
+                                "supplierTax": 0,
+                                "supplierBase": 160,
+                                "supplierVat": 0,
+                                "supplierTotal": 160,
+                                "total": 163.5402,
+                                "supplierAmount": "160.0",
+                                "currency": "SAR",
+                                "id": "6edc44c0",
+                                "baggageCode": "40 Kg Total in 2 Piece",
+                                "supplierCurrency": "AED",
+                                "base": 163.5402
+                            }
+                        ],
+                        "departureDateTime": "2025-12-17T11:55:00",
+                        "id": "cb299b7f",
+                        "label": "Complete Journey",
+                        "flightRefNumberRPHList": "G9$HKT/SHJ$3157746$20251217115500$20251217154500",
+                        "flightNumber": "G9700"
+                    }
+                ],
+                "pax": [
+                    {
+                        "totals": {
+                            "penalty": 0,
+                            "vat": 0,
+                            "mu": 0,
+                            "tax": 161.496,
+                            "supplierBase": 991,
+                            "supplierTax": 158,
+                            "supplierVat": 0,
+                            "supplierTotal": 1149,
+                            "couponDiscount": 0,
+                            "total": 1174.4228,
+                            "luggage": 0,
+                            "currency": "SAR",
+                            "refundable": null,
+                            "supplierCurrency": "AED",
+                            "base": 1012.9269
+                        },
+                        "info": {
+                            "ref": 1,
+                            "type": "ADT"
+                        },
+                        "ptc": {
+                            "apisRequired": true,
+                            "idRequired": true,
+                            "dobRequired": true,
+                            "passportRequired": true,
+                            "nationalIdRequired": false,
+                            "documentType": [
+                                {
+                                    "type": "passport",
+                                    "enabled": true,
+                                    "issuingCountry": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    },
+                                    "nationality": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "nationalId",
+                                    "enabled": false
+                                },
+                                {
+                                    "type": "iqamaId",
+                                    "enabled": false
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "totals": {
+                            "penalty": 0,
+                            "vat": 0,
+                            "mu": 0,
+                            "tax": 161.496,
+                            "supplierBase": 991,
+                            "supplierTax": 158,
+                            "supplierVat": 0,
+                            "supplierTotal": 1149,
+                            "couponDiscount": 0,
+                            "total": 1174.4228,
+                            "luggage": 0,
+                            "currency": "SAR",
+                            "refundable": null,
+                            "supplierCurrency": "AED",
+                            "base": 1012.9269
+                        },
+                        "info": {
+                            "ref": 2,
+                            "type": "ADT"
+                        },
+                        "ptc": {
+                            "apisRequired": true,
+                            "idRequired": true,
+                            "dobRequired": true,
+                            "passportRequired": true,
+                            "nationalIdRequired": false,
+                            "documentType": [
+                                {
+                                    "type": "passport",
+                                    "enabled": true,
+                                    "issuingCountry": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    },
+                                    "nationality": {
+                                        "include": [
+                                            "*"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "nationalId",
+                                    "enabled": false
+                                },
+                                {
+                                    "type": "iqamaId",
+                                    "enabled": false
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "itineraryId": "cb299b7fG9-de730912_G9_ONE",
+                "nid": "1764761561452279358",
+                "ahsGroupName": "",
+                "hasFrequentFlyerOptions": true,
+                "hasMealOptions": false,
+                "hasSpecialRequestOption": false,
+                "fareFamilyOptions": null,
+                "vatConfig": {
+                    "product": false,
+                    "markup": false,
+                    "discount": false,
+                    "method": "AUTO"
+                },
+                "direction": "inbound",
+                "hasFareFamilies": true,
+                "isMultiPNR": true,
+                "fareRules": {
+                    "statusCode": 200,
+                    "data": [
+                        {
+                            "origin": "HKT",
+                            "destination": "JED",
+                            "pricingTime": "2025-12-03T11:33:54.560Z",
+                            "departureTime": "2025-12-17T11:55:00",
+                            "unit": "minute",
+                            "change": {
+                                "timeframe": 2880,
+                                "condition": [
+                                    {
+                                        "amount": 205,
+                                        "traveller": [
+                                            "ADT"
+                                        ],
+                                        "oldAmount": 200,
+                                        "oldCurrency": "AED"
+                                    }
+                                ],
+                                "status": "ALLOWED"
+                            },
+                            "cancellation": {
+                                "timeframe": 2880,
+                                "condition": [
+                                    {
+                                        "amount": 205,
+                                        "traveller": [
+                                            "ADT"
+                                        ],
+                                        "oldAmount": 200,
+                                        "oldCurrency": "AED"
+                                    }
+                                ],
+                                "status": "ALLOWED"
+                            },
+                            "createdAt": "2025-12-03T11:38:51.414Z",
+                            "nid": "1764761561452279358",
+                            "currency": "SAR",
+                            "refundMethod": "credit shell",
+                            "tags": {
+                                "change": "REISSUE_WITH_FEES",
+                                "wallet_change": "YES",
+                                "cancellation": "REFUNDABLE_WITH_FEES_CREDIT",
+                                "wallet_cancellation": "NO"
+                            }
+                        }
+                    ]
+                },
+                "checkInDate": null,
+                "checkOutDate": null,
+                "firstCancellationDate": null,
+                "supplierFirstCancellationDate": null
+            },
+            "paymentStatus": 78,
+            "status": 58,
+            "vendorStatus": "Pending",
+            "supplierStatus": "Auto Confirmed",
+            "qty": 1,
+            "valid": true,
+            "type": "flight",
+            "isManual": false,
+            "expiredAt": "2025-12-05T11:33:56+0000",
+            "isProduct": true,
+            "allowedPaymentMethods": [
+                {
+                    "provider": "checkoutcom",
+                    "label": "Credit Card",
+                    "applemid": "merchant.com.almosafer.alrajhi.travel"
+                },
+                {
+                    "provider": "tabby",
+                    "label": "Tabby"
+                },
+                {
+                    "provider": "tamara",
+                    "label": "Tamara"
+                },
+                {
+                    "provider": "stcpay",
+                    "label": "STC Pay"
+                }
+            ],
+            "price": {
+                "base": 2025.8538,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 322.992,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2348.8458,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2348.8458,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": [
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 1012.9269
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 161.496
+                            }
+                        ],
+                        "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                        "type": "ADT",
+                        "ref": 1,
+                        "total": 1174.4229,
+                        "tickets": [
+                            {
+                                "ticketNumber": "",
+                                "ticketSubType": "",
+                                "total": 1174.4228,
+                                "vat": 0,
+                                "totalWithVat": 1174.4228,
+                                "currency": "SAR"
+                            }
+                        ]
+                    },
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 1012.9269
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 161.496
+                            }
+                        ],
+                        "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                        "type": "ADT",
+                        "ref": 2,
+                        "total": 1174.4229,
+                        "tickets": [
+                            {
+                                "ticketNumber": "",
+                                "ticketSubType": "",
+                                "total": 1174.4228,
+                                "vat": 0,
+                                "totalWithVat": 1174.4228,
+                                "currency": "SAR"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "vendorPrice": {
+                "base": 2025.8538,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 322.992,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2348.8458,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2348.8458,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR",
+                "breakdown": []
+            },
+            "supplierPrice": {
+                "base": 1982,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 316,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2298,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2298,
+                "currency": "AED",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "AED",
+                "totalCurrency": "AED",
+                "breakdown": []
+            },
+            "code": "d8ac17896e1c891b1cf7c595b7941886",
+            "displayItemName": "multiPNRflight",
+            "additionalData": {
+                "officeId": "Flight One",
+                "ticketingOfficeId": "Flight One",
+                "validatingCarrier": "G9",
+                "isDomestic": false,
+                "ticketingType": "",
+                "tzOfDepartureAirport": "+07:00",
+                "searchType": "Roundtrip",
+                "experiment": "variant_d",
+                "experiment_a": true,
+                "cid": "de730912",
+                "isTstCreated": false,
+                "itineraryId": "cb299b7fG9-de730912_G9_ONE",
+                "isV3Search": true,
+                "isV3Pricing": true,
+                "paxTypeCount": {
+                    "adult": 2,
+                    "child": 0,
+                    "infant": 0,
+                    "totalSeats": 2
+                },
+                "query": "JED-HKT/2025-12-09/2025-12-17/Economy/2Adult/0Child/0Infant",
+                "isV2Search": false,
+                "orderTracking": {
+                    "pricingTime": "2025-12-03T11:33:54+0000",
+                    "startBookingLaunched": true,
+                    "startBookingTime": "2025-12-03T11:38:53+0000",
+                    "ticketingTrackingId": "one-e2290805-1711-4fbb-b58a-d5acd3369ee7",
+                    "ticketingLastReadHistoryId": 6,
+                    "ticketingPollingAttempts": 3,
+                    "checkBookingTime": null,
+                    "pnrTime": null,
+                    "tstTime": null
+                },
+                "fareUuid": "f2d468e1-d03b-11f0-839f-5719546e9753",
+                "transactionIdentifier": "TID$1764761634454164801783.2811148",
+                "isPromoCodeApplied": false,
+                "hasMixedFareFamily": false,
+                "posCountry": "SA",
+                "distributionChannel": "",
+                "isMultiTicket": false,
+                "nexusSessionId": "08f41c4c-7cbd-454a-8ce2-14fbf2192b48",
+                "includedVatPercentage": 0,
+                "supplierVat": 0,
+                "originalVendorPrice": {
+                    "base": 2025.8538,
+                    "tax": 322.992,
+                    "vat": 0,
+                    "total": 2348.8456,
+                    "currency": "SAR"
+                },
+                "direction": "inbound",
+                "exchange": {
+                    "Base": {
+                        "symbol": "SAR",
+                        "name": "Saudi Riyal",
+                        "name_ar": "ريال سعودي",
+                        "symbol_native": "ر.س.‏",
+                        "decimal_digits": 2,
+                        "rounding": 0,
+                        "code": "SAR",
+                        "name_plural": "Saudi riyals"
+                    },
+                    "Equivalent": [
+                        {
+                            "symbol": "SAR",
+                            "name": "Saudi Riyal",
+                            "name_ar": "ريال سعودي",
+                            "symbol_native": "ر.س.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "SAR",
+                            "name_plural": "Saudi riyals",
+                            "rate": 1,
+                            "Rate": 1,
+                            "date": "2025-12-02 09:10:48"
+                        },
+                        {
+                            "symbol": "AED",
+                            "name": "United Arab Emirates Dirham",
+                            "name_ar": "درهم اماراتي",
+                            "symbol_native": "د.إ.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "AED",
+                            "name_plural": "UAE dirhams",
+                            "rate": 0.97834,
+                            "Rate": 0.97834,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "QAR",
+                            "name": "Qatari Rial",
+                            "name_ar": "ريال قطري",
+                            "symbol_native": "ر.ق.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "QAR",
+                            "name_plural": "Qatari rials",
+                            "rate": 0.975302,
+                            "Rate": 0.975302,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "KWD",
+                            "name": "Kuwaiti Dinar",
+                            "name_ar": "دينار كويتي",
+                            "symbol_native": "د.ك.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "KWD",
+                            "name_plural": "Kuwaiti dinars",
+                            "rate": 0.0818,
+                            "Rate": 0.0818,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "BHD",
+                            "name": "Bahraini Dinar",
+                            "name_ar": "دينار بحريني",
+                            "symbol_native": "د.ب.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "BHD",
+                            "name_plural": "Bahraini dinars",
+                            "rate": 0.10042,
+                            "Rate": 0.10042,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "$",
+                            "name": "US Dollar",
+                            "name_ar": "دولار أمريكي",
+                            "symbol_native": "$",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "USD",
+                            "name_plural": "US dollars",
+                            "rate": 0.266396,
+                            "Rate": 0.266396,
+                            "date": "2025-12-02 09:46:03"
+                        },
+                        {
+                            "symbol": "€",
+                            "name": "Euro",
+                            "name_ar": "يورو",
+                            "symbol_native": "€",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "EUR",
+                            "name_plural": "euros",
+                            "rate": 0.229463,
+                            "Rate": 0.229463,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "£",
+                            "name": "British Pound Sterling",
+                            "name_ar": "الجنيه الاسترليني",
+                            "symbol_native": "£",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "GBP",
+                            "name_plural": "British pounds sterling",
+                            "rate": 0.201652,
+                            "Rate": 0.201652,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "EGP",
+                            "name": "Egyptian Pound",
+                            "name_ar": "جنيه مصري",
+                            "symbol_native": "ج.م.‏",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "EGP",
+                            "name_plural": "Egyptian pounds",
+                            "rate": 12.654343,
+                            "Rate": 12.654343,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "₹",
+                            "name": "Indian Rupee",
+                            "name_ar": "روبية هندية",
+                            "symbol_native": "₹",
+                            "decimal_digits": 2,
+                            "rounding": 0,
+                            "code": "INR",
+                            "name_plural": "Indian rupees",
+                            "rate": 23.925653,
+                            "Rate": 23.925653,
+                            "date": "2025-12-02 09:52:04"
+                        },
+                        {
+                            "symbol": "OMR",
+                            "name": "Omani Rial",
+                            "name_ar": "ريال عماني",
+                            "symbol_native": "ر.ع.‏",
+                            "decimal_digits": 3,
+                            "rounding": 0,
+                            "code": "OMR",
+                            "name_plural": "Omani rials",
+                            "rate": 0.102432,
+                            "Rate": 0.102432,
+                            "date": "2025-12-02 09:46:03"
+                        }
+                    ]
+                },
+                "exchangeRates": {
+                    "Base": "SAR",
+                    "Equivalent": {
+                        "SAR-SAR": 1,
+                        "AED-SAR": 1.021856,
+                        "QAR-SAR": 1.029018,
+                        "KWD-SAR": 12.230774,
+                        "BHD-SAR": 9.954618,
+                        "USD-SAR": 3.752767,
+                        "EUR-SAR": 4.376507,
+                        "GBP-SAR": 4.988721,
+                        "EGP-SAR": 0.078782,
+                        "INR-SAR": 0.041601,
+                        "OMR-SAR": 9.760124
+                    }
+                },
+                "analyticsData": {
+                    "fareFamilies": {
+                        "successfullyFetched": true,
+                        "selectedFareFamily": {
+                            "name": "Basic",
+                            "price": 2348.84
+                        },
+                        "cheapestFareFamily": {
+                            "name": "Basic",
+                            "price": 2348.84,
+                            "priceDifference": 0
+                        },
+                        "mostExpensiveFareFamily": {
+                            "name": "Ultimate",
+                            "price": 2921.23,
+                            "priceDifference": 572.3899999999999
+                        }
+                    }
+                },
+                "expiredAt": "2025-12-03 11:53:55",
+                "hasFreeInsurance": false,
+                "isMultiPNR": true,
+                "_pricingRules": {
+                    "hasQitaf": false,
+                    "hasWallet": false,
+                    "ahsGroupName": "",
+                    "cartKeycartType": "flight",
+                    "departureTerminal": "",
+                    "arrivalTerminal": "North Term",
+                    "stopCount": 1,
+                    "totalSeat": 2,
+                    "validatingCarrier": "G9",
+                    "isDomestic": false,
+                    "isMultiPNR": true,
+                    "direction": "inbound",
+                    "operatingCarrier": "G9",
+                    "vendor": "one",
+                    "supplier": "G9",
+                    "category": "flight",
+                    "type": "flight",
+                    "totalPax": 2,
+                    "experiment": "variant_d",
+                    "experiment_a": true,
+                    "loggedIn": true,
+                    "isRoundTrip": true,
+                    "isMultiCity": false,
+                    "isOneWay": false,
+                    "origin": "HKT",
+                    "destination": "JED",
+                    "originCountryCode": "TH",
+                    "destinationCountryCode": "SA",
+                    "isStopLegFirst": true,
+                    "flightCode": [
+                        "G9-700"
+                    ],
+                    "flightPath": [
+                        "HKT-JED"
+                    ],
+                    "isSotoBooking": true,
+                    "leg_0_cabin": "economy",
+                    "leg_0_fareBasis": "",
+                    "leg_0_cabinCode": "Economy",
+                    "leg_0_classOfLeg": null,
+                    "cartKeyFirstDepartureTime": "2025-12-17T11:55:00",
+                    "clientVersion": "",
+                    "cartKeyLastArrivalTime": "2025-12-17T23:35:00",
+                    "daysBeforeCheckin": 15,
+                    "hoursBeforeDeparture": 329.33,
+                    "base": 2025.8538,
+                    "cartKeybase": 2025.8538,
+                    "cartKeytax": 322.992,
+                    "total": 2348.8458,
+                    "totalWithoutVat": 2348.8458,
+                    "totalPriceWithoutVat": 2348.8458,
+                    "isVatApplied": false,
+                    "cartKeytotalSeat": 2,
+                    "fareFamily": "Basic"
+                },
+                "isV3SSR": true,
+                "ssr": [
+                    {
+                        "seatIndex": 1,
+                        "luggage": []
+                    },
+                    {
+                        "seatIndex": 2,
+                        "luggage": []
+                    }
+                ],
+                "miscellaneousDescription": {
+                    "type": "Luggage Surcharge",
+                    "value": 0
+                },
+                "isV3SellSeat": true,
+                "isSeatReserved": true,
+                "seatReservedTime": "2025-12-03T11:34:48+0000",
+                "uiControls": {
+                    "disableContactForm": true,
+                    "disableTravellersForm": true,
+                    "disableSSRForm": true
+                },
+                "supplierPrice": {
+                    "total": "2298.00",
+                    "tax": "316.0",
+                    "currency": "AED",
+                    "base": "1982.0",
+                    "price": {
+                        "pax": [
+                            {
+                                "totals": {
+                                    "penalty": 0,
+                                    "vat": 0,
+                                    "mu": 0,
+                                    "tax": 161.496,
+                                    "supplierBase": 991,
+                                    "supplierTax": 158,
+                                    "luggageVat": 0,
+                                    "supplierTotal": 1149,
+                                    "couponDiscount": 0,
+                                    "total": 1174.4228,
+                                    "luggage": 0,
+                                    "supplierLuggageVat": 0,
+                                    "currency": "SAR",
+                                    "supplierLuggage": 0,
+                                    "supplierCurrency": "AED",
+                                    "base": 1012.9269
+                                },
+                                "info": {
+                                    "ref": 2,
+                                    "type": "ADT"
+                                }
+                            },
+                            {
+                                "totals": {
+                                    "penalty": 0,
+                                    "vat": 0,
+                                    "mu": 0,
+                                    "tax": 161.496,
+                                    "supplierBase": 991,
+                                    "supplierTax": 158,
+                                    "luggageVat": 0,
+                                    "supplierTotal": 1149,
+                                    "couponDiscount": 0,
+                                    "total": 1174.4228,
+                                    "luggage": 0,
+                                    "supplierLuggageVat": 0,
+                                    "currency": "SAR",
+                                    "supplierLuggage": 0,
+                                    "supplierCurrency": "AED",
+                                    "base": 1012.9269
+                                },
+                                "info": {
+                                    "ref": 1,
+                                    "type": "ADT"
+                                }
+                            }
+                        ],
+                        "totals": {
+                            "penalty": 0,
+                            "vat": 0,
+                            "mu": 0,
+                            "tax": 322.992,
+                            "supplierTax": 316,
+                            "supplierBase": 1982,
+                            "luggageVat": 0,
+                            "supplierVat": 0,
+                            "supplierTotal": 2298,
+                            "couponDiscount": 0,
+                            "total": 2348.8456,
+                            "luggage": 0,
+                            "supplierLuggageVat": 0,
+                            "currency": "SAR",
+                            "supplierCurrency": "AED",
+                            "supplierLuggage": 0,
+                            "base": 2025.8538
+                        }
+                    }
+                },
+                "_priceCompareResult": {
+                    "supplierPricePricing": {
+                        "base": 1982,
+                        "currencyRate": 0,
+                        "commission": 0,
+                        "commissionCurrencyRate": 0,
+                        "tax": 316,
+                        "taxCurrencyRate": 0,
+                        "discount": 0,
+                        "discountCurrencyRate": 0,
+                        "total": 2298,
+                        "totalCurrencyRate": 1,
+                        "miscellaneous": 0,
+                        "markup": 0,
+                        "inputVat": 0,
+                        "outputVat": 0,
+                        "inputVatMeta": 0,
+                        "outputVatMeta": 0,
+                        "totalWithVat": 2298,
+                        "currency": "AED",
+                        "commissionCurrency": "",
+                        "taxCurrency": "",
+                        "discountCurrency": "AED",
+                        "totalCurrency": "AED",
+                        "breakdown": []
+                    },
+                    "supplierPriceSellSeat": {
+                        "total": "2298.00",
+                        "tax": "316.0",
+                        "currency": "AED",
+                        "base": "1982.0",
+                        "price": {
+                            "pax": [
+                                {
+                                    "totals": {
+                                        "penalty": 0,
+                                        "vat": 0,
+                                        "mu": 0,
+                                        "tax": 161.496,
+                                        "supplierBase": 991,
+                                        "supplierTax": 158,
+                                        "luggageVat": 0,
+                                        "supplierTotal": 1149,
+                                        "couponDiscount": 0,
+                                        "total": 1174.4228,
+                                        "luggage": 0,
+                                        "supplierLuggageVat": 0,
+                                        "currency": "SAR",
+                                        "supplierLuggage": 0,
+                                        "supplierCurrency": "AED",
+                                        "base": 1012.9269
+                                    },
+                                    "info": {
+                                        "ref": 2,
+                                        "type": "ADT"
+                                    }
+                                },
+                                {
+                                    "totals": {
+                                        "penalty": 0,
+                                        "vat": 0,
+                                        "mu": 0,
+                                        "tax": 161.496,
+                                        "supplierBase": 991,
+                                        "supplierTax": 158,
+                                        "luggageVat": 0,
+                                        "supplierTotal": 1149,
+                                        "couponDiscount": 0,
+                                        "total": 1174.4228,
+                                        "luggage": 0,
+                                        "supplierLuggageVat": 0,
+                                        "currency": "SAR",
+                                        "supplierLuggage": 0,
+                                        "supplierCurrency": "AED",
+                                        "base": 1012.9269
+                                    },
+                                    "info": {
+                                        "ref": 1,
+                                        "type": "ADT"
+                                    }
+                                }
+                            ],
+                            "totals": {
+                                "penalty": 0,
+                                "vat": 0,
+                                "mu": 0,
+                                "tax": 322.992,
+                                "supplierTax": 316,
+                                "supplierBase": 1982,
+                                "luggageVat": 0,
+                                "supplierVat": 0,
+                                "supplierTotal": 2298,
+                                "couponDiscount": 0,
+                                "total": 2348.8456,
+                                "luggage": 0,
+                                "supplierLuggageVat": 0,
+                                "currency": "SAR",
+                                "supplierCurrency": "AED",
+                                "supplierLuggage": 0,
+                                "base": 2025.8538
+                            }
+                        }
+                    },
+                    "isCurrencyMatching": true,
+                    "hasMiscellaneousPrice": false,
+                    "isTotalMatching": true,
+                    "isBaseMatching": true,
+                    "isTaxMatching": true,
+                    "isPricesMatching": true,
+                    "reason": "Price match"
+                },
+                "showAgeRestrictionFormDisclaimer": {
+                    "G9": false
+                },
+                "isManuallyApproved": true,
+                "packageInfo": {
+                    "createdAt": null,
+                    "updatedAt": null,
+                    "checkinDate": null,
+                    "checkoutDate": null,
+                    "validFrom": null,
+                    "validTo": null
+                }
+            },
+            "supplierName": "G9",
+            "addedBy": "flight-api",
+            "vendorName": "one",
+            "name": "cb299b7f-G9-700,G9-219",
+            "category": "flight",
+            "index": 1,
+            "displayCurrency": "SAR",
+            "displayPrice": {
+                "base": 2025.8538,
+                "currencyRate": 0,
+                "commission": 0,
+                "commissionCurrencyRate": 0,
+                "tax": 322.992,
+                "taxCurrencyRate": 0,
+                "discount": 0,
+                "discountCurrencyRate": 0,
+                "total": 2348.8458,
+                "totalCurrencyRate": 1,
+                "miscellaneous": 0,
+                "markup": 0,
+                "inputVat": 0,
+                "outputVat": 0,
+                "inputVatMeta": 0,
+                "outputVatMeta": 0,
+                "totalWithVat": 2348.8458,
+                "currency": "SAR",
+                "commissionCurrency": "",
+                "taxCurrency": "",
+                "discountCurrency": "",
+                "totalCurrency": "SAR"
+            },
+            "displayCurrencyRate": 1,
+            "emails": {
+                "ticket": true
+            },
+            "traveller": [
+                {
+                    "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                    "createdAt": "2025-12-03T11:35:13+0000",
+                    "updatedAt": "2025-12-03T11:35:13+0000",
+                    "_id": "69302071522b3a2d43e22792",
+                    "title": "Mr",
+                    "firstName": "YOUSEF",
+                    "middleName": "AWWADH",
+                    "lastName": "ALHARTHI",
+                    "type": "ADT",
+                    "birthDate": "1994-08-21",
+                    "gender": "",
+                    "nationality": "SA",
+                    "originalTicketNo": "",
+                    "ticketType": "",
+                    "ticketSubType": "",
+                    "eTicket": "",
+                    "additionalData": {
+                        "index": 1,
+                        "type": "ADT",
+                        "seatIndex": 1,
+                        "isPrimaryContact": true
+                    },
+                    "travellerId": {
+                        "id": "tvid-39d22812-2736-4b36-9b59-b53d785327c1",
+                        "createdAt": "2025-12-03T11:35:13+0000",
+                        "updatedAt": "2025-12-03T11:35:13+0000",
+                        "_id": "693020714e02b733a192b501",
+                        "type": "passport",
+                        "number": "BG86754",
+                        "issueDate": "",
+                        "expiryDate": "2029-07-31",
+                        "issueCountry": "SA"
+                    }
+                },
+                {
+                    "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                    "createdAt": "2025-12-03T11:35:13+0000",
+                    "updatedAt": "2025-12-03T11:35:13+0000",
+                    "_id": "69302071e7e50f11aa2e583f",
+                    "title": "Mrs",
+                    "firstName": "HIND",
+                    "middleName": "NASSER",
+                    "lastName": "ALHARTHI",
+                    "type": "ADT",
+                    "birthDate": "1991-12-24",
+                    "gender": "",
+                    "nationality": "SA",
+                    "originalTicketNo": "",
+                    "ticketType": "",
+                    "ticketSubType": "",
+                    "eTicket": "",
+                    "additionalData": {
+                        "index": 2,
+                        "type": "ADT",
+                        "seatIndex": 2
+                    },
+                    "travellerId": {
+                        "id": "tvid-a9aedbeb-eeea-4d81-8bd6-c37069d7b67c",
+                        "createdAt": "2025-12-03T11:35:13+0000",
+                        "updatedAt": "2025-12-03T11:35:13+0000",
+                        "_id": "69302071e446401d26378622",
+                        "type": "passport",
+                        "number": "BR92000",
+                        "issueDate": "",
+                        "expiryDate": "2030-04-15",
+                        "issueCountry": "SA"
+                    }
+                }
+            ],
+            "supplierConfirmationNumber": "6C60EU",
+            "statusHistory": [
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "New",
+                    "status": 10
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Pending",
+                    "status": 71
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:43+0000",
+                    "updatedAt": "2025-12-03T11:38:43+0000",
+                    "type": "payment_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Authorised",
+                    "status": 78
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:52+0000",
+                    "updatedAt": "2025-12-03T11:38:52+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Confirm Decision",
+                    "status": 50
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:53+0000",
+                    "updatedAt": "2025-12-03T11:38:53+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm Queue",
+                    "status": 55
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:53+0000",
+                    "updatedAt": "2025-12-03T11:38:53+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm Started",
+                    "status": 54
+                },
+                {
+                    "createdAt": "2025-12-03T11:38:53+0000",
+                    "updatedAt": "2025-12-03T11:38:53+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirm in Progress",
+                    "status": 56
+                },
+                {
+                    "createdAt": "2025-12-03T11:39:09+0000",
+                    "updatedAt": "2025-12-03T11:39:09+0000",
+                    "type": "status_history",
+                    "productId": "69302024c24bd228e5e8a561",
+                    "orderId": "69302143cf61df252c505132",
+                    "text": "Auto Confirmed",
+                    "status": 58
+                }
+            ],
+            "orderId": "69302143cf61df252c505132",
+            "vendorConfirmationNumber": "VendorONE",
+            "cartId": null,
+            "orderedAt": null,
+            "cancelledAt": null,
+            "confirmedAt": null,
+            "statusText": "Auto Confirmed",
+            "paymentStatusText": "Authorised",
+            "ahsGroupName": "Almosafer IOS SA"
+        }
+    ],
+    "totals": {
+        "total": 4627.8106,
+        "totalCurrencyRate": 0,
+        "commission": 0,
+        "commissionCurrencyRate": 0,
+        "tax": 1764.992,
+        "taxCurrencyRate": 0,
+        "discount": 0,
+        "discountCurrencyRate": 0,
+        "subtotal": 4612.8458,
+        "subtotalCurrencyRate": 0,
+        "miscellaneous": 0,
+        "markup": 0,
+        "inputVat": 0,
+        "outputVat": 0,
+        "inputVatMeta": 0,
+        "outputVatMeta": 0,
+        "totalCurrency": "SAR",
+        "commissionCurrency": "SAR",
+        "taxClass": "",
+        "taxCurrency": "SAR",
+        "discountCurrency": "SAR",
+        "subtotalCurrency": "SAR",
+        "breakdown": null
+    },
+    "grandTotals": {
+        "total": 4627.8106,
+        "totalCurrencyRate": 0,
+        "commission": 0,
+        "commissionCurrencyRate": 0,
+        "tax": 1764.992,
+        "taxCurrencyRate": 0,
+        "discount": 0,
+        "discountCurrencyRate": 0,
+        "subtotal": 4612.8458,
+        "subtotalCurrencyRate": 0,
+        "miscellaneous": 0,
+        "markup": 0,
+        "inputVat": 0,
+        "outputVat": 0,
+        "inputVatMeta": 0,
+        "outputVatMeta": 0,
+        "totalCurrency": "SAR",
+        "commissionCurrency": "SAR",
+        "taxClass": "",
+        "taxCurrency": "SAR",
+        "discountCurrency": "SAR",
+        "subtotalCurrency": "SAR",
+        "breakdown": [
+            {
+                "id": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb",
+                "subTotal": 2265.5807,
+                "vat": 0,
+                "total": 2265.5807
+            },
+            {
+                "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                "subTotal": 2362.2299,
+                "vat": 0,
+                "total": 2362.2299
+            }
+        ]
+    },
+    "type": "flight",
+    "displayTotals": {
+        "total": 4627.8106,
+        "totalCurrencyRate": 0,
+        "commission": 0,
+        "commissionCurrencyRate": 0,
+        "tax": 1764.992,
+        "taxCurrencyRate": 0,
+        "discount": 0,
+        "discountCurrencyRate": 0,
+        "subtotal": 4612.8458,
+        "subtotalCurrencyRate": 0,
+        "miscellaneous": 0,
+        "markup": 0,
+        "inputVat": 0,
+        "outputVat": 0,
+        "inputVatMeta": 0,
+        "outputVatMeta": 0,
+        "totalCurrency": "SAR",
+        "commissionCurrency": "SAR",
+        "taxClass": "",
+        "taxCurrency": "SAR",
+        "discountCurrency": "SAR",
+        "subtotalCurrency": "SAR",
+        "breakdown": null
+    },
+    "currency": "SAR",
+    "displayCurrency": "SAR",
+    "displayCurrencyRate": 1,
+    "coupon": "FLYNOW",
+    "allowedPaymentMethods": [
+        {
+            "provider": "checkoutcom",
+            "label": "Credit Card",
+            "applemid": "merchant.com.almosafer.alrajhi.travel"
+        },
+        {
+            "provider": "tabby",
+            "label": "Tabby"
+        },
+        {
+            "provider": "tamara",
+            "label": "Tamara"
+        },
+        {
+            "provider": "stcpay",
+            "label": "STC Pay"
+        }
+    ],
+    "customerEmail": "q7t6tcgw66@privaterelay.appleid.com",
+    "payment": {
+        "card": {
+            "token": "tok_mlakewmtaaoexe55armskrhctq"
+        },
+        "type": "prepaid",
+        "source": "apple.checkout",
+        "paymentMethod": "checkoutcom",
+        "description": "APPLE charge worth 4627.8106 SAR",
+        "chargeId": "charge-cko-0820d7d1-602c-4afa-85e6-c6122d6e1a1e",
+        "paymentType": "checkoutcom",
+        "method": "checkoutcom",
+        "paymentId": "pay_zg7m5wg4fptudgi57tovq3ttn4",
+        "paymentCurrency": "SAR",
+        "paymentMode": "online",
+        "paymentTotal": 4627.81,
+        "storeId": 52
+    },
+    "billingAddress": null,
+    "additionalData": {
+        "documentToSend": "invoice",
+        "headers": {
+            "client_ip": "10.160.88.18",
+            "uhash": "f3ac78ea60daf2a0bed4677fd6a71350",
+            "x-uhash": "f3ac78ea60daf2a0bed4677fd6a71350",
+            "x-router": "mobile",
+            "x-loyalty-program-code": "ALM_SA",
+            "client-ip": "5.82.122.184",
+            "x-host": "www.almosafer.com",
+            "x-elb-ip": "",
+            "referer": "",
+            "x-fp": "",
+            "x-site-id": "almosafer.com",
+            "x-user-account-role": "user",
+            "x-user-id": "63756f7a2bdadb522168c3bf",
+            "x-user-email": "q7t6tcgw66@privaterelay.appleid.com",
+            "x-user-phone": "+966560540518",
+            "x-v3-authorization-verified": "true",
+            "x-user-account-status": "active",
+            "x-envoy-attempt-count": "1",
+            "x-ev-osversion": "18.6",
+            "x-ev-networktype": "CTRadioAccessTechnologyNRNSA",
+            "x-ev-isjailbroken": "false",
+            "x-ev-devicename": "iPhone",
+            "x-ev-devicemodel": "iPhone13,4",
+            "x-ev-devicelocale": "ar-sa",
+            "x-ev-config": "LIVE",
+            "x-ev-brandname": "Apple",
+            "x-ev-appversion": "8.70.2",
+            "x-ev-appbuildnumber": "2909",
+            "x-env-type": "prod",
+            "x-device-id": "2705F0EE-A031-435A-8AFD-1969509430B2",
+            "x-currency": "SAR",
+            "x-base-currency": "SAR",
+            "x-base-country": "SA",
+            "x-authorization": "Bearer I28JS$s928918982SL344&#lSLKJ3#",
+            "true-client-ip": "5.82.122.184",
+            "tracestate": "3528122@nr=0-2-3528122-451390404-7ebfee2a8a3db909---1764761706782",
+            "traceparent": "00-43d3384ed4c28047672e0bd2a8193bef-7ebfee2a8a3db909-01",
+            "timestamp": "1764761706782",
+            "signature": "7f27937f40927f5eea01ebf8fcb9fc575245be548b8e42b926c33dd206f92eba43",
+            "request-id": "6E54F533-9834-42FC-BBF3-6D9A8B59971C",
+            "priority": "u=3",
+            "price-update-enabled": "true",
+            "newrelic": "ewoiZCI6IHsKImFjIjogIjM1MjgxMjIiLAoiYXAiOiAiNDUxMzkwNDA0IiwKImlkIjogIjdlYmZlZTJhOGEzZGI5MDkiLAoidGkiOiAxNzY0NzYxNzA2NzgyLAoidHIiOiAiNDNkMzM4NGVkNGMyODA0NzY3MmUwYmQyYTgxOTNiZWYiLAoidHkiOiAiTW9iaWxlIgp9LAoidiI6IFsKMCwKMgpdCn0=",
+            "mkt-id": "00000000-0000-0000-0000-000000000000",
+            "experiment-id": "2705F0EE-A031-435A-8AFD-1969509430B2",
+            "cf-timezone": "Asia/Riyadh",
+            "cf-region-code": "02",
+            "cf-region": "Mecca Region",
+            "cf-iplongitude": "39.18624",
+            "cf-iplatitude": "21.49012",
+            "cf-ipcontinent": "AS",
+            "cf-ipcity": "Jeddah",
+            "amplitude-session-id": "1764757811076",
+            "cf-connecting-ip": "5.82.122.184",
+            "user-agent": "AlMosafer/iPhone13,4/18.6/8.70.2/2909/2705F0EE-A031-435A-8AFD-1969509430B2/iPhone",
+            "accept-language": "ar-sa",
+            "cdn-loop": "cloudflare; loops=1; subreqs=1",
+            "cf-ew-via": "15",
+            "content-type": "application/json",
+            "x-platform": "ios",
+            "x-pricing-version": "1",
+            "cf-ipcountry": "SA",
+            "cf-worker": "almosafer.com",
+            "x-real-client-ip": "5.82.122.184",
+            "x-tz": "Asia/Riyadh",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "x-nexus-session-id": "08f41c4c-7cbd-454a-8ce2-14fbf2192b48",
+            "accept-encoding": "gzip",
+            "x-locale": "ar-sa",
+            "x-ev-totaldiskspace": "255881465856",
+            "x-ev-vendorid": "2705F0EE-A031-435A-8AFD-1969509430B2",
+            "cf-ray": "9a82c23cc668e284-DUB",
+            "x-amzn-trace-id": "Root=1-6930206b-3803f7bc75aa106f297c648d",
+            "x-original-forwarded-for": "5.82.122.184, 162.158.6.87",
+            "x-scheme": "https",
+            "x-forwarded-scheme": "https",
+            "x-request-id": "83a7e62a-feac-4dd2-afbb-b7bb55450f26",
+            "x-forwarded-prefix": "/api/m/v3/flights/",
+            "x-forwarded-path": "/api/m/v3/flights/flight/sale/sl-41354e60-3e29-4c5c-82f8-cba3a1fa8c0b/cart/cart-e4cf09b0-1b8e-46fa-84bb-2f238e7c07a3/seat/reservation",
+            "x-forwarded-port": "443",
+            "x-forwarded-host": "www.almosafer.com",
+            "x-forwarded-proto": "https",
+            "x-forwarded-for": "5.82.122.184, 162.158.6.87, 10.160.8.218, 10.160.99.224",
+            "scheme": "http",
+            "x-real-ip": "10.160.88.18",
+            "user_ip": "10.160.88.18",
+            "x-group-id": "2",
+            "x-office-id": "RUHAA28WH",
+            "x-tpt-office-id": "87oF",
+            "affiliate-id": "",
+            "x-ahs-group-name": "Almosafer iOS SA",
+            "x-filters": "",
+            "is-web-app": "0",
+            "is-tajawal-app-id": "0",
+            "x-forwarded-client-cert": "By=spiffe://cluster.local/ns/flights/sa/flights-api-node-sa;Hash=f062549e894a010143d193f1d2063bd159323521123654f96c8037dd6b9140d5;Subject=\"\";URI=spiffe://cluster.local/ns/flights/sa/flights-api-v3-sa",
+            "x-b3-traceid": "fca97f2f6b69844fcb3b03abe94a9e12",
+            "x-b3-spanid": "04d437fe4c64023a",
+            "x-b3-parentspanid": "86fd9b4928efb301",
+            "x-b3-sampled": "0",
+            "app-id": "52",
+            "x-skip-service-fee": "true",
+            "x-experiment": "variant_d",
+            "x-unify-fileid": "693020249f09f66eebd6709d",
+            "x-unify-salenumber": "U2512030524552",
+            "x-booking-channel": "online",
+            "x-ahs-group-id": "5811e17ee5631810146a2c92",
+            "linked-at": "2025-12-03T11:38:46+0000"
+        },
+        "nexusSessionId": "08f41c4c-7cbd-454a-8ce2-14fbf2192b48",
+        "channelData": null,
+        "b2bAccountId": "",
+        "saleId": "sl-41354e60-3e29-4c5c-82f8-cba3a1fa8c0b",
+        "searchType": "Roundtrip",
+        "oms-sale-version": "v1",
+        "entityType": "B2C",
+        "origin": "HKT",
+        "destination": "JED",
+        "isMultiPNR": true,
+        "includeTotalWithVat": true,
+        "disabledPaymentMethods": [],
+        "travel_date": "2025-12-09",
+        "availableAddOns": [
+            {
+                "code": "insurance",
+                "nameEn": "Trip Insurance",
+                "amount": 100,
+                "isBundle": false,
+                "isMultiProduct": true,
+                "priceToProductIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ],
+                "currency": "SAR",
+                "breakdowns": [
+                    {
+                        "amount": 50,
+                        "priceToProductId": "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                    },
+                    {
+                        "amount": 50,
+                        "priceToProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                    }
+                ]
+            },
+            {
+                "code": "leadGeneration",
+                "nameEn": "Enjoy upto 12% discount on stays",
+                "amount": 0,
+                "isBundle": false,
+                "isMultiProduct": true,
+                "priceToProductIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ],
+                "currency": "SAR",
+                "breakdowns": [
+                    {
+                        "amount": 0,
+                        "priceToProductId": "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                    },
+                    {
+                        "amount": 0,
+                        "priceToProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                    }
+                ]
+            },
+            {
+                "code": "CFAR",
+                "nameEn": "Cancellation Freedom",
+                "amount": 414.31,
+                "isBundle": false,
+                "isMultiProduct": true,
+                "priceToProductIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ],
+                "currency": "SAR",
+                "variant": "model_v3",
+                "breakdowns": [
+                    {
+                        "amount": 187.91,
+                        "priceToProductId": "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                    },
+                    {
+                        "amount": 226.4,
+                        "priceToProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                    }
+                ]
+            },
+            {
+                "code": "baggageProtection",
+                "nameEn": "Baggage Recovery",
+                "amount": 87,
+                "isBundle": false,
+                "isMultiProduct": true,
+                "priceToProductIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ],
+                "currency": "SAR",
+                "breakdowns": [
+                    {
+                        "amount": 39,
+                        "priceToProductId": "prod-4146234d-fa28-466c-bccd-6ce24e63274b"
+                    },
+                    {
+                        "amount": 48,
+                        "priceToProductId": "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                    }
+                ]
+            }
+        ],
+        "isDomestic": false,
+        "orderEntityId": "ALM",
+        "isPop": false,
+        "OmsSourceTracker": {
+            "cart": "v2",
+            "order": "v2",
+            "pricing": "v2",
+            "pricing-call-sdk": false,
+            "pricing-call-v2": true,
+            "enable-pricing-logger": false,
+            "enable-pricing-validator": false,
+            "sale": "v1"
+        },
+        "return_date": "2025-12-17",
+        "relatedCartIds": [
+            "cart-8b1bf0d4-3e3c-4bfa-9300-3780b0bd63e2"
+        ],
+        "hasRelatedCart": true,
+        "coupon": "FLYNOW",
+        "cartId": "cart-e4cf09b0-1b8e-46fa-84bb-2f238e7c07a3",
+        "bookingMethod": "checkoutcom",
+        "checkoutApiVer": "v3",
+        "hasInstallment": false,
+        "isFullyPaid": true,
+        "saleSessionId": "a30901a7-e400-4866-97ea-1377575aec30",
+        "relatedOrderNumbers": [
+            "O251203724352"
+        ],
+        "hasRelatedOrder": true,
+        "partnerEligibility": [
+            {
+                "pageId": "email",
+                "partnerCodes": [
+                    "bsf"
+                ]
+            }
+        ],
+        "invoiceable": true,
+        "zatcaInvoiceId": "9044202",
+        "invoicePublicXmlUrl": "https://hub.almosafer.com/api/download-invoice-xml/invoices/2025/12/300056209610003_20251203T113843_2025-12-03-A251203724252",
+        "invoicePublicUrl": "https://hub.almosafer.com/api/download/invoices/dwqPkLhYJo",
+        "invoiceS3Url": "https://oms-invoice-storage-prod.s3.eu-west-1.amazonaws.com/invoices/2025/12/9044202.pdf",
+        "fraudFlag": "Auto Cleared",
+        "state": "Complete",
+        "unify": {
+            "updatedAt": null
+        },
+        "knet": {
+            "createdAt": null
+        }
+    },
+    "options": {
+        "isMultiProduct": true,
+        "mainProductCount": 2
+    },
+    "contact": {
+        "title": "Mr",
+        "firstName": "YOUSEF",
+        "lastName": "ALHARTHI",
+        "email": "hamada.1020@outlook.com",
+        "phone": "+966560540518",
+        "countryId": ""
+    },
+    "emails": {
+        "ticket": true
+    },
+    "isManual": false,
+    "isManualOrder": false,
+    "expiredAt": null,
+    "notes": [],
+    "paidAt": "2025-12-03T11:38:43+0000",
+    "displayItems": {
+        "includeTotalWithVat": true,
+        "validation": {
+            "status": "valid",
+            "message": "Display Items is valid.Display Items Total Price CartGrandTotal: 4627.8106 - DisplayItems Total: 4627.8106"
+        },
+        "lineItems": [
+            {
+                "id": "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                "type": "flight",
+                "item_display_type": null,
+                "category": "flight",
+                "name": "multiPNRflight",
+                "price": {
+                    "subTotal": 4612.8458,
+                    "vat": 0,
+                    "totalWithVat": 4612.8458
+                },
+                "productsBreakdown": {
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b": {
+                        "price": {
+                            "subTotal": 2348.8458,
+                            "vat": 0,
+                            "totalWithVat": 2348.8458
+                        },
+                        "breakdown": [
+                            {
+                                "details": [
+                                    {
+                                        "key": "FARE",
+                                        "amount": 1012.9269
+                                    },
+                                    {
+                                        "key": "TAXES_FEES",
+                                        "amount": 161.496
+                                    }
+                                ],
+                                "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                                "type": "ADT",
+                                "ref": 1,
+                                "total": 1174.4229,
+                                "tickets": [
+                                    {
+                                        "ticketNumber": "",
+                                        "ticketSubType": "",
+                                        "total": 1174.4228,
+                                        "vat": 0,
+                                        "totalWithVat": 1174.4228,
+                                        "currency": "SAR"
+                                    }
+                                ],
+                                "itemPrice": 1174.4229,
+                                "qty": 1,
+                                "vat": 0,
+                                "totalWithVat": 1174.4229
+                            },
+                            {
+                                "details": [
+                                    {
+                                        "key": "FARE",
+                                        "amount": 1012.9269
+                                    },
+                                    {
+                                        "key": "TAXES_FEES",
+                                        "amount": 161.496
+                                    }
+                                ],
+                                "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                                "type": "ADT",
+                                "ref": 2,
+                                "total": 1174.4229,
+                                "tickets": [
+                                    {
+                                        "ticketNumber": "",
+                                        "ticketSubType": "",
+                                        "total": 1174.4228,
+                                        "vat": 0,
+                                        "totalWithVat": 1174.4228,
+                                        "currency": "SAR"
+                                    }
+                                ],
+                                "itemPrice": 1174.4229,
+                                "qty": 1,
+                                "vat": 0,
+                                "totalWithVat": 1174.4229
+                            }
+                        ]
+                    },
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb": {
+                        "price": {
+                            "subTotal": 2264,
+                            "vat": 0,
+                            "totalWithVat": 2264
+                        },
+                        "breakdown": [
+                            {
+                                "details": [
+                                    {
+                                        "key": "FARE",
+                                        "amount": 411
+                                    },
+                                    {
+                                        "key": "TAXES_FEES",
+                                        "amount": 721
+                                    }
+                                ],
+                                "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                                "type": "ADT",
+                                "ref": 1,
+                                "total": 1132,
+                                "tickets": [
+                                    {
+                                        "ticketNumber": "607-5066769843",
+                                        "ticketSubType": "",
+                                        "total": 1132,
+                                        "vat": 0,
+                                        "totalWithVat": 1132,
+                                        "currency": "SAR"
+                                    }
+                                ],
+                                "itemPrice": 1132,
+                                "qty": 1,
+                                "vat": 0,
+                                "totalWithVat": 1132
+                            },
+                            {
+                                "details": [
+                                    {
+                                        "key": "FARE",
+                                        "amount": 411
+                                    },
+                                    {
+                                        "key": "TAXES_FEES",
+                                        "amount": 721
+                                    }
+                                ],
+                                "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                                "type": "ADT",
+                                "ref": 2,
+                                "total": 1132,
+                                "tickets": [
+                                    {
+                                        "ticketNumber": "607-5066769842",
+                                        "ticketSubType": "",
+                                        "total": 1132,
+                                        "vat": 0,
+                                        "totalWithVat": 1132,
+                                        "currency": "SAR"
+                                    }
+                                ],
+                                "itemPrice": 1132,
+                                "qty": 1,
+                                "vat": 0,
+                                "totalWithVat": 1132
+                            }
+                        ]
+                    }
+                },
+                "breakdown": [
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 1423.9269
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 882.496
+                            }
+                        ],
+                        "id": "trav-f35dd112-53e6-4530-88a5-dacdb82bd20a",
+                        "type": "ADT",
+                        "ref": 1,
+                        "total": 2306.4229,
+                        "tickets": [
+                            {
+                                "ticketNumber": "",
+                                "ticketSubType": "",
+                                "total": 1174.4228,
+                                "vat": 0,
+                                "totalWithVat": 1174.4228,
+                                "currency": "SAR"
+                            },
+                            {
+                                "ticketNumber": "607-5066769843",
+                                "ticketSubType": "",
+                                "total": 1132,
+                                "vat": 0,
+                                "totalWithVat": 1132,
+                                "currency": "SAR"
+                            }
+                        ],
+                        "itemPrice": 2306.4229,
+                        "qty": 1,
+                        "vat": 0,
+                        "totalWithVat": 2306.4229
+                    },
+                    {
+                        "details": [
+                            {
+                                "key": "FARE",
+                                "amount": 1423.9269
+                            },
+                            {
+                                "key": "TAXES_FEES",
+                                "amount": 882.496
+                            }
+                        ],
+                        "id": "trav-a06baaae-6e2f-49f7-aebd-76db2d4b940c",
+                        "type": "ADT",
+                        "ref": 2,
+                        "total": 2306.4229,
+                        "tickets": [
+                            {
+                                "ticketNumber": "",
+                                "ticketSubType": "",
+                                "total": 1174.4228,
+                                "vat": 0,
+                                "totalWithVat": 1174.4228,
+                                "currency": "SAR"
+                            },
+                            {
+                                "ticketNumber": "607-5066769842",
+                                "ticketSubType": "",
+                                "total": 1132,
+                                "vat": 0,
+                                "totalWithVat": 1132,
+                                "currency": "SAR"
+                            }
+                        ],
+                        "itemPrice": 2306.4229,
+                        "qty": 1,
+                        "vat": 0,
+                        "totalWithVat": 2306.4229
+                    }
+                ],
+                "productIds": [
+                    "prod-4146234d-fa28-466c-bccd-6ce24e63274b",
+                    "prod-11f5978d-54d9-4591-939d-cb23527ea4bb"
+                ]
+            },
+            {
+                "id": "prod-011ed62e-ffa0-4a7f-b334-343e6fc179d2",
+                "type": "rule",
+                "item_display_type": "SHOW_ALL",
+                "category": "rule",
+                "name": "Service fee",
+                "price": {
+                    "subTotal": 207.7902,
+                    "vat": 0,
+                    "totalWithVat": 207.7902
+                },
+                "productIds": [
+                    "prod-011ed62e-ffa0-4a7f-b334-343e6fc179d2",
+                    "prod-985fc14e-367b-43ef-9ac6-37780edc7431"
+                ]
+            },
+            {
+                "id": "prod-1eb826ad-db46-4bc9-8b6e-59d5b3e8b9e5",
+                "type": "rule",
+                "item_display_type": null,
+                "category": "coupon",
+                "name": "FLYNOW",
+                "price": {
+                    "subTotal": -192.8254,
+                    "vat": 0,
+                    "totalWithVat": -192.8254
+                },
+                "productIds": [
+                    "prod-1eb826ad-db46-4bc9-8b6e-59d5b3e8b9e5"
+                ]
+            }
+        ],
+        "total": {
+            "subTotal": 4627.8106,
+            "vat": 0,
+            "total": 4627.8106,
+            "totalToBePaid": 4627.8106,
+            "currency": "SAR"
+        }
+    },
+    "snapshotId": null,
+    "statusMessage": "Auto Confirmed",
+    "paymentStatusMessage": "Authorised",
+    "displayStatus": 200,
+    "statusText": "Auto Confirmed",
+    "paymentStatusText": "Authorised",
+    "blacklistedItems": [],
+    "vipItems": [],
+    "customerRequests": []
+}
