@@ -186,12 +186,18 @@ else{
   capture line:2, column:1, length:1 assign to checkpast
   capture line:2, column:1, length:2 assign to checktoday
   if (checkpast == "-"){
-    send "Flight Departed!"
-    ask "Ignore!" assign to qz5
-    send "ig"
-  }
+        send "RTA"
+        choose "Is flight in the past?" {
+            when ("Yes"){
+                send "Ig"
+            }
+            when ("No"){
+
+            }
+        }
+    }
   if (checktoday == " 0"){
-    send "DF"  +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 +"-" +TravelTime1 +"*60-" +TravelTime2 
+    send "DF"  +TravelTime1 +"*60-" +TravelTime2 +"-" +OriginCityCurrentTime1 +"*60;" +OriginCityCurrentTime2 
     capture line:2, column:1, length:1 assign to checkTimePast
     capture line:2, column:1, length:5 assign to checkTimeDifference
     if (checkTimePast == "-"){
