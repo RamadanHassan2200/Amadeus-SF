@@ -409,17 +409,8 @@ if (Airline1=="UL"){
     assign "TRUE" to EXPAKCheck
 }
 
-if (EXPAKCheck != "TRUE"){
-    send "THIS's NOT EX PAK DEAL!"
-    mandatory ask "PLease check the departure city again!" assign to qz5
-}
 
-  //Today dates aren't considered
-  if (TravelDate == today){
-    send  "No void for today flights"
-    ask "Check again please!" assign to qz
-    send "ig"
-  }
+
 // Checking Airline(s) and Travel date and passenger count//
 
       send "tqm"

@@ -1,3 +1,5 @@
+// z_FOPCASH_DEL
+send "rtf"
 capture line:1, column:1, length:19 assign to checksuccess
 if (checksuccess =="ENTRY NOT PROCESSED"){
     send "IR"

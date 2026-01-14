@@ -1,7 +1,26 @@
   // fast_search
   send "TTH/ALL"
+  capture line:2, column:1, length:2 assign to TST_No
   capture line:2, column:35, length:3 assign to currency
   capture line:2, column:42, length:9 assign to first_Amount
+  
+
+  send "TTH/T" + TST_No
+  send "MD-RF-"
+  capture line:1, column:5, length:2 assign to RF1
+  if (RF1 == "RF"){
+    capture line:1, column:15, length:9 assign to issuing_PCC
+  }
+  else{
+    send "MD-RF-"
+    capture line:1, column:5, length:2 assign to RF1
+    if (RF1 == "RF"){
+      capture line:1, column:15, length:9 assign to issuing_PCC
+    }
+  }
+
+  if (issuing_PCC != "RUHAA2162"){
+  
 
   send "FXR/K"
   send "Fqq1"
@@ -83,5 +102,6 @@
       send "SRTSuccess"
   }
  
+  }// RUHAA2162 condition
 
   

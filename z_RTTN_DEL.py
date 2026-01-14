@@ -1,3 +1,4 @@
+//z_RTTN_DEL
 send "rttn"
 capture line:2, column:5, length:2 assign to FA1
 if (FA1=="FA"){

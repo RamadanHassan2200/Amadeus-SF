@@ -1318,23 +1318,6 @@ send "TRF" +TKTP1 +" " +TKTP2 +"-" +TKTP3
 capture line:1, column:58, length:1 assign to checkATC
 if (checkATC =="C"){
 
-    capture line:15, column:1, length:2 assign to FOCheck1
-    capture line:16, column:1, length:2 assign to FOCheck2
-    capture line:17, column:1, length:2 assign to FOCheck3
-
-    if (FOCheck1=="FO"){
-      assign "True" to FOCheck
-      capture line:15, column:28, length:7 assign to FODate
-    }
-    if (FOCheck2=="FO"){
-      assign "True" to FOCheck
-      capture line:16, column:28, length:7 assign to FODate
-    }
-    if (FOCheck3=="FO"){
-      assign "True" to FOCheck
-      capture line:17, column:28, length:7 assign to FODate
-    }
-
     capture line:10, column:5, length:12 assign to totalRefundcheck1
     capture line:11, column:5, length:12 assign to totalRefundcheck2
     capture line:12, column:5, length:12 assign to totalRefundcheck3
@@ -1353,25 +1336,148 @@ if (checkATC =="C"){
     }
     capture line:6, column:28, length:3 assign to refundCurrency
 
-
-    if (FOCheck == "True"){
-        send "DD"
-        capture line:2, column:33, length:7 assign to todayDate
-        send "DD" +FODate +"/" +todayDate
-        capture line:2, column:1, length:4 assign to dateDifference
-        if (dateDifference >= "365"){
-          mandatory ask "Original Ticket is Expired!" assign to qz5
-          call "Modified FQD&FQP"
-        }
+    send "TRFU/NF"
+    capture line:9, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:9, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:10, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:10, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:11, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:11, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:12, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:12, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:13, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:13, column:33, length:10 assign to totalRefundAmount
     }
 
-    send "TRFU/NF"
-    send "TRFP"
+
+    capture line: 11, column:1, length:3 assign to check_FP1
+    if (check_FP1 == "FP1"){
+      capture line:11, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 12, column:1, length:3 assign to check_FP2
+    if (check_FP2 == "FP1"){
+      capture line:12, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 13, column:1, length:3 assign to check_FP3
+    if (check_FP3 == "FP1"){
+      capture line:13, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 14, column:1, length:3 assign to check_FP4
+    if (check_FP4 == "FP1"){
+      capture line:14, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 15, column:1, length:3 assign to check_FP5
+    if (check_FP5 == "FP1"){
+      capture line:15, column:33, length:10 assign to FP_Amount
+    }
+
+
+    if (totalRefundAmount == FP_Amount){
+        send "TRFP"
+    }
+    else{
+      send "TRFU/FPA1" +totalRefundAmount
+      send "TRFP"
+    }
     capture line:2, column:1, length:21 assign to refundedTicketCheck
     if (refundedTicketCheck == "OK - REFUND PROCESSED"){
         send ":" +totalRefundAmount +"  " +refundCurrency
         call "Modified FQD&FQP"
     }
+}
+
+if (checkATC =="P"){
+  capture line:14, column:28, length:16 assign to check_GDS1
+  capture line:15, column:28, length:16 assign to check_GDS2
+  capture line:16, column:28, length:16 assign to check_GDS3
+  capture line:17, column:28, length:16 assign to check_GDS4
+  capture line:18, column:28, length:16 assign to check_GDS5
+
+  if (check_GDS1 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS2 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS3 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS4 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+  if (check_GDS5 == "OTHER GDS TICKET"){
+    assign "True" to travelport_Galileo
+  }
+
+  if (travelport_Galileo == "True"){
+    send "TRFU/NF"
+    
+    capture line:9, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:9, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:10, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:10, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:11, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:11, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:12, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:12, column:33, length:10 assign to totalRefundAmount
+    }
+    capture line:13, column:5, length:12 assign to check_Total_Refund
+    if (check_Total_Refund == "REFUND TOTAL"){
+      capture line:13, column:33, length:10 assign to totalRefundAmount
+    }
+
+
+    capture line: 11, column:1, length:3 assign to check_FP1
+    if (check_FP1 == "FP1"){
+      capture line:11, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 12, column:1, length:3 assign to check_FP2
+    if (check_FP2 == "FP1"){
+      capture line:12, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 13, column:1, length:3 assign to check_FP3
+    if (check_FP3 == "FP1"){
+      capture line:13, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 14, column:1, length:3 assign to check_FP4
+    if (check_FP4 == "FP1"){
+      capture line:14, column:33, length:10 assign to FP_Amount
+    }
+    capture line: 15, column:1, length:3 assign to check_FP5
+    if (check_FP5 == "FP1"){
+      capture line:15, column:33, length:10 assign to FP_Amount
+    }
+
+    if (totalRefundAmount == FP_Amount){
+        send "TRFP"
+    }
+    else{
+      send "TRFU/FPA1" +totalRefundAmount
+      send "TRFP"
+    }    
+  }
+  capture line:2, column:1, length:21 assign to refundedTicketCheck
+    if (refundedTicketCheck == "OK - REFUND PROCESSED"){
+        send ":" +totalRefundAmount +"  " +refundCurrency
+        call "Modified FQD&FQP"
+    }
+
 }
 
 // Working with Ghost Segments
@@ -1897,14 +2003,12 @@ if (airline1 == "WY"){
     capture line:9, column:32, length:14 assign to FQQfareBasis1
     if (FQQfareBasis1 != fareBasis1){
       assign "False" to check_FareBasis_Compatibility
-      send "1"
     }
 
     if (segCount > "1"){
       capture line:10, column:32, length:14 assign to FQQfareBasis2
       if (FQQfareBasis2 != fareBasis2){
         assign "False" to check_FareBasis_Compatibility
-        send "2"
       }
     }
 
@@ -1912,7 +2016,6 @@ if (airline1 == "WY"){
       capture line:11, column:32, length:14 assign to FQQfareBasis3
       if (FQQfareBasis3 != fareBasis3){
         assign "False" to check_FareBasis_Compatibility
-        send "3"
       }
     }
 
@@ -1920,7 +2023,6 @@ if (airline1 == "WY"){
       capture line:12, column:32, length:14 assign to FQQfareBasis4
       if (FQQfareBasis4 != fareBasis4){
         assign "False" to check_FareBasis_Compatibility
-        send "4"
       }
     }
 
@@ -1928,7 +2030,6 @@ if (airline1 == "WY"){
       capture line:13, column:32, length:14 assign to FQQfareBasis5
       if (FQQfareBasis5 != fareBasis5){
         assign "False" to check_FareBasis_Compatibility
-        send "5"
       }
     }
 
@@ -1936,13 +2037,11 @@ if (airline1 == "WY"){
       capture line:14, column:32, length:14 assign to FQQfareBasis6
       if (FQQfareBasis6 != fareBasis6){
         assign "False" to check_FareBasis_Compatibility
-        send "6"
       }
     }
 
     if (check_FareBasis_Compatibility == "True"){
       assign "7" to FXXfareBasisNumber
-      send "8"
     }
   }
   }
@@ -2610,7 +2709,10 @@ if (airline1 == "WY"){
  }
 
  send "FQN" +FXXfareBasisNumber +"*PE"
- send "MD-Cancellations"
+ send "MD-CANCELLATIONS"
+ call "FQN_Refund_Fetcher"
+
+ 
 
   assign "1" to Fares
   if (segCount > "1"){
@@ -2641,22 +2743,29 @@ if (airline1 == "WY"){
 
   if (Fares == "11"){
     send "FQN" +FXXfareBasisNumber +"-2*PE"
-    send "MD-Cancellations"
+    send "MD-CANCELLATIONS"
+    call "FQN_Refund_Fetcher"
   }
   if (Fares == "111"){
     send "FQN" +FXXfareBasisNumber +"-3*PE"
-    send "MD-Cancellations"
+    send "MD-CANCELLATIONS"
+    call "FQN_Refund_Fetcher"
   }
   if (Fares == "1111"){
     send "FQN" +FXXfareBasisNumber +"-4*PE"
-    send "MD-Cancellations"
+    send "MD-CANCELLATIONS"
+    call "FQN_Refund_Fetcher"
   }
   if (Fares == "11111"){
     send "FQN" +FXXfareBasisNumber +"-5*PE"
-    send "MD-Cancellations"
+    send "MD-CANCELLATIONS"
+    call "FQN_Refund_Fetcher"
   }
   if (Fares == "111111"){
     send "FQN" +FXXfareBasisNumber +"-6*PE"
-    send "MD-Cancellations"
+    send "MD-CANCELLATIONS"
+    call "FQN_Refund_Fetcher"
   }
+
+
 

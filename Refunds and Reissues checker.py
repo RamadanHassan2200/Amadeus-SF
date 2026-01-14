@@ -26428,6 +26428,7 @@ if (dfnextcheck == ">"){
   }
 
   }
+  
 
   if (quoteType == "Refund"){
 
@@ -26582,4 +26583,4 @@ if (dfnextcheck == ">"){
   }
    
   }
-
+  

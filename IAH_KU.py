@@ -1,5 +1,6 @@
 // IAH_KU_BEY_MS
 //retrirval
+
 mandatory ask "Enter the PNR: " assign to pnr
 send "IG"
 

@@ -161,21 +161,6 @@ else{
 }
 }
 
-if (OriginCity!="MNL"){
-  assign "TRUE" to EXMNLCheck
-}
-if (Airline1=="GF"){
-    assign "TRUE" to EXMNLCheck
-}
-if (Airline1=="UL"){
-    assign "TRUE" to EXMNLCheck
-}
-
-if (EXMNLCheck != "TRUE"){
-    send "THIS's NOT EX MNL DEAL!"
-    mandatory ask "PLease check the departure city/Airline again!" assign to qz5
-}
-
 
   send "tqt/t500"
   capture line:2, column:1, length:3 assign to TQTNumber1
@@ -2400,6 +2385,8 @@ else {
 }
 
     }
+
+call "z_FM_DEL"
 
 send "FM5"
 call "z_FOPCASH_DEL" 
